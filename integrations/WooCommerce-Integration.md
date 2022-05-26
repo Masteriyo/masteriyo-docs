@@ -1,0 +1,58 @@
+# WooCommerce Integration Addon
+
+WooCommerce Integration Addon for Masteriyo allows the user to use WooCommerce for the checkout process and plethora of payment methods provided by the WooCommerce to sell courses.
+
+## Requires
+
+- WooCommerce to be installed and activated.
+
+## Features
+- Allows to use WooCommerce checkout process to enroll users.
+- Allows to use abundant of WooCommerce payment gateways.
+- Allow to use WooCommerce analytics.
+
+## WooCommerce Configuration
+* [Mandatory] Uncheck `Allow customers to place orders without an account`
+* [Mandatory] Check `Allow customers to log into an existing account during checkout`
+![WooCommerce configuration!](https://i.imgur.com/cip5vlc.png)
+* [Optional] Check `Redirect to the cart page after successful addition` to provide seemless flow similar to Masteriyo checkout.
+![Redirect to cart page!](https://i.imgur.com/oVbwFUp.png)
+
+## How to use?
+
+1. Install and activate [WooCommerce](https://wordpress.org/plugins/woocommerce/) plugin.
+
+2. Activate _WooCommerce Integration for Masteriyo_ Addon.
+   ![Activate WooCommerce Integration Addon For Masteriyo!](https://i.imgur.com/qjeYmrQ.png)
+
+3. Create a paid course in Masteriyo.
+   ![Create new course!](https://i.imgur.com/w4IFMAq.png)
+   ![Create course with price!](https://i.imgur.com/TgmtYbO.png)
+
+4. Create a product in WooCommerce with same as course price and `Masteriyo Course` product type.
+   ![Create product with Masteriyo course!](https://i.imgur.com/ia4sDfR.png)
+
+5. Select a course you want to associate the product with from the `Course` tab. Note: only *Draft*, *Published* and *Paid* courses are shown in the dropdown list.
+  ![Associate product with course!](https://i.imgur.com/kGuNFcG.png)
+
+6. Goto the courses page and click on the buy button. The associated product will be added to the cart.
+  ![Buy course!](https://i.imgur.com/pXBwkY8.png)
+  ![Single product page!](https://i.imgur.com/hghG5Jg.png)
+
+7. Follow WooCommerce checkout process and use `Cash on Delivery` as payment option for now. Select other payment option if you have configured.
+  ![WooCommerce cart page!](https://i.imgur.com/Jg4ivn7.png)
+  ![WooCommerce checkout page!](https://i.imgur.com/ZcLy2vu.png)
+  ![WooCommerce thank you page!](https://i.imgur.com/bONGe2n.png)
+
+8. Goto courses page as you can see you are still unable to start the course, because the order is not completed.
+  ![Unable to start course!](https://i.imgur.com/pXBwkY8.png)
+
+9. Goto orders page and change order status to `Completed`
+  ![Change order status!](https://i.imgur.com/BRVfMJd.png)
+
+10. Goto courses page, now you can start the course.
+  ![Start course](https://i.imgur.com/RSLx2bj.png)
+
+## Unenrollment process
+By default, whenever the WooCommerce order is of the following types `Cancelled`, `Refunded` and `Failed`, the user is unenrolled from the course. You can change the unenrollment statuses from the global settings page.
+  ![Change unenrollment status!](https://i.imgur.com/8lTnEUb.png)
