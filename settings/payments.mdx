@@ -30,8 +30,81 @@ Choose the positon of currency symbol where you want it to appear with respect t
 - **Thousand Separator**  
 Choose the appropriate symbol as thousand separator.
 
-#### Decimal Separator
+- **Decimal Separator**
 Choose the appropriate symbol as decimal separator.
 
 - **Number of Decimals**  
 Choose the number of digits to appear after decimal.
+
+### Standard PayPal
+Settings related to PayPal if you using PayPal for receiving payments.
+
+- **Enable**  
+Enable if you want to use PayPal for receiving payments.<br />
+**Note**: All other related options will appear just below this option once you enable it. 
+
+- **Title**  
+Title of the payment method that user sees during the checkout procees. By default it's set to **PayPal**.
+However, you can change it to any other title if you want to.
+
+- **Description**  
+Description of the payment method that user sees during the checkout process.
+
+- **IPN Email Notification**
+Enable to send notifications when an IPN is received from PayPal indicating refunds, chargebacks and cancellations.
+
+- **PayPal Email**  
+This is the PayPal email where you will be receiving the payments.
+
+- **Receiver Email**  
+If your primary PayPal email differs from the one that you entered for above option (**PayPal Email**), please add your primary PayPal email in this option
+This will be used to validate IPN requests.
+
+- **Identity Token**  
+You can optionally enable **Payment Data Transfer** in your PayPal account. This will be located at **Profile > Profile and Settings >
+My Selling Tools > Website Preferences**. You will find **Identity Token** there, copy and add it in this option field.<br />
+**Note**: This will allow payments to be verified without the need for PayPal IPN.
+
+- **Invoice Prefix**  
+If you use your PayPal account with more than one installation, please use a distinct prefix to separate those installations.
+Please do not use numbers. 
+
+- **Payment Actions**  
+Select either to capture payment immediately or authorize a payment for an order after order creation.
+
+- **Image URL**  
+You can optionally add URL of image to be shown in the upper-left corner of PayPal checkout pages.
+**Note**: A image size of 150 X 150 pixels will be appropriate.
+
+- **Debug Log**  
+You can enable this option for debugging purposes.<br />
+**Note**: This may log personal information. We recommend using this for debugging purposes only and deleting the logs when finished.
+
+- **Sandbox**  
+Enable PayPal Sandbox for testing payments.
+
+- **Live API Username**  
+You can get it from your PayPal.
+
+- **Live API Password**  
+You can get it from your PayPal.
+
+- **Live API Signature**  
+You can get it from your PayPal.
+
+### Offline Payment
+Settings related to PayPal if you using PayPal for receiving payments.
+
+- **Enable**  
+Enable if you want to get payments offline.<br />
+**Note**: All other related options will appear just below this option once you enable it. 
+
+- **Title**  
+Title of the payment method that user sees during the checkout procees. By default it's set to **Offline Payment**.
+However, you can change it to any other title if you want to.
+
+- **Description**  
+Description of the payment method that user sees during the checkout process.
+
+- **Instructions**  
+If you want to provide any detailed instruction on how your users are supposed to make the offline payment, please add that here.
