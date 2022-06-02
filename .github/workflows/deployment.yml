@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage
-      uses: fjogeleit/http-request-action@v1
+      uses: fjogeleit/http-request-action@v1.9.1
       with:
         url: 'https://api.netlify.com/build_hooks/628f1cb1815b251c0d705950'
         method: 'POST'
