@@ -1,4 +1,6 @@
 
+Deploy Status:  
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3a9b402a-af95-4051-9025-f762197bdb5b/deploy-status)](https://app.netlify.com/sites/masteriyo-docs/deploys)
 
 # Docs for Masteriyo LMS
 
