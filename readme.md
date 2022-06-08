@@ -1,8 +1,8 @@
-title: Getting Started
+
 
 # Docs for Masteriyo LMS
 
-This is a repository for documentation for Masteriyo LMS. All documentations are uses mdx syntax. This is exactly like md syntax with some additional features. If you are unsure of how to write using md syntax checkout this [mark down guide](https://www.markdownguide.org/basic-syntax/). It is compiled and deployed to https://docs.masteriyo.com.
+This is a repository for documentation for Masteriyo LMS. All documentations use mdx syntax. This is exactly like md syntax with some additional features. If you are unsure of how to write using md syntax checkout this [mark down guide](https://www.markdownguide.org/basic-syntax/). It is compiled and deployed to https://docs.masteriyo.com.
 
 ### How to contribute
 
