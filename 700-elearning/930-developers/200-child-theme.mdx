@@ -1,0 +1,71 @@
+---
+title: How to add custom code to the theme using Child Theme?
+show_child_cards: true
+excerpt: Learn basics of using LMS by Masteriyo. How to add custom code to the theme using Child Theme.
+---
+
+# How to add custom code to the theme using Child Theme?
+
+If you want to add your own code to the theme then the best way is to use a **Child Theme**.
+
+## Using Child Theme
+
+Child themes are a safe way to modify WordPress themes where you don't make any changes to the parent theme’s files. When the parent theme gets updated, the changes made in the Child theme are preserved and applied on the updated version as well. This is why Child themes are the best way to make changes to an existing theme. Rather than modifying theme files directly you can simply override them with the templates in the Child theme.
+
+    If you want to know more about Child themes then refer to this blog post here: [Tutorial on Creating WordPress Child Theme] (https://themegrill.com/blog/tutorial-creating-wordpress-child-theme/)
+
+## Creating a eLearning Child Theme (Shortcut Method)
+
+- You can directly download the starter eLearning Child theme zip file. Download here: Get Child Theme For eLearning
+
+- After the download is finished, look for the **elearning-child** zip file on your computer which will likely be in your Downloads folder. Once you find it, remember the location and continue to the next step.
+
+- Navigate to **Appearance > Themes** and then go to **Add New**. Now click on **Upload Theme**.
+
+- Click on browse and navigate to the downloaded **elearning-child** zip file and click on **Install Now**.
+
+- **Activate** the Zakra Child Theme.
+
+## Creating Zakra Child Theme (Manual Method)
+
+- Create a new folder in your themes directory. The themes directory is wp-content/themes. Name the folder elearning-child.
+
+- Inside the elearning-child folder create a file called style.css and fill in the information as shown below.
+
+    /*
+    Theme Name: eLearning Child Theme
+    Theme URI: http://themegrill.com/themes/elearning/
+    Description: Child Theme for eLearning
+    Author: ThemeGrill
+    Author URI: http://themegrill.com
+    Template: eLearning
+    Version: 1.0
+    */
+
+Add this and save the file.
+
+- Create a file called functions.php and add the code below:
+
+<?php
+/* 
+ * Child theme functions file
+ * 
+ */
+function zakra_child_enqueue_styles() {
+
+	$parent_style = 'zakra-style'; //parent theme style handle 'zakra-style'
+
+	//Enqueue parent and chid theme style.css
+	wp_register_style( $parent_style, get_template_directory_uri() . '/style.css' ); 
+	wp_enqueue_style( 'zakra_child_style',
+	    get_stylesheet_directory_uri() . '/style.css',
+	    array( $parent_style ),
+	    wp_get_theme()->get('Version')
+	);
+}
+add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
+
+
+
+
+
