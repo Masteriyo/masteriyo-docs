@@ -65,6 +65,26 @@ function zakra_child_enqueue_styles() {
 }
 add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
 
+    In creating a child theme, style.css is mandatory while template files and other files are optional and can be created if required.
+
+- Lastly, **Activate** the child theme. From the **WordPress Dashboard**, go to **Appearance > Themes** and look for the child theme you created. Now simply activate it.
+
+
+    Make sure the Parent theme is also present in the installed themes for the Child theme to work
+
+If you now visit your site, it should look the same just like when the parent theme was activated. However, you may need to reset some of the settings in the Customizer.
+
+## Adding custom code using a Child theme
+
+Your Child theme is ready. Now, you can add your custom code to the Child theme.
+
+**For example**: If you want to modify the theme’s CSS, you can add CSS at the end of the style.css file and save it. These CSS lines will overwrite the parent theme CSS.
+
+### To add code in template files
+
+You can make further changes by adjusting template files. Suppose you want to make some changes or add some extra code to the Header. In that case, you can copy the **header.php** file of the Parent theme, paste it into the Child theme and make the required changes there. Now save the file and this **header.php** file will load instead of the **header.php** file of the parent theme.
+
+
 
 
 
