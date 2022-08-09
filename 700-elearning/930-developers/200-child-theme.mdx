@@ -84,6 +84,25 @@ Your Child theme is ready. Now, you can add your custom code to the Child theme.
 
 **For example**: If you want to modify the theme’s CSS, you can add CSS at the end of the style.css file and save it. These CSS lines will overwrite the parent theme CSS.
 
+```
+/*
+Theme Name: eLearning Child Theme
+Theme URI: http://themegrill.com/themes/elearning/
+Description: Child Theme for eLearning
+Author: ThemeGrill
+Author URI: http://themegrill.com
+Template: elearning
+Version: 1.0
+*/
+/* =Theme customization starts here
+------------------------------------------------------- */
+#site-title a {
+color: #0000FF;
+font-size: 42px;
+}
+
+```
+
 ### To add code in template files
 
 You can make further changes by adjusting template files. Suppose you want to make some changes or add some extra code to the Header. In that case, you can copy the **header.php** file of the Parent theme, paste it into the Child theme and make the required changes there. Now save the file and this **header.php** file will load instead of the **header.php** file of the parent theme.
