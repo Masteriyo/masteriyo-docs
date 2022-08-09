@@ -42,9 +42,7 @@ Author URI: http://themegrill.com <br/>
 Template: elearning <br/>
 Version: 1.0 <br/>
 */
-asas
 
-asas
 Add this and save the file.
 
 - Create a file called functions.php and add the code below:
@@ -56,7 +54,9 @@ Add this and save the file.
  */ <br/>
 function zakra_child_enqueue_styles() { <br/>
 
-	$parent_style = 'zakra-style'; //parent theme style handle 'zakra-style'
+function zakra_child_enqueue_styles() { <br/>
+	
+    $parent_style = 'zakra-style'; //parent theme style handle 'zakra-style'
 
 	//Enqueue parent and chid theme style.css
 	wp_register_style( $parent_style, get_template_directory_uri() . '/style.css' ); 
