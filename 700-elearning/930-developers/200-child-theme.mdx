@@ -33,7 +33,7 @@ Child themes are a safe way to modify WordPress themes where you don't make any 
 - Inside the elearning-child folder create a file called style.css and fill in the information as shown below.
 
 
-> /* <br/>
+``` /* <br/>
 Theme Name: eLearning Child Theme <br/>
 Theme URI: http://themegrill.com/themes/elearning/ <br/>
 Description: Child Theme for eLearning <br/>
@@ -41,7 +41,7 @@ Author: ThemeGrill <br/>
 Author URI: http://themegrill.com <br/>
 Template: elearning <br/>
 Version: 1.0 <br/>
-*/
+*/```
 
 Add this and save the file.
 
@@ -53,19 +53,19 @@ Add this and save the file.
  * Child theme functions file
  * 
  */
-function zakra_child_enqueue_styles() {
+function elearning_child_enqueue_styles() {
 
-	$parent_style = 'zakra-style'; //parent theme style handle 'zakra-style'
+	$parent_style = 'elearning-style'; //parent theme style handle 'elearning-style'
 
 	//Enqueue parent and chid theme style.css
 	wp_register_style( $parent_style, get_template_directory_uri() . '/style.css' ); 
-	wp_enqueue_style( 'zakra_child_style',
+	wp_enqueue_style( 'elearning_child_style',
 	    get_stylesheet_directory_uri() . '/style.css',
 	    array( $parent_style ),
 	    wp_get_theme()->get('Version')
 	);
 }
-add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'elearning_child_enqueue_styles' );
 ```
 
 > In creating a child theme, style.css is mandatory while template files and other files are optional and can be created if required.
