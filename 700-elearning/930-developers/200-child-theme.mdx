@@ -46,24 +46,7 @@ Version: 1.0 <br/>
 Add this and save the file.
 
 - Create a file called functions.php and add the code below:
-    <?php
-    /* 
-    * Child theme functions file
-    * 
-    */
-    function zakra_child_enqueue_styles() {
 
-        $parent_style = 'zakra-style'; //parent theme style handle 'zakra-style'
-
-        //Enqueue parent and chid theme style.css
-        wp_register_style( $parent_style, get_template_directory_uri() . '/style.css' ); 
-        wp_enqueue_style( 'zakra_child_style',
-            get_stylesheet_directory_uri() . '/style.css',
-            array( $parent_style ),
-            wp_get_theme()->get('Version')
-        );
-    }
-    add_action( 'wp_enqueue_scripts', 'zakra_child_enqueue_styles' );
     
 
 > In creating a child theme, style.css is mandatory while template files and other files are optional and can be created if required.
