@@ -6,19 +6,19 @@ excerpt: Learn basics of using LMS by Masteriyo. How to add custom code to the t
 
 # How to add custom code to the theme using Child Theme?
 
-If you want to add your own code to the theme then the best way is to use a **Child Theme**.
+If you want to add your own code to the theme, then using a **Child Theme**is the best way.
 
 ## Using Child Theme
 
-Child themes are a safe way to modify WordPress themes where you don't make any changes to the parent theme’s files. When the parent theme gets updated, the changes made in the Child theme are preserved and applied on the updated version as well. This is why Child themes are the best way to make changes to an existing theme. Rather than modifying theme files directly you can simply override them with the templates in the Child theme.
+Child themes are a safe way to modify WordPress themes where you don't make any changes to the parent theme’s files. When the parent theme gets updated, the changes made in the child theme are preserved and applied on the updated version as well. This is why child themes are the best way to make changes to an existing theme. Rather than modifying theme files directly you can simply override them with the templates in the Child theme.
 
-> If you want to know more about Child themes then refer to this blog post here: [Tutorial on Creating WordPress Child Theme](https://themegrill.com/blog/tutorial-creating-wordpress-child-theme/)
+> If you want to know more about child themes then refer to this blog post here: [Tutorial on Creating WordPress Child Theme] (https://themegrill.com/blog/tutorial-creating-wordpress-child-theme/)
 
-## Creating a eLearning Child Theme (Shortcut Method)
+## Creating an eLearning Child Theme (Shortcut Method)
 
 - You can directly download the starter eLearning Child theme zip file. Download here: Get Child Theme For eLearning
 
-- After the download is finished, look for the **elearning-child** zip file on your computer which will likely be in your Downloads folder. Once you find it, remember the location and continue to the next step.
+- After the download is finished, look for the **elearning-child** zip file on your computer, which will likely be in your Downloads folder. Once you find it, remember the location and continue to the next step.
 
 - Navigate to **Appearance > Themes** and then go to **Add New**. Now click on **Upload Theme**.
 
@@ -30,7 +30,7 @@ Child themes are a safe way to modify WordPress themes where you don't make any 
 
 - Create a new folder in your themes directory. The themes directory is wp-content/themes. Name the folder elearning-child.
 
-- Inside the elearning-child folder create a file called style.css and fill in the information as shown below.
+- Inside the elearning-child folder, create a file called style.css and fill in the information as shown below.
 
 
 ``` 
@@ -70,14 +70,14 @@ function elearning_child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'elearning_child_enqueue_styles' );
 ```
 
-> In creating a child theme, style.css is mandatory while template files and other files are optional and can be created if required.
+> In creating a child theme, style.css is mandatory, while template files and other files are optional and can be created if required.
 
 - Lastly, **Activate** the child theme. From the **WordPress Dashboard**, go to **Appearance > Themes** and look for the child theme you created. Now simply activate it.
 
 
 > Make sure the Parent theme is also present in the installed themes for the Child theme to work
 
-If you now visit your site, it should look the same just like when the parent theme was activated. However, you may need to reset some of the settings in the Customizer.
+If you now visit your site, it should look the same, just like when the parent theme was activated. However, you may need to reset some of the settings in the Customizer.
 
 ## Adding custom code using a Child theme
 
@@ -107,10 +107,5 @@ font-size: 42px;
 
 ### To add code in template files
 
-You can make further changes by adjusting template files. Suppose you want to make some changes or add some extra code to the Header. In that case, you can copy the **header.php** file of the Parent theme, paste it into the Child theme and make the required changes there. Now save the file and this **header.php** file will load instead of the **header.php** file of the parent theme.
-
-
-
-
-
+You can make further changes by adjusting template files. Suppose you want to make some changes or add some extra code to the Header. In that case, you can copy the **header.php** file of the Parent theme, paste it into the Child theme and make the required changes there. Now save the file, and this **header.php** file will load instead of the **header.php** file of the parent theme.
 
