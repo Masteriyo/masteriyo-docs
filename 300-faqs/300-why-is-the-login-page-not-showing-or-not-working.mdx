@@ -1,25 +1,27 @@
 ---
-title: Why is the login page not showing or not working?
+title: Why is the login form in account page not showing or not working?
 show_child_cards: true
 excerpt: Learn how to fix the login page not showing or not working.
 ---
 
-If your login page is not showing or working, there are two possible reasons for this. So, let’s go through it one by one to resolve this issue.
+If the login form is not showing in the account page then it means that you have not added the respective shortcode in that page. 
 
-### Missing Masteriyo's account page shortcode on my account page
+### Adding [masteriyo_shortcode] in the account page
 1. Login to your WordPress dashboard
 2. Go to **Pages** and click on the **All pages** option
-3. Click on the **Account** page
-4. Here, if the shortcode is missing, then, on the shortcode block type Masteriyo's account page shortcode: **[masteriyo_account]**
-5. Then, press the **Update** button
+3. Click on the **Account** page or simply the page you are using as account page
+4. Add shortcode block
+5. Type shortcode **[masteriyo_account]** inside the shortcode block
+6. Then, press the **Update** button
 
-After updating the page, if your account page is still not displayed on your website, then continue with the second method.
+Now, this should display the login form in the account page. 
+However, you need to adjust one more setting to make sure the login form works properly.
 
-### Account page is not selected in the Masteriyo setting
-
+### Adjusting Masteriyo Global settings for account page
 1. Go to your WordPress dashboard
-2. Click on **Masteriyo**
-3. Click on **Settings**
-4. Navigate **General**->**Account** pages
-5. From the drop-down menu of the **Account Page** setting, click on the page you've created earlier i.e., the Account page
-6. Then, press the **Save** Settings button
+2. Click on **Masteriyo** -> **Settings**
+4. Navigate **General** -> **Pages** -> **Account Page** drop down option.
+5. Select the account page there or the page containg account shortcode mentioned in above section.
+6. Then, press the **Save Settings** button
+
+Now, your login form in the acccount page should work all fine.
