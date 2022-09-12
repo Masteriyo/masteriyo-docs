@@ -1,0 +1,30 @@
+---
+title: Stripe Payment Gateway
+show_child_cards: true
+excerpt: Learn how to setup Stripe Payment Gateway. It supports major cards like Visa, MasterCard, American Express, Discover, debit cards, etc.
+---
+
+You can sell online courses and accept credit card payments via Stripe. It also supports major cards like Visa, MasterCard, American Express, Discover, debit cards, etc.
+ 
+### How to Use?
+
+![setting-up-stripe-with-masteriyo](https://user-images.githubusercontent.com/24367265/189649913-46fb97f5-1d5d-445a-a38e-8ebc54894027.png)
+
+1. Install [Masteriyo Pro](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version)
+2. Activate the [Stripe Payment Gateway Add-on](https://docs.masteriyo.com/premium-addons/install-masteriyo-premium-addons)
+
+After activating the Stripe Payment Gateway add-on, login into your Stripe dashboard and copy the **Standard Keys**, **Published Keys**, and **Secret Keys**; then, follow the below steps:
+
+> **Note:** Want to know how to create and copy your API keys? Check this [documentation](https://stripe.com/docs/keys).
+
+3.  Go to your **Dashboard**, navigate->**Masteriyo**-> **Settings**
+4.  Click on **Payments**->**Stripe**-> **Enable**
+
+After enabling the button, you'll need to set up the following options:
+ 
+5.  **Sandbox:**  If you want to test your Stripe account, enable this button to test it. However, if your website is live and you've added your live key to your Stripe account, you don't need to enable it.
+6.  **Live Publishable Key:** Paste the Published key that you've copied earlier from your Stripe dashboard
+7.  **Live Secret Key:** Paste the Secret key that you've copied from your Stripe dashboard
+8.  **Webhook Secret Key:** Paste your Webhook Secret Key that you've copied
+9.  **Webhook Endpoint:** It notifies you when an event happens in your account
+10.  Click on **Save Settings**
