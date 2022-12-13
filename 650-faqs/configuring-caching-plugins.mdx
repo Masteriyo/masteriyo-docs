@@ -1,0 +1,40 @@
+---
+title: How to configuring caching pluginss?
+show_child_cards: true
+excerpt: Learn How to configuring caching plugins. It will help you to fix the caching problem with Masteriyo.
+---
+
+When using caching plugins, the below mentioned pages are frequently already excluded. Otherwise, ensure that these pages are excluded from the cache via your caching system's settings. 
+
+- Account 
+- Checkout 
+- Instructor Registration 
+
+Below, you will find the instruction to remove these pages from the cache for a few top caching plugins. 
+
+## WP Rocket 
+
+The Masteriyo plugin is compatible with the WP Rocket. Please make sure that the above-mentioned pages are excluded from the cache.  
+For this, navigate to **Dashboard** -> **Pages** -> **Account** -> Check on **Never cache this page** on the WP Rocket Sidebar Menu.
+
+![Account Page](https://user-images.githubusercontent.com/24367265/207308374-bcef56c6-3c72-40b2-81e9-bf48521a106b.png)
+
+We suggest you to avoid JS files minification from the **WP Rocket** -> **Settings** -> **File Optimization**.  
+
+![Minify JS for WP Rocket](https://user-images.githubusercontent.com/24367265/207308446-fc31c7bb-5038-4b68-ac2e-e3f03fa3f53c.png)
+
+You can also use an alternative method for avoiding the desired pages from cache. This method also helps you to add bulk URLs for multiple pages.
+For this, go to **Settings** -> **WP Rocket** -> **Advanced Rules**. Add the desired page URLs on the **Never Cache URLs** input option. 
+
+![WP Rocket Advanced Rules](https://user-images.githubusercontent.com/24367265/207308541-1fdcc79e-5591-45b7-9466-81a2709aadbb.png)
+
+## WP Super Cache 
+
+The Masteriyo is compatible with WP Super Cache. Please make sure that the above-mentioned pages are excluded from the cache by placing the corresponding endpoints here **WP Admin** -> **Settings** -> **WP Super Cache** -> **Advanced**. 
+ 
+ ![wp-super-cache](https://user-images.githubusercontent.com/24367265/207308745-c015bba4-62d5-4290-bb11-839802614b44.png)
+
+ 
+## Excluding Masteriyo Session From The Cache 
+
+If the caching system you’re using offers database caching, it might be helpful to exclude ``` masteriyo_sessions ``` from being cached. This will be dependent on the plugin or host caching so refer to the specific instructions or docs for that system. 
