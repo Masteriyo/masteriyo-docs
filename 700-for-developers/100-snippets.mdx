@@ -1,0 +1,16 @@
+---
+title: Code Snippets
+excerpt: Documentation for listing code snippets
+---
+
+### Change Default Order Status For Ofline Payment
+
+``` add_filter( 'masteriyo_offline_process_payment_order_status', function( $status ) { 
+        return 'completed'; 
+    }); ```
+
+### Change Courses Featured label [PRO]
+
+``` add_filter( 'masteriyo_pro_course_featured_text', function( $text ) {
+        return 'New Featured';
+    }); ```
