@@ -8,8 +8,8 @@ All of the code snippets for modifying existing features can be found below. Che
 ### Change Default Order Status For Ofline Payment
 
 ```php
-add_filter( 'masteriyo_offline_process_payment_order_status', function( $status ) { 
-    return 'completed'; 
+add_filter( 'masteriyo_offline_process_payment_order_status', function( $status ) {
+    return 'completed';
 });
 ```
 
@@ -19,4 +19,20 @@ add_filter( 'masteriyo_offline_process_payment_order_status', function( $status 
 add_filter( 'masteriyo_pro_course_featured_text', function( $text ) {
     return 'New Featured';
 });
+```
+
+### Sort the courses in the courses page alphabetically by course name.
+```php
+add_filter( 'pre_get_posts', function ($q) {
+	// We only want to affect the main query.
+	if ( ! $q->is_main_query() ) {
+		return;
+	}
+
+	// Order courses by course's title alphabetical order .
+	$q->set( 'orderby', 'title ID');
+	$q->set( 'order', 'ASC'); // ASC for A->Z or DESC for Z-A.
+
+});
+
 ```
