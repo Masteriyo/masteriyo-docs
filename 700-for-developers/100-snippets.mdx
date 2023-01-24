@@ -25,14 +25,10 @@ add_filter( 'masteriyo_pro_course_featured_text', function( $text ) {
 ```php
 add_filter( 'pre_get_posts', function ($q) {
 	// We only want to affect the main query.
-	if ( ! $q->is_main_query() ) {
-		return;
+	if ( $q->is_main_query() && is_post_type_archive( 'mto-course' ) ) {
+		$q->set( 'orderby', 'title ID');
+		$q->set( 'order', 'ASC'); // ASC for A->Z or DESC for Z-A.;
 	}
-
-	// Order courses by course's title alphabetical order .
-	$q->set( 'orderby', 'title ID');
-	$q->set( 'order', 'ASC'); // ASC for A->Z or DESC for Z-A.
-
 });
 
 ```
