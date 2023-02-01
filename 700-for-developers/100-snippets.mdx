@@ -27,8 +27,29 @@ add_filter( 'pre_get_posts', function ($q) {
 	// We only want to affect the main query.
 	if ( $q->is_main_query() && is_post_type_archive( 'mto-course' ) ) {
 		$q->set( 'orderby', 'title ID');
-		$q->set( 'order', 'ASC'); // ASC for A->Z or DESC for Z-A.;
+		$q->set( 'order', 'ASC'); // ASC for A->Z or DESC for Z->A.;
 	}
 });
+```
 
+### Sort the courses in the courses page according to published date.
+```php
+add_filter( 'pre_get_posts', function ($q) {
+	// We only want to affect the main query.
+	if ( $q->is_main_query() && is_post_type_archive( 'mto-course' ) ) {
+		$q->set( 'orderby', 'date ID');
+		$q->set( 'order', 'DESC'); // ASC for Oldest->Newswet or DESC for Newest->Oldest
+	}
+});
+```
+
+### Sort the courses in the courses page according to modified date.
+```php
+add_filter( 'pre_get_posts', function ($q) {
+	// We only want to affect the main query.
+	if ( $q->is_main_query() && is_post_type_archive( 'mto-course' ) ) {
+		$q->set( 'orderby', 'modified ID');
+		$q->set( 'order', 'DESC'); // ASC for Oldest->Newswet or DESC for Newest->Oldest
+	}
+});
 ```
