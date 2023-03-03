@@ -53,3 +53,11 @@ add_filter( 'pre_get_posts', function ($q) {
 	}
 });
 ```
+
+### Multiple Coupon code support.
+```php
+add_filter('masteriyo_enable_multiple_coupon', function($bool, $coupon_code) {
+  return true;
+});
+```
+
