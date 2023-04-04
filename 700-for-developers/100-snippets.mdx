@@ -13,6 +13,8 @@ add_filter( 'masteriyo_offline_process_payment_order_status', function( $status 
 });
 ```
 
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
+
 ### Change Courses Featured label [PRO]
 
 ```php
@@ -20,6 +22,8 @@ add_filter( 'masteriyo_pro_course_featured_text', function( $text ) {
     return 'New Featured';
 });
 ```
+
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
 
 ### Sort the courses in the courses page alphabetically by course name.
 ```php
@@ -32,6 +36,8 @@ add_filter( 'pre_get_posts', function ($q) {
 });
 ```
 
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
+
 ### Sort the courses in the courses page according to published date.
 ```php
 add_filter( 'pre_get_posts', function ($q) {
@@ -42,6 +48,8 @@ add_filter( 'pre_get_posts', function ($q) {
 	}
 });
 ```
+
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
 
 ### Sort the courses in the courses page according to modified date.
 ```php
@@ -54,6 +62,8 @@ add_filter( 'pre_get_posts', function ($q) {
 });
 ```
 
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
+
 ### Multiple Coupon code support.
 ```php
 add_filter('masteriyo_enable_multiple_coupon', function($bool, $coupon_code) {
@@ -61,3 +71,17 @@ add_filter('masteriyo_enable_multiple_coupon', function($bool, $coupon_code) {
 });
 ```
 
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
+
+### Solution to Video Playback Fast-Forward or Rewind Function Not Working.
+
+To ensure the security of your self-hosted videos, we provide various security codes. However, in certain cases, the hosting platform may clash with this security measure, making it impossible to forward or rewind the video by clicking on a specific time. In these scenarios, we suggest implementing the code snippet below to resolve the problem.
+
+```php
+add_filter( 'masteriyo_self_hosted_lesson_video_url', function( $url, $lesson ) { 
+$url = wp_get_attachment_url( $lesson->get_video_source_id() ); 
+return $url; 
+}, 10, 2);
+```
+
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>

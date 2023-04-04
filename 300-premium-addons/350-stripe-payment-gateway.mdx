@@ -5,7 +5,9 @@ excerpt: Learn how to setup Stripe Payment Gateway. It supports major cards like
 ---
 
 You can sell online courses and accept credit card payments via Stripe. It also supports major cards like Visa, MasterCard, American Express, Discover, debit cards, etc.
- 
+
+<Embed>https://www.youtube.com/watch?v=Qd8CyyfS_vQ&ab_channel=Masteriyo</Embed>
+
 ### How to Use?
 
 ![setting-up-stripe-with-masteriyo](https://user-images.githubusercontent.com/24367265/189649913-46fb97f5-1d5d-445a-a38e-8ebc54894027.png)
@@ -15,23 +17,29 @@ You can sell online courses and accept credit card payments via Stripe. It also 
 
 After activating the Stripe Payment Gateway add-on, login into your Stripe dashboard and copy the **Standard Keys**, **Published Keys**, and **Secret Keys**; then, follow the below steps:
 
-<Callout> **Note:** Want to know how to create and copy your API keys? Check this [documentation](https://stripe.com/docs/keys). </Callout>
+<Callout>
+  {" "}
+  **Note:** Want to know how to create and copy your API keys? Check this [documentation](https://stripe.com/docs/keys).{" "}
+</Callout>
 
 3.  Go to your **Dashboard**, navigate->**Masteriyo**-> **Settings**
 4.  Click on **Payments**->**Stripe**-> **Enable**
 
 After enabling the button, you'll need to set up the following options:
- 
-5.  **Sandbox:**  If you want to test your Stripe account, enable this button to test it. However, if your website is live and you've added your live key to your Stripe account, you don't need to enable it.
+
+5.  **Sandbox:** If you want to test your Stripe account, enable this button to test it. However, if your website is live and you've added your live key to your Stripe account, you don't need to enable it.
 6.  **Live Publishable Key:** Paste the Published key that you've copied earlier from your Stripe dashboard
 7.  **Live Secret Key:** Paste the Secret key that you've copied from your Stripe dashboard
 8.  **Webhook Secret Key:** Paste your Webhook Secret Key that you've copied
 9.  **Webhook Endpoint:** It notifies you when an event happens in your account
-10.  Click on **Save Settings**
+10. Click on **Save Settings**
 
-<Callout>For auto completion of the Stripe payment, you must link the webhook on your Stripe account.</Callout>
+<Callout>
+  For auto completion of the Stripe payment, you must link the webhook on your
+  Stripe account.
+</Callout>
 
 1. Please go to your **Dashboard**-> **Masteriyo**-> **Settings**-> **Payments**-> **Stripe**-> At the bottom, you will find the **Webhook Endpoint**-> **Copy** the Webhook.
-2. Now login to your Stripe official account and go to the **Developers**-> **Webhook**-> Click on **Add an Endpoint**-> **Paste** the Endpoint URL copied earlier. 
+2. Now login to your Stripe official account and go to the **Developers**-> **Webhook**-> Click on **Add an Endpoint**-> **Paste** the Endpoint URL copied earlier.
 3. After pasting the webhook, you must select an **Event** before adding an Endpoint. Click on the select **Event** you will get multiple dropdown options-> Select the **Payment Intent**-> **Select all Payment Intents Events**.
 4. Now you can add endpoints and save. The automatic payment completion will be work.
