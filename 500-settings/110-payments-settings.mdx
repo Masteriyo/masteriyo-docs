@@ -1,0 +1,72 @@
+---
+title: Payments Settings
+show_child_cards: true
+excerpt: Masteriyo > Settings > Payments
+---
+
+        Location: Masteriyo > Settings > Payments
+
+## Payments
+
+### Store
+
+![Payment-Store](https://user-images.githubusercontent.com/75772539/228786093-fc04114e-b463-483a-9694-32f705fbf5de.png)
+
+- **Country** - Select the country where your store is based on.
+  **Other Address Fields For the Store**
+- **State**
+- **City**
+- **Address Line 1**
+- **Address Line 2**
+
+### Currency
+
+![Payment-Currency](https://user-images.githubusercontent.com/75772539/228786357-7ef5097a-116a-44d3-b4e8-5d39810dd58a.png)
+
+- **Currency** - Select the currency you want to use for the courses.
+- **Currency Position** - Select the position(left/right) to display the currency symbol.
+- **Thousand Separator** - Set a character for the number places.
+- **Decimal Separator** - Set a character for decimal numbers.
+- **Number of Decimals** - Set the decimal number place.
+
+### Standard Paypal
+
+![Payment-Standard](https://user-images.githubusercontent.com/75772539/228786973-3f76bb7a-037c-4d57-be4b-c7b16e92ada7.png)
+
+- **Enable** - Enable this option to use the Paypal payment method.
+  - **Title** - Write the title of the payment for it to be seen in the Checkout page.
+  - **Description** - Describe the payment method.
+  - **IPN Email Notification** - Enable this to send a notification when IPN is received from Paypal.
+  - **Paypal Email** - Email used in your paypal account.
+  - **Receiver Email** - If your main Paypal email is different from the above entered email, set it here.
+  - **Identity Token** - Add the identity token. An identity token in PayPal is a unique alphanumeric code used for secure authentication and integration with third-party applications or services.
+  - **Invoice Prefix** - Provide a prefix for the invoice.
+  - **Payment Actions** - Select either Capture or Authorize as the payment actions.
+  - **Image URl** - URL for a 150x50px image to be displayed on the checkout page as the logo.
+  - **Debug Log** - Enable this option to store debug logs.
+  - **Sandbox** - Enable this if you want to use test/sandbox account.
+  - **Live API username**
+  - **Live API password**
+  - **Live API Signature**
+
+### Offline Payments
+
+![Payments-Offline-Payments](https://user-images.githubusercontent.com/75772539/228787408-c7f6e73a-1702-4da6-9122-d13a68f74d5f.png)
+
+- **Enable** - Enable this option to use offline payment method during checkout.
+  - **Title** - Provide the title to the offline payment.
+  - **Description** - Describe the offline payment method.
+  - **Instruction** - Specify if you have any instructions required.
+
+### Stripe
+
+![Payments-Stripe](https://user-images.githubusercontent.com/75772539/228787886-67a69ffe-9b9b-444d-9861-07d9bf9313b1.png)
+
+- **Enable** - Enable this option to use the Stripe payment method.
+  - **Title** - Provide the title to the Stripe payment.
+  - **Description** - Describe the payment method.
+  - **Sandbox** - Enable this option if you want to use the sandbox/test Stripe payment.
+  - **Test Publishable Key** - Get you API credentials from Stripe and add the test publishable key here.
+  - **Test Secret Key** - Add the test secret key from the Stripe here.
+  - **Webhook Secret Key** - Get your webhook secret key from Stipe and add here.
+  - **Webhook Endpoint** - Add the given endpoint to your Stripe webhook endpoint list to verify the payment status.
