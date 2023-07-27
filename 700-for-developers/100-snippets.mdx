@@ -88,7 +88,7 @@ add_filter( 'masteriyo_self_hosted_lesson_video_url', function( $url, $lesson ) 
 
 ```php
 add_filter( 'masteriyo_registration_redirect_url', function( $url ) {
-	return get_permalink( 1 );
+	return get_permalink( 1 ); // Where 1 is the page/post id.
 });
 ```
 > P.S. Currently, you cannot redirect to third-party websites. You can only redirect to the same website page.
