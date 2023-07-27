@@ -78,10 +78,20 @@ add_filter('masteriyo_enable_multiple_coupon', function($bool, $coupon_code) {
 To ensure the security of your self-hosted videos, we provide various security codes. However, in certain cases, the hosting platform may clash with this security measure, making it impossible to forward or rewind the video by clicking on a specific time. In these scenarios, we suggest implementing the code snippet below to resolve the problem.
 
 ```php
-add_filter( 'masteriyo_self_hosted_lesson_video_url', function( $url, $lesson ) { 
-$url = wp_get_attachment_url( $lesson->get_video_source_id() ); 
-return $url; 
+add_filter( 'masteriyo_self_hosted_lesson_video_url', function( $url, $lesson ) {
+	$url = wp_get_attachment_url( $lesson->get_video_source_id() );
+	return $url;
 }, 10, 2);
 ```
+
+### Redirect to different page after user/instructor registration.
+
+```php
+add_filter( 'masteriyo_registration_redirect_url', function( $url ) {
+	return get_permalink( 1 );
+});
+```
+> P.S. Currently, you cannot redirect to third-party websites. You can only redirect to the same website page.
+
 
 <Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
