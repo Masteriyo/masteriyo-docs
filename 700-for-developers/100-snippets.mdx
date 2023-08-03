@@ -94,7 +94,7 @@ add_filter( 'masteriyo_registration_redirect_url', function( $url ) {
 > P.S. Currently, you cannot redirect to third-party websites. You can only redirect to the same website page.
 
 
-### [Redirect to different page after user/instructor registration.](#redirect-to-different-page-after-user-logged-in)
+### [Redirect to different page after user/instructor is logged in.](#redirect-to-different-page-after-user-logged-in)
 ```php
 add_filter( 'masteriyo_after_signin_redirect_url', function( $url ) {
 	return get_permalink( 1 ); // Where 1 is the page/post id.
