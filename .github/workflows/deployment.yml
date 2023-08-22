@@ -17,7 +17,7 @@ jobs:
         run: echo "$NETLIFY_WEBHOOK_URL"
       uses: fjogeleit/http-request-action@v1.9.1
       with:
-        url: "$NETLIFY_WEBHOOK_URL"
+        url: '${{ secrets.NETLIFY_WEBHOOK_URL }}'
         method: 'POST'
         data: '{}'
         
