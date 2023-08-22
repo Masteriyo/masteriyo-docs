@@ -12,9 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Deploy Stage
+      env:
+        NETLIFY_WEBHOOK_URL: ${{ secrets.NETLIFY_WEBHOOK_URL }}
       uses: fjogeleit/http-request-action@v1.9.1
       with:
-        url: 'https://api.netlify.com/build_hooks/628f1cb1815b251c0d705950'
+        url: "$NETLIFY_WEBHOOK_URL"
         method: 'POST'
         data: '{}'
         
