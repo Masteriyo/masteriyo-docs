@@ -13,7 +13,7 @@ jobs:
     steps:
     - name: Deploy Stage
       env:
-        NETLIFY_WEBHOOK_URL: ${{ secrets.NETLIFY_WEBHOOK_URL }}
+        NETLIFY_WEBHOOK_URL: '${{ secrets.NETLIFY_WEBHOOK_URL }}'
         run: echo "$NETLIFY_WEBHOOK_URL"
       uses: fjogeleit/http-request-action@v1.9.1
       with:
