@@ -1,7 +1,2 @@
-[[redirects]]
-  from = "/settings"
-  to = "https://www.google.com/"
-  status = 200
-  force = true
-  headers = {X-From = "Netlify"}
-  
+[build]
+    publish = "."
