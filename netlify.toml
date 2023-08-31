@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "https://docs.masteriyo.com/settings"
+  from = "/settings"
   to = "https://www.google.com/"
   status = 200
   force = true
