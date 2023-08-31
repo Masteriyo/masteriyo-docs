@@ -1,2 +1,6 @@
-[build]
-    publish = "."
+[[redirects]]
+  from = "https://docs.masteriyo.com/course-creation/settings"
+  to = "https://docs.masteriyo.com/settings"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
