@@ -1,6 +1,6 @@
 [[redirects]]
-  from = "https://docs.masteriyo.com/course-creation/settings"
-  to = "https://docs.masteriyo.com/settings"
+  from = "https://docs.masteriyo.com/settings"
+  to = "https://www.google.com/"
   status = 200
   force = true
   headers = {X-From = "Netlify"}
