@@ -63,3 +63,39 @@ WooCommerce Integration Addon for Masteriyo allows the user to use WooCommerce f
 
 By default, whenever the WooCommerce order is of the following types `Cancelled`, `Refunded` and `Failed`, the user is unenrolled from the course. You can change the unenrollment statuses from the global settings page.
 ![Change unenrollment status!](https://i.imgur.com/8lTnEUb.png)
+
+## WooCommerce Subscription Support
+
+Masteriyo plugin is compatible with the WooCommerce Subscription extension. 
+
+**Requires**
+
+- [WooCommerce Subscription](https://woocommerce.com/document/subscriptions/)
+
+### Configuration
+
+- Go to **Masteriyo > Courses**.
+- Go to Course Editor of the required course. 
+- Go to **Settings > Pricing**.
+- Set the pricing as '**Paid**'.
+- Enable '**Recurring**' and determine the recurring sum and time period.
+
+![set-reccuring-payment](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/20175e5f-55c5-45b2-80ce-7b021e205bba)
+
+Once the recurring payment is set for the course, you can now set this course as a WooCommerce Product. For this, follow the steps below.
+
+- Go to **Products > Add New**
+- Provide a name to the product. Make sure to match it with the course.
+- On the Product Data meta box, select **Masteriyo Course** as the Product type.
+
+![product-type-masteriyo-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/73e05f16-a379-4006-91a7-9ddbc8489343)
+
+Now, you will see a Course and a General tab on this meta box. On the Course tab you can select the course for which you have set the recurring payments.  
+
+![select-masteriyo-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/1c7d3a9f-ef38-4a08-b31f-0712d219a125)
+
+On the General tab, you need to set the same amount for the recurring fee as well as the same recurring time period just as the one you have set for the course above.
+
+![product-data-general-tab-masteriyo-subscription](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/297ab29b-8aee-4c34-b90c-1442c09a0f9f)
+
+Once you have done this, when the user enrolls to the course, there subscription will be created in the WooCommerce > subscriptions. You can manage the subscription from there. 
