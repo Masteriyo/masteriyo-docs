@@ -103,11 +103,13 @@ add_filter( 'masteriyo_after_signin_redirect_url', function( $url ) {
 
 <Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
 
-### [Redirect to different page after user/instructor is logged out.](#redirect-to-different-page-after-user-logged-out)
+### [Redirect to a different page after user/instructor is logged out.](#redirect-to-different-page-after-user-logged-out)
 
-```add_filter( 'masteriyo_redirect_logout_url', function($url) {
+```php
+add_filter( 'masteriyo_redirect_logout_url', function($url) {
     $url = 'http://www.google.com';
 	// replace http://www.google.com with your redirection link
     return $url;
 } );
 ```
+<Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
