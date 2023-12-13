@@ -1,0 +1,50 @@
+---
+title: WooCommerce Subscription Support
+show_child_cards: true
+excerpt: Show you how to integrate WC subscriptions with Masteriyo.
+---
+
+This documentation reflects the compatability of the Masteriyo plugin with WooCommerce Subscription.
+
+## Setup
+
+1. Install [Masteriyo Pro](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version)
+2. Activate WooCommerce.
+3. Activate the [WooCommerce Subscription Add-on](https://woo.com/products/woocommerce-subscriptions/)
+
+## Configuration
+
+**Create a Recurring/Subscription based course**
+
+Once you have activated the above mentioned plugins/add-ons, you will need to create a course or edit an existing code so that this course has a recurring payment option. For this, go to **Courses > Edit a Course > Settings > Pricing** and set a recurring price.
+
+![recurring-payment-for-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/eb61a058-9a6b-4edf-9836-a06c05f84fb4)
+
+**Create a WooCommerce product based on above course**
+
+Now, you will need to create a WC product based on the above course. For this, go to **Products > Add New**.
+
+        Make sure the product description like name and pricing is similar to the course you are basing this product with. 
+
+On the Product Data box, you will need to select **Masteriyo Course** as the **Product Type**. 
+
+![product-data-product-type](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/bb44b1ea-144f-4c72-bed4-5ff6c2eb9fbf)
+
+You will see the options related to Masteriyo Course on the Product Data box. Select the course you have created/edited on the first step. 
+
+![select-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/402ec7a5-4179-44c8-aa2b-aae51a08c3ad)
+
+After this, on the **General** Tab, set the pricing and subscription as per the course. Make sure the pricing and the time period is exact to the course. 
+
+![course-subscription-pricing-on-product-data-box](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/23a1500c-b6f6-4411-a217-00e145d8ffb9)
+
+The integration is now set between the WooCommerce Subscription and the Masteriyo Course. You can go to the Courses page and buy a subscription for this course.
+
+![course-buy-now](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/d71b13c3-a3f0-4069-a937-c2c89c672542)
+
+Click on Buy Now. You will now be redirected to the WooCommerce product page for the product you just created. You can Sign Up for the course from here.
+
+![redirected-to-wc-product-page](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/bf189c9b-a272-4c3e-8120-87f02548e50c)
+
+This will let you checkout via WooCommerce and create a WooCommerce Subscription. Once you have completed the purchase, you can go to **Admin Dashboard > WooCommerce > Subscriptions** and find the new subscription. 
+
