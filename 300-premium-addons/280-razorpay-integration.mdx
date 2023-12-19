@@ -1,0 +1,53 @@
+---
+title: Razorpay Integration
+show_child_cards: true
+excerpt: The "Razorpay" addon by Masteriyo enables secure and seamless transactions on your site using Razorpay payment gateway.
+---
+
+The "Razorpay" addon by Masteriyo enables secure and seamless transactions on your site using Razorpay payment gateway.
+
+## Installation
+
+- Install [Masteriyo Pro](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version)
+- Activate the [RazorPay Integration add-on](https://docs.masteriyo.com/premium-addons/activate-masteriyo-premium-addons)
+
+## Configuration
+
+### Getting Credentials from Razorpay
+
+In order to integrate Razorpay, you will need Live/Test Publishable and Secret keys. To generate the Publishable and Secret keys in Razorpay, you need to follow these steps:
+
+1. Log in to your **Razorpay Dashboard** using your credentials.
+2. Once you are logged in, navigate to the **Settings** section.
+3. In the Settings section, click on **API Keys**.
+
+![razorpay-dashboard](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/2d2a3ca6-2db6-4c87-ac05-a2130409387e)
+
+4. On the API Keys page, you will see two sections: **Test Mode and Live Mode**.
+- **Test Mode**: This mode is used for testing your integration without making actual transactions. The keys generated in this mode will not process real payments.
+- **Live Mode**: This mode is used for accepting real payments from your customers. The keys generated in this mode will process actual transactions.
+5. Click on the Generate Key button in the respective mode (Test or Live) for which you want to generate the keys.
+6. A pop-up window will appear with your Publishable Key and Secret Key.
+
+![razorpay-credentials](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/7e09453f-427f-4f89-b2da-27a71d43b12d)
+
+- The **Publishable Key** is used on the client-side (such as in your website or mobile app) to securely communicate with Razorpay.
+- The **Secret Key** is used on the server-side to authenticate and authorize requests made to Razorpay's API.
+7. You can click on the Copy button to copy the keys to your clipboard or click on the Download Key Details button to save the keys on your device.
+8. Make sure to securely store your Secret Key and never share it with anyone or expose it in your client-side code.
+
+It is important to note that the Secret Key should never be shared publicly or exposed in client-side code, as it can pose a security risk to your Razorpay account. Only the Publishable Key should be used on the client-side.
+
+### Integrating RazorPay in Masteriyo
+
+Once you have generated the required keys, you will have to add these keys in the following location.
+
+        Masteriyo > Settings > Payments > Razorpay
+
+![razorpay-settings](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/06d833c8-d0e1-40a5-950e-a76c67c234f2)
+
+- Enable Razorpay
+- Provide Title and Description
+- You can switch between Live and Sandbox/Test mode with the given **Sandbox** toggle.
+
+Now, the users will be able to pay via Razorpay while they purchase the courses.
