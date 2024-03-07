@@ -1,0 +1,72 @@
+---
+title: Google Classroom Integration
+show_child_cards: true
+excerpt: A feature that allows teachers to share engaging activities and content with their class directly within Google Classroom.
+---
+
+A feature that allows teachers to share engaging activities and content with their class directly within Google Classroom.
+
+## Setup and Configuration
+
+- Activate the [Google Classroom Integration add-on](https://docs.masteriyo.com/premium-addons/activate-masteriyo-premium-addons)
+
+Once you have activated the add-on, go to **Masteriyo > Google Classroom > Settings**. You will see the following options.
+
+![google-classroom-settings](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/8aa882db-6ec2-487f-be60-11c69c9725e8)
+
+### How to generate Google Client ID and Secret?
+
+- Go to [Google Cloud Console](https://console.cloud.google.com/)
+- Go to the Project dropdown and click on **New Project**.
+
+![create-new-project](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/bfc43b78-b3a7-4707-8997-11807add2402)
+
+- Provide the project's name and click on **Create**.
+- Go to the OAuth Consent Screen. Choose **External** in the **User Type** and click on **Create**.
+- Provide the app's name, save and continue until you go to the last step. In the last step, click on 'Back to Dashboard'.
+- In the OAuth Consent Screen dashboard, you will see **Publishing Status**. Click on the **PUBLISH APP**.
+
+![publish-app-google-classroom](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/de768e49-07e1-4566-970b-eb4beb15b9f6)
+
+- Go to Enable API & Services and search for the Google Classroom API.
+
+![enable-classroom-api](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/8d19d402-5d2a-4e00-98c6-e1e9a7eab1ac)
+
+- Enable this API and go back to the main dashboard.
+
+- Go to **Credentials > Create Credentials >OAuth Client ID**.
+
+![oauth-client-id](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/704545e9-d5be-433b-aaac-201c293129ef)
+
+- In the Application Type, choose Web application. Give the name for the application.
+- In the **Authorized redirect URIs**, you will need to add the redirect URL given in the Masteriyo > Google Classroom > Settings.
+
+![redirect-url](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/df0d94a4-848d-463a-8b72-8ab027674644)
+
+- Click on **Create**.
+
+You will then get the Client ID and Secret. Copy this to a clipboard for further process.
+
+### Connect Google Account to Masteriyo
+
+Once you have created the Client ID and Secret, go to **Masteriyo > Google Classroom > Settings**. Add the copied credentials to the required options. Then, click on the Save button to get the following screen.
+
+![connect-google-account](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/37d4bc76-7f90-45a7-8f23-e27394331288)
+
+Now, click on **Connect Google Account**. Now, all the Google Classrooms you have created will be shown on the **Google Courses**.
+
+![google-classrooms](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/041419d9-b7a6-4de0-a741-25f8e224ac65)
+
+In the **Action** tab, you need to click on Import to merge these classrooms to the Masteriyo courses. After you import, you will be able to publish the class. Once published, you can check other actions.
+
+![other-actions](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/7a52f58d-ff29-4d9b-b01c-e62b766a115d)
+
+You can update course, import students, preview the course or delete it completely.
+
+### Other Settings
+
+![google-classrooms-other-settings](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/4630b572-1839-4977-9cd5-f5123bf96e2a)
+
+- **Code For Logged in Users Only** - When enabled, this option restricts the access to the classroom invite codes. For free classrooms, only logged-in users can see the code.
+- **Clear Course Cache** - Deletes the existing caches data and requests for new course data from Google Classroom.
+- **Clear All Data** - Deletes the all the data, so users have to sign in again to synch the data to Google Classroom.
