@@ -1,0 +1,94 @@
+---
+title: Google Meet
+show_child_cards: true
+excerpt: A feature that allows teachers to share virtual lessons with their class directly within Google Meet.
+---
+
+This feature allows the teachers to share virtual lessons with their class directly within the Google Meet.
+
+## Installation
+
+- Activate the [Google Meet add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons)
+
+## Configuration
+
+Once you have activate the Google Meet add-on, you will need to create and integrate the OAuth Credentials at the following location.
+
+        Masteriyo > Google Meet > Set API
+
+![masteriyo-google-meet](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/1513c5df-b54b-45ba-ad62-40b79a9e5648)
+
+### Creating OAuth Credentials
+
+- Go to [Google Cloud Console](https://console.cloud.google.com/)
+- Go to the Project dropdown and click on **New Project**.
+
+![create-new-project](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/bfc43b78-b3a7-4707-8997-11807add2402)
+
+- Provide the project's name and click on **Create**.
+- Go to the OAuth Consent Screen. Choose **External** in the **User Type** and click on **Create**.
+
+![oauth-external-app](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/c71ad29d-ea4c-4095-850d-9e3435f05a35)
+
+- Provide the app's name, save and continue until you go to the last step. In the last step, click on 'Back to Dashboard'.
+- In the OAuth Consent Screen dashboard, you will see **Publishing Status**. Click on the **PUBLISH APP**.
+
+![publish-app](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/061b3179-08a4-497f-a424-44ba98553f1d)
+
+- Go to Enable API & Services and search for the Google Calendar API.
+
+![enable-google-calendar-api](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/17584080-1886-475e-b7a4-f7573b0ce1ba)
+
+- Enable this API and go back to the main dashboard.
+
+- Go to **Credentials > Create Credentials >OAuth Client ID**.
+
+![oauth-client-id](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/38217a01-bc44-45b3-b956-716679cbf134)
+
+- In the Application Type, choose Web application. Give the name for the application.
+- In the **Authorized redirect URIs**, you will need to add the redirect URL given in the **Masteriyo > Google Meet > Set API**.
+
+![redirect-url](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/cdcc03b7-6706-4fab-ba09-30c0ed07ab00)
+
+- Click on **Create**.
+
+You will then get a popup with the Client ID and Secret. Here, click on the **Download JSON** button.
+
+![download-json-popup](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/c6284845-68a7-4952-89b1-1645d776fbcf)
+
+### Integrating Google Meet with Masteriyo
+
+- Go to **Masteriyo > Google Meet > Set API**.
+- Upload the downloaded JSON file to integrate the Google Meet with Masteriyo.
+
+Now, you will see the following screen that says 'This app is not permitted yet'.
+
+![permit-app](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/d58d195d-9046-4840-9953-ecf9491a9969)
+
+- Click on the **Go to Google's Consent Screen** button.
+- Allow required permissions.
+
+Then, the connection is ready and you will see the following screen.
+
+![meet-account-activated](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/d26cff3e-211e-4167-a090-5f2fa15bd72b)
+
+### Adding Google Meet on a Course
+
+- Go to Courses > Edit a Course or, create a new one.
+- Go to Builder
+- Add a new Section
+- Inside the section, click on Add New Content > Add New Google Meet
+
+![add-new-google-meeting](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/9d7a0de3-0c6b-4ab9-9172-2ec64e56467e)
+
+Provide the required details for the Google Meet. The details include title, description, start and end time, and the option to set all the enrolled students as attendees.
+
+![google-meet-details](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/063af3f8-d5ae-415f-91c2-3bed4dc2f070)
+
+- Click on the **Add New Google Meet** button and the meeting will be added.
+
+Go to Masteriyo > Google Meet > Meetings to find the details about all of the added meetings across the courses.
+
+![all-added-google-meets](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/bdcc0e21-5c34-4e30-a626-f889543a19b3)
+
+You can edit, start, or delete the meetings from here.
