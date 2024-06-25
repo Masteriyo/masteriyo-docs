@@ -113,3 +113,18 @@ add_filter( 'masteriyo_redirect_logout_url', function($url) {
 } );
 ```
 <Callout> Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
+
+### [Change Course Feature Image Size.](#change-course-feature-image-size)
+```php
+add_filter( 'masteriyo_product_get_image', 'modified_img_size', 10, 4 );
+
+function modified_img_size( $image, $course, $size, $attr ) {
+if ( $course->get_image_id() ) {
+$size = array('400','400'); // Your custom img size here.
+$image = wp_get_attachment_image( $course->get_image_id(), $size, false, $attr );
+}
+return $image;
+}
+```
+
+<Callout>You can change the 400 and 400 image sizes according to your needs. Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) </Callout>
