@@ -1,0 +1,26 @@
+---
+title: How to troubleshoot email not being delivered?
+show_child_cards: true
+excerpt: Learn how to troubleshoot email not being delivered.
+---
+
+For troubleshooting the issues with the email delivery, we will need a third-party plugin called Check & Log Email.
+
+![check-and-log-email](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/2d41a9bd-8064-41f6-bb5a-9b7ac5997adc)
+
+After installing this plugin, submit a form from which the emails are not being delivered. Now, follow the steps the below.
+
+- Go to Check & Log Email > View Logs
+
+![view-logs](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/a1b90293-4348-4bc6-8349-4307775f24f8)
+
+Here, on the **Sent Status** you will either see a red cross or a green tick symbol. These indicate the following:
+
+1. **Red Cross**: The email wasn't sent from your site.
+2. **Green Tick**: The email was sent from your site.
+
+You will see the details about the emails on the same page under Sent at, From, and Subject sections.
+
+If the email log that have green tick on the sent status were not delivered to the respective email address, the issue is with the email server you are using. In this case, you will need to contact the hosting provider and ask them about the issue with the email delivery.
+
+If the email log has a red cross status, the issue is with the site's email sending system. In this case, using a SMTP plugin like Easy SMTP, WP SMTP, etc will fix the issue.
