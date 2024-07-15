@@ -1,0 +1,67 @@
+---
+title: How to setup SMTP using the Easy WP SMTP plugin?
+show_child_cards: true
+excerpt: Learn how to setup SMTP using the Easy WP SMTP plugin.
+---
+
+This documentation outlines a straightforward solution: leveraging the Easy WP SMTP plugin and implementing Simple Mail Transfer Protocol (SMTP). By following these steps, you'll transform your email delivery process, eliminating the dreaded "Email Not Delivered" notifications and fostering seamless communication through your website's forms.
+
+## Install Easy WP SMTP plugin
+
+![installing-easy-wp-smtp](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/03b4f869-13a8-48d3-a46c-f95e615a4b9b)
+
+The first step is to install the Easy WP SMTP plugin on your site. So, go to **Plugins > Add New** and search for Easy WP SMTP. Then, install and activate the plugin to your site.
+
+## Setting Easy WP SMTP
+
+For this, go to **Easy WP SMTp > Settings**.
+
+![settings-easy-wp-smtp](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/66b311b5-e69a-45a3-a21e-5f048653b614)
+
+Here, you can set the required SMTP settings. For this documentation, we will try the most used settings. You choose **Other SMTP**
+
+![others-smtp-setting](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/de26f080-0d67-4937-aec1-9696da0a2dca)
+
+### Configuration of the SMTP
+
+In the configuration settings, you can see the various SMTP settings. Here, we are going to list out and explain all the settings.
+
+- **From Email Address:** You need to enter the email address that you use to send the email notifications.
+
+- **From Name:** You need to enter the Sender name which will be displayed to the recipients with the emails.
+
+- **SMTP Host:** Here, you need to enter the address of the host’s SMTP server or, the outgoing mail server (example: smtp.your-site.com)
+
+- **Type of Encryption:** There are three options here for you to choose: none, SSL/TLS and STARTTLS. SSL and TLS are widely used and they are used with different ports: 465 and 587 respectively.
+
+- **SMTP Port:** Enter the port that will be used to relay outbound mail to your mail server. The most common ports are 587 and 465 but, you need to check with your hosting provider if these ports are open.
+
+- **SMTP Authentication:** This option should always be checked “Yes” as popular email providers require authentication.
+
+- **Username:** Enter the username for SMTP mail server (example: abc123@gmail.com)
+
+- **Password:** Enter the password for the SMTP mail server
+
+Once you are done with the settings, you can Save Changes.
+
+### SMTP Settings for Email Providers
+
+There are different SMTP settings for different email providers. So, you need to know these settings before you configure SMTP on your site. We are listing the SMTP configuration settings for the popular email service providers so, take a look at them and fill out the fields accordingly.
+
+- **Gmail**
+
+SMTP Host: smtp.gmail.com
+Type of Encryption: TLS
+SMTP Port: 587
+
+- **Yahoo**
+
+SMTP Host: smtp.mail.yahoo.com
+Type of Encryption: SSL
+SMTP Port: 465
+
+- **Hotmail**
+
+SMTP Host: smtp.live.com
+Type of Encryption: TLS
+SMTP Port: 587
