@@ -1,0 +1,26 @@
+---
+title: How to enable error logging in Masteriyo?
+show_child_cards: true
+excerpt: Check this out to learn how to enable error logging in Masteriyo.
+---
+
+To enable the error logging in Masteriyo, you will need to enable the debug log for your site at first. Follow the steps below to do this.
+
+- Go to you site's folder via FTP.
+- Open wp-config.php
+- Add the following code.
+
+  // Enable WP_DEBUG mode
+  define( 'WP_DEBUG', true );
+  // Enable Debug logging to the /wp-content/debug.log file
+  define( 'WP_DEBUG_LOG', true );
+
+- Save changes.
+
+Now, go to the following location in your admin dashboard to check the logging in Masteriyo.
+
+        Masteriyo > Tools > Logs
+
+![enable-logging](https://github.com/user-attachments/assets/bea94ccb-485e-47e6-9f62-50c0c8f1dcb4)
+
+Here, you will find all the logs related to the Masteriyo plugin.
