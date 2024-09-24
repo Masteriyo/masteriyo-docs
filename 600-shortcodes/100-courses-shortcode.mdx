@@ -22,15 +22,19 @@ However, there are more attributes via which you will have some control on what 
 1. **Category**: Default value is `none`. You can add the slug of any course and it will show the courses of that particular slug.
 2. **Columns**: Default value is `3`. You can choose the columns value ranging from **1** to **4**, as Masteriyo supports upto 4 columns while showing the courses.
 3. **Count**: Default value is `12`. You can set any number as you like and it will show that number of courses.
-4. **Category**: Write the name of the category. The courses under this category will only be shown in that page.
+4. **Category**: Write the name of the category. The courses under this category will only be shown in that page. Multiple categories can be separated by comma. For example, art, science, music.
 5. **per_page**: You can create a showcase of the courses on a page and set the number of courses to appear per slide.
 6. **order**: Set ASC for ascending and DESC for descending order.
 7. **show_pagination**: 'on' for enabling pagination, and 'off' for disabling.
 
 #### Examples
 
-1. Shortcode: `[masteriyo_courses columns=4 count=4 category="art"]`
+1.  Shortcode: `[masteriyo_courses columns=4 count=4 category="art"]`
 
-2. Shortcode: `[masteriyo_courses columns=2 count=4]`
+2.  Shortcode: `[masteriyo_courses columns=2 count=4]`
 
-3. Shortocde: `[masteriyo_courses count="6" columns="3" category="photography" per_page="4" order="DESC" orderby="date" show_pagination="on"]`
+3.  Shortocde: `[masteriyo_courses count="6" columns="3" category="photography" per_page="4" order="DESC" orderby="date" show_pagination="on"]`
+
+4.  Shortcode: `[masteriyo_courses count="6" columns="3" category="photography, art, science, music" per_page="4" order="DESC" orderby="date" show_pagination="on"]`
+
+        In the fourth shortcode, the courses from various categories will be displayed.
