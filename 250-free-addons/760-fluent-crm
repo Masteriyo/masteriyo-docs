@@ -4,12 +4,12 @@ show_child_cards: true
 excerpt: How to integrate the Fluent CRM plugin Materiyo?
 ---
 
-## Requires
-
 
 FluentCRM is a self-hosted email marketing plugin for WordPress. It lets you manage leads, customers, email campaigns, automated email sequences, learner and affiliate management, track user activities, and much more from your WordPress dashboard!
 
 The Masteriyo FluentCRM integration helps you connect with  FluentCRM and makes it easy to register your Masteriyo users on the FluentCRM platform.
+
+## Requires
 
 1. [FluentCRM Plugin](https://wordpress.org/plugins/fluent-crm/)
 2. [FluentCRM Integration Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons)
