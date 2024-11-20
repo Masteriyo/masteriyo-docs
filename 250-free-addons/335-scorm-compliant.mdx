@@ -5,7 +5,9 @@ excerpt: Seamlessly integrates SCORM, optimizing e-learning by enabling efficien
 ---
 
 <Callout>
-  Please note that the current feature only supports SCORM 1.2 and 2004 files.
+  **!important** The current feature only supports SCORM 1.2 and 2004 files. Please note that SCORM is a complete course, and its content cannot be edited through the Masteriyo LMS.
+
+Additionally, you cannot add multiple SCORM files as lessons or quizzes.
 </Callout>
 
 The Sharable Content Object Reference Model (SCORM) Compliant, add-on for Masteriyo, is engineered to facilitate a smoother learning experience by enabling interoperability, reusability, and scalability of e-learning content across various platforms and devices. By embracing SCORM standards, this add-on ensures that your digital learning materials are more accessible and easily trackable, providing insights into learner progress and performance. This documentation section will guide you through the installation, configuration, and utilization of the SCORM Compliant add-on for Masteriyo, ensuring you can leverage its full potential to elevate your e-learning offerings.
@@ -39,4 +41,16 @@ Now the students can purchase(if not free) and enroll in the course.
 
 ![scorm-course-content-preview](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/9168638c-036b-462a-94c4-97cddb44c29f)
 
+## How do you allow extensions on the SCORM Package?
 
+This setting allows you to choose which extensions can be included in SCORM-compliant ZIP files uploaded to the Masteriyo LMS. By managing the allowed file types, you can make sure that the content in SCORM packages is secure, compatible, and properly formatted for the LMS.
+
+You can go to your Dashboard > Masteriyo > Settings > Advanced > SCORM to add an extension.
+
+![Allowed Extensions](https://github.com/user-attachments/assets/b987be17-461f-49fa-a429-5f4e80bbe216)
+
+Enter the file extensions you want to allow in the SCORM ZIP file, separated by commas (without spaces). You can list any valid file type to ensure it is supported when uploading the SCORM package.
+
+<Callout>
+Already added extensions are: css, js, woff, ttf, otf, jpg, jpeg, png, gif, html, json, xml, pdf, mp3, mp4, xsd, dtd, ico, swf, txt, mpga, wav woff2.
+</Callout>
