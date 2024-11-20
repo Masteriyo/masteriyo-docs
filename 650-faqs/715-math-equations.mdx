@@ -1,0 +1,53 @@
+---
+title: Math Equations
+show_child_cards: true
+excerpt: Learn How to Add Math Equations in lessons, quizzes, and assignments. 
+---
+
+
+Masteriyo LMS allows you to use Math Equations in lessons, quizzes, and assignment editors. This feature works with both the classic and block editors.
+
+## Math Essentials: Syntax and Delimiters
+
+Please read the following information to learn how math equations can be used in lessons, quizzes, and assignments. 
+
+### In-line Math Delimiters
+
+Use these for math expressions that appear within a line of text.
+
+Syntax: \(...\) or $...$
+Example: \( x^2 + y^2 = z^2 \) or $ x^2 + y^2 = z^2 $
+
+### Displayed Equations
+
+Use these for math equations that need to appear on a separate line.
+
+Syntax: \[...\] or $$...$$
+Example: \[ x^2 + y^2 = z^2 \] or $$ x^2 + y^2 = z^2 $$
+
+### Prevent Dollar Sign as Delimiter
+
+To show a dollar sign without triggering math mode, use this syntax.
+
+Syntax: \$
+Example: To display $5, use \$
+
+### Processing Environments
+
+MathJax can process everything inside these delimiters, even for cases where true LaTeX might not.
+
+Syntax: \begin{equation}...\end{equation}
+Example: \begin{equation} E = mc^2 \end{equation}
+
+### Matrix Environment
+
+MathJax can render this syntax even without math delimiters, but it is better to use delimiters.
+
+Syntax: \begin{matrix}...\end{matrix}
+Example: \begin{matrix} a & b \\ c & d \end{matrix}
+
+### Additional Configuration
+
+For more parameters for the TeX input processor.
+Refer to this Documentation: https://docs.mathjax.org/en/latest/
+
