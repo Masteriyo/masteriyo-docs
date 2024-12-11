@@ -4,12 +4,13 @@ show_child_cards: true
 excerpt: Learn How to configure caching plugins. It will help you to fix the caching problem with Masteriyo.
 ---
 
-When using caching plugins, the below mentioned pages are frequently already excluded. Otherwise, ensure that these pages are excluded from the cache via your caching system's settings.
+When using a caching plugin, make sure to exclude Masteriyo default pages from the cache, disable caching for **logged-in users**, and turn off the cache for the **REST API**. Adjusting these settings will help ensure a smoother experience and avoid any potential issues.
 
-- Account
-- Learn
-- Checkout
-- Instructor Registration 
+- **Account**  
+- **Learn**  
+- **Courses**  
+- **Checkout**  
+- **Instructor Registration**
 
 Below, you will find the instruction to remove these pages from the cache for a few top caching plugins.
 
@@ -42,17 +43,22 @@ If you are using the LiteSpeed Cache plugin, follow the steps below.
 - Go to LiteSpeed Cache > Cache > Cache.
 - Turn off the **Cache Logged-in Users**.
 
-![disable-logged-in-cache-litespeed](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/fbf243e8-e4b5-4a49-9131-5d8338aa1311)
+![disable-logged-in-cache-litespeed](https://github.com/user-attachments/assets/c1082880-8dec-4fb8-80d1-16bd4b67a6a2)
 
 - Go to LiteSpeed Cache > Excludes
 - On the **Do not Cache URLs** add the following:
+  
   /account/$
+
   /learn/$
+
   /checkout/$
+
   /instructor-registration/$
 
-![litespeedcache-exclude-urls](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/00c39c3c-7f9d-4232-9507-e71589a73023)
+![litespeedcache-exclude-urls](https://github.com/user-attachments/assets/403063d4-189c-46d2-b025-705fd4f342ed)
 
-## Excluding Masteriyo Session From The Cache
+## Excluding Masteriyo Sessions
 
-If the caching system you’re using offers database caching, it might be helpful to exclude `masteriyo_sessions` from being cached. This will be dependent on the plugin or host caching so refer to the specific instructions or docs for that system.
+If using database caching, exclude `masteriyo_sessions` from caching. Check your host's documentation for details or get in touch with hosting support.
+
