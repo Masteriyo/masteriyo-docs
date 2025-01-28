@@ -167,7 +167,7 @@ Example of Response:
   "id": 45,
   "name": "Yoga",
   "slug": "yoga",
-  "status": "trash", // Indicates successful deletion
+  "status": "trash",
   "message": "Course deleted successfully" 
 }
 ```
@@ -182,7 +182,7 @@ Example of Response:
 | `400 Bad Request`  | Invalid request payload or missing required fields.                       | Validate the request body and ensure all required fields are provided.       |
 | `429 Too Many Requests` | Rate limit exceeded.                                                     | Reduce the frequency of API requests or implement rate limiting in your app. |
 
-Example Scenario: Attempting to create a course category without proper write permissions:
+**Example Scenario**: Attempting to create a course category without proper write permissions:  
 Request (cURL):
 ```bash 
 curl -X 'POST' \
