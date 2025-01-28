@@ -65,7 +65,7 @@ You can edit or delete the user from the Action tab. Simply click on the Actions
 
 ### Authentication
 
-To make API calls, you’ll need to set up **Basic Authentication** on your REST Client. Open the Basic Authorization tab:  
+To make API calls, you’ll need to set up **Basic Authentication** on your REST Client. Open the `Basic Authorization` tab:  
 
 1. Enter your credentials:
 
@@ -81,7 +81,9 @@ Now, based on the authorization provided, the user can send a request and retrie
 
 Let’s look at a few examples of requests made through Masteriyo LMS REST API and the responses received.
 
-**Note:** In the following URLs, **“your-site.com”** refers to your live LMS website address.
+ <Callout>
+**Note:** In the following URLs, `**your-site.com**` refers to your live LMS website address.
+ </Callout>
 
 ### Reading Data
 
@@ -127,7 +129,9 @@ Example of Response:
 Here is an example of creating a course via API:
 
 To create a new course in Masteriyo LMS using REST API, send a POST request to the following endpoint:
-POST/masteriyo/v1/courses 
+
+``POST/masteriyo/v1/courses ``
+
 Example of Request:
 
 ``` bash
@@ -153,6 +157,7 @@ Example of Response:
 
 ## Deleting Data 
 Here’s an example of removing a lesson from the course.
+
 Example of Request:
 ```bash 
 curl -X 'DELETE' \
@@ -182,6 +187,7 @@ Example of Response:
 | `429 Too Many Requests` | Rate limit exceeded.                                                     | Reduce the frequency of API requests or implement rate limiting in your app. |
 
 **Example Scenario**: Attempting to create a course category without proper write permissions:  
+
 Request (cURL):
 ```bash 
 curl -X 'POST' \
