@@ -28,31 +28,31 @@ To set up your course API access in Masteriyo LMS, follow the steps below:
 
 **Step 1:** From your WordPress Dashboard, navigate to **Masteriyo >** **Tools > REST API**.
 
-**Step 2:** Click the **ADD New** button, and configure detaisl:
+**Step 2:** Click the **ADD New** button, and configure details:  
 
-**User:** Choose a user who will own this connection. This can be anyone who has joined or created a course.
+- **User:** Choose a user who will own this connection. This can be anyone who has joined or created a course.  
 
-**Permissions:** Choose the appropriate access level:
+- **Permissions:** Choose the appropriate access level:
 
-**Read:** Allows viewing data
+  - **Read:** Allows viewing data  
 
-**Write:** Enables data creation and modification
+  - **Write:** Enables data creation and modification  
 
-**Read/Write:** Provides full access to view and modify data
+  - **Read/Write:** Provides full access to view and modify data  
 
-**Description:** Add a meaningful description to identify this API key’s purpose so that it becomes easy to understand later when you have multiple API keys.
+- **Description:** Add a meaningful description to identify this API key’s purpose so that it becomes easy to understand later when you have multiple API keys.
 
 **Step 3:** Click on **Generate** and you’ll see a table containing:
 
-An API Key (Username for authentication)
+1. An API Key (Username for authentication)
 
-A Secret Key (Password)
+2. A Secret Key (Password)
 
 Keep these safe as they are your access passes to the API.
 
 **Step 4:** Manage API Keys
 
-You can edit or delete the user from Action tab. Simply click on **⋮**  Actions menu  and perform the required action.
+You can edit or delete the user from the Action tab. Simply click on the `**⋮**`  Actions menu  and perform the required action.
 
 If you’re editing, don’t forget to **Update** after you are satisfied with the changes.
 
@@ -60,23 +60,23 @@ If you’re editing, don’t forget to **Update** after you are satisfied with t
 
 ### API Response Format
 
-**JSON**: All responses return JSON data.
+- **JSON**: All responses return JSON data.  
 
-**Dates**: YYYY-MM-DD HH:MM:SS (e.g., 2025-01-21 14:30:00).
+- **Dates**: YYYY-MM-DD HH:MM:SS (e.g., 2025-01-21 14:30:00).  
 
-**Prices**: Strings with 2 decimal places (e.g., "price": "50.00").
+- **Prices**: Strings with 2 decimal places (e.g., "price": "50.00").  
 
 ### Authentication
 
-To make API calls, you’ll need to set up **Basic Authentication** on your REST Client. Open the Basic Authorization tab:
+To make API calls, you’ll need to set up **Basic Authentication** on your REST Client. Open the Basic Authorization tab:  
 
-Enter your credentials:
+1. Enter your credentials:
 
-**Username:** Copy the API key from the Masteriyo LMS API page, and paste the key
+    **Username:** Copy the API key from the Masteriyo LMS API page, and paste the key  
 
-**Password:**  Copy and paste Secret Key in the Password field
+    **Password:**  Copy and paste Secret Key in the Password field  
 
-Create authorization
+2. Create authorization
 
 Now, based on the authorization provided, the user can send a request and retrieve the desired data from Masteriyo LMS Rest API.
 
@@ -91,15 +91,14 @@ Let’s look at a few examples of requests made through Masteriyo LMS REST API a
 The example below shows fetching course categories.
 
 Example of Request:
-Bash
-```
+```bash
 curl -X 'GET' \
   'https://your-site.com/wp-json/masteriyo/v1/courses/categories' \
   -H 'accept: application/json' \
   -H 'authorization: Basic <your_auth_key>'
 
 ```
-Example of Respons:
+Example of Response:
 Json
 ```
 {
