@@ -6,7 +6,7 @@ excerpt: _Integrate, Automate, and Extend Your LMS Programmatically_
 --- 
 Masteriyo LMS integrates with the WordPress REST API, allowing external applications to securely interact with your LMS data (courses, users, content) using standard HTTP requests and JSON.
 
-**Prerequisites**
+**Prerequisites:**
 
 ✓ **Masteriyo LMS v1.15.1** or higher (Free version)  
 ✓ **Masteriyo LMS Pro v2.0** or higher (For premium features)  
@@ -20,11 +20,11 @@ Masteriyo REST API lets your application talk to your LMS system just like a mes
 - **Delete Data**: Remove outdated content programmatically.  
 - **Automate Workflows**: Sync data with CRMs, mobile apps, or other tools.  
 
-## Setting Up API Access in Masteriyo LMS?
+## Setting Up API Access in Masteriyo LMS
 
 To set up your course API access in Masteriyo LMS, follow the steps below:
 
-###Generate API Keys
+### Generate API Keys
 
 **Step 1:** From your WordPress Dashboard, navigate to **Masteriyo >** **Tools > REST API**.
 
@@ -52,9 +52,7 @@ Keep these safe as they are your access passes to the API.
 
 **Step 4:** Manage API Keys
 
-You can edit or delete the user from the Action tab. Simply click on the `**⋮**`  Actions menu  and perform the required action.
-
-If you’re editing, don’t forget to **Update** after you are satisfied with the changes.
+You can edit or delete the user from the Action tab. Simply click on the Actions menu `⋮` and perform the required action. If you’re editing, don’t forget to **Update** after you are satisfied with the changes.
 
 ## Making API Requests
 
@@ -84,7 +82,7 @@ Now, based on the authorization provided, the user can send a request and retrie
 
 Let’s look at a few examples of requests made through Masteriyo LMS REST API and the responses received.
 
-**Note:** In the following URLs, “your-site.com” refers to your live LMS website address.
+**Note:** In the following URLs, **“your-site.com”** refers to your live LMS website address.
 
 ### Reading Data
 
@@ -99,8 +97,8 @@ curl -X 'GET' \
 
 ```
 Example of Response:
-Json
-```
+
+```json
 {
   "data": [
     {
