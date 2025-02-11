@@ -30,10 +30,10 @@ Toggle to enable or disable Mollie as a payment method. When enabled, Mollie app
 
 ### API Keys
 **Test API Key (Required for Sandbox):**  
-        - Obtain this key from your Mollie dashboard under Developers > API Keys.  
+        - Obtain this key from your Mollie dashboard under **Developers > API Keys**.  
         - Paste it here when Sandbox is enabled.  
 **Live API Key (Required for Production):**  
-        - Obtain this key from your Mollie dashboard under Developers > API Keys.  
+        - Obtain this key from your Mollie dashboard under **Developers > API Keys**.  
         - Paste it here after disabling Sandbox.  
 
 Disable Sandbox, if you’re ready with the transaction for real. Click in **Save Setting** to save all configured Mollie settings. 
@@ -43,7 +43,7 @@ Disable Sandbox, if you’re ready with the transaction for real. Click in **Sav
 
 <Callout>
   {" "} 
-  To test Mollie payments with automatic status updates, your website must be hosted on a publicly accessible domain (e.g., .com, .me, .net). Mollie checkout flows will not work in local/test environments (e.g., localhost), as Mollie cannot communicate with non-public domains. However, even with publicly accessible domains, you will not have access to Mollie webhooks
+  To test Mollie payments with automatic status updates, your website must be hosted on a publicly accessible domain (e.g., .com, .me, .net). Mollie checkout flows **will not work** in local/test environments (e.g., localhost), as Mollie cannot communicate with non-public domains. However, even with publicly accessible domains, you will not have access to Mollie webhooks
 </Callout>    
 
 
@@ -61,11 +61,11 @@ During the checkout, the interface will look similar to the image below:
 
 ![checkout-interface-for-mollie](https://github.com/user-attachments/assets/cd8532cf-6050-4d2d-b15c-f12e28a1789c)
 
-As soon as customer click on Proceed to Mollie, it redirects to Mollie’s Secure Payment Page from where they can enter card details and confirm the transaction. 
+As soon as customer click on **Proceed to Mollie**, it redirects to Mollie’s Secure Payment Page from where they can enter card details and confirm the transaction. 
 
 ![mollie-test-checkout](https://github.com/user-attachments/assets/49c709b7-cec4-4dfa-b160-3025fe39c19c)
 
-Mollie then processes the payment and verifies it. You can see the payment status on your dashboard Masteriyo > Orders. 
+Mollie then processes the payment and verifies it. You can see the payment status on your dashboard **Masteriyo > Orders**. 
 
 ![view-completed-orders](https://github.com/user-attachments/assets/7c04f5cc-61db-4d30-b3be-044d83479e89)
 
