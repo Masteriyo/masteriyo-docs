@@ -11,10 +11,12 @@ Masteriyo LMS allows seamless integration with Mollie, a global payment service 
 1.	Navigate to **Masteriyo > Addons** in your WordPress dashboard.
 2.	Use the search bar to locate the **Mollie Payment Integration addon**, or scroll through the list manually.
 3.	**Toggle** the switch to enable the addon. A success notification will confirm activation.
+
 ![enable-mollie-adodn](https://github.com/user-attachments/assets/a85649f6-3608-4f6f-8052-30a7f12eee32)
 
 ### Step 2: Configure Mollie's Settings
 Go to **Masteriyo > Settings> Payments > Mollie**  to customize the payment gateway:
+
 ![navigate-to-mollie-in-dashbaord](https://github.com/user-attachments/assets/26e8adf7-d6ad-4ee0-9895-b47c24a9ae8e)
 
 #### Enable/Disable Mollie
@@ -26,15 +28,14 @@ Toggle to enable or disable Mollie as a payment method. When enabled, Mollie app
 **Sandbox:** Toggle to enable **(for testing)** or disable **(for live transactions)**. Transactions processed during Sandbox mode use dummy data and do not charge real money. 
 
 ### API Keys
-Test API Key (Required for Sandbox):
+**Test API Key (Required for Sandbox):**  
 •	Obtain this key from your Mollie dashboard under Developers > API Keys.
-•	Paste it here when Sandbox is enabled.
-Live API Key (Required for Production):
-o	Obtain this key from your Mollie dashboard under Developers > API Keys.
-o	Paste it here after disabling Sandbox.
+•	Paste it here when Sandbox is enabled.  
+**Live API Key (Required for Production):**  
+o	Obtain this key from your Mollie dashboard under Developers > API Keys.  
+o	Paste it here after disabling Sandbox.  
 
-Disable Sandbox, if you’re ready with the transaction for real. 
-Click in **Save Setting** to save all configured Mollie settings. 
+Disable Sandbox, if you’re ready with the transaction for real. Click in **Save Setting** to save all configured Mollie settings. 
 
 
 ### Step 3: Test and Go Live
@@ -42,25 +43,28 @@ Click in **Save Setting** to save all configured Mollie settings.
 <Callout>
   {" "} 
   To test Mollie payments with automatic status updates, your website must be hosted on a publicly accessible domain (e.g., .com, .me, .net). Mollie checkout flows will not work in local/test environments (e.g., localhost), as Mollie cannot communicate with non-public domains. However, even with publicly accessible domains, you will not have access to Mollie webhooks
-</Callout>
+</Callout>  
 
-Sandbox Testing:
+**Sandbox Testing:**  
 •	Process a test transaction to ensure payments work in dummy mode.
-•	Verify Mollie’s test card numbers or use the Mollie test dashboard.
+•	Verify Mollie’s test card numbers or use the Mollie test dashboard.  
 
-Live Transactions:
-•	Disable **Sandbox Mode** and enter your **Live API Key**.
-•	Ensure your Mollie account is activated for live payments.
+**Live Transactions:**  
+•	Disable **Sandbox Mode** and enter your **Live API Key**.  
+•	Ensure your Mollie account is activated for live payments.  
 
 ## Checkout Experience
 
 During the checkout, the interface will look similar to the image below: 
+
 ![checkout-interface-for-mollie](https://github.com/user-attachments/assets/cd8532cf-6050-4d2d-b15c-f12e28a1789c)
 
 As soon as customer click on Proceed to Mollie, it redirects to Mollie’s Secure Payment Page from where they can enter card details and confirm the transaction. 
+
 ![mollie-test-checkout](https://github.com/user-attachments/assets/49c709b7-cec4-4dfa-b160-3025fe39c19c)
 
 Mollie then processes the payment and verifies it. You can see the payment status on your dashboard Masteriyo > Orders. 
+
 ![view-completed-orders](https://github.com/user-attachments/assets/7c04f5cc-61db-4d30-b3be-044d83479e89)
 
 
