@@ -1,0 +1,73 @@
+---
+title: Video lesson Creation
+excerpt: A quick guide on how to create a audio lesson while creating the complete course.
+---
+
+<Callout>
+  {" "} 
+**Note:** This instruction is for creating video lessons for your course. If you missed the documentation for creating a complete course, please review it here: [https://docs.masteriyo.com/course-creation/complete-course-creation](https://docs.masteriyo.com/course-creation/complete-course-creation).
+</Callout>
+
+Masteriyo’s Audio Lesson feature empowers instructors to deliver engaging content through self-hosted audio files, external URLs, or embedded audio players.  
+
+Prerequisites:    
+  - Masteriyo LMS Pro v2.17.0 or above  
+  - Ready to use audio lesson
+
+## Step-by-Step Guide to Create an Audio Lesson
+
+### Step 1: Access Course Builder  
+1.	Navigate to the course where you want to add an audio lesson, **Masteriyo > Courses**    
+2.	Switch to the **Builder** tab and click on **Add New Content**. You’ll see different lesson types that you can create with Masteriyo.     
+3.	To add audio lesson type to your course, click on **Audio Lesson**    
+
+![navigate-to-course-builder-and-add-audio-lesson](https://github.com/user-attachments/assets/14a61d56-e623-4f37-8c33-e7ca21f83082)
+
+### Step 2: Configure the Audio Lesson
+**Lesson Name:** Give a clear and descriptive title    
+**Audio Source:** Choose one of three options:    
+    - **Self-Hosted:** Click on Add Audio to upload the audio lesson from your local device.    
+    - **External URL:** Copy and paste the direct audio URL you want to use (e.g., https://www.youtube.com/watch?v=7bTdGCXlDuI&list=PLEWqdLEd68piRdHzudUjJCID9Q97GyAhm )     
+    - **Embed Audio:** Paste an iframe code to add an audio lesson (e.g., <iframe src= “soundcloud.com/...”></iframe>)    
+
+**Supported audio file types:** MP3, WAV, OGG, OGA, M4A, and AAC.  
+**Support platforms to embed audio:** Spotify, Amazon Music, YouTube, Deezer, SoundCloud, iHeart, and Audiomack.   
+
+<Callout>
+  {" "} 
+**Note:** Full-track or album embedding via iframe requires a paid subscription on these platforms:    
+    - Spotify  
+    - Apple Music  
+    - YouTube Music  
+    - Amazon Music  
+Free accounts may only embed previews or clips.
+</Callout>
+
+![add-audio-lesson](https://github.com/user-attachments/assets/bda5088b-4e08-4d6f-9f4f-43f7a7fdd91d)
+
+#### Select Timestamps    
+You can also create interactive timestamps for your audio. To add timestamps:  
+1.	Play the audio and note key moments with time
+2.	You’ll see a blue slider with two timestamp markers
+3.	Slide the timestamp marker to select a specific time range of the audio 
+4.	Give **Title Name** to the timestamp range and click on **Add** to save the timestamp
+5.	Repeat this until you give a proper timestamp name to the whole audio lesson
+
+![add-timestamps-to-audio-lesson](https://github.com/user-attachments/assets/a3ad2cc6-cd0c-4f20-87b2-ae7bc3671855)
+
+You can also easily edit or delete the audio lesson once it is created. 
+
+**Lesson Description:** Add a description to your audio lesson here. You can provide content, objectives, or any other materials from here. 
+
+![add-audio-lesson-description-and-save-or-publish](https://github.com/user-attachments/assets/fcff507e-4bf6-4388-8a6f-fb4906300d4e)
+
+### Step 3: Save or Publish the Audio Lesson
+After completing configuration, you can publish the audio lesson or save it to draft and edit later. 
+
+Example of audio lesson at the frontend:
+
+![frontend-view-of-audio-lesson](https://github.com/user-attachments/assets/243775a9-7572-4001-a045-f6fed0839be7)
+
+## Additional Resources: 
+    - [Live Stream Lesson](https://docs.masteriyo.com/course-creation/live-stream-lesson-creation)  
+    - [Create Video Lesson](https://docs.masteriyo.com/course-creation/video-lesson-creation)
