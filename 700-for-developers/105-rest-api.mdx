@@ -1,0 +1,217 @@
+---
+title: Masteriyo LMS REST API Guide
+excerpt: _Integrate, Automate, and Extend Your LMS Programmatically_
+
+--- 
+Masteriyo LMS integrates with the WordPress REST API, allowing external applications to securely interact with your LMS data (courses, users, content) using standard HTTP requests and JSON.
+ 
+<Callout>
+{" "} 
+ **Prerequisites:**  
+✓ **Masteriyo LMS v1.16.0** or higher (Free version)  
+✓ **Masteriyo LMS Pro v2.17.0** or higher (For premium features)  
+✓ **HTTPS connection** (can also be accessed over HTTP, but HTTPS is recommended for security)  
+{" "}
+</Callout>
+
+## Key Capabilities
+Masteriyo REST API lets your application talk to your LMS system just like a messenger. You can:
+
+- **Read Data**: Fetch course, user progress, categories, or other.  
+- **Write Data**: Create or update courses, lessons, or user profiles.  
+- **Delete Data**: Remove outdated content programmatically.  
+- **Automate Workflows**: Sync data with CRMs, mobile apps, or other tools.  
+
+## Setting Up API Access in Masteriyo LMS
+
+To set up your course API access in Masteriyo LMS, follow the steps below:
+
+### Generate API Keys
+
+**Step 1:** From your WordPress Dashboard, navigate to **Masteriyo >** **Tools > REST API**.
+
+**Step 2:** Click the **ADD New** button, and configure details:  
+
+- **User:** Choose a user who will own this connection. This can be anyone who has joined or created a course.  
+
+- **Permissions:** Choose the appropriate access level:
+
+  - **Read:** Allows viewing data  
+
+  - **Write:** Enables data creation and modification  
+
+  - **Read/Write:** Provides full access to view and modify data  
+
+- **Description:** Add a meaningful description to identify this API key’s purpose so that it becomes easy to understand later when you have multiple API keys.
+
+**Step 3:** Click on **Generate** and you’ll see a table containing:
+
+1. An API Key (Username for authentication)
+
+2. A Secret Key (Password)
+
+Keep these safe as they are your access passes to the API.
+
+**Step 4:** Manage API Keys
+
+You can edit or delete the user from the Action tab. Simply click on the Actions menu `⋮` and perform the required action. If you’re editing, don’t forget to **Update** after you are satisfied with the changes.
+
+## Making API Requests
+
+### API Response Format
+
+- **JSON**: All responses return JSON data.  
+
+- **Dates**: YYYY-MM-DD HH:MM:SS (e.g., 2025-01-21 14:30:00).  
+
+- **Prices**: Strings with 2 decimal places (e.g., "price": "50.00").  
+
+### Authentication
+
+To make API calls, you’ll need to set up **Basic Authentication** on your REST Client. Open the `Basic Authorization` tab:  
+
+1. Enter your credentials:
+
+    **Username:** Copy the API key from the Masteriyo LMS API page, and paste the key  
+
+    **Password:**  Copy and paste Secret Key in the Password field  
+
+2. Create authorization
+
+Now, based on the authorization provided, the user can send a request and retrieve the desired data from Masteriyo LMS Rest API.
+
+## Working with the API – Examples of Requests and Responses
+
+Let’s look at a few examples of requests made through Masteriyo LMS REST API and the responses received.
+
+**Note:** In the following URLs, ``your-site.com`` refers to your live LMS website address.
+
+### Reading Data
+
+The example below shows fetching course categories.
+
+Example of Request:
+```bash
+curl -X 'GET' \
+  'https://your-site.com/wp-json/masteriyo/v1/courses/categories' \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic <your_auth_key>'
+
+```
+Example of Response:
+
+```json
+{
+  "data": [
+    {
+      "id": 11,
+      "name": "Ukulele",
+      "slug": "ukulele",
+      "link": "https://your-site.com/course-category/ukulele/",
+      "taxonomy": "course_cat",
+      "description": "",
+      "parent_id": 0,
+      "count": 0,
+      "display": "default",
+      "featured_image": ""
+    }
+  ],
+  "meta": {
+    "total": 1,
+    "pages": 1,
+    "current_page": 1,
+    "per_page": 10
+  }
+}
+
+```
+### Writing Data
+
+Here is an example of creating a course via API:
+
+To create a new course in Masteriyo LMS using REST API, send a POST request to the following endpoint:
+
+``POST/masteriyo/v1/courses ``
+
+Example of Request:
+
+``` bash
+curl -X 'POST' \
+  'https://your-site.com/wp-json/masteriyo/v1/courses' \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic <your-api-key>' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -d 'name=Yoga&slug=yoga&status=publish&price=50'
+```
+Example of Response: 
+```json
+{
+  "id": 44,
+  "name": "Yoga",
+  "slug": "yoga",
+  "permalink": "https://your-site.com/course/yoga/",
+  "status": "publish",
+  "price": "50",
+  "formatted_price": "$50"
+}
+```
+
+## Deleting Data 
+Here’s an example of removing a lesson from the course.
+
+Example of Request:
+```bash 
+curl -X 'DELETE' \
+  'https://your-site.com/wp-json/masteriyo/v1/courses/45' \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic <your-api-key>'
+```
+Example of Response: 
+```json 
+{
+  "id": 45,
+  "name": "Yoga",
+  "slug": "yoga",
+  "status": "trash",
+  "message": "Course deleted successfully" 
+}
+```
+
+## **Troubleshooting**
+| **Error Code** | **Cause**                                                                 | **Solution**                                                                 |
+|----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| `401 Unauthorized` | Invalid or missing API key.                                               | Verify the API key and secret key. Ensure they are correctly entered.        |
+| `403 Forbidden`    | Insufficient permissions for the API key.                                 | Regenerate the API key with the required permissions (e.g., Read/Write).    |
+| `404 Not Found`    | Incorrect endpoint URL or resource does not exist.                        | Check the API documentation for valid endpoints and ensure the URL is correct. |
+| `500 Internal Server Error` | Server-side issue (e.g., plugin conflict or misconfiguration).            | Check server logs for details. Disable conflicting plugins or contact support. |
+| `400 Bad Request`  | Invalid request payload or missing required fields.                       | Validate the request body and ensure all required fields are provided.       |
+| `429 Too Many Requests` | Rate limit exceeded.                                                     | Reduce the frequency of API requests or implement rate limiting in your app. |
+
+**Example Scenario**: Attempting to create a course category without proper write permissions:  
+
+Request (cURL):
+```bash 
+curl -X 'POST' \
+  'https://your-site.com/wp-json/masteriyo/v1/courses/categories' \
+  -H 'accept: application/json' \
+  -H 'authorization: Basic <your-api-key>' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "name": "NewCategory"
+  }'
+```
+Response (401 Unauthorized)
+```json
+{
+  "code": "masteriyo_rest_authentication_error",
+  "message": "The API key provided does not have write permissions.",
+  "data": {
+    "status": 401
+  }
+}
+```
+## Additional Support and Resources
+[Masteriyo LMS REST API Endpoints](https://docs.masteriyo.com/for-developers/rest-api-endpoints)
+### Getting Help
+  - [Contact Masteriyo LMS support](https://masteriyo.com/support/)
+  - [Join the developer community](https://www.facebook.com/groups/masteriyo)

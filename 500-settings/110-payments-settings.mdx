@@ -60,16 +60,32 @@ You can enable any of the available fields to display them on the checkout form.
 
 ### Offline Payments
 
-![payment-offline-payment](https://github.com/user-attachments/assets/d362db64-5896-4f99-a6d6-cbdcb33fd599)
+![enable-offline-payment](https://github.com/user-attachments/assets/be7ee6b4-e4b8-4607-9a7e-f6cc45d3ae32)
 
 - **Enable** - Enable this option to use offline payment method during checkout.
   - **Title** - Provide the title to the offline payment.
   - **Description** - Describe the offline payment method.
-  - **Instruction** - Specify if you have any instructions required.
+  - **Instruction** - Specify if you have any instructions required.    
+
+You also get a wire transfer option with offline payment. It allows you to display essential bank details to customers during checkout so that you can receive payments directly in your bank account.
+To display the information, toggle the **Display Wire Transfer Information** option. Next, fill in the required fields to display your banking information:
+
+![display-wire-transfer-information](https://github.com/user-attachments/assets/d3dd3f4f-8b50-46c2-a67f-3ff4203179d4)
+
+  - **Title:** Give a name for this payment method    
+  - **Account Number:** Your bank account number    
+  - **Account Holder Name:** The name registered with the bank account    
+  - **Bank Name:** The name of your bank    
+  - **Swift:** The bank’s international identifier for wire transfers. You can find it on your bank’s website or by contacting your bank directly.    
+  - **Description:** A short instruction for your customers    
+
+**Save** the changes after you complete the configuration. Customers will now see the wire transfer option with the necessary details at the checkout. 
+
+![wire-transfer-at-frontend](https://github.com/user-attachments/assets/06ad5f90-5843-4d35-9130-83b2e940f21e)
 
 ### Stripe
 
-![Payments-Stripe](https://user-images.githubusercontent.com/75772539/228787886-67a69ffe-9b9b-444d-9861-07d9bf9313b1.png)
+![stripe-payment-settings](https://github.com/user-attachments/assets/a20cb2ec-9a56-48fc-9208-42537504bf75)
 
 - **Enable** - Enable this option to use the Stripe payment method.
   - **Title** - Provide the title to the Stripe payment.
