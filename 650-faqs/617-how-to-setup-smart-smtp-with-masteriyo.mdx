@@ -58,15 +58,15 @@ Brevo (previously known as Sendinblue) offers reliable email delivery with minim
 
 Now, on your WordPress dashboard, enable the Brevo option and fill in the following information:    
 
-![brevo-settings](https://github.com/user-attachments/assets/814fe8eb-6078-404e-9f87-e3b4f459e64e)
-
-**From Email Address:** Enter your site’s admin email address or any email address with which you want to send the email from your site.    
+**From Email Address:** Enter your site’s admin email address or any email address from which you want to send the email from your site.    
 
 **From Name:** Enter a professional sender name     
 
 **API Key:** Paste your Brevo API key     
 
 Now, hit **Save Connection Settings.**  
+
+![brevo-settings](https://github.com/user-attachments/assets/814fe8eb-6078-404e-9f87-e3b4f459e64e)
 
 ### Option 3: Other SMTP (Recommended for Custom SMTP Services)
 
@@ -81,8 +81,6 @@ The Other SMTP option provides flexibility in connecting with any SMTP provider,
 It requires you to manually configure the details that your email provider will provide, like SMTP Host, encryption, port, and so on. So, you can contact your email provider or visit their documentation for their SMTP settings (they usually have a guide). Once you have the details, you can configure settings.   
 
 #### Configure Other SMTP Settings  
-
-![other-smtp-settings](https://github.com/user-attachments/assets/f5df76b8-7b74-41db-858f-14c6a19e1879)
 
 Enable the **Other SMTP** option and configure settings further.  
 
@@ -108,6 +106,8 @@ Enable the **Other SMTP** option and configure settings further.
 **Security Note:** Many providers, including Gmail and Microsoft, require app-specific passwords rather than your regular account password.    
 
 Click on **Save Connection Settings** once you complete the configuration.     
+
+![other-smtp-settings](https://github.com/user-attachments/assets/f5df76b8-7b74-41db-858f-14c6a19e1879)
 
 Once everything is configured, WordPress will route emails (such as form submissions, order confirmations, and password resets) through the SMTP server instead of the default mail ( )  function.   
 
@@ -137,12 +137,12 @@ Once everything is configured, WordPress will route emails (such as form submiss
 
 After configuring your chosen SMTP connection, verify that it works correctly:  
 
-![test-mail-with-smartsmtp](https://github.com/user-attachments/assets/ae882710-540b-4ccd-ab7c-b7efbcbcdec3)
-
-1.	Navigate to Test Mail under SmartSMTP   
+1.	Navigate to **Test Mail** under **SmartSMTP**   
 2.	Enter the email address where you want to send the test email  
 3.	Enable HTML Formatted to receive the test email in a standard format  
-4.	Click on Send Test Mail  
+4.	Click on **Send Test Mail**  
+
+![test-mail-with-smartsmtp](https://github.com/user-attachments/assets/ae882710-540b-4ccd-ab7c-b7efbcbcdec3)
 
 Check your mailbox to see whether or not you have received the email. 
 
@@ -152,11 +152,11 @@ Check your mailbox to see whether or not you have received the email.
 
 SmartSMTP includes a mail logging system to track delivery status:  
 
-![mail-log-by-smartsmtp](https://github.com/user-attachments/assets/85fd47bb-ca02-46d8-9459-fc08ffcdfc0f)
-
-  1.	Access “Mail Logs” in the SmartSMTP menu 
+  1.	Access **Mail Logs** in the SmartSMTP menu 
   2.	Review the status of sent emails 
-  3.	Click “View” on any entry to see detailed information    
+  3.	Click **View** on any entry to see detailed information    
+
+![mail-log-by-smartsmtp](https://github.com/user-attachments/assets/85fd47bb-ca02-46d8-9459-fc08ffcdfc0f)
 
 ### Email Delivery Best Practices  
 
