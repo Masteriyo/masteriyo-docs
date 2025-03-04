@@ -14,6 +14,8 @@ This documentation outlines a straightforward solution: leveraging the SmartSMTP
 
 •	Next, click on the **Activate** button to use the plugin.
 
+![install-smart-smtp-plugin](https://github.com/user-attachments/assets/08a67aa2-9d30-473f-be5c-d6f05545638f)
+
 ## Step 2: Selecting an Email Service Provider
 
 After activating the SmartSMTP plugin on your WordPress LMS site, you’ll find the SmartSMTP menu in your dashboard. This menu allows you to configure your email delivery settings.    
@@ -22,10 +24,13 @@ Email Service Providers handle the technical aspects of email delivery using SMT
 
 SmartSMTP offers three configuration options:
 
+![smart-smtp-email-service-provider](https://github.com/user-attachments/assets/8c7a9492-f891-4c12-b2e1-9ad85928ec52)
 
 ### Option 1: Default SMTP (Use for Testing)
 
 The Default SMTP option uses WordPress’s built-in mail functionality, which relies on your hosting provider’s server configuration.    
+
+![smtp-settings-for-default](https://github.com/user-attachments/assets/d2cb41f9-bd79-46cc-940c-a766da660bd4)
 
 **Note:** This method frequently encounters delivery problems, including emails landing in spam folders or failing to deliver entirely. We would recommend that you use this option only for initial testing.    
 
@@ -36,13 +41,24 @@ Brevo (previously known as Sendinblue) offers reliable email delivery with minim
 #### Create Your Brevo API Key    
   a)	Sign in to your Brevo account (or create one if needed).   
   b)	Navigate to the “SMTP & API” section.    
+
+![go-to-smtp-and-api](https://github.com/user-attachments/assets/040fbe0e-6044-4912-952a-1b21a184f5b9)
+
+
   c)	Select “API Keys” and choose “Generate New Key.”  
+
+![generate-brevo-api-key](https://github.com/user-attachments/assets/3f4ef838-5e84-4531-89e7-9529dc107acc)
+
   d)	Ensure the key has appropriate email-sending permissions.  
-  e)	Copy your newly generated API key for the next step.    
+  e)	Copy your newly generated API key for the next step.  
+
+![brevo-api-key](https://github.com/user-attachments/assets/7c82532a-2bef-4d58-a75b-d0b5432e2b4f)
 
 #### Configure SmartSMTP with Brevo
 
 Now, on your WordPress dashboard, enable the Brevo option and fill in the following information:    
+
+![brevo-settings](https://github.com/user-attachments/assets/814fe8eb-6078-404e-9f87-e3b4f459e64e)
 
 **From Email Address:** Enter your site’s admin email address or any email address with which you want to send the email from your site.    
 
@@ -62,9 +78,11 @@ The Other SMTP option provides flexibility in connecting with any SMTP provider,
   •	You need specialized delivery options    
   •	You want complete control over email settings    
 
-It requires you to manually configure the details that your email provider will provide, like SMTP Host, encryption, port, and so on. So, contact your email provider or visit their documentation for their SMTP settings (they usually have a guide). Once you have the details, you can configure settings.   
+It requires you to manually configure the details that your email provider will provide, like SMTP Host, encryption, port, and so on. So, you can contact your email provider or visit their documentation for their SMTP settings (they usually have a guide). Once you have the details, you can configure settings.   
 
 #### Configure Other SMTP Settings  
+
+![other-smtp-settings](https://github.com/user-attachments/assets/f5df76b8-7b74-41db-858f-14c6a19e1879)
 
 Enable the **Other SMTP** option and configure settings further.  
 
@@ -119,22 +137,29 @@ Once everything is configured, WordPress will route emails (such as form submiss
 
 After configuring your chosen SMTP connection, verify that it works correctly:  
 
+![test-mail-with-smartsmtp](https://github.com/user-attachments/assets/ae882710-540b-4ccd-ab7c-b7efbcbcdec3)
+
 1.	Navigate to Test Mail under SmartSMTP   
 2.	Enter the email address where you want to send the test email  
 3.	Enable HTML Formatted to receive the test email in a standard format  
 4.	Click on Send Test Mail  
 
-Check your mailbox to see whether or not you have received the email.  
+Check your mailbox to see whether or not you have received the email. 
+
+![received-test-email-with-smart-smtp](https://github.com/user-attachments/assets/f8725bac-4b16-424c-93d8-56c32a1436a5)
 
 ### Mail Logs  
 
 SmartSMTP includes a mail logging system to track delivery status:  
 
+![mail-log-by-smartsmtp](https://github.com/user-attachments/assets/85fd47bb-ca02-46d8-9459-fc08ffcdfc0f)
+
   1.	Access “Mail Logs” in the SmartSMTP menu 
   2.	Review the status of sent emails 
   3.	Click “View” on any entry to see detailed information    
 
-### Email Delivery Best Practices
+### Email Delivery Best Practices  
+
 •	Use a professional domain-based email address when possible    
 •	Check mail logs regularly to identify potential delivery issues    
 •	Run test emails after WordPress core updates    
