@@ -8,9 +8,9 @@ This documentation outlines a straightforward solution: leveraging the SmartSMTP
 
 ## Step 1: Install the SmartSMTP Plugin  
 
-- •	Navigate to **Plugins > Add New** on your Masteriyo Dashboard.
+•	Navigate to **Plugins > Add New** on your Masteriyo Dashboard.
 
-- •	Search for the SmartSMTP plugin and click on the Install Now button. 
+•	Search for the SmartSMTP plugin and click on the Install Now button. 
 
 •	Next, click on the Activate button to use the plugin.
 
@@ -77,15 +77,15 @@ Enable the **Other SMTP** option and configure settings further.
 **SMTP Host:** The hostname or IP address of the SMTP server. Example: smtp.gmail.com for Gmail and smtp.office365.com for Outlook.    
 
 **Type of Encryption:** The encryption method used by the SMTP server   
-  •	TLS (Transport Layer Security)
+  •	TLS (Transport Layer Security)    
   •	SSL (Secure Sockets Layer)  
 
 **SMTP Port:** Typically, 587 for TLS or 465 for SSL    
 
 **SMTP Authentication:** The authentication method required by the SMTP server. Enable, and you’ll be asked to fill in the username and password:    
 
-  •	**Username:** Your SMTP email address    
-  •	**Password:** Your account password or app-specific password    
+    •	**Username:** Your SMTP email address    
+    •	**Password:** Your account password or app-specific password    
 
 **Security Note:** Many providers, including Gmail and Microsoft, require app-specific passwords rather than your regular account password.    
 
@@ -101,8 +101,8 @@ Once everything is configured, WordPress will route emails (such as form submiss
   •	Encryption: TLS  
   •	Port: 587  
   •	Authentication: On  
-      •	Username: Your Gmail address  
-      •	Password: Generate an App Password from Google  
+        •	Username: Your Gmail address  
+        •	Password: Generate an App Password from Google  
 
 **Microsoft 365/Outlook**
 
@@ -110,8 +110,8 @@ Once everything is configured, WordPress will route emails (such as form submiss
   •	Encryption: TLS    
   •	Port: 587    
   •	Authentication: On    
-    •	Username: Your Outlook email
-    •	Password: Generate an App Password from Microsoft Security settings
+      •	Username: Your Outlook email    
+      •	Password: Generate an App Password from Microsoft Security settings
 
 ## Step 3: Validate Your Configuration  
 
@@ -119,10 +119,11 @@ Once everything is configured, WordPress will route emails (such as form submiss
 
 After configuring your chosen SMTP connection, verify that it works correctly:  
 
-  1.	Navigate to Test Mail under SmartSMTP   
-  2.	Enter the email address where you want to send the test email  
-  3.	Enable HTML Formatted to receive the test email in a standard format  
-  4.	Click on Send Test Mail  
+    1.	Navigate to Test Mail under SmartSMTP   
+    2.	Enter the email address where you want to send the test email  
+    3.	Enable HTML Formatted to receive the test email in a standard format  
+    4.	Click on Send Test Mail  
+
 Check your mailbox to see whether or not you have received the email.  
 
 ### Mail Logs  
@@ -134,11 +135,11 @@ SmartSMTP includes a mail logging system to track delivery status:
   3.	Click “View” on any entry to see detailed information    
 
 ### Email Delivery Best Practices
-•	Use a professional domain-based email address when possible
-•	Check mail logs regularly to identify potential delivery issues
-•	Run test emails after WordPress core updates
-•	Keep the SmartSMTP plugin updated for security and compatibility
-•	Monitor spam complaint rates to maintain the sender reputation
+•	Use a professional domain-based email address when possible    
+•	Check mail logs regularly to identify potential delivery issues    
+•	Run test emails after WordPress core updates    
+•	Keep the SmartSMTP plugin updated for security and compatibility    
+•	Monitor spam complaint rates to maintain the sender reputation    
 
 
 
