@@ -1,0 +1,172 @@
+---
+title: How to Setup SMTP Using the SmartSMTP Plugin?
+show_child_cards: true
+excerpt: Learn how to set up SMTP using the SmartSMTP plugin and fix your email delivery issue.
+---
+
+This documentation outlines a straightforward solution: leveraging the SmartSMTP plugin and implementing Simple Mail Transfer Protocol (SMTP). Following these steps, you’ll transform your course notifications, student alerts, and LMS communications to reach inboxes effectively without receiving “Email Not Delivered” notifications. SmartSMTP ensures emails are sent via authenticated SMTP servers (e.g., Gmail, Outlook, or your hosting provider), improving deliverability and professionalism.
+
+## Step 1: Install the SmartSMTP Plugin  
+
+•	Navigate to **Plugins > Add New** on your Masteriyo Dashboard.
+
+•	Search for the **SmartSMTP** plugin and click on the Install Now button. 
+
+•	Next, click on the **Activate** button to use the plugin.
+
+![install-smart-smtp-plugin](https://github.com/user-attachments/assets/08a67aa2-9d30-473f-be5c-d6f05545638f)
+
+## Step 2: Selecting an Email Service Provider
+
+After activating the SmartSMTP plugin on your WordPress LMS site, you’ll find the SmartSMTP menu in your dashboard. This menu allows you to configure your email delivery settings.    
+
+Email Service Providers handle the technical aspects of email delivery using SMTP (Simple Mail Transfer Protocol) instead of your web server’s built-in mail function.     
+
+SmartSMTP offers three configuration options:
+
+![smart-smtp-email-service-provider](https://github.com/user-attachments/assets/8c7a9492-f891-4c12-b2e1-9ad85928ec52)
+
+### Option 1: Default SMTP (Use for Testing)
+
+The Default SMTP option uses WordPress’s built-in mail functionality, which relies on your hosting provider’s server configuration.    
+
+![smtp-settings-for-default](https://github.com/user-attachments/assets/d2cb41f9-bd79-46cc-940c-a766da660bd4)
+
+**Note:** This method frequently encounters delivery problems, including emails landing in spam folders or failing to deliver entirely. We would recommend that you use this option only for initial testing.    
+
+### Option 2: Brevo (Needs Brevo Account)
+
+Brevo (previously known as Sendinblue) offers reliable email delivery with minimal configuration. SmartSMTP includes pre-configured Brevo settings for host, port, and encryption protocols.  
+
+#### Create Your Brevo API Key    
+  a)	Sign in to your Brevo account (or create one if needed).   
+  b)	Navigate to the “SMTP & API” section.    
+
+![go-to-smtp-and-api](https://github.com/user-attachments/assets/040fbe0e-6044-4912-952a-1b21a184f5b9)
+
+
+  c)	Select “API Keys” and choose “Generate New Key.”  
+
+![generate-brevo-api-key](https://github.com/user-attachments/assets/3f4ef838-5e84-4531-89e7-9529dc107acc)
+
+  d)	Ensure the key has appropriate email-sending permissions.  
+  e)	Copy your newly generated API key for the next step.  
+
+![brevo-api-key](https://github.com/user-attachments/assets/7c82532a-2bef-4d58-a75b-d0b5432e2b4f)
+
+#### Configure SmartSMTP with Brevo
+
+Now, on your WordPress dashboard, enable the Brevo option and fill in the following information:    
+
+**From Email Address:** Enter your site’s admin email address or any email address from which you want to send the email from your site.    
+
+**From Name:** Enter a professional sender name     
+
+**API Key:** Paste your Brevo API key     
+
+Now, hit **Save Connection Settings.**  
+
+![brevo-settings](https://github.com/user-attachments/assets/814fe8eb-6078-404e-9f87-e3b4f459e64e)
+
+### Option 3: Other SMTP (Recommended for Custom SMTP Services)
+
+The Other SMTP option provides flexibility in connecting with any SMTP provider, including Gmail, Microsoft 365, Amazon SES, and others.  
+
+**When to use this option?**    
+
+  •	You already have an email service you prefer    
+  •	You need specialized delivery options    
+  •	You want complete control over email settings    
+
+It requires you to manually configure the details that your email provider will provide, like SMTP Host, encryption, port, and so on. So, you can contact your email provider or visit their documentation for their SMTP settings (they usually have a guide). Once you have the details, you can configure settings.   
+
+#### Configure Other SMTP Settings  
+
+Enable the **Other SMTP** option and configure settings further.  
+
+**From Email Address:** Email address used for sending emails   
+
+**From Name:** Sender’s name that appears in recipients’ inboxes  
+
+**Reply-To-Email Address:** To receive responses to your email (can match your sending address). 
+
+**SMTP Host:** The hostname or IP address of the SMTP server. Example: smtp.gmail.com for Gmail and smtp.office365.com for Outlook.    
+
+**Type of Encryption:** The encryption method used by the SMTP server   
+  •	TLS (Transport Layer Security)    
+  •	SSL (Secure Sockets Layer)  
+
+**SMTP Port:** Typically, 587 for TLS or 465 for SSL    
+
+**SMTP Authentication:** The authentication method required by the SMTP server. Enable, and you’ll be asked to fill in the username and password:    
+
+  •	**Username:** Your SMTP email address    
+  •	**Password:** Your account password or app-specific password    
+
+**Security Note:** Many providers, including Gmail and Microsoft, require app-specific passwords rather than your regular account password.    
+
+Click on **Save Connection Settings** once you complete the configuration.     
+
+![other-smtp-settings](https://github.com/user-attachments/assets/f5df76b8-7b74-41db-858f-14c6a19e1879)
+
+Once everything is configured, WordPress will route emails (such as form submissions, order confirmations, and password resets) through the SMTP server instead of the default mail ( )  function.   
+
+#### Common Email Providers Settings    
+
+**Gmail**  
+
+  •	SMTP Host: smtp.gmail.com    
+  •	Encryption: TLS  
+  •	Port: 587  
+  •	Authentication: On  
+        •	Username: Your Gmail address  
+        •	Password: Generate an App Password from Google  
+
+**Microsoft 365/Outlook**
+
+  •	SMTP Host: smtp.office365.com    
+  •	Encryption: TLS    
+  •	Port: 587    
+  •	Authentication: On    
+      •	Username: Your Outlook email    
+      •	Password: Generate an App Password from Microsoft Security settings
+
+## Step 3: Validate Your Configuration  
+
+### Test Email Delivery    
+
+After configuring your chosen SMTP connection, verify that it works correctly:  
+
+1.	Navigate to **Test Mail** under **SmartSMTP**   
+2.	Enter the email address where you want to send the test email  
+3.	Enable HTML Formatted to receive the test email in a standard format  
+4.	Click on **Send Test Mail**  
+
+![test-mail-with-smartsmtp](https://github.com/user-attachments/assets/ae882710-540b-4ccd-ab7c-b7efbcbcdec3)
+
+Check your mailbox to see whether or not you have received the email. 
+
+![received-test-email-with-smart-smtp](https://github.com/user-attachments/assets/f8725bac-4b16-424c-93d8-56c32a1436a5)
+
+### Mail Logs  
+
+SmartSMTP includes a mail logging system to track delivery status:  
+
+  1.	Access **Mail Logs** in the SmartSMTP menu 
+  2.	Review the status of sent emails 
+  3.	Click **View** on any entry to see detailed information    
+
+![mail-log-by-smartsmtp](https://github.com/user-attachments/assets/85fd47bb-ca02-46d8-9459-fc08ffcdfc0f)
+
+### Email Delivery Best Practices  
+
+•	Use a professional domain-based email address when possible    
+•	Check mail logs regularly to identify potential delivery issues    
+•	Run test emails after WordPress core updates    
+•	Keep the SmartSMTP plugin updated for security and compatibility    
+•	Monitor spam complaint rates to maintain the sender reputation    
+
+
+
+
+
