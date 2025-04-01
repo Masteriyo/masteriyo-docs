@@ -4,28 +4,58 @@ show_child_cards: true
 excerpt: This add-on helps you effortlessly migrate data from various LMS platforms to Masteriyo with the Masteriyo Migration Tool.
 ---
 
-Effortlessly migrate data from various LMS platforms to Masteriyo with the Masteriyo Migration Tool.
-
+The Masteriyo Migration Tool enables seamless transfer of your existing Learning Management System (LMS) data to Masteriyo LMS. his tool supports migration of courses, user enrollments, orders, reviews, and other essential data from various popular LMS platforms.
+	
 **Requires**
 
-1. [Masteriyo LMS](https://masteriyo.com/pricing/)
-2. [Migration Tool Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons)
+1. [Masteriyo LMS](https://masteriyo.com/pricing/) (installed and activated)
+2. [Migration Tool Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons) (installed and activated)
 
 ## Setup and Configuration
 
-Once you have activated the Migration Tool add-on, please go to the following location.
+To activate the Migration Tool addon, navigate to **Masteriyo > Addons** and enable **Migration Tool**. Next, navigate to the following location to access migration interface.
 
         Masteriyo > Tools > Migration
 
-![masteriyo-migrationtool-settings](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/ecf5f8d5-8b04-4ccf-9361-f74b1b39b7b9)
+![masteriyo-migration-tool](https://github.com/user-attachments/assets/aa18dad4-9638-4250-963e-809afe7c8de6)
 
-Here, you can select the LMS plugin from which you want to migrate the data into Masteriyo LMS plugin. Once selected, click on **Migrate**. Now, the data on the chosen LMS will be migrated.
+### Configure Migration Settings
+**Migration From:** Using the dropdown menu, select your source LMS from where you want to migrate courses and other data.        
+
+<Callout>
+  {" "} 
+Note: You’ll only see the LMS options, after you install and activate the respective plugin.  Before migrating, confirm that both source and destination plugins are activated on your WordPress website.  
+  </Callout>
+
+Based on the LMS platforms, you can review the data types available for migration. 
+
+### Execute Migration
+
+Click on the **Migrate** button, to start migrating data. The tool will automatically transfer all the compatible data and notifies you after the migration is complete.
 
 For example, create a sample course on any other LMS plugin and use the Masteriyo Migrate feature. You will then find the course have been migrated to **Masteriyo > Courses**.
 
-        All the content of the courses including lessons and quizzes will be automatically migrated.Similarly, the other data that are migrated are order details and reviews.
+All the supported content of the courses including lessons and quizzes will be automatically migrated. Similarly, some plugin also supports other data like order details and reviews for migration
+
+## Supported Platforms for Migration
+Masteriyo supports migration from the following LMS plugins:        
+- LearnPress        
+- Tutor LMS        
+- MasterStudy        
+- LifterLMS        
+- LearnDash        
+
+### Migrate form LearnPress
+
+To migrate course content from LearnPress, select the LMS and hit on Migrate button. 
+
+![masteriyo-migrationtool-settings](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/ecf5f8d5-8b04-4ccf-9361-f74b1b39b7b9)
+
+You can migrate the courses’s instructors, the users who are enrolled in the respective courses, orders, and review. 
 
 ![migration-status](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/6e2308de-d32b-493a-b954-4d9e62bc8410)
+
+Once the migration is completed, you can get the migrated contents under Masteriyo.
 
 ### Migrate from Tutor
 
@@ -61,4 +91,9 @@ This process seamlessly imports your course essential data, including course rev
 
 ![lifterlms-migration-process](https://github.com/user-attachments/assets/a238a4b1-6c1e-42bf-8f36-488aa4d6be8d)
 
-Once the migration is completed, you can get the contents under Masteriyo.
+Once the migration is completed, you can get the contents under Masteriyo.        
+
+### Migrate from LearnDash        
+
+Similarly, you can migrate course from LearnDash by installing the plugin. 
+
