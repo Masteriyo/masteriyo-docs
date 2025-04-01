@@ -1,1 +1,50 @@
+---
+title: Instructor List Shortcode
+excerpt: Leran to add Instructor list using the shortcode for Masteriyo.
+
+--- 
+
+With the instructors shortcode, you can display a customizable list of instructors anywhere on your site. This shortcode offers multiple attributes to control the display, order, and pagination of instructors.
+
+## Default Shortcode
+
+Shortcode: **[masteriyo_instructors_list]**  
+
+## Instructor List's Attributes
+
+| **Attribute** | **Description**                                                                 | **Example**                                                                 |
+|----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| `Count` | To display a total number of instructors to display.                                              | [masteriyo_instructors_list count="5"]      |
+| `Columns`    | To display number in the form of columns (supports 1–4 columns).                              | [masteriyo_instructors_list columns="2"]  |
+| `Ids`    | Display specific instructors using their Ids.              | [masteriyo_instructors_list ids="1,5,9"] |
+| `Exclude Ids` | Comma-separated list of instructor IDs to exclude.            | [masteriyo_instructors_list exclude_ids="3,7"] |
+| `Order`  | Order direction to display instructor list: ASC (ascending) or DESC (descending).                     |[masteriyo_instructors_list order="ASC"] |
+| `Order by` | Sort instructors by criteria like name, date, or other fields.                            | [masteriyo_instructors_list orderby="name"] |
+| `Paginate` | Enable pagination: "true" to turn on, "false" to turn off.                       | [masteriyo_instructors_list paginate="true"] |
+| `Per Page` | Number of instructors displayed per page (requires paginate="true").                                 | [masteriyo_instructors_list per_page="5"]|    
+
+### Examples
+
+1. Basic Usage  
+
+Display 6 instructors in 2 columns:  
+
+[masteriyo_instructors_list count="6" columns="2"]  
+
+2. Filter by IDs  
+
+Show instructors with IDs 1, 3, 5 in 4 columns:  
+
+[masteriyo_instructors_list ids="1,3,5" columns="4"]  
+
+3. Pagination  
+
+Display 20 instructors per page with pagination enabled, ordered by name (A–Z):  
+[masteriyo_instructors_list paginate="true" per_page="20" orderby="name" order="ASC"]  
+
+4. Advanced Example  
+
+Show 15 instructors in 3 columns, exclude IDs 4, 5, 6, and enable pagination with 5 per page:  
+
+[masteriyo_instructors_list count="15" columns="3" exclude_ids="4,5,6" paginate="true" per_page="5"]
 
