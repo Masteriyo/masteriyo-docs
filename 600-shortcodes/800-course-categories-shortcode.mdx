@@ -1,0 +1,40 @@
+---
+title: Course Categories Shortcode
+excerpt: Learn about course categories shortcode for Masteriyo
+---
+
+Using the shortcode for course categories, you can display your course categories anywhere in your site.   
+
+Shortcode: [masteriyo_course_categories]  
+
+This shortcode offers flexibility in showcasing course categories with various customization options.  
+
+## Attributes:
+It also supports multiple attributes for further customization:  
+
+| **Attribute** | **Description**                                                                 | **Example**                                                                 |
+|----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| `count` | Number of categories to display   | [masteriyo_course_categories count="1"] |
+| `columns`    | Number of columns to arrange the categories. | [masteriyo_course_categories columns="1"] |
+| `ids`    | Display specific categories using their IDs.  | [masteriyo_course_categories ids="1,2,3"] |
+| `exclude_ids` |Exclude specific categories by ID.    | [masteriyo_course_categories exclude_ids="4,5,6"]|
+| `order`  | Sorting order, either ASC (ascending) or DESC (descending). |Example: [masteriyo_course_categories order="ASC"]|
+| `order_by` | Order categories by name, ID, or count.  | [masteriyo_course_categories orderby="name"]|
+| `hide_courses_count` | Hide course count. Use yes to hide, no to show.       | [masteriyo_course_categories hide_courses_count="no"] |
+| `include_sub_categories` |Include subcategories. Use yes or no. | [masteriyo_course_categories include_sub_categories="no"]|    
+| `enable_slider` | Enable slider functionality. Use true or false | [masteriyo_course_categories enable_slider="true"]|  
+
+### Examples of Using Shortcode:   
+
+You can use the shortcode to display course categories with specific configurations. For example:  
+
+[masteriyo_course_categories count="" columns="4" hide_courses_count="no" include_sub_categories="yes" ids="4,9,12" exclude_ids="7,15" order="ASC" orderby="name"]  
+
+[masteriyo_course_categories enable_slider="true" columns="4" space_between="30" reverse_direction="false" delay="2500"]  
+
+### Where to Use This Shortcode  
+You can place this shortcode anywhere on your WordPress site, including:  
+•	Homepage sections  
+•	Course listing pages  
+•	Widgets and sidebars  
+•	Custom-built pages  
