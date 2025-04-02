@@ -1,1 +1,91 @@
+---
+title: How to Translate Masteriyo LMS Email Content into Another Language?
+show_child_cards: true
+excerpt: Check this out to learn how to translate your email to another language
+---
+
+
+This guide will walk you through translating Masteriyo LMS email notifications into different languages using the WPML plugin. By following these steps, your users will receive Masteriyo LMS emails in their preferred language.   
+
+Prerequisites:
+•	Masteriyo LMS plugin (installed and activated)  
+•	WPML plugin (installed and activated)  
+
+## 1. Set Up WPML Plugin  
+
+1.	Install and activate the WPML plugin on your WordPress site.  
+2.	During setup, select the language(s) you want to use for translation.  
+
+![choose-language-for-translation](https://github.com/user-attachments/assets/186052f7-7776-4085-a3a6-c00b0fed1ede)
+
+3.	Complete the WPML configuration wizard.  
+
+## 2. Configure WPML Settings  
+1.	Navigate to WPML > Settings > String Translation.  
+2.	Enable "Look for strings while pages are rendered" under the "Auto register strings for translation" section  
+
+![look-for-string-while-pages-are-rendered](https://github.com/user-attachments/assets/54f07080-408e-49cc-9681-5dab1e1a826b)
+
+## 3. Register Masteriyo Email Strings    
+1.	Navigate to any pages where Masteriyo emails are triggered  
+2.	Click the + icon to initiate translation  
+
+![click-on-add-icon](https://github.com/user-attachments/assets/3b29f18e-1791-41e4-8875-c5f8f6cdcc72)
+
+3.	On the translation page, click the + icon again  
+
+![select-page-for-transaltion](https://github.com/user-attachments/assets/76944e78-1b6b-4f37-aae6-b8bbdc330af1)
+
+4.	Select your page name and click "Complete Translation".  
+
+## 4. Trigger Email String Registration  
+1.	Visit your site in incognito mode  
+2.	Create a new account on your LMS site   
+    - This step is essential to register the Masteriyo email strings with WPML  
+    
+## 5. Translate Email Content  
+1.	Return to your WordPress admin area  
+2.	Navigate to WPML > String Translation  
+3.	Locate the "masteriyo-email-message" strings  
+
+![masteriyo-email-message](https://github.com/user-attachments/assets/1527b6c2-d0df-4f47-a588-5f2fa1df3b96)
+
+
+4.	Click the [+] icon next to each string you want to translate  
+5.	Copy the original string  
+6.	Translate it to your desired language (you can use Google Translate as a starting point) and copy  
+
+![copy-translated-language](https://github.com/user-attachments/assets/07ec77ce-70d2-4b22-b3e5-0243c3a704e0)
+
+7.	Paste the translated text into the translation field  
+
+![paste-translated-language](https://github.com/user-attachments/assets/d446ef59-edb1-4bc1-a043-816d7be74d2b)
+
+8.	Save your translation  
+ **Dynamic Placeholders:** Preserve tags like {user_name}, {course_title}, or {site_url}.  
+Example:  
+**Original:** Welcome {user_name}! You’ve enrolled in {course_title}.  
+**Translated:** Bienvenido {user_name}! Te has inscrito en {course_title}.   
+
+## 6. Test Your Translations  
+1.	Create a new test account in your target language  
+2.	Verify that the email notification arrives in the translated language  
+
+![translated-email-in-inbox](https://github.com/user-attachments/assets/d7ed366e-0a2d-49ca-86c8-ed2d5ea65b9f)
+
+
+
+## Troubleshooting  
+•	If email strings don't appear in the String Translation section, try triggering different Masteriyo email notifications  
+•	Ensure WPML's string translation module is configured correctly  
+•	Check that your WordPress site's language settings match your WPML configuration  
+
+## FAQs  
+Q: Can I use Google Translate for email content?  
+A: Yes, but paste translations manually into WPML’s String Translation editor without altering placeholders.  
+Q: How to add a new language?  
+A: Go to WPML > Languages and click Add Language.  
+Q: Do I need to retranslate after updating Masteriyo?  
+A: Only if email templates change. Recheck String Translation after plugin updates.  
+  
 
