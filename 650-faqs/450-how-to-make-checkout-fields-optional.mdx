@@ -8,7 +8,7 @@ By default, Masteriyo marks specific billing fields as required based on your **
 
 ## Example 1: Make **all** built-in field optional  
 
-`add_filter( 'masteriyo_checkout_fields', 'make_all_fields_optional', 10, 1 );    
+` add_filter( 'masteriyo_checkout_fields', 'make_all_fields_optional', 10, 1 );    
 
 function make_all_fields_optional( $fields ) {    
 
@@ -22,7 +22,9 @@ function make_all_fields_optional( $fields ) {
 
     return $fields;   
 
-}`
+}`    
+
+
 
 ## Example 2: Only make **Company** and **Phone** optional  
 
