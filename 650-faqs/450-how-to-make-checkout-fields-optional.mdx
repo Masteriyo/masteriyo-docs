@@ -28,7 +28,8 @@ function make_all_fields_optional( $fields ) {
 
 ## Example 2: Only make **Company** and **Phone** optional  
 
-`add_filter( 'masteriyo_checkout_fields', 'optional_company_phone', 10, 1 );    
+`    
+add_filter( 'masteriyo_checkout_fields', 'optional_company_phone', 10, 1 );    
 
 function optional_company_phone( $fields ) {   
 
@@ -38,7 +39,8 @@ function optional_company_phone( $fields ) {
 
     return $fields;    
 
-}` 
+}    
+` 
 
 
     
