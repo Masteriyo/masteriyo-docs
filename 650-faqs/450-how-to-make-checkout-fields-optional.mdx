@@ -11,7 +11,7 @@ By default, Masteriyo marks specific billing fields as required based on your **
 ```
 add_filter( 'masteriyo_checkout_fields', 'make_all_fields_optional', 10, 1 );    
 
-    function make_all_fields_optional( $fields ) {    
+function make_all_fields_optional( $fields ) {    
 
     foreach ( $fields as $key => &$field ) {    
 
@@ -23,25 +23,21 @@ add_filter( 'masteriyo_checkout_fields', 'make_all_fields_optional', 10, 1 );
 
     return $fields;   
 
-}```    
+}
+```    
 
 
 
 ## Example 2: Only make **Company** and **Phone** optional  
 
-`    
-    add_filter( 'masteriyo_checkout_fields', 'optional_company_phone', 10, 1 );    
-
-    function optional_company_phone( $fields ) {   
-
-    $fields['billing_company']['required'] = false;    
-
+```  
+add_filter( 'masteriyo_checkout_fields', 'optional_company_phone', 10, 1 );     
+function optional_company_phone( $fields ) {   
+    $fields['billing_company']['required'] = false;     
     $fields['billing_phone']['required']   = false;   
-
-    return $fields;    
-
+        return $fields;    
     }    
-` 
+``` 
 
 
     
@@ -66,11 +62,13 @@ Target any of these keys in your filter to change their `required` status:
 ## Hiding fields entirely
 
 If you don’t just want to make a field optional, but remove it from the form:  
-`add_filter( 'masteriyo_checkout_fields', 'remove_postcode_field', 20, 1 );    
+```    
+add_filter( 'masteriyo_checkout_fields', 'remove_postcode_field', 20, 1 );    
 function remove_postcode_field( $fields ) {    
     unset( $fields['billing_postcode'] );    
     return $fields;    
-}`    
+}
+```    
 
 <Callout>
   {" "}
