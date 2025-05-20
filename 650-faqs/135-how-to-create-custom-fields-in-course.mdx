@@ -11,10 +11,13 @@ Masteriyo allows admins to extend course creation with additional fields and con
 - Plugin for inserting custom code.
 
 ### How It Works
-•	Developers can register fields dynamically in the course builder using the registerMasteriyoField function.
-•	Fields can be added to specific placement locations, ensuring they appear in the desired sections.
-•	The system supports various field types, including text, textarea, checkbox, radio, switch, and select.
-•	Custom field data is automatically saved when the course is updated.
+•	Developers can register fields dynamically in the course builder using the registerMasteriyoField function.  
+
+•	Fields can be added to specific placement locations, ensuring they appear in the desired sections.  
+
+•	The system supports various field types, including text, textarea, checkbox, radio, switch, and select.  
+
+•	Custom field data is automatically saved when the course is updated.  
 
 
 ### Implementation Guide
@@ -26,18 +29,17 @@ To add custom code, you first need to install and activate a plugin that allows 
 
 Create a new JavaScript snippet in your chosen plugin with the following structure:  
 
-``
+```bash
 document.addEventListener('DOMContentLoaded', function() {  
-
   // Check if the Masteriyo API is available  
 if (typeof window.registerMasteriyoField === 'function') {    
-// Add your custom fields here  
+  // Add your custom fields here  
 
-  }  
+    }  
 
   });  
 
-  ``  
+  ```  
 
 #### Step 3: Register Custom Fields
 Use the registerMasteriyoField() function to add custom fields to the course builder. The function accepts the following parameters:
@@ -46,11 +48,12 @@ Use the registerMasteriyoField() function to add custom fields to the course bui
 3.	**Component target (optional)** - Specific component to attach the field to.
 
 ##### Where Do Custom Fields Appear
-Currently, Masteriyo supports the following placement locations:
-•	after_description - Appears after the course description field
-•	Additional locations may be available in future updates
+Currently, Masteriyo supports the following placement locations:  
 
-![Custom Field in Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-fields-in-masteriyo-course.png
+•	after_description - Appears after the course description field  
+•	Additional locations may be available in future updates  
+
+![Custom Field in Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-fields-in-masteriyo-course.png)
 
 ### Field Configuration Options
 Each field requires the following configuration options:
