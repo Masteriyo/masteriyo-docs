@@ -103,13 +103,19 @@ rules: { required: 'ABC is required' }
 ##### Checkbox Field Example  
 
 ``` bash  
-window.registerMasteriyoField('after_description', {  `
-  name: 'accept_terms',  
-  type: 'checkbox',  
-  label: 'I accept the terms and conditions',  
+document.addEventListener('DOMContentLoaded', function () {  
+  // Check if registerMasteriyoField is available  
+if (typeof window.registerMasteriyoField === 'function') {  
+  // Add Text field 
+	window.registerMasteriyoField('after_description', {
+    name: 'accept_terms',  
+    type: 'checkbox',  
+    label: 'I accept the terms and conditions',  
   priority: 25,  
   defaultValue: false,  
-  rules: { required: 'You must accept the terms and conditions' }  
+ rules: { required: 'You must accept the terms and conditions' }  
+});
+	  }  
 });  
 ```
 
