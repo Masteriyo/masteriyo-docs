@@ -20,7 +20,7 @@ Masteriyo allows admins to extend course creation with additional fields and con
 ### Implementation Guide
 
 #### Step 1: Install a Code Snippet Plugin
-To add custom code, you first need to install and activate a plugin to add custom JavaScript code to your WordPress site. You can use plugins like ***"Simple Custom CSS and JS "**, which is available in the WordPress plugin repository.   
+To add custom code, you first need to install and activate a plugin to add custom JavaScript code to your WordPress site. You can use plugins like **"Simple Custom CSS and JS "**, which is available in the WordPress plugin repository.   
 
 #### Step 2: Register Custom Fields
 Use the `registerMasteriyoField()` function to add custom fields to the course builder. The function accepts the following parameters:
@@ -41,7 +41,7 @@ Each field requires the following configuration options:
 #### Component Targets
 Fields can be added to different components within the Masteriyo LMS interface:
 
-•	**Default (Course)** - When no component is specified, fields are added to the course.
+•	**Default (Course)** - When no component is specified, fields are added to the course.	
 •	**"Curriculum.Lesson"** - Adds fields to the lesson.
 
 **Important**: When specifying "Curriculum.Lesson" as the third parameter, the custom fields will only appear in the lesson editor, not in the main course form. This allows you to create different fields for different content types.
@@ -161,7 +161,7 @@ defaultValue: true
  }  
 });
 ``` 
-![Custom Switch Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/newsletter- subscription-field.png)
+![Custom Switch Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/newsletter-subscription-field.png)
 
 ##### Select Dropdown Example  
 ``` javascript
