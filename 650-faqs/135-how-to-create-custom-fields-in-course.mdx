@@ -1,0 +1,204 @@
+---
+title: How to create custom fields in a Course?
+show_child_cards: true
+excerpt: Learn how to create custom fields for your course through this comprehensive guide.
+---
+
+Masteriyo allows admins to extend course creation with additional fields and content througha  third-party plugin or custom code. Admin can now dynamically add new fields in the course builder. 
+
+**Requirements**
+- Masteriyo LMS Free v1.18.0 or above and PRO v2.19.0 or above.
+- Plugin for inserting custom code.
+
+### How It Works
+•	Developers can register fields dynamically in the course builder using the registerMasteriyoField function.  
+
+•	Fields can be added to specific placement locations, ensuring they appear in the desired sections.  
+
+•	The system supports various field types, including text, textarea, checkbox, radio, switch, and select.  
+
+•	Custom field data is automatically saved when the course is updated.  
+
+
+### Implementation Guide
+
+#### Step 1: Install a Code Snippet Plugin
+To add custom code, you first need to install and activate a plugin that allows you to add custom JavaScript code to your WordPress site. You can use plugins like ***"Simple Custom CSS and JS "**, which is available in the WordPress plugin repository. 
+
+#### Step 2: Add Custom JavaScript
+
+Create a new JavaScript snippet in your chosen plugin with the following structure:  
+
+```bash
+document.addEventListener('DOMContentLoaded', function() {  
+  // Check if the Masteriyo API is available  
+if (typeof window.registerMasteriyoField === 'function') {    
+  // Add your custom fields here  
+
+    }  
+
+  });  
+
+  ```  
+
+#### Step 3: Register Custom Fields
+Use the registerMasteriyoField() function to add custom fields to the course builder. The function accepts the following parameters:
+1.	**Placement location** - Where the field should appear in the interface.
+2.	**Field configuration** - An object containing field properties
+3.	**Component target (optional)** - Specific component to attach the field to.
+
+##### Where Do Custom Fields Appear
+Currently, Masteriyo supports the following placement locations:  
+
+•	after_description - Appears after the course description field  
+•	Additional locations may be available in future updates  
+
+![Custom Field in Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-fields-in-masteriyo-course.png)
+
+### Field Configuration Options
+Each field requires the following configuration options:
+
+### Component Targets
+Fields can be added to different components within the Masteriyo LMS interface:
+
+•	Default (Course) - When no component is specified, fields are added to the main course form  
+•	"Curriculum.Lesson" - Adds fields to the lesson creation form.
+
+**Important**: When specifying "Curriculum.Lesson" as the third parameter, the custom fields will only appear in the lesson editor, not in the main course form. This allows you to create different fields for different content types.
+
+### Validation Rules
+You can add validation to your custom fields using the rules property. Here are some examples:
+```bash  
+// Required field validation
+rules: { 
+  required: 'This field is required' 
+}
+```  
+
+### Examples of Adding New Field
+For example, to add a new text area field, you can use the following code snippet:  
+
+``` bash
+document.addEventListener('DOMContentLoaded', function () {  
+// Check if registerMasteriyoField is available  
+if (typeof window.registerMasteriyoField === 'function') {  
+// Add Text field  
+window.registerMasteriyoField('after_description', {  
+name: 'seo_content',  
+type: 'text',  
+label: 'SEO Content',  
+placeholder: 'Write here...',  
+priority: 30,  
+defaultValue: 'Default SEO content...',  
+rules: { required: 'SEO content is required' }  
+});  
+// Add Text input field  
+window.registerMasteriyoField('after_description', {  
+name:'abc',  
+type: 'text',  
+label: 'ABC',  
+placeholder: 'Write here...',  
+priority: 20,  
+defaultValue: 'Default ABC value',  
+rules: { required: 'ABC is required' }  
+});  
+``` 
+
+#### Other Examples
+##### Checkbox Field Example  
+
+``` bash  
+window.registerMasteriyoField('after_description', {  `
+  name: 'accept_terms',  
+  type: 'checkbox',  
+  label: 'I accept the terms and conditions',  
+  priority: 25,  
+  defaultValue: false,  
+  rules: { required: 'You must accept the terms and conditions' }  
+});  
+```
+
+##### Radio Button Group Example:   
+  
+```bash
+// Radio button group  
+window.registerMasteriyoField('after_description', {  
+name: 'gender',  
+type: 'radio',  
+label: 'Gender',  
+options: [  
+{ label: 'Male', value: 'male' },  
+{ label: 'Female', value: 'female' },  
+{ label: 'Other', value: 'other' }  
+],  
+priority: 15,  
+defaultValue: 'male',  
+rules: { required: 'Please select your gender' }  
+});  
+``` 
+##### Switch Field Example  
+``` bash  
+window.registerMasteriyoField('after_description', {  
+name: 'subscribe_newsletter',  
+type: 'switch',  
+label: 'Subscribe to newsletter',  
+priority: 18,  
+defaultValue: true  
+});  
+``` 
+##### Select Dropdown Example  
+``` bash  
+window.registerMasteriyoField('after_description', {  
+  name: 'country',  
+  type: 'select',  
+  label: 'Country',  
+  options: [  
+    { label: 'Select a country', value: '' },  
+    { label: 'United States', value: 'us' },  
+    { label: 'Canada', value: 'ca' },  
+    { label: 'United Kingdom', value: 'uk' },  
+    { label: 'Australia', value: 'au' }  
+  ],  
+  priority: 22,  
+  defaultValue: '',  
+  rules: { required: 'Please select your country' }  
+});  
+
+``` 
+
+### Adding Fields to Lessons  
+```bash  
+// Text input field added in Lesson  
+window.registerMasteriyoField('after_description', {  
+name:'abc',  
+type: 'text',  
+label: 'ABC',  
+placeholder: 'Write here...',  
+priority: 20,  
+defaultValue: 'Default ABC value',  
+rules: { required: 'ABC is required' }  
+}, "Curriculum.Lesson");  
+
+
+// Textarea field added in Lesson  
+window.registerMasteriyoField('after_description', {  
+name:'textarea',  
+type: 'textarea',  
+label: 'Text Area',  
+placeholder: 'Write something',  
+priority: 10,  
+defaultValue: '',  
+rules: { required: 'This field is required' }  
+},"Curriculum.Lesson");  
+}   
+});  
+```
+
+Troubleshooting  
+•	Ensure your JavaScript code is loaded correctly and not blocked by other scripts.  
+•	Check the browser console for any errors.  
+•	Verify that the Masteriyo LMS plugin is up to date.  
+•	Ensure field names are unique to avoid conflicts.  
+
+
+
