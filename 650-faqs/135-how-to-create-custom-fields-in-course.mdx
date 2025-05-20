@@ -73,11 +73,12 @@ You can add validation to your custom fields using the rules property. Here are 
 rules: { 
   required: 'This field is required' 
 }
+```  
 
 ### Examples of Adding New Field
 For example, to add a new text area field, you can use the following code snippet:  
 
-```  
+``` bash
 document.addEventListener('DOMContentLoaded', function () {  
 // Check if registerMasteriyoField is available  
 if (typeof window.registerMasteriyoField === 'function') {  
@@ -101,7 +102,7 @@ priority: 20,
 defaultValue: 'Default ABC value',  
 rules: { required: 'ABC is required' }  
 });  
-``  
+``` 
 
 #### Other Examples
 ##### Checkbox Field Example  
