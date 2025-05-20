@@ -120,7 +120,7 @@ window.registerMasteriyoField('after_description', {  `
 
 ##### Radio Button Group Example:   
   
-``
+```bash
 // Radio button group  
 window.registerMasteriyoField('after_description', {  
 name: 'gender',  
@@ -135,9 +135,9 @@ priority: 15,
 defaultValue: 'male',  
 rules: { required: 'Please select your gender' }  
 });  
-``  
+``` 
 ##### Switch Field Example  
-``  
+``` bash  
 window.registerMasteriyoField('after_description', {  
 name: 'subscribe_newsletter',  
 type: 'switch',  
@@ -145,43 +145,29 @@ label: 'Subscribe to newsletter',
 priority: 18,  
 defaultValue: true  
 });  
-``  
+``` 
 ##### Select Dropdown Example  
-``  
+``` bash  
 window.registerMasteriyoField('after_description', {  
-
   name: 'country',  
-
   type: 'select',  
-
   label: 'Country',  
-
   options: [  
-
     { label: 'Select a country', value: '' },  
-
     { label: 'United States', value: 'us' },  
-
     { label: 'Canada', value: 'ca' },  
-
     { label: 'United Kingdom', value: 'uk' },  
-
     { label: 'Australia', value: 'au' }  
-
   ],  
-
   priority: 22,  
-
   defaultValue: '',  
-
   rules: { required: 'Please select your country' }  
-
 });  
 
-``  
+``` 
 
 ### Adding Fields to Lessons  
-``  
+```bash  
 // Text input field added in Lesson  
 window.registerMasteriyoField('after_description', {  
 name:'abc',  
@@ -192,6 +178,7 @@ priority: 20,
 defaultValue: 'Default ABC value',  
 rules: { required: 'ABC is required' }  
 }, "Curriculum.Lesson");  
+
 
 // Textarea field added in Lesson  
 window.registerMasteriyoField('after_description', {  
@@ -205,7 +192,7 @@ rules: { required: 'This field is required' }
 },"Curriculum.Lesson");  
 }   
 });  
-``
+```
 
 Troubleshooting  
 •	Ensure your JavaScript code is loaded correctly and not blocked by other scripts.  
