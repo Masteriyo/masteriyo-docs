@@ -106,7 +106,7 @@ rules: { required: 'ABC is required' }
 document.addEventListener('DOMContentLoaded', function () {  
   // Check if registerMasteriyoField is available  
 if (typeof window.registerMasteriyoField === 'function') {  
-  // Add Text field 
+  // Add checkbox field
 	window.registerMasteriyoField('after_description', {
     name: 'accept_terms',  
     type: 'checkbox',  
@@ -114,38 +114,49 @@ if (typeof window.registerMasteriyoField === 'function') {
   priority: 25,  
   defaultValue: false,  
  rules: { required: 'You must accept the terms and conditions' }  
-});
-	  }  
+	});
+ 	}  
 });  
 ```
 
 ##### Radio Button Group Example:   
   
 ```bash
+document.addEventListener('DOMContentLoaded', function () {  
+  // Check if registerMasteriyoField is available  
+if (typeof window.registerMasteriyoField === 'function') {  
 // Radio button group  
 window.registerMasteriyoField('after_description', {  
-name: 'gender',  
-type: 'radio',  
-label: 'Gender',  
+	name: 'gender',  
+	type: 'radio',  
+	label: 'Gender',  
 options: [  
-{ label: 'Male', value: 'male' },  
-{ label: 'Female', value: 'female' },  
-{ label: 'Other', value: 'other' }  
-],  
+	{ label: 'Male', value: 'male' },  
+	{ label: 'Female', value: 'female' },  
+	{ label: 'Other', value: 'other' }  
+	],  
 priority: 15,  
 defaultValue: 'male',  
 rules: { required: 'Please select your gender' }  
-});  
+	});  
+  }  
+});
 ``` 
 ##### Switch Field Example  
-``` bash  
+``` javascript
+document.addEventListener('DOMContentLoaded', function () {  
+  // Check if registerMasteriyoField is available  
+if (typeof window.registerMasteriyoField === 'function') {  
+// Add switch field
 window.registerMasteriyoField('after_description', {  
-name: 'subscribe_newsletter',  
-type: 'switch',  
-label: 'Subscribe to newsletter',  
+	name: 'subscribe_newsletter',  
+	type: 'switch',  
+	label: 'Subscribe to newsletter',  
 priority: 18,  
 defaultValue: true  
-});  
+	});  
+ }  
+});
 ``` 
 ##### Select Dropdown Example  
 ``` bash  
