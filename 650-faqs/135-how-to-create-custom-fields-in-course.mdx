@@ -1,0 +1,49 @@
+---
+title: How to create custom fields in Course?
+show_child_cards: true
+excerpt: Learn how to create custom fields for your course through this comprehensive guide.
+---
+
+Masteriyo allows admin to extend course creation with additional fields and content through third-party plugin or custom code. Admin can now dynamically add new fields in the course builder. 
+
+**Requirements**
+- Masteriyo LMS Free v1.18.0 or above and PRO v2.19.0 or above
+- Plugin for inserting custom code
+
+### Implementation
+
+#### Step 1: Install a Code Snippet Plugin
+To add custom code, you first need to install and activate a plugin that allows you to add custom JavaScript code to your WordPress site. You can use plugins like ***"Simple Custom CSS and Js"**, which is available in the WordPress plugin repository. 
+
+#### Step 2: Add Custom JavaScript
+Now you can create a new JavaScript snippet in your chosen plugin. 
+For example:
+
+``
+document.addEventListener('DOMContentLoaded', function () {
+
+  // Check if registerMasteriyoField is available
+
+  if (typeof window.registerMasteriyoField === 'function') {
+
+    // Text field
+
+	   window.registerMasteriyoField('after_description', {
+
+      name: 'seo_content',
+
+      type: 'text',
+
+      label: 'SEO Content',
+
+      placeholder: 'Write here...',
+
+      priority: 30,
+
+      defaultValue: 'Default SEO content...',
+
+      rules: { required: 'SEO content is required' }
+
+    });
+    
+    ``
