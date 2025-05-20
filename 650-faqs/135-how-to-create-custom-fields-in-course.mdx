@@ -143,21 +143,37 @@ defaultValue: true
 ##### Select Dropdown Example  
 ``  
 window.registerMasteriyoField('after_description', {  
+
   name: 'country',  
+
   type: 'select',  
+
   label: 'Country',  
+
   options: [  
+
     { label: 'Select a country', value: '' },  
+
     { label: 'United States', value: 'us' },  
+
     { label: 'Canada', value: 'ca' },  
+
     { label: 'United Kingdom', value: 'uk' },  
+
     { label: 'Australia', value: 'au' }  
+
   ],  
+
   priority: 22,  
+
   defaultValue: '',  
+
   rules: { required: 'Please select your country' }  
+
 });  
+
 ``  
+
 ### Adding Fields to Lessons  
 ``  
 // Text input field added in Lesson  
@@ -185,11 +201,11 @@ rules: { required: 'This field is required' }
 });  
 ``
 
-Troubleshooting
-•	Ensure your JavaScript code is loaded correctly and not blocked by other scripts.
-•	Check the browser console for any errors.
-•	Verify that the Masteriyo LMS plugin is up to date.
-•	Ensure field names are unique to avoid conflicts.
+Troubleshooting  
+•	Ensure your JavaScript code is loaded correctly and not blocked by other scripts.  
+•	Check the browser console for any errors.  
+•	Verify that the Masteriyo LMS plugin is up to date.  
+•	Ensure field names are unique to avoid conflicts.  
 
 
 
