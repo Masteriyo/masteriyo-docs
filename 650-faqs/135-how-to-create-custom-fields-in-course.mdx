@@ -26,14 +26,20 @@ To add custom code, you first need to install and activate a plugin that allows 
 
 Create a new JavaScript snippet in your chosen plugin with the following structure:
 ``
-javascript  
 document.addEventListener('DOMContentLoaded', function() {  
+
   // Check if the Masteriyo API is available  
+
   if (typeof window.registerMasteriyoField === 'function') {  
+
     // Add your custom fields here  
+
   }  
+
   });  
+
   ``  
+
 #### Step 3: Register Custom Fields
 Use the registerMasteriyoField() function to add custom fields to the course builder. The function accepts the following parameters:
 1.	**Placement location** - Where the field should appear in the interface.
