@@ -48,7 +48,7 @@ Fields can be added to different components within the Masteriyo LMS interface:
 
 ### Validation Rules
 You can add validation to your custom fields using the rules property. Here are some examples:
-```bash  
+```javascript
 // Required field validation
 rules: { 
   required: 'This field is required' 
@@ -58,7 +58,7 @@ rules: {
 
 Create a new JavaScript snippet in your chosen plugin with the following structure:  
 
-```bash
+```javascript
 document.addEventListener('DOMContentLoaded', function() {  
   // Check if the Masteriyo API is available  
 if (typeof window.registerMasteriyoField === 'function') {    
@@ -71,7 +71,7 @@ Publish the code through the plugin settings and check the courses of your LMS s
 ### Examples of Adding a New Field
 For example, to add a new text area field, you can use the following code snippet:  
 
-``` bash
+``` javascript
 document.addEventListener('DOMContentLoaded', function () {  
   // Check if registerMasteriyoField is available  
 if (typeof window.registerMasteriyoField === 'function') {  
@@ -98,11 +98,11 @@ rules: { required: 'ABC is required' }
    }  
 });
 ``` 
-
+![Custom Field in Course Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/example-of-adding-custom-field.png)
 #### Other Examples
 ##### Checkbox Field Example  
 
-``` bash  
+``` javascript
 document.addEventListener('DOMContentLoaded', function () {  
   // Check if registerMasteriyoField is available  
 if (typeof window.registerMasteriyoField === 'function') {  
@@ -118,10 +118,11 @@ if (typeof window.registerMasteriyoField === 'function') {
  	}  
 });  
 ```
+![Custom Checkbox Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-checkbox-field.png)
 
 ##### Radio Button Group Example:   
   
-```bash
+```javascript
 document.addEventListener('DOMContentLoaded', function () {  
   // Check if registerMasteriyoField is available  
 if (typeof window.registerMasteriyoField === 'function') {  
@@ -142,6 +143,8 @@ rules: { required: 'Please select your gender' }
   }  
 });
 ``` 
+![Custom Radio Button Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-radio-button-field.png)
+
 ##### Switch Field Example  
 ``` javascript
 document.addEventListener('DOMContentLoaded', function () {  
@@ -158,8 +161,14 @@ defaultValue: true
  }  
 });
 ``` 
+![Custom Switch Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/newsletter- subscription-field.png)
+
 ##### Select Dropdown Example  
-``` bash  
+``` javascript
+document.addEventListener('DOMContentLoaded', function () {  
+  // Check if registerMasteriyoField is available  
+if (typeof window.registerMasteriyoField === 'function') {  
+  // Add dropdown 
 window.registerMasteriyoField('after_description', {  
   name: 'country',  
   type: 'select',  
@@ -174,37 +183,42 @@ window.registerMasteriyoField('after_description', {
   priority: 22,  
   defaultValue: '',  
   rules: { required: 'Please select your country' }  
-});  
-
+	});  
+}  
+});
 ``` 
+![Custom Dropdown Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-dropdown-field.png)
 
 ### Adding Fields to Lessons  
-```bash  
-// Text input field added in Lesson  
-window.registerMasteriyoField('after_description', {  
-name:'abc',  
-type: 'text',  
-label: 'ABC',  
-placeholder: 'Write here...',  
+```javascript
+document.addEventListener('DOMContentLoaded', function () {  
+  // Check if registerMasteriyoField is available  
+if (typeof window.registerMasteriyoField === 'function') {  
+	// Text input field added in Lesson  
+	window.registerMasteriyoField('after_description', {  
+		name:'abc',  
+		type: 'text',  
+		label: 'ABC',  
+	placeholder: 'Write here...',  
 priority: 20,  
-defaultValue: 'Default ABC value',  
+	defaultValue: 'Default ABC value',  
 rules: { required: 'ABC is required' }  
 }, "Curriculum.Lesson");  
 
-
 // Textarea field added in Lesson  
 window.registerMasteriyoField('after_description', {  
-name:'textarea',  
-type: 'textarea',  
-label: 'Text Area',  
-placeholder: 'Write something',  
+	name:'textarea',  
+	type: 'textarea',  
+	label: 'Text Area',  
+	placeholder: 'Write something',  
 priority: 10,  
 defaultValue: '',  
 rules: { required: 'This field is required' }  
 },"Curriculum.Lesson");  
-}   
+	}   
 });  
 ```
+![Custom Field in Lesson](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-field-in-lesson.png)
 
 ### Troubleshooting  
 •	Ensure your JavaScript code is loaded correctly and not blocked by other scripts.  
