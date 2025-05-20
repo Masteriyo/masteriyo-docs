@@ -1,10 +1,10 @@
 ---
-title: How to create custom fields in Course?
+title: How to create custom fields in a Course?
 show_child_cards: true
 excerpt: Learn how to create custom fields for your course through this comprehensive guide.
 ---
 
-Masteriyo allows admin to extend course creation with additional fields and content through third-party plugin or custom code. Admin can now dynamically add new fields in the course builder. 
+Masteriyo allows admins to extend course creation with additional fields and content througha  third-party plugin or custom code. Admin can now dynamically add new fields in the course builder. 
 
 **Requirements**
 - Masteriyo LMS Free v1.18.0 or above and PRO v2.19.0 or above.
@@ -50,6 +50,8 @@ Currently, Masteriyo supports the following placement locations:
 •	after_description - Appears after the course description field
 •	Additional locations may be available in future updates
 
+![Custom Field in Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-fields-in-masteriyo-course.png
+
 ### Field Configuration Options
 Each field requires the following configuration options:
 
@@ -63,7 +65,7 @@ Fields can be added to different components within the Masteriyo LMS interface:
 
 ### Validation Rules
 You can add validation to your custom fields using the rules property. Here are some examples:
-
+```bash  
 // Required field validation
 rules: { 
   required: 'This field is required' 
@@ -72,7 +74,7 @@ rules: {
 ### Examples of Adding New Field
 For example, to add a new text area field, you can use the following code snippet:  
 
-``  
+```  
 document.addEventListener('DOMContentLoaded', function () {  
 // Check if registerMasteriyoField is available  
 if (typeof window.registerMasteriyoField === 'function') {  
