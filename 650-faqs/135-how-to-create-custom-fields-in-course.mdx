@@ -68,33 +68,35 @@ if (typeof window.registerMasteriyoField === 'function') {
   ```
 Publish the code through the plugin settings and check the courses of your LMS site.
 
-### Examples of Adding New Field
+### Examples of Adding a New Field
 For example, to add a new text area field, you can use the following code snippet:  
 
 ``` bash
 document.addEventListener('DOMContentLoaded', function () {  
-// Check if registerMasteriyoField is available  
+  // Check if registerMasteriyoField is available  
 if (typeof window.registerMasteriyoField === 'function') {  
-// Add Text field  
-window.registerMasteriyoField('after_description', {  
-name: 'seo_content',  
-type: 'text',  
-label: 'SEO Content',  
-placeholder: 'Write here...',  
-priority: 30,  
-defaultValue: 'Default SEO content...',  
+  // Add Text field  
+  window.registerMasteriyoField('after_description', {  
+    name: 'seo_content',  
+    type: 'text',  
+    label: 'SEO Content',  
+    placeholder: 'Write here...',  
+  priority: 30,  
+  defaultValue: 'Default SEO content...',  
 rules: { required: 'SEO content is required' }  
-});  
+  });  
 // Add Text input field  
-window.registerMasteriyoField('after_description', {  
-name:'abc',  
-type: 'text',  
-label: 'ABC',  
-placeholder: 'Write here...',  
-priority: 20,  
-defaultValue: 'Default ABC value',  
+  window.registerMasteriyoField('after_description', {  
+    name:'abc',  
+    type: 'text',  
+    label: 'ABC',  
+    placeholder: 'Write here...',  
+  priority: 20,  
+  defaultValue: 'Default ABC value',  
 rules: { required: 'ABC is required' }  
-});  
+    });  
+   }  
+});
 ``` 
 
 #### Other Examples
