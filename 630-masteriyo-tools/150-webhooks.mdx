@@ -39,16 +39,18 @@ After filling in all the required information, click on **Create** to save the w
 
 ### Available Trigger Events
 Masteriyo offers various events that can trigger webhooks:
-- Quiz Attempt Status Change        
-- New Question in a Course        
-- Course Enrollment        
-- Course Completion        
-- Lesson Completion        
-- User Registration        
-- Course Creation        
-- Quiz Creation        
-- Lesson Creation        
-- Student Enrollment        
+- Course Completed 
+- Course Published 
+- Course Question Created 
+- Course Question Reply Created 
+- Course Review Created 
+- Instructor Registration 
+- Lesson Completed
+- Lesson Published        
+- Quiz Completed        
+- Quiz Published        
+- Student Enrolled        
+- Student Registration                
 
         Note: When logged in as an instructor, webhooks will only be triggered for events related to that specific instructor's courses and activities.
 
@@ -118,7 +120,10 @@ The `event` parameter specifies which action to trigger, and additional paramete
 4. For **Trigger event**, click on the drop-down menu and select an event. 
 
  ![Choose Trigger Event](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/choose-trigger-event.png) 
-5. Under **Account**, click on **Sign In**. 
+5. Under **Account**, click on **Sign In**.  
+
+![Sign in to Connect Masteriyo](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/sign-in-to-connect-masteriyo.png) 
+
 6. Now, you'll get a new interface asking for your site URL and the API key. 
 
 ![Allow Zapier to access Masteriyo Account](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/allow-zapier-to-access-masteriyo-account.png)
@@ -130,13 +135,15 @@ The `event` parameter specifies which action to trigger, and additional paramete
 Here, you'll see the API key. 
 8. Copy and paste the key and hit **Yes, Continue to Masteriyo**. 
 
-[Paste API Key on Zapier](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/allow-zapier-to-access-masteriyo-account.png)
+![Paste API Key on Zapier](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/allow-zapier-to-access-masteriyo-account.png)
 
 9. Click on the **Continue** button to proceed further.
 
-![Sign in to Connect Masteriyo](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/sign-in-to-connect-masteriyo.png) 
+10. You can now test the trigger to confirm your trigger.  
 
-10. You can now test the trigger to confirm your trigger. Once you see the record, you can click on **Continue with selected record**. 
+![Continue with selected record](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/continue-with-selected-record.png)
+
+Once you see the record, you can click on **Continue with selected record**. 
 
 ## Using Zapier to Send Action Webhooks to Masteriyo
 
@@ -144,22 +151,25 @@ Here, you'll see the API key.
 
 ![Select Action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/select-action.png) 
 
-3. From the dropdown of **Action event**, select "POST" as the event and click on **Continue**.   
+2. From the dropdown of **Action event**, select "POST" as the event and click on **Continue**.   
 
  ![Choose Action Event](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/choose-action-event.png) 
 
-4. Configure the webhook:       
+3. Configure the webhook:       
 Example:
-       URL: https://your-site.com/wp-json/masteriyo/v1/webhooks/action       
+       URL: https://your-site.com/wp-json/masteriyo/v1/webhooks/action   
        Payload Type: JSON       
        Data:       
        - event: masteriyo_course_user_completed       
        - user_id: [user ID number]       
        - course_id: [course ID number]       
-       Headers:       
+  
+![Configure Action URL](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/configure-action-url.png) 
+
+ **Headers:**       
        X-WP-Webhook-Token: [your-webhook-token]  
 
- ![Enter Data for Action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/enter-data-for-action.png) 
+![Configure Remaining Action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/configure-remaining-action.png)
 
 You can find the Webhook token from your WordPress dashboard. So, navigate to **Webhook** and click on the settings icon. Now, you'll see the webhook token in the side interface.       
 
@@ -167,9 +177,9 @@ You can find the Webhook token from your WordPress dashboard. So, navigate to **
  
 Copy this token and paste under **Headers** of the Zap you're currently creating.   
 
-![Add Headers Token](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/add-headers-token.png) 
-5. Click on **Continue** to test the Zap. 
-6. Under the **Data out**, you can see the relevant data.        
+4. Click on **Continue** to test the Zap.  
+
+5. Under the **Data out**, you can see the relevant data.        
 
 This means you've successfully triggered webhooks with Zapier and sent the action to Masteriyo. Now, click on **Publish** to publish the zap. 
 
