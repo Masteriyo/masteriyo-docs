@@ -89,8 +89,10 @@ Use the `POST` method for all action webhooks.
 
 **Headers**     
 
-Include the following header for authentication              
-`X-WP-Webhook-Token: [your-webhook-token]`              
+Include the following header for authentication       
+
+`X-WP-Webhook-Token: [your-webhook-token]`      
+
 The webhook token can be generated and found in the Masteriyo Webhooks settings.
 
 **Payload Format**        
@@ -107,30 +109,30 @@ json{
 The `event` parameter specifies which action to trigger, and additional parameters will vary based on the selected action.
 
 ## Using Masteriyo Trigger Webhooks with Zapier
-First, [enable Zapier addon](https://docs.masteriyo.com/premium-addons/zapier-integration) and configure.
+1. First, [enable Zapier addon](https://docs.masteriyo.com/premium-addons/zapier-integration) and configure.
 
-In Zapier, create a new Zap and select "Webhooks by Zapier" as your trigger app.
-Choose "Catch Hook" as the event
-Copy the webhook URL provided by Zapier
-In Masteriyo, create a new webhook and paste the Zapier URL as the Delivery URL
-Select the events you want to trigger the webhook
-Configure the rest of your Zap to perform actions based on the Masteriyo data.
+2. In Zapier, create a new Zap and select "Webhooks by Zapier" as your trigger app.       
+3. Choose "Catch Hook" as the event       
+4. Copy the webhook URL provided by Zapier       
+5. In Masteriyo, create a new webhook and paste the Zapier URL as the Delivery URL       
+6. Select the events you want to trigger the webhook       
+7. Configure the rest of your Zap to perform actions based on the Masteriyo data.       
 
-Using Zapier to Send Action Webhooks to Masteriyo
+## Using Zapier to Send Action Webhooks to Masteriyo
 
-In Zapier, create a new Zap with your desired trigger
-Choose "Webhooks by Zapier" as your action app
-Select "POST" as the event
-Configure the webhook:
+1. In Zapier, create a new Zap with your desired trigger       
+2. Choose "Webhooks by Zapier" as your action app       
+3. Select "POST" as the event       
+4. Configure the webhook:       
 
-URL: https://your-site.com/wp-json/masteriyo/v1/webhooks/action
-Payload Type: JSON
-Data:
-event: masteriyo_user_enrolled_to_course
-user_id: [user ID number]
-course_id: [course ID number]
+       URL: https://your-site.com/wp-json/masteriyo/v1/webhooks/action
+       Payload Type: JSON
+       Data:
+       event: masteriyo_user_enrolled_to_course
+       user_id: [user ID number]
+       course_id: [course ID number]
 
 Headers:
-X-WP-Webhook-Token: [your-webhook-token]
+       X-WP-Webhook-Token: [your-webhook-token]
 
-Test and activate your Zap
+5. Test and activate your Zap
