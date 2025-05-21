@@ -126,20 +126,17 @@ The `event` parameter specifies which action to trigger, and additional paramete
 
 6. Now, you'll get a new interface asking for your site URL and the API key. 
 
-![Allow Zapier to access Masteriyo Account](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/allow-zapier-to-access-masteriyo-account.png)
-
 7. Go back to your WordPress website, and navigate to **Masteriyo > Zapier**. 
 
 ![Copy API Key from Zapier](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/copy-api-key-from-zapier.png) 
 
-Here, you'll see the API key. 
+Here, you'll see the API key.  
+
 8. Copy and paste the key and hit **Yes, Continue to Masteriyo**. 
 
 ![Paste API Key on Zapier](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/allow-zapier-to-access-masteriyo-account.png)
 
-9. Click on the **Continue** button to proceed further.
-
-10. You can now test the trigger to confirm your trigger.  
+9. Click on the **Continue** button to proceed further. It'll now provide you with the option to test the trigger to confirm your trigger. Test to confirm the trigger. If you see any records, it confirms that the trigger has been set. 
 
 ![Continue with selected record](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/continue-with-selected-record.png)
 
@@ -169,7 +166,7 @@ Example:
  **Headers:**       
        X-WP-Webhook-Token: [your-webhook-token]  
 
-![Configure Remaining Action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/configure-remaining-action.png)
+![Configure Remaining Action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/configure-remaining-action-settings.png)
 
 You can find the Webhook token from your WordPress dashboard. So, navigate to **Webhook** and click on the settings icon. Now, you'll see the webhook token in the side interface.       
 
@@ -185,3 +182,9 @@ This means you've successfully triggered webhooks with Zapier and sent the actio
 
 ![Publish Zap](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/publish-zap.png) 
 
+Now, whenever a student is enrolled in the course, wwebhook will mark the course as completed. 
+
+<Callout>
+  {" "} 
+In this documentation, we used **Student Enrolled** as the trigger which lead the action of **Course Completion**. Similarly, you can use other Triggers and set other Action. 
+</Callout>
