@@ -58,7 +58,7 @@ Masteriyo offers various events that can trigger webhooks:
 
 Masteriyo sends data to your specified URL using HTTP POST in JSON format when a trigger event occurs.
 
-## Action Webhooks (Incoming Data) [PRO]
+## Action Webhooks (Incoming Data) [Pro]
 Action webhooks allow external applications to perform actions within your Masteriyo LMS. This feature is available in the PRO version and enables you to integrate Masteriyo with CRM systems, automation tools, or other applications.
 
 ### Supported Action Webhooks
@@ -157,14 +157,14 @@ Example:
        URL: https://your-site.com/wp-json/masteriyo/v1/webhooks/action   
        Payload Type: JSON       
        Data:       
-       - event: masteriyo_course_user_completed       
-       - user_id: [user ID number]       
-       - course_id: [course ID number]       
+       - event: `masteriyo_course_user_completed`       
+       - user_id: `[user ID number]`       
+       - course_id: `[course ID number]`       
   
 ![Configure Action URL](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/configure-action-url.png) 
 
  **Headers:**       
-       X-WP-Webhook-Token: [your-webhook-token]  
+       X-WP-Webhook-Token: `[your-webhook-token]`  
 
 ![Configure Remaining Action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/configure-remaining-action-settings.png)
 
@@ -182,9 +182,9 @@ This means you've successfully triggered webhooks with Zapier and sent the actio
 
 ![Publish Zap](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/publish-zap.png) 
 
-Now, whenever a student is enrolled in the course, wwebhook will mark the course as completed. 
+Now, whenever a student is enrolled in the course, the webhook will mark the course as completed. 
 
 <Callout>
   {" "} 
-In this documentation, we used **Student Enrolled** as the trigger which lead the action of **Course Completion**. Similarly, you can use other Triggers and set other Action. 
+In this documentation, we used **Student Enrolled** as the trigger that leads to the action of **Course Completion**. Similarly, you can use other Triggers and set other Action. 
 </Callout>
