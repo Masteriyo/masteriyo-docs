@@ -13,7 +13,7 @@ excerpt: This features let you send data to an external URL.
        Masteriyo > Webhooks
 
 ## What are Webhooks?
-Webhooks allow different applications to communicate automatically with each other in real-time. When an event occurs in one application, it can notify another application through webhooks, triggering specific actions or transferring data without manual intervention.
+Webhooks allow different applications to communicate automatically with each other in real-time. When an event occurs in one application, it can notify another through webhooks, triggering specific actions or transferring data without manual intervention.
 
 ## Trigger Webhooks (Outgoing Data)
 Trigger webhooks send data from your Masteriyo LMS to external applications whenever specific events occur on your site.
@@ -40,7 +40,7 @@ Trigger webhooks send data from your Masteriyo LMS to external applications when
 
 **Secret(Optional)** - This helps you identify if a malicious third-party system has altered the data before it reaches its destination.
 
-After filling in all the required information, you can click on **Create** to save the webhook.        
+After filling in all the required information, click on **Create** to save the webhook.        
 
 ### Available Trigger Events
 Masteriyo offers various events that can trigger webhooks:
@@ -97,10 +97,10 @@ The webhook token can be generated and found in the Masteriyo Webhooks settings.
 
 **Payload Format**        
 
-Use JSON format with the following structure:
+Use JSON format. For example,
 ```
 json{
-  "event": "masteriyo_user_enrolled_to_course",
+  "event": "masteriyo_course_user_completed",
   "user_id": 123,
   "course_id": 456
 }
@@ -109,30 +109,31 @@ json{
 The `event` parameter specifies which action to trigger, and additional parameters will vary based on the selected action.
 
 ## Using Masteriyo Trigger Webhooks with Zapier
-1. First, [enable Zapier addon](https://docs.masteriyo.com/premium-addons/zapier-integration) and configure.
-
-2. In Zapier, create a new Zap and select "Webhooks by Zapier" as your trigger app.       
-3. Choose "Catch Hook" as the event       
-4. Copy the webhook URL provided by Zapier       
-5. In Masteriyo, create a new webhook and paste the Zapier URL as the Delivery URL       
-6. Select the events you want to trigger the webhook       
-7. Configure the rest of your Zap to perform actions based on the Masteriyo data.       
+1. First, [enable Zapier addon](https://docs.masteriyo.com/premium-addons/zapier-integration).
+2. In Zapier, create a new Zap and click on the trigger. 
+3. Search for **Masteriyo** and select the app.
+4. For **Trigger event**, click on the drop-down menu and select an event. 
+5. Under **Account**, click on **Sign In** to get a new interface asking for your site URL and the API key. 
+6. Go back to your WordPress website, and navigate to **Masteriyo > Zapier**. Here, you'll see the API key. Copy and paste the key and hit **Yes, Continue to Masteriyo**. 
+6. Click on **Continue** button to proceed further.
+7. You can now test the trigger to confirm your trigger. Once you see the record, you can click on **Continue with selected record**. 
 
 ## Using Zapier to Send Action Webhooks to Masteriyo
 
-1. In Zapier, create a new Zap with your desired trigger       
-2. Choose "Webhooks by Zapier" as your action app       
-3. Select "POST" as the event       
+1. Click on **Action** and search and choose "Webhooks by Zapier" as your action app.       
+3. From the dropdown of **Action event**, select "POST" as the event and click on **Continue**.       
 4. Configure the webhook:       
-
+Example:
        URL: https://your-site.com/wp-json/masteriyo/v1/webhooks/action
        Payload Type: JSON
        Data:
-       event: masteriyo_user_enrolled_to_course
-       user_id: [user ID number]
-       course_id: [course ID number]
-
-Headers:
+       - event: masteriyo_course_user_completed
+       - user_id: [user ID number]
+       - course_id: [course ID number]
+       Headers:
        X-WP-Webhook-Token: [your-webhook-token]
+You can find the Webhook token from your WordPress dashboard. So, navigate to **Webhook** and click on the settings icon. Now, you'll see the webhook token in the side interface. Copy this token and paste under **Headers** of the Zap you're currently creating. 
+Click on **Continue** to test the Zap.
+Under the **Data out**, you can see the relevant data.        
+This means you've successfully triggered webhooks with Zapier and sent the action to Masteriyo. 
 
-5. Test and activate your Zap
