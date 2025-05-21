@@ -10,7 +10,7 @@ excerpt: This features let you send data to an external URL.
 
 **Action Webhooks (Incoming)**: Allow external applications to trigger actions within Masteriyo.        
 
-       **Masteriyo > Webhooks**
+       Masteriyo > Webhooks
 
 ## What are Webhooks?
 Webhooks allow different applications to communicate automatically with each other in real-time. When an event occurs in one application, it can notify another application through webhooks, triggering specific actions or transferring data without manual intervention.
@@ -83,22 +83,26 @@ To send action webhooks to Masteriyo from an external application (such as Zapie
 ```
 https://your-site.com/wp-json/masteriyo/v1/webhooks/action
 ```
-**Method**
+**Method**      
+
 Use the `POST` method for all action webhooks.
 
-**Headers**
-Include the following header for authentication        
-`X-WP-Webhook-Token: [your-webhook-token]`        
+**Headers**     
+
+Include the following header for authentication              
+`X-WP-Webhook-Token: [your-webhook-token]`              
 The webhook token can be generated and found in the Masteriyo Webhooks settings.
 
 **Payload Format**        
 
 Use JSON format with the following structure:
-```json{
+```
+json{
   "event": "masteriyo_user_enrolled_to_course",
   "user_id": 123,
   "course_id": 456
-}```        
+}
+```        
 
 The `event` parameter specifies which action to trigger, and additional parameters will vary based on the selected action.
 
