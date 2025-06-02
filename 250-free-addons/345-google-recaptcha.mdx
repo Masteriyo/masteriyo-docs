@@ -1,0 +1,121 @@
+---
+title: Google reCAPTCHA
+show_child_cards: true
+excerpt: Learn How to Integrate Google reCAPTCHA. Add an extra layer of security.
+---
+
+Google reCAPTCHA addon safeguards the login and registration processes for both instructors and students in Masteriyo LMS. This security feature helps protect your eLearning platform from spam registrations, bot attacks, and fraudulent activities by requiring users to verify they are human. 
+
+<Callout>
+  {" "}  
+  Prerequisite: Google reCAPTCHA addon.
+</Callout>
+
+## Step 1: Install and Activate Google reCAPTCHA Addon
+After you have installed Masteriyo LMS on your site, navigate to **Masteriyo > Addons** and search for the Google reCAPTCHA addon. Next, toggle to enable the addon.
+
+![Enable Google reCAPTCHA addon](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/navigate-to-masteriyo-addons-and-enable-google-recaptcha.png)
+
+## Step 2: Generate Google reCAPTCHA Keys
+You can go to **Masteriyo > Settings > Authentication > reCAPTCHA**. Now, you’ll see the page for reCAPTCHA configuration. For configuration, you’ll require Google reCAPTCHA Keys:
+
+![Navigate to reCAPTCHA Settings](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/navigate-to-masteriyo-settings-authentication-and-recaptcha.png)
+
+### reCAPTCHA Version Support
+Masteriyo's Google reCAPTCHA addon supports **reCAPTCHA v2** ("I'm not a robot" Checkbox) and **reCAPTCHA v3** (invisible background verification). Choose the version that best fits your user experience requirements: 
+
+#### reCAPTCHA v2 
+•	**Checkbox**: Users click "I'm not a robot". 
+
+•	**Invisible**: Runs in the background, shows challenge when needed. 
+
+•	**Best for**: Sites where user interaction confirmation is preferred. 
+
+
+#### reCAPTCHA v3
+•	**Score-based**: Analyzes user behavior and assigns risk scores. 
+
+•	**Invisible**: Completely seamless user experience. 
+
+•	**Best for**: High-traffic sites prioritizing user experience. 
+
+
+So, visit [Google reCAPTCHA console](https://www.google.com/recaptcha/) and click on the Get Started button to generate the required keys. 
+
+### Register Your Site
+Enter all the necessary information to register your site: 
+-	**Label**: Enter a descriptive name (e.g., Masteriyo). 
+-	Choose **reCAPTCHA type**:   
+  o	Score based (v3)  
+  o	Challenge (v2) 
+-	**Domains**: Add your website domains. 
+-	**Google Cloud Platform**: Under the **Project Name**, give a descriptive name to your project (e.g., Masteriyo Testing).   
+
+![Configure Site Registration for reCAPTCHA](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/configure-recaptcha-settings-and-submit.png)
+
+Click on the **Submit** button to register your site.  
+
+Now, you can retrieve API Keys:   
+- **Site Key**: Public key for frontend integration.  
+- **Secret Key**: Private key for server-side verification.   
+
+![Copy Site Key and Secret Key](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/copy-and-paste-site-key-and-secret-key.png)
+
+<Callout>
+**Security Note**: Keep your secret key confidential and never expose it in frontend code.  
+</Callout> 
+
+## Step 4: Configure reCAPTCHA in Masteriyo 
+You can access settings through your dashboard, as you did in Step 2. So, navigate to **Masteriyo > Settings > Authentication > reCAPTCHA**.  
+
+Next, select the reCAPTCHA Version for which you have generated the site key. Now, paste the keys under their respective fields. 
+
+**Forms**: Select which forms you  would like reCAPTCHA to appear in.  
+
+![Configure reCAPTCHA v2 in Masteriyo](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/configure-recaptcha-in-masteriyo-dashbard.png)
+
+### reCAPTCHA v3 Settings (if using v3) 
+
+**Captcha Score**: You can adjust the captcha score from 0.1 to 0.9 for reCAPTCHA v3. 
+
+**Load CAPTCHA v3 scripts on**: Select where the CAPTCHA should appear on all pages or only on form pages. 
+
+![reCAPTCHA v3 Settings](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/recaptchav-3-settings-for-masteriyo.png)
+
+### Additional Configurations
+**Captcha Language**: You can use the same language as the client system or another language using the dropdown.  
+**Select Domain**:  This specifies which reCAPTCHA service endpoint to use. 
+  - google.com: Standard Google reCAPTCHA service
+  - Alternative option: "recaptcha.net" for regions where google.com might be blocked   
+
+**Theme**: Choose between light or dark theme for reCAPTCHA. 
+Here's how the dark theme appears: 
+
+![Dark Theme Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/example-of-recaptcha-dark-theme.png)
+
+**Size**: Choose either normal or compact size for the reCAPTCHA.  
+**Error Message**: Customize error message for users who don’t complete the captcha.   
+
+## Step 5: Save and Test Configuration 
+
+### Save Settings 
+- Review all the configuration options. 
+- Click on Save Settings, and wait for a confirmation message. 
+
+### Test Implementation 
+
+- Open your site in private/incognito mode.  
+- Visit the form page where you have added reCAPTCHA. 
+- Verify if the reCAPTCHA appears on the selected form. 
+- Complete a test registration to ensure functionality. 
+
+Here's how reCAPTCHA v2 might appear on your form:
+
+![reCAPTCHA in Instructor Registration Form](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/recaptcha-in-instructor-registration-form.png)
+
+Here's how reCAPTCHA v3 might appear on your form:
+
+![reCAPTCHA v3 Frontend View](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/google-recaptcha/re-captchav3.png)
+
+Need Help? If you encounter issues during setup, check the troubleshooting section above or contact Masteriyo support with your specific configuration details.
+

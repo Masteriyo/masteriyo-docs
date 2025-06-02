@@ -1,0 +1,96 @@
+---
+title: HubSpot Integration
+show_child_cards: true
+excerpt: Automatically sync student enrollment data, track course progress, and trigger personalized email campaigns by connecting your educational content seamlessly with marketing automation.
+---
+
+Follow these step-by-step instructions for integrating HubSpot with Masteriyo LMS in WordPress. Integration allows you to synchronize student data, course enrollments, and learning activities with your HubSpot CRM, enabling advanced marketing, sales, and customer service capabilities.
+
+## Prerequisites:
+•	[Masteriyo LMS Pro plan or above](https://masteriyo.com/pricing/) installed and activated.  
+•	[Active installation of the HubSpot addon](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons).  
+•	An active HubSpot account. 
+
+## Setup and Configuration
+After you install and activate the Masteriyo LMS plugin, enable the **HubSpot Integration** addon. 
+
+![Enable HubSpot Addon in Masteriyo LMS](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/enable-hubspot-integration.png)
+
+Now, follow the steps below to configure further:
+
+### Step 1: Create a Private App in HubSpot and Generate a Token
+Create an account with HubSpot if you haven’t done so, and log in to your account. To do so, navigate to **Settings > Integration > Private Apps**. 
+
+![Create a private app in HubSpot](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/navigate-to-private-apps-and-create-a-private-app.png)
+
+Next, click on **Create a private app**. A new screen pops up asking you for the details of the app. 
+
+![Navigate to Scopes tab in HubSpot](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/add-basic-info-and-click-on-scopes.png)
+
+Click on the Scopes tab. Now, search for the following scopes and select them:
+- crm.objects.contacts.read
+- crm.objects.contacts.write
+- crm.lists.write
+- crm.lists.read
+
+![Add Scopes for HubSpot and Masteriyo Integration](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/add-scopes-and-update.png)
+
+Click on the **Update** button once you have completed the selection.
+Next, click the **Create app**, and you’ll see a message about your access token. Hit the **Continue creating** button. 
+
+![Create an App in HubSpot](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/click-on-create-app.png)
+
+It will now generate a **Token**. 
+
+![Click on Show Token for HubSpot](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/hubspot-token.png)
+
+Click on **Show token**, then copy and keep it safe to use later. 
+
+### Step 2: Generate a Static List
+Masteriyo LMS integrations with HubSpot require you to specify which list to sync data to during the initial setup process. The list acts as the container for all the student information flowing from Masteriyo into HubSpot.   
+
+So, you now need to generate a list in **HubSpot**. Navigate to **CRM > Lists** and click on **Create List**. 
+
+![Create a list in HubSpot](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/create-a-list-in-hubspot.png)
+ 
+Now select the type of list you want to create and hit the **Next** button. Now, you can edit the list's name and click on the **Review and save** button. 
+
+![Edit HubSpot List Name](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/edit-name-of-hubspot-list-and-save.png)
+ 
+Now, the most crucial part is ensuring your list is **Static** to create a stable destination for syncing student data from Masteriyo. This prevents students from being automatically removed due to changing contact properties and gives you precise control over your educational marketing campaigns.
+
+![Create a Static List in HubSpot](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/save-your-list-as-static.png)
+
+Click on **Save and process list** button. 
+
+### Step 3: Configure HubSpot API Connection in WordPress
+In your WordPress dashboard, go to **Masteriyo > Settings > Integrations**. Find the **HubSpot Integration** and click on it.
+
+![Paste Access Token for HubSpot](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/navigate-to-masteriyo-settings-integration.png)
+ 
+Paste the copied token under **Hubspot Access Token** and then click Connect.  
+
+You’ll now see the HubSpot Integration settings. From here, you can:
+-	Enable Forced Subscription to automatically subscribe users to your email list. If you enable this option, users who register on your site don’t see the consent message for receiving emails; they will be forced to receive email.
+
+![Example of asking consent](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/asking-consent-for-email-collection.png)
+
+-	Add a custom consent message that will be displayed to users asking for their email subscription consent.   
+-	Choose a list you created in your Hubspot account so that the contact will be saved in the same list.   
+
+![Example of selecting a list for HubSpot integration with Masteriyo ](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/select-hubspot-list-in-masteriyo-dashboard.png)
+ 
+You can reverify to connect and click on **Save Setting** to save the changes made.    
+
+### Step 4: Test the Integration
+To test the integration, you can open your LMS site in private or incognito mode. Now, buy any course to see if the data gets integrated into the HubSpot list. After successful integration, Masteriyo data will be available in HubSpot:
+
+![Testing HubSpot Integration](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/hubspot-integration/testing-hubspot-integration-with-masteriyo.gif)
+
+#### Automation Possibilities
+With integrated data, you can set up HubSpot automation to:
+1.	Send welcome emails to new Masteriyo students.
+2.	Create follow-up tasks for students who haven’t completed courses.
+3.	Trigger congratulatory emails for course completions.
+4.	Segment contacts based on course enrollments or completions.
+5.	Create targeted marketing campaigns based on learning interests.
