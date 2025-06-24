@@ -10,19 +10,21 @@ excerpt: Masteriyo > Settings > Payments
 </Callout>
 
 ## Payments
+Setting up payment configurations in Masteriyo LMS is essential for selling your courses online. This comprehensive guide will walk you through every payment option, from basic store setup to advanced payment gateway configurations.
 
 ### Store
 
 ![payment-store](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/store-tab.png)
 
-- **Country** - Select the country where your store is based on.
+- **Country** - Select the country where your store is based.
   **Other Address Fields For the Store**
-- **State**
-- **City**
-- **Address Line 1**
-- **Address Line 2**
+- **State** - Select your state or province.
+- **City** - Enter your business city.
+- **Address Line 1** - Your primary business address.
+- **Address Line 2** - Suite, unit, or additional address details.
 
 ### Currency
+Proper currency setup ensures your course prices display correctly and payments process smoothly.
 
 ![payment-currency](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/currency-tab.png)
 
@@ -36,7 +38,7 @@ excerpt: Masteriyo > Settings > Payments
 Setting up taxes in Masteriyo LMS allows you to automatically calculate and collect taxes on course purchases based on your students' locations. Tax settings help you comply with local tax regulations and automatically calculate taxes for your course of sales.
 
 #### Configuration
-In the Payments submenu, click on **Taxes** to open tax configuration.
+Click on **Taxes** in the Payments submenu to open tax configuration.
 
 ![Navigate to Taxes tab](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/navigate-to-payments-and-taxes.png)
 
@@ -53,42 +55,45 @@ From here, you can determine how taxes should be calculated for your courses:
 
 ![Choose tax calculation method](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/select-tax-calculation-method.png)
 
-**Option 1**: Prices Include Tax 
-Course prices already include tax, as the tax amount is extracted from the total price. It’s useful when selling to a single tax jurisdiction because it’s simpler for fixed-rate scenarios.
+**Option 1**: Prices Include Tax  
 
-**Option 2**: Calculate Tax at Checkout 
-Tax is calculated during the checkout process, based on customer's billing address. It’s more accurate for international sales. 
+Course prices already include tax, as the tax amount is extracted from the total cost. It’s useful when selling to a single tax jurisdiction because it’s simpler for fixed-rate scenarios.
+
+![Display Tax Inclusive Price](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/price-include-tax.png)
+
+**Option 2**: Calculate Tax at Checkout   
+
+Tax is calculated during checkout, based on the customer's billing address. It’s more accurate for international sales. 
 
 ![Calculate Tax at Checkout](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/calculate-tax-at-checkout.png)
 
 #### Price Display Options 
-**Configure Tax-Inclusive Display: ** Check **"Display tax-inclusive prices"** if you want to show prices with tax included. 
+**Configure Tax-Inclusive Display**: Check **"Display tax-inclusive prices"** if you want to show prices with tax included. 
 
-![Display Tax Inclusive Price](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/display-tax-inclusive-price.png)
+![Price Display Option](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/price-display-options.png)
 
-**Pro Tip: ** For better user experience, consider showing tax-inclusive prices to avoid checkout surprises. 
+**Pro Tip**: For a better user experience, consider showing tax-inclusive prices to avoid checkout surprises. 
 ### Setting Up Tax Regions & Rates 
 **Step 1**: Click on the **+ Add Regions** button to create your first tax region.
 
 ![Add Region for Tax Setup](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/click-on-add-region-for-taxes.png)
 
  **Step 2**: Configure Regional Tax
-A popup will appear for tax configuration. Now, choose the country from the dropdown. 
+A pop-up will appear for tax configuration.   
+Now, choose the country from the dropdown.  
 Enter your tax percentage in the box. (e.g., 13 for 13%)
+
+Uncheck **Apply single tax for entire country** if you want to apply individual tax rates for each region of the country.   
+After that, you can pick the specific state or region:  
+**Enter Tax Rate**: Input the tax percentage for the regions you select. For non-selected states, you can seta  default tax rate. Click **"Add"** to save the regional tax settings 
 
 ![Uncheck Apply single tax](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/uncheck-single-tax-for-entire-country.png)
 
-Uncheck **Apply single tax for entire country if you want to apply individual tax rate for each region of the country. 
-After that you can pick the specific state or region:
- **Enter Tax Rate**: Input the tax percentage for the regions you select.
-For non-selected states, you can set default tax rate. 
-
-Click **"Add"** to save the regional tax settings 
 The region will appear in your tax regions list. Click on **Save Setting** to save the changes.  
 
 ![Save Tax Configuration](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/save-taxes-configuration.png)
 
-#### Frontend View of the Taxes: 
+#### Frontend View of the Taxes at Checkout: 
 
 ![Frontend View of the Taxes Configuration](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/tax-calculation-at-frontend.gif)
 
