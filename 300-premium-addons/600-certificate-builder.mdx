@@ -10,9 +10,8 @@ You can now assign different certificate templates to various courses. It provid
 
 ## Prerequisites: 
 
-1. [Masteriyo LMS Pro plan or higher](https://masteriyo.com/pricing/).
-2. [Active installation of Masteriyo LMS](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version).
-3. [Activate the Certificate Builder Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons).
+1. [Masteriyo LMS free plan or higher](https://masteriyo.com/pricing/).
+2. [Activate the Certificate Builder Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons).
 
 <Callout>
   {" "}
@@ -20,6 +19,11 @@ You can now assign different certificate templates to various courses. It provid
 </Callout>
 
 ## Getting Started
+To activate the addon, navigate to **Masteriyo > Addons ** and search for **Certificate Builder**. As soon as you see the addon, toggle it to enable it. 
+
+![Enable Certificate Addon]()
+
+Now, follow these steps: 
 1. Go to your **Dashboard** and navigate **Masteriyo > Certificates**
 2. Click on **Add New Certificate**
 
@@ -31,7 +35,7 @@ You can now assign different certificate templates to various courses. It provid
 
   - **Blank Slate:** Create a certificate template from scratch using the Gutenberg editor.
 
-  - **Certificate Samples:** You’ll find multiple certificate samples; if you like any of them, you can use the one you want.   
+  - **Certificate Samples:** In the free version of the plugin, you only get a single sample, while you’ll find multiple certificate samples in the premium versions; if you like any of them, you can use the one you want.   
 
 <Callout>
   {" "}
@@ -42,26 +46,42 @@ You can now assign different certificate templates to various courses. It provid
 
 4. **Create** or **modify** the Certificate Template to fit your needs.    
 
-You can click on full screen icon to edit the certificate. 
+You can click on the full-screen icon to edit the certificate. 
 
 ![toggle-full-screen-for-editing-certificates](https://github.com/user-attachments/assets/f85a057b-c878-4e31-b1f2-44a95d93f7fb)
 
-<Callout>
-  {" "} 
-  **Note:** During the creation or modification of the certificate templates, you
-  will get two default Masteriyo Gutenberg blocks for dynamically pulling the values.
-  **Student Name:** The student's name is automatically generated on the certificate.
-  **Course Title:** The course's title is automatically generated on the certificate.{" "}
-</Callout>
+### Gutenberg Blocks Available for Certificate Builder
+You can enhance your certificate design by adding these dynamic Gutenberg blocks that automatically populate with student and course information.
 
+For example:   
+  **Student Name:** The student's name is automatically generated on the certificate.  
+  **Course Title:** The course's title is automatically generated on the certificate.  
 
 ![student-name-and-course-title-block](https://github.com/user-attachments/assets/a5ab5a26-bda7-43c9-9d79-be5ea13d794e)
 
-#### Use Custom Fonts on Certificate
+To add the block, click on the **Block Inserter** and add your prefered blocks. 
+
+You can also add additional blocks to customize your certificate:
+- **Course Title**: Dynamically displays the name of the completed course on the certificate.
+- **Student Name**: Automatically inserts the enrolled student's full name who earned the certificate.
+- **QR Code**: Generates a unique QR code containing certificate verification information for instant authenticity checks.
+- **Course Completion Date**: Shows the exact date when the student successfully finished the course.
+- **Certificate Verification Code**: Adds a unique alphanumeric code for manual certificate verification and fraud prevention.
+- **Course Start Date**:  Displays when the student first began taking the course.
+- **Course Grade Result**: Shows the student's final grade or score (requires Gradebook Addon activation).
+- **Instructor Name**:  Includes the primary course instructor's name on the certificate.
+- **Co-Instructors Names**: Lists all additional instructors for the course (requires Multiple Instructors addon).
+- **Course Duration**: Calculates and displays the total time the student spent completing the course.
+- **Current Date**:Inserts today's date when the certificate is generated or downloaded.
+- **Current Time**: Adds the current time when the certificate is created.
+- **Current Timestamp**: Provides a complete date and time stamp for precise certificate generation tracking.
+
+
+### Use Custom Fonts on Certificate
 
 By default, Masteriyo will have multiple fonts that you can use to customize the certificate. To change the fonts, click on the block and you’ll see **Typography > Font** on the left. From the dropdown, you can choose any fonts you wish.   
 
-If you don’t find the font of your choice, you can also use the custom font. For that, follow the steps below:  
+If you don’t find the font you choose, you can also use the custom font. For that, follow the steps below:  
   1. Navigate to **Masteriyo > Certificate**.  
   2. Click on the settings icon in the top right corner
 
