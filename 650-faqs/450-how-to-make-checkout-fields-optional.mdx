@@ -1,0 +1,77 @@
+---
+Title: How do you make checkout fields optional?
+show_child_cards: true
+excerpt: Learn how to make the checkout field optional. 
+---
+
+By default, Masteriyo marks specific billing fields as required based on your **Settings > Payments > Checkout Fields**. If you’d instead let customers skip any of these, you can hook into the `masteriyo_checkout_fields` filter and clear the `required` flag.
+
+## Example 1: Make **all** built-in field optional  
+
+```
+add_filter( 'masteriyo_checkout_fields', 'make_all_fields_optional', 10, 1 );    
+
+function make_all_fields_optional( $fields ) {    
+
+    foreach ( $fields as $key => &$field ) {    
+
+        // turn off the “required” flag    
+
+        $field['required'] = false;    
+
+    }    
+
+    return $fields;   
+
+}
+```    
+
+
+
+## Example 2: Only make **Company** and **Phone** optional  
+
+```  
+add_filter( 'masteriyo_checkout_fields', 'optional_company_phone', 10, 1 );     
+function optional_company_phone( $fields ) {   
+    $fields['billing_company']['required'] = false;     
+    $fields['billing_phone']['required']   = false;   
+        return $fields;    
+    }    
+``` 
+
+
+    
+
+## All Available Field Keys
+Target any of these keys in your filter to change their `required` status:
+
+| **Key** | **Label**                                                                 | 
+|----------------|---------------------------------------------------------------------------|
+| `billing_country` | Country  | 
+| `billing_address_1`    | Address line 1 | 
+| `billing_address_2`    | Address line 2 | 
+| `billing_company` | Company name | 
+| `billing_phone`  | Phone number|
+| `billing_city` | City | 
+| `billing_state` | State / Province      |
+| `billing_postcode` |Postal / ZIP code |    
+| `customer_note` | Order notes |  
+| `attachment_upload` | File upload |  
+| `gdpr` | GDPR consent checkbox |  
+
+## Hiding fields entirely
+
+If you don’t just want to make a field optional, but remove it from the form:  
+```    
+add_filter( 'masteriyo_checkout_fields', 'remove_postcode_field', 20, 1 );    
+function remove_postcode_field( $fields ) {    
+    unset( $fields['billing_postcode'] );    
+    return $fields;    
+}
+```    
+
+<Callout>
+  {" "}
+**Tip**: This filter runs after Masteriyo’s internal **maybe_skip_field()** logic so you can override any Settings‑based toggle. Just clear the **required** (set to **false** or '') or unset() the key entirely.
+</Callout>
+
