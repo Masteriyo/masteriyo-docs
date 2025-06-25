@@ -10,21 +10,23 @@ excerpt: Masteriyo > Settings > Payments
 </Callout>
 
 ## Payments
+Setting up payment configurations in Masteriyo LMS is essential for selling your courses online. This comprehensive guide will walk you through every payment option, from basic store setup to advanced payment gateway configurations.
 
 ### Store
 
-![payment-store](https://github.com/user-attachments/assets/747c46bb-7455-42eb-8968-10cedb643bdd)
+![payment-store](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/store-tab.png)
 
-- **Country** - Select the country where your store is based on.
+- **Country** - Select the country where your store is based.
   **Other Address Fields For the Store**
-- **State**
-- **City**
-- **Address Line 1**
-- **Address Line 2**
+- **State** - Select your state or province.
+- **City** - Enter your business city.
+- **Address Line 1** - Your primary business address.
+- **Address Line 2** - Suite, unit, or additional address details.
 
 ### Currency
+Proper currency setup ensures your course prices display correctly and payments process smoothly.
 
-![payment-currency](https://github.com/user-attachments/assets/91d9b9de-624c-4e28-9721-d38a2aa9e6e5)
+![payment-currency](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/currency-tab.png)
 
 - **Currency** - Select the currency you want to use for the courses.
 - **Currency Position** - Select the position(left/right) to display the currency symbol.
@@ -32,37 +34,100 @@ excerpt: Masteriyo > Settings > Payments
 - **Decimal Separator** - Set a character for decimal numbers.
 - **Number of Decimals** - Set the decimal number place.
 
-### Checout Fields
+### Taxes [Pro] 
+Setting up taxes in Masteriyo LMS allows you to automatically calculate and collect taxes on course purchases based on your students' locations. Tax settings help you comply with local tax regulations and automatically calculate taxes for your course of sales.
 
-![payment-checkout-fields](https://github.com/user-attachments/assets/7177dd0f-0549-48b5-8eff-04dac2bbd147)
+#### Configuration
+Click on **Taxes** in the Payments submenu to open tax configuration.
+
+![Navigate to Taxes tab](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/navigate-to-payments-and-taxes.png)
+
+#### Global Tax Configuration 
+
+<Callout>
+{" "}**Note:** Please enable Country and State field from **Payments > Checkout Field** for the taxes to work.
+</Callout>
+
+![Enable Checkout Fields](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/enable-checkout-fields.png)
+
+#### Tax Calculation Method Choose 
+From here, you can determine how taxes should be calculated for your courses: 
+
+![Choose tax calculation method](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/tax-calculation-method.png)
+
+**Option 1**: Prices Include Tax  
+
+Course prices already include tax, as the tax amount is extracted from the total cost. It’s useful when selling to a single tax jurisdiction because it’s simpler for fixed-rate scenarios.
+
+![Display Tax Inclusive Price](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/price-include-tax.png)
+
+**Option 2**: Calculate Tax at Checkout   
+
+Tax is calculated during checkout, based on the customer's billing address. It’s more accurate for international sales. 
+
+![Calculate Tax at Checkout](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/calculate-tax-at-checkout.png)
+
+#### Price Display Options 
+**Configure Tax-Inclusive Display**: Check **"Display tax-inclusive prices"** if you want to show prices with tax included. 
+
+![Price Display Option](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/price-display-options.png)
+
+**Pro Tip**: For a better user experience, consider showing tax-inclusive prices to avoid checkout surprises. 
+### Setting Up Tax Regions & Rates 
+**Step 1**: Click on the **+ Add Regions** button to create your first tax region.
+
+![Add Region for Tax Setup](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/click-on-add-region-for-taxes.png)
+
+ **Step 2**: Configure Regional Tax  
+A pop-up will appear for tax configuration. Now, choose the country from the dropdown. Enter your tax percentage in the box. (e.g., 13 for 13%)
+
+![Set Tax for Entire Country](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/set-tax-for-entire-country.png)
+
+Uncheck **Apply single tax for entire country** if you want to apply individual tax rates for each region of the country. After that, you can pick the specific state or region:  
+**Enter Tax Rate**: Input the tax percentage for the regions you select.   
+For non-selected states, you can set a  default tax rate. Click **"Add"** to save the regional tax settings. 
+
+![Uncheck Apply single tax](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/uncheck-single-tax-for-entire-country.png)
+
+The region will appear in your tax regions list. Click on **Save Setting** to save the changes.  
+
+![Save Tax Configuration](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/save-taxes-configuration.png)
+
+#### Frontend View of the Taxes at Checkout: 
+
+![Frontend View of the Taxes Configuration](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/tax-calculation-at-frontend.gif)
+
+### Checkout Fields
+
+![payment-checkout-fields](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/checkout-field-tab.png)
 
 You can enable any of the available fields to display them on the checkout form.
 
-### Standard Paypal
+### Standard PayPal
 
-![payment-paypal-standard](https://github.com/user-attachments/assets/b8874b8d-b1a0-437c-b820-8e39edde1169)
+![payment-paypal-standard](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/standard-paypal-tab.png)
 
-- **Enable** - Enable this option to use the Paypal payment method.
-  - **Title** - Write the title of the payment for it to be seen in the Checkout page.
+- **Enable** - Enable this option to use the PayPal payment method.
+  - **Title** - Write the payment title so it can be seen on the Checkout page.
   - **Description** - Describe the payment method.
-  - **IPN Email Notification** - Enable this to send a notification when IPN is received from Paypal.
-  - **Paypal Email** - Email used in your paypal account.
-  - **Receiver Email** - If your main Paypal email is different from the above entered email, set it here.
+  - **IPN Email Notification** - Enable this to send a notification when IPN is received from PayPal.
+  - **PayPal Email** - Email used in your PayPal account.
+  - **Receiver Email** - If your main PayPal email is different from the above-entered email, set it here.
   - **Identity Token** - Add the identity token. An identity token in PayPal is a unique alphanumeric code used for secure authentication and integration with third-party applications or services.
   - **Invoice Prefix** - Provide a prefix for the invoice.
   - **Payment Actions** - Select either Capture or Authorize as the payment actions.
-  - **Image URl** - URL for a 150x50px image to be displayed on the checkout page as the logo.
+  - **Image URL** - URL for a 150x50px image to be displayed on the checkout page as the logo.
   - **Debug Log** - Enable this option to store debug logs.
-  - **Sandbox** - Enable this if you want to use test/sandbox account.
+  - **Sandbox** - Enable this if you want to use a test/sandbox account.
   - **Live API username**
   - **Live API password**
   - **Live API Signature**
 
 ### Offline Payments
 
-![enable-offline-payment](https://github.com/user-attachments/assets/be7ee6b4-e4b8-4607-9a7e-f6cc45d3ae32)
+![enable-offline-payment](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/offline-payment-tab.png)
 
-- **Enable** - Enable this option to use offline payment method during checkout.
+- **Enable** - Enable this option to use the offline payment method during checkout.
   - **Title** - Provide the title to the offline payment.
   - **Description** - Describe the offline payment method.
   - **Instruction** - Specify if you have any instructions required.    

@@ -1,18 +1,19 @@
 ---
 title: Coupons
-excerpt: A quick guide on how to create and apply coupon codes on the courses.
+excerpt: A quick guide on creating and applying coupon codes on the courses.
 ---
 
-In Masteriyo Pro, you can add Coupons to provide discounts to the users that buy your courses. In this tutorial, you can find the steps to activate, create and apply coupons on your courses.
+In Masteriyo Pro, you can add Coupons to provide discounts to the users who buy your courses. In this tutorial, you can find the steps to activate, create, and apply coupons on your courses.
 
-### How to Use?
+## Prerequisites:
+
+1. [Masteriyo LMS Pro plan or higher](https://masteriyo.com/pricing/).
+2. Active [installation of Masteriyo LMS](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version).
+3. Enable the [Coupons Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons).
 
 ![Add Coupon Extension](https://user-images.githubusercontent.com/75772539/222650943-38431bd8-28ec-4fbe-a10a-28f3acd5877f.png)
 
-1. Install [Masteriyo Pro](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons)
-2. Enable the [Coupons Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons)
-
-### Add New Coupon
+## Add New Coupon
 
 Once you have installed and activated the required plugin and add-on, follow the steps below.
 
@@ -23,32 +24,82 @@ Once you have installed and activated the required plugin and add-on, follow the
 
 Now, you will see the following screen where you can add the details for the coupon you are creating.
 
-![Add New Coupon Main Screen](https://user-images.githubusercontent.com/75772539/222650950-1e3593fd-bc17-4447-9edc-92235c18698f.png)
+![Add New Coupon Main Screen](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/coupon/add-coupon.png)
 
-- **Code** - Write the code name for the desired coupon. For example, **MASTERIYO2023**
-- **Description** - Describe the code's purposes, discounts available etc.
-- **Usage Limit Per Coupon** - Set the total number of times the Coupon can be applied in general.
-- **Usage Limit Per User** - Set the total number of times the Coupon can be used by same user.
-- **Discount Type** - There are two types of discounts that can be set. They are:
-  - **Fixed Cart Discount** - Set this to provide fixed discounts like $50, etc.
-  - **Percent Cart Discount** - Set this to provide some percent of the total course price like 10%, etc.
-- **Discount Amount** - Write the discount amount for the coupon code. Make sure which **Discount Type** you have selected.
-- **Start Date** - Set the date from when the Coupon can be applied.
-  **Expiry Date** - Set the Expiry Date of the Coupon code.
+### Coupon Details
 
-Once you have set all of the above fields, you can click on **Create** button to create the coupon or click on **Save to Draft** to save the coupon for future use.
+#### Method
+Choose how the coupon will be applied:
+- **Code**: The user must manually enter the coupon code.
+- **Automatic**: The discount is applied automatically if conditions are met.
+
+#### Coupon Description
+Provide a description for the coupon, e.g., `Women's Day Sale 2025`.
+
+#### Coupon Code
+Enter or generate a unique coupon code, e.g., `WOMENSDAY25`.
+
+### Discount
+
+#### Discount Type
+There are two types of discounts that can be set. They are:
+- **Fixed Cart Discount** - Set this to provide fixed discounts like $50.
+- **Percent Cart Discount** - Set this to provide some percent of the total course price, like 10%, etc.
+
+#### Discount Amount
+Set the discount value based on the selected type.
+
+#### Applies To
+Choose what the coupon applies to:
+- **All Courses & Categories**
+- **All Courses**
+- **All Courses Bundles**
+- **Specific Courses**
+- **Specific Course Bundles**
+- **Specific Categories**
+
+### Combination Rules
+
+#### Stackable
+Specify if this coupon can be used with other coupons:
+- **Yes**: Can be combined with other active coupons.
+- **No**: Cannot be combined with other active coupons.
+
+### Usage Limitation
+
+#### Usage Limit Per User
+Limit how many times a single user can use this coupon. Use `0` for unlimited.
+
+#### Usage Limit Per Coupon
+Limit how many times the coupon can be used in total. Use `0` for unlimited.
+
+### Validity
+
+#### Start Date
+Specify the date from which the coupon becomes active.
+
+#### Expiry Date
+Specify when the coupon expires.
+
+Once you have set all of the above fields, you can click on the **Create** button to create the coupon or click on **Save to Draft** to save the coupon for future use.
 
 ### View All Coupons
 
 You can go to **Masteriyo > Coupons** to view all the coupons you have created.
 
-![All Coupons](https://user-images.githubusercontent.com/75772539/222650958-5f6f4a3d-1688-46fe-96fe-68307b0acfe8.png)
+![All Coupons](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/coupon/all-coupons.png)
 
 ### Apply coupons
 
-![Coupon Applied](https://user-images.githubusercontent.com/75772539/222650963-4da6a9ce-9c39-4fda-b3ff-f880fc5dcb21.gif)
+#### Normal Applied Coupon
 
-Once a user buys a course, they will be redirected to the checkout page. Here, you will find a checkout form where you will see a field called **Coupon**. Add the desired Coupon code and click on **Apply Coupon** to find the total sum after given discount.
+![Normal Coupon Applied](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/coupon/normal-applied-coupon.png)
+
+#### Stackable Applied Coupon
+
+![Stackable Coupon Applied](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/coupon/stackable-coupon.png)
+
+Once a user buys a course, they will be redirected to the checkout page. Here, you will find a checkout form where you will see a field called **Coupon**. Add the desired Coupon code and click on **Apply Coupon** to find the total sum after the given discount.
 
 <Callout>
   {" "} 
