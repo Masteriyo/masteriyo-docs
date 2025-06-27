@@ -4,29 +4,101 @@ show_child_cards: true
 excerpt: Enhance the security by enabling two-factor authentication.
 ---
 
-Two-factor authentication enhances security by requiring users to verify their identity through a one-time password (OTP) sent to their email, providing an additional layer of protection beyond passwords.
+Two-factor authentication enhances security by requiring users to verify their identity through a **one-time password (OTP)** sent to their email, providing an additional layer of protection beyond passwords.
 
 ## Prerequisites:
 
-1.[Masteriyo LMS Pro plan or higher](https://masteriyo.com/pricing/).  
-2.[Masteriyo LMS installed and activated](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version).  
-3.[Two Factor Authentication Add-on activated](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons).  
+1. [Masteriyo LMS Pro plan or higher](https://masteriyo.com/pricing/).  
+2. [Masteriyo LMS installed and activated](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version).  
+3. [Two Factor Authentication Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons).  
 
-## Configuration
+## Installation & Activation
 
-Once you have installed and activated this add-on, go to the following location.
+To enable the addon, follow the steps mentioned below:
+1. Navigate to the addon through **Masteriyo > Addons**.
+2. Locate **Two-factor Authentication**.
+3. Next, toggle to enable the addon. 
+
+![Enable Two Factor Authentication Addon](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/enable-two-factor-authentication-addon.png)
+
+## Access Two-Factor Authentication Settings
+Once you activate the addon, you can go to the following location.
 
 <Callout>
   {" "} 
 **Masteriyo > Settings > Advanced > Two Factor Authentication**
 </Callout>
 
-![tfa-settings](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/cdd1c25a-fd53-4f4a-b953-7086b77e455d)
+![Navigate to Two Factor Authentication Tab](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/navigate-to-two-factor-authentication.png)
 
-- **Location** - Here, you can select to enable the TFA at Masteriyo Login, WP Login or both.
-- **OTP Length** - Set the length of the OTP that is received by the users in their email.
-- **OTP Expiration Interval** - Set the time limit for the expiration of the OTP. This is set in seconds. 
-- **OTP Resend Interval** - Set the time interval in which the users can request for another OTP.
-- **OTP Resend Max Attempts** - Set the number of attempts allowed to resend the OTP.
+## Configure Two-Factor Authentication for your LMS Site
+You can configure all the settings required for two-factor authentication from here. 
 
-![OTP-has-been-sent-screen](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/4d973fea-1158-4a13-88f7-f47683da421a)
+### Location Settings
+The Location dropdown in your Two-Factor Authentication settings determines where the **OTP** verification will be required on your LMS website.
+
+![Select Location for Two-factor Authentication](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/location-setting-for-2fa.png)
+
+- **Masteriyo & WP Login**:  Enforces two-factor authentication on both LMS and WordPress login for your site.
+- **Masteriyo Login**: Enforces two-factor authentication only on Masteriyo Login. 
+- **WP Login**: Enforces two-factor authentication only on WordPRess login.
+
+### OTP-related settings
+Next, you'll find different setting options related to OTP:
+
+![OTP Related Setting](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/otp-related-settings.png)
+
+#### OTP Length
+From here, you can set the number of digits in the one-time password.  
+- Default: 6 digits.  
+- Range: Typically 4-8 digits.  
+
+#### OTP Expiration Interval
+Set a time limit for OTP validity before it expires, so that the user must verify the OTP within the given time frame. If verification fails, they must request to resend the OTP. The expiration interval is specified in the email of the user:  
+
+![OTP Expiration Interval Message](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/otp-validity-message.png)
+
+- Default: 1800 seconds (30 minutes).  
+- Recommended: 300-1800 seconds for optimal security.
+
+#### OTP Resend Interval
+It sets the minimum time users must wait before requesting a **new OTP**. The resend interval will be shown below the **Resend OTP** button. 
+
+![Remaining time for Resending OTP](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/remaining-time-for-sending-otp.png)
+
+- Default: 120 seconds (2 minutes).
+- Recommended: 60-300 seconds to prevent spam.
+
+If the user tries to ask for the new OTP before the interval, an error message will be shown:
+
+![Error Message for OTP Interval](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/waiting-time-interval-for-otp.png)
+
+#### OTP Resend Max Attempts
+
+Set the maximum number of times a user can request OTP resend. It prevents abuse and potential spam attacks. Remaining attempts will be shown to the user at the frontend:
+
+![Resend Max Attempts Left](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/resend-attempts-left.png)
+
+- Default: 10 attempts.  
+
+Once you've configured all options above, click **Save Settings** to enable two-factor authentication on your site.
+
+![Save 2FA Settings](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/save-2fa-settings.png)
+
+## Test User Experience with Two-Factor Authentication
+To test two-factor authentication, register on your LMS site and sign out. Now, try to log in to your **Account**. You'll then receive an OTP on your registered email.
+
+![Email with OTP](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/otp-for-login.png)
+
+Copy the OTP and paste it under the OTP field to log in. 
+
+If you don't receive email or have a problem sending email, you can try [using the SmartSMTP plugin](https://docs.masteriyo.com/faqs/how-to-setup-smart-smtp-with-masteriyo). It helps ensure emails are delivered reliably by configuring proper SMTP settings for your WordPress site.
+
+Here's how the two-factor authentication works at the user's end:
+
+![Example of Two-factor Authentication](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/otp-verification-demo.gif)
+
+## Additional Resources
+- [Enable Google reCAPTCHA in your LMS](https://docs.masteriyo.com/free-addons/google-recaptcha).
+- [Using Masteriyo Trigger Webhooks with Zapier](https://docs.masteriyo.com/masteriyo-tools/webhooks).
+
