@@ -3,6 +3,7 @@ title: General Settings
 show_child_cards: true
 excerpt: Masteriyo > Settings > General
 ---
+The General Settings section in Masteriyo LMS provides comprehensive control over your learning platform's core functionality and appearance. This documentation covers the essential configuration options that form the foundation of your LMS experience.
 
 <Callout>
   {" "}  
@@ -12,57 +13,66 @@ excerpt: Masteriyo > Settings > General
 ## General
 
 ### Pages
+Configure your LMS page structure and navigation, including course catalogs, user dashboards, and custom page assignments.
 
-![general-page](https://github.com/user-attachments/assets/c7926df5-3344-4a91-8b71-f722e82a223d)
+![general-page](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/settings/pages-settings.png)
 
 - **Course Page** - Select the page where you want to show all the courses collectively.
 - **Learn Page** - Select the learn page.
 - **Account Page** - Select the page for the user's account.
-- **Checkout Page** - Select the page to redirect the users for checkout.
-- **Instructor Registration Page** - Select the page for the instructors to register.
-- **Thankyou Page** - Select a page to be set as Course Thankyou Page. This page shows thank you page if course has been completed by students.
+- **Checkout Page** - Select the page to redirect users to for checkout.
+- **Thankyou Page** - Select a page to be set as Course Thankyou Page. This page shows a thank you page if the course has been completed by students.
 
   ![thank-you-page](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/f942917d-ad5e-4446-aeb2-036149e89372)
 
-- **Instructors List Page** - Select a page to be set as instructors list page. This page shows the list of instructors.
-  The page should contain `[masteriyo_instructors_list]`
-
-- **Course Bundles Page [Pro]** - Select a page to be set as a course bundles page. This page will show all available course bundles.
 - **Post-Checkout Landing Page** - Select a page to be displayed after a user completes an order.
 
-### Styling
+### Styles
+You can customize the visual appearance of your learning platform with theme options, color schemes, and layout preferences.
 
-![general-styling](https://github.com/user-attachments/assets/499f4e6e-24ed-4a9c-ad93-f6e3801d338a)
+![general-styling](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/settings/style-settings.png)
 
 - **Primary Color** - Select the color that matches your brand/site, the style will be applied to course archives.
+- You can also select the primary color for your learn page and button color from here. 
 
 ### Course Access
+Define how students can access courses, set enrollment rules, and manage course visibility and permissions.
 
-![course-access](https://github.com/user-attachments/assets/11443e85-db49-41b5-805c-07eed54f9bd2)
+![course-access](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/settings/course-access-settings.png)
 
-- **Enable Course Content Access** - Allow admin and instructors to access course contents without enrolling.
-- **Restrict Instructors** - Allow instructors to view only their contents.
+- **Enable Course Content Access** - Allow admins and instructors to access course content without enrolling.
+- **Restrict Instructors** - Allow instructors to view only their content.
 
 ### Registration
+Control user registration processes, account creation settings, and new user onboarding workflows.
 
-![general-registration](https://github.com/user-attachments/assets/32fff79d-9acb-4d26-aa38-7b4176211fec)
+![general-registration](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/settings/registration-settings.png)
 
 - **Enable Student Registration** - Show/hide student registration page in your site.
 - **Enable Instructor Registration** - Show/hide instructor registration page.
 - **Enable Guest Checkout** - Allow non-registered users to checkout and create an account during the process.
 
-### Editor
-
-![general-editor](https://github.com/user-attachments/assets/fd6104be-187e-49a5-83d5-cce1fc082ef1)
-
-From here, you can choose the required editor for creating/editing a Course.
-
 ### Player
+Configure video playback settings, integrate external platforms like YouTube and Vimeo, and customize the learning experience with player controls and branding options.
 
-![general-player](https://github.com/user-attachments/assets/00a60492-7d4b-47b2-b42d-52dc370585bb)
+![general-player](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/settings/player-settings.png)
 
 This feature, also known as Masteriyo Player, allows you to turn the player on or off for YouTube and Vimeo videos you've uploaded. You can choose to require students to watch the full video, preventing them from skipping, and set a specific seek time.
 
 **In the premium version**, you can activate the note system, set a Video Completion Percentage, which ensures students watch the video based on the percentage you define in the player settings, and display your brand logo on the videos.
 
-Please note that you can change the brand logo using the White Label addon.
+Please note that you can change the brand logo using the [White Label addon](https://docs.masteriyo.com/premium-addons/white-label).
+
+#### Player Configuration:
+  - **Allow Notes**: Toggle to enable/disable note-taking feature.
+  - **Use Masteriyo Player for**: Choose between YouTube and Vimeo for video playback.
+  - **Display Brand Logo on Player**: Show/hide your brand logo on the video player.
+  - **Require Full Video Watch**: Force students to watch the entire video before proceeding.
+  - **Autoplay with Sound**: Enable automatic video playback with audio.
+  - **Seek Time**: Set jump interval (currently 5 seconds) for forward/backward controls.
+
+#### API Integration:
+
+  - **YouTube API Key Setup**: Required for YouTube video integration.
+
+Each section contains specific toggles, dropdown menus, and input fields that allow you to tailor Masteriyo LMS to your organization's unique requirements. Proper configuration of these settings ensures a seamless learning experience for both instructors and students.
