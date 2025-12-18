@@ -4,17 +4,25 @@ name: Netlify Deployment
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
-    branches: [ main ]
+    branches: [main]
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 jobs:
   deployment:
     runs-on: ubuntu-latest
     steps:
-    - name: Deploy Stage
-      uses: fjogeleit/http-request-action@v1.9.1
-      with:
-        url: '${{ secrets.NETLIFY_WEBHOOK_URL }}'
-        method: 'POST'
-        data: '{}'
-        
+      - name: Deploy Stage
+        uses: fjogeleit/http-request-action@v1.9.1
+        with:
+          url: "${{ secrets.NETLIFY_WEBHOOK_URL }}"
+          method: "POST"
+          data: "{}"
+
+        # Trigger parent repo submodule update
+      - name: Trigger Parent Repo Update
+        run: |
+          curl -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+            https://api.github.com/repos/wpeverest/masteriyo-docs-website/dispatches \
+            -d '{"event_type":"update-submodule"}'
