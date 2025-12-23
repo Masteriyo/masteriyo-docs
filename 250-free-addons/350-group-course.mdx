@@ -1,91 +1,731 @@
 ---
 title: Groups
-show_child_cards: true
-excerpt: Groups functionality enables the allocation of courses to a collective audience and facilitates the commercial sale of these educational programs to organizations, as example.
+excerpt: Sell courses to teams and organizations with flexible pricing tiers, fixed or variable seats, volume discounts, and group management features.
 ---
 
-Groups add-on enables the allocation of courses to a collective audience and facilitates the commercial sale of these educational programs to organizations. For example, a student can buy a course for a group of 3 and share the course with their two other friends.
+## What is the Groups Feature?
 
-## Prerequisites:
+The **Groups** feature allows you to sell your courses to teams and organizations. Instead of selling to individual students, you can sell to groups with features like:
 
-- [Masteriyo LMS Free or higher](https://docs.masteriyo.com/getting-started/installation).
-- [Groups add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons)
+- **Multiple pricing tiers** for different team sizes
+- **Group leader management** where buyers can add/remove team members
+- **Flexible seat configurations** with volume discounts
+- **Administrative controls** for enrollment and approvals
 
-![Activate Groups Addon](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/enable-groups-addon.png)
+## What is Multiple Group Pricing? (v3.1.0+) [Pro]
 
-## Adding Groups to a Course
+Starting with version 3.1.0, Groups includes **multiple group pricing** capability, allowing you to create **multiple pricing tiers** for the same course. Instead of having just one group price, you can offer different options like "Small Team," "Medium Business," and "Enterprise" - each with their own pricing structure and seat configurations.
 
-To add a new group, go to the **Settings** of your course: **Masteriyo > Course > Settings**.
-Now, you can enable **Sell to Groups** and configure group pricing.
+Think of it like SaaS pricing plans, but for your courses. You can offer volume discounts, flexible seat ranges, and tiered pricing to attract different customer segments.
 
-![group-details](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/set-group-pricing.png)
+## Key Benefits
 
-Now, click on **Update** to create a group.
+- **Available for All Plans**: Groups feature available in Free, Basic, Pro, and Elite plans
+- **Flexible Pricing Tiers**: Create unlimited pricing options (Pro/Elite) or 1 tier (Free/Basic)
+- **Volume Discounts**: Reward larger purchases with better per-seat prices (Pro/Elite)
+- **Fixed or Variable Seats**: Offer specific seat counts (all plans) or flexible ranges (Pro/Elite)
+- **Tiered Pricing Model**: Set different per-seat prices for different quantity ranges (Pro/Elite)
+- **Enterprise-Ready**: Perfect for B2B course sales and corporate training
+- **Automatic Migration**: Seamlessly upgrades from legacy single group pricing
 
-### Want to manually enroll group? [Pro]
+## Requirements
 
-Check this docs: [Manual group enrollment](https://docs.masteriyo.com/getting-started/premium-addons/manual-enrollment#manual-group-enrollment)
+- Masteriyo Free, Basic, Pro, or Elite plan
+- Version 3.1.0 or higher
+- Groups addon enabled
 
-## Group settings
+<Callout>
+  Note: Free and Basic plans are limited to 1 pricing tier with fixed seats
+  only. Pro and Elite plans unlock unlimited tiers, variable seats, and advanced
+  pricing models.
+</Callout>
 
-Navigate to **Masteriyo > Users > Groups** to manage various options for the group you create.
+## Differences from Legacy Group Pricing
 
-![group-settings](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/navigate-to-users-groups.png)
+### Legacy Single Group Pricing
 
-You can find all the groups you created on your website from here. From the settings tab, you can modify the following details:
+The old system allowed only one group pricing option:
 
-![Group Settings](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/group-settings.png)
+- Single fixed price (e.g., $500 for 10 people)
+- One maximum group size
+- Simple but limited
 
-- **Deactivate Enrollment on Status Change** - Enable this option to automatically deactivate the enrollment status of the members when the group status changes. The group status includes trashed, deleted, or drafted. This also reactivates the enrollment upon restoration.
-- **Deactivate Enrollment on Member Change** - Enable this option to deactivate the enrollment status of the member who is removed from the group.
-- **Group Buy Button Text** - From here, you can change the text of the button that appears at the checkout page for the group buy. Meanwhile, don't modify the placeholders like `{group_price}`.
-- **Group Buy Helper Test** - To let users know more about the group pricing, you can write any message regarding the group buy.
+### New Multiple Group Pricing (v3.1.0+)
 
-Click on **Save Settings** to experience the changes made in the group.
+The new system provides enterprise-level flexibility:
 
-### Group Pricing Workflow
+- **Multiple pricing tiers** per course (Pro/Elite: unlimited, Free/Basic: 1 tier)
+- **Two seat models**: Fixed seats (all plans) or Variable seats (Pro/Elite)
+- **Two pricing models**: Per-seat or Tiered pricing (Pro/Elite)
+- **Volume discounts** through tiered pricing (Pro/Elite)
+- Available across all Masteriyo plans with progressive features
 
-At the frontend, students can buy the course for groups with similar behaviour as shown below:
+<Callout>
+  Note: If you were using legacy group pricing, your existing settings will
+  automatically migrate to a single pricing tier in the new format.
+</Callout>
 
-![Buy Course for Group](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/buy-group-course.gif)
+## Understanding Seat Models
 
-The user can then view their payment receipt, yet can't access their course until the admin approves the group and publishes it.
+| Feature          | Fixed Seats                              | Variable Seats                                       |
+| ---------------- | ---------------------------------------- | ---------------------------------------------------- |
+| **What it is**   | A specific, unchangeable number of seats | A range of seats customers can choose from (min-max) |
+| **Pricing**      | One total price for all seats            | Two options (see Pricing Models below)               |
+| **Example**      | "Small Team - 10 seats for $1,000"       | "Enterprise - Choose 11-50 seats"                    |
+| **Use case**     | Standard team sizes, package deals       | Scalable teams, custom group sizes                   |
+| **Availability** | All plans (Free, Basic, Pro, Elite)      | Pro or Elite plan only                               |
+| **Best for**     | Predefined team packages                 | Flexible, varying team sizes                         |
 
-![Buy Course for Group](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/user-account-dashboard-after-buying-group-before-approval.gif)
+## Understanding Pricing Models
 
-Now, the admin should approve the group so that users can add other members. As an admin, navigate to **Masteriyo > Users > Groups**. Here, you can see all the groups that are in draft. This means users have bought course for the groups, but you need to approve them manually. So, click on the draft group and you'll see the option to edit the order.
+Pricing models only apply to **Variable Seats** (Pro/Elite plans only).
 
-![Edit Oder for Group](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/edit-group-order.png)
+| Feature         | Per-Seat Pricing                 | Tiered Pricing                                                                   |
+| --------------- | -------------------------------- | -------------------------------------------------------------------------------- |
+| **Formula**     | Price per seat × Number of seats | Different per-seat prices for different quantity ranges                          |
+| **Example**     | $50/seat × 20 seats = $1,000     | • 11-25 seats: $45/seat<br/>• 26-50 seats: $40/seat<br/>• 51-100 seats: $35/seat |
+| **Calculation** | Single rate applies to all seats | Rate depends on total quantity selected (e.g., 30 seats × $40 = $1,200)          |
+| **Use case**    | Simple, predictable pricing      | Encourage larger purchases with volume discounts                                 |
+| **Display**     | Shows "$50/seat"                 | Shows price range "$45-$35/seat"                                                 |
+| **Best for**    | Straightforward pricing needs    | Incentivizing bulk purchases                                                     |
 
-Next, change the status to completed after verifying the order and click on **Update Order**.
+## Setting Up Multiple Group Pricing
 
-![Complete Order for Group](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/complete-order.png)
+### Step 1: Enable Groups Addon
 
-User can be notified through email regarding their group enrollment, joining, and publishing. You can customize those emails through **Masteriyo > Settings > Emails**.
+1. Go to **Masteriyo → Addons**
+2. Find **Groups** addon
+3. Click **Activate**
 
-![Email regarding Group](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/email-to-student-regarding-group.png)
+![Group Addon Activation](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/enable-groups-addon.png)
 
-At the user's dashboard, they can now refresh to add new members to their group. To add a new member, they can add the email of the person they want to add to the group.
+### Step 2: Enable Group Pricing for Your Course
 
-![Add new member to the Group](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/add-members-to-group.png)
+1. Go to **Masteriyo → Courses**
+2. Edit the course you want to sell to groups
+3. Click the **Settings** tab in the course builder
+4. Go to **Group Pricing** section
+5. Toggle on **Sell to Groups**
 
-You can also enable multiple currencies in Group Pricing. To do so, you need to enable the **[Multiple Currency addon](https://docs.masteriyo.com/free-addons/multiple-currency)** and configure it.
+![Sell to group enable](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/sell-to-group-enable.png)
 
-![Add new member to the Group](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/toggle-to-enable-multiple-currency-addon.png)
+<p style={{ textAlign: "center" }}>
+  (_Image: Course setting for group pricing._)
+</p>
 
-You need to configure the addon by adding a pricing zone through **Masteriyo > Settings > Currencies**.
+### Step 3: Create Your First Pricing Tier
 
-![Add New Pricing Zone](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/add-new-pricing-zone.png)
+When you enable "Sell to Groups," you'll see options to create pricing tiers:
 
-After setting up the addon, navigate to the Course Builder of the course where you created the **Group**. Now, toggle **Enable Multiple Currency**.
+1. Click **Add Group Pricing** (or configure the default tier)
+2. Enter a **Group Name** (e.g., "Small Team," "Enterprise")
+3. Choose your **Seat Model**:
 
-Here, you’ll see the zone you’ve set up. You can enable whichever zone you want. Again, you have two options for the pricing method:
+   - **Fixed Seats**: Enter a specific number (e.g., 10)
+   - **Variable Seats**: Enter min and max range (e.g., 5-50)
 
-- Enable price calculation by the exchange rate that you’ve set up.
-- **Set prices manually:** It allows you to set Regular, Sale, and Group prices for the course. - To set price manually, you need to add **Regular Price**, **Sale Price**, and the **Group Price**.
+4. If you chose **Variable Seats**, select **Pricing Model**:
 
-![set-group-price-manually-asper-currency](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/enable-multiple-currency-in-group.png)
+   - **Per Seat**: Enter price per seat
+   - **Tiered Pricing**: Add price tiers (see example below)
 
-Users can then pay the amount as per their choice of currency:
+5. Set **Regular Price** and optionally **Sale Price**
+6. Choose **Pricing Type**: One-time (recurring coming soon)
 
-![Multiple Currency](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/group-course-with-multiple-currency.png)
+### Step 4: Add More Tiers (Pro/Elite Plans) [Pro]
+
+Want to offer multiple options? Click **Add Pricing Tier** again and repeat:
+
+- Create different tiers for different customer segments
+- Mix fixed and variable seat models
+- Offer volume discounts through tiered pricing
+
+![All group pricing](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/all-group-pricing.png)
+
+<p style={{ textAlign: "center" }}>
+  (_Image: Shows all group pricing options in course setting._)
+</p>
+
+### Step 5: Save Your Course
+
+Click **Update** to save your group pricing configuration.
+
+## Configuration Examples
+
+### Example 1: Simple Fixed Seat Packages
+
+Perfect for standardized team training:
+
+**Tier 1: Small Team**
+
+- Seat Model: Fixed Seats
+- Group Size: 10 seats
+- Regular Price: $1,000
+- Result: $1,000 for exactly 10 people
+
+**Tier 2: Medium Team**
+
+- Seat Model: Fixed Seats
+- Group Size: 25 seats
+- Regular Price: $2,200
+- Result: $2,200 for exactly 25 people
+
+**Tier 3: Enterprise**
+
+- Seat Model: Fixed Seats
+- Group Size: 100 seats
+- Regular Price: $7,500
+- Result: $7,500 for exactly 100 people
+
+### Example 2: Flexible Per-Seat Pricing [Pro]
+
+Perfect for scalable teams:
+
+**Tier 1: Growing Team**
+
+- Seat Model: Variable Seats (5-20)
+- Pricing Model: Per Seat
+- Regular Price: $100/seat
+- Results:
+  - 5 seats = $500
+  - 10 seats = $1,000
+  - 20 seats = $2,000
+
+**Tier 2: Enterprise Flex**
+
+- Seat Model: Variable Seats (21-100)
+- Pricing Model: Per Seat
+- Regular Price: $85/seat
+- Results:
+  - 25 seats = $2,125
+  - 50 seats = $4,250
+  - 100 seats = $8,500
+
+### Example 3: Advanced Tiered Pricing with Volume Discounts [Pro]
+
+Perfect for encouraging larger purchases:
+
+**Tier: Enterprise Volume Pricing**
+
+- Seat Model: Variable Seats (10-100)
+- Pricing Model: Tiered Pricing
+- Pricing Tiers:
+  - 10-25 seats: $80/seat
+  - 26-50 seats: $70/seat
+  - 51-100 seats: $60/seat
+
+**Results:**
+
+- Buy 15 seats = 15 × $80 = $1,200
+- Buy 30 seats = 30 × $70 = $2,100
+- Buy 75 seats = 75 × $60 = $4,500
+
+**Benefit**: Customers save more per seat when buying in larger quantities.
+
+### Example 4: Mixed Strategy (Most Flexible)
+
+Combine different models to cover all customer types:
+
+**Tier 1: Starter Package** (Fixed)
+
+- Fixed 5 seats for $400
+- Perfect for small teams who want simple pricing
+
+**Tier 2: Team Plan** (Variable + Per Seat)
+
+- Variable 6-20 seats at $75/seat
+- Flexible for growing teams
+
+**Tier 3: Enterprise Volume** (Variable + Tiered)
+
+- Variable 21-100 seats
+- Tiered: 21-50 = $65/seat, 51-100 = $55/seat
+- Volume discounts for large organizations
+
+## How It Works for Customers
+
+### Frontend Experience
+
+When customers visit your course page with multiple group pricing enabled, they see:
+
+1. **All available pricing tiers** displayed as cards/options
+2. **Tier name and pricing** clearly shown
+3. **Seat selection dropdown** (for variable seats)
+4. **Real-time price calculation** as they select seats
+5. **"Buy for Group" button** for each tier
+
+![Frontend group pricing](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/group-pricing-frontend.png)
+
+<p style={{ textAlign: "center" }}>
+  (_Image: Single course page group pricing UI._)
+</p>
+
+### Purchasing Workflow
+
+1. Customer views all available tiers
+2. Selects their preferred tier (radio button)
+3. If variable seats: chooses number of seats from dropdown
+4. Sees total price calculate automatically
+5. Clicks "Buy for Group" button
+6. Proceeds to checkout with selected configuration
+7. Completes payment
+
+### After Purchase
+
+1. Order is created with group details
+2. Admin receives notification
+3. Admin approves the order (changes status to Completed)
+4. Customer receives email notification
+5. Customer can add members to their group from their dashboard
+6. Group members receive invitation emails
+7. Members can access the course once enrolled
+
+## Setting Up Tiered Pricing [Pro]
+
+Tiered pricing can be tricky, so here's a detailed walkthrough:
+
+### Step 1: Choose Variable Seats
+
+1. In your pricing tier configuration
+2. Select **Seat Model: Variable Seats**
+3. Enter min and max (e.g., Min: 10, Max: 100)
+
+### Step 2: Select Tiered Pricing Model
+
+1. Under **Pricing Model**, choose **Tiered Pricing**
+2. You'll see options to add price tiers
+
+### Step 3: Add Price Tiers
+
+For each price break, add a tier:
+
+| Tier | From | To  | Per Seat Price | Total Cost (Min-Max) |
+| ---- | ---- | --- | -------------- | -------------------- |
+| 1    | 10   | 25  | $80            | $800 - $2,000        |
+| 2    | 26   | 50  | $70            | $1,820 - $3,500      |
+| 3    | 51   | 100 | $60            | $3,060 - $6,000      |
+
+### Step 4: Verify Your Setup
+
+Make sure:
+
+- Ranges don't overlap
+- Ranges cover your entire min-max range (10-100)
+- Prices decrease as quantity increases (volume discount)
+- There are no gaps between ranges
+
+<Callout>
+  **Important**: The "From" of each tier should be 1 more than the "To" of the
+  previous tier.
+</Callout>
+
+## Managing Groups
+
+### Group Settings
+
+Navigate to **Masteriyo → Users → Groups** to manage group settings:
+
+**Deactivate Enrollment on Status Change**
+
+- Automatically deactivate member enrollments when group is trashed/deleted
+- Reactivates enrollments when group is restored
+
+**Deactivate Enrollment on Member Change**
+
+- Deactivate enrollment when a member is removed from the group
+
+### Approving Group Orders
+
+After a customer purchases a group course:
+
+1. Go to **Masteriyo → Users → Groups**
+2. Find groups with "Draft" status (pending approval)
+3. Click on the group to view details
+4. Verify the order and payment
+5. Go to the associated order
+6. Change order status to **Completed**
+7. Customer receives notification and can add members
+
+![Group Order](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/complete-order.png)
+
+### Viewing All Groups (Admin)
+
+From **Masteriyo → Users → Groups**, administrators can:
+
+- See all groups and their status
+- View member lists
+- Check enrolled courses
+- Monitor group activity
+- Edit group details
+
+## Group Leader Account Page
+
+When a customer purchases a course for a group, they become the **group leader** and gain access to powerful management tools through their account page.
+
+### Accessing the Groups Page
+
+Group leaders can access their groups management from:
+
+1. Log into their account
+2. Navigate to **Account → Groups** from the sidebar menu
+3. View all groups they've created/purchased
+
+<Callout>
+  **Note**: The Groups menu item only appears for users who have purchased at
+  least one group course.
+</Callout>
+
+![Group detail account](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/user-account-dashboard-after-buying-group-before-approval.gif)
+
+### What Group Leaders Can Do
+
+#### 1. View All Their Groups
+
+On the Groups page, group leaders see:
+
+- **List of all their groups** with group names
+- **Status badges** (Pending approval / Active)
+- **Member count** (hover to see details)
+- **Edit and Delete buttons** for each group
+- **Associated courses** linked to each group
+
+#### 2. Add Group Members
+
+After admin approves the group (order status = Completed), group leaders can add members:
+
+**How to Add Members:**
+
+1. Click **Edit** on a group
+2. In the **Members** section, enter email addresses
+3. Press Enter or comma after each email to add it
+4. Click **Save** to update the group
+
+![Add group members](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/add-members-to-group.png)
+
+**Important Notes:**
+
+- Each email must be valid (validated automatically)
+- Cannot add duplicate emails
+- Maximum members limited by purchased seat count
+- Members receive invitation emails automatically
+- **Cannot add members while group is pending approval**
+
+**Pending Approval Notice:**
+If the group is still in "Draft" or "Pending" status, group leaders will see:
+
+> "Group is pending approval. Members cannot be modified until the group is approved."
+
+They must wait for admin approval before adding members.
+
+#### 3. Remove Group Members
+
+Group leaders can remove members from their groups:
+
+**How to Remove Members:**
+
+1. Click **Edit** on the group
+2. In the **Members** section, find the member's email tag
+3. Click the **X** button on the email tag
+4. Click **Save** to update
+
+**Important Restrictions:**
+
+- **Cannot remove themselves** - The group leader's email cannot be removed
+- Removed members lose access to group courses (if settings enable this)
+- Removed members receive notification emails (if configured)
+
+#### 4. Edit Group Details
+
+Group leaders can customize their group information:
+
+**Editable Fields:**
+
+- **Group Name** (required) - Give your group a meaningful name
+- **Group Description** - Add details about the group (supports rich text/HTML)
+- **Members List** - Add or remove member emails
+
+**Non-Editable Fields:**
+
+- Group leader/owner (only admins can change)
+- Group status (pending/approved - admin controlled)
+- Associated courses (determined by purchase)
+- Maximum group size (determined by purchased tier)
+
+**How to Edit:**
+
+1. Click **Edit** button on any group
+2. Update the Group Name or Description
+3. Modify members if needed
+4. Click **Save Changes**
+
+#### 5. View Linked Courses
+
+Group leaders can see which courses are associated with their group:
+
+- **Course names** displayed in the group details
+- **Course count** shown on group card
+- **Read-only view** - Cannot add/remove courses (determined by purchase)
+- Members automatically get enrolled in these courses once added
+
+#### 6. Delete Groups
+
+Group leaders can delete groups they no longer need:
+
+**How to Delete:**
+
+1. Click **Delete** button on the group card
+2. Confirm deletion in the dialog
+3. Group is permanently removed
+
+**What Happens When Deleted:**
+
+- All member enrollments are deactivated (if settings configured)
+- Members lose access to group courses
+- Cannot be undone (permanent deletion)
+- Associated order remains in history
+
+### Group Status & Workflow
+
+#### Pending Approval (Draft Status)
+
+When a group leader first purchases a group course:
+
+**Status:** Draft/Pending
+**What They See:**
+
+- "Pending" badge on group card
+- Cannot add members yet
+- Message: "Waiting for admin approval"
+
+**What They Can Do:**
+
+- View the group
+- View their purchase/order details
+- Wait for admin approval
+
+**What They Cannot Do:**
+
+- Add or remove members
+- Edit certain group details
+
+#### Active (Published Status)
+
+After admin approves the order (status = Completed):
+
+**Status:** Published/Active
+**What They See:**
+
+- No "Pending" badge
+- Full editing capabilities unlocked
+- Can manage members
+
+**What They Can Do:**
+
+- Add members (up to seat limit)
+- Remove members
+- Edit group name and description
+- Delete the group
+- View all linked courses
+
+### Permission Summary
+
+| Action                      | Group Leader            | Admin  |
+| --------------------------- | ----------------------- | ------ |
+| View own groups             | ✅ Yes                  | ✅ Yes |
+| View all groups             | ❌ No                   | ✅ Yes |
+| Add members                 | ✅ Yes (after approval) | ✅ Yes |
+| Remove members              | ✅ Yes (except self)    | ✅ Yes |
+| Edit group name/description | ✅ Yes                  | ✅ Yes |
+| Change group status         | ❌ No                   | ✅ Yes |
+| Change group leader         | ❌ No                   | ✅ Yes |
+| Delete group                | ✅ Yes (own groups)     | ✅ Yes |
+| Approve orders              | ❌ No                   | ✅ Yes |
+
+### Important Restrictions for Group Leaders
+
+1. **Cannot access other users' groups** - Only see and manage their own groups
+2. **Cannot remove themselves** - Group leader must remain in the group
+3. **Cannot change approval status** - Only admins can approve/publish groups
+4. **Cannot exceed seat limits** - Maximum members determined by purchased tier
+5. **Cannot modify while pending** - Must wait for admin approval to add members
+6. **Cannot transfer ownership** - Only admins can change group leaders
+
+## Email Notifications
+
+Customize group-related emails from **Masteriyo → Settings → Emails**:
+
+- **Group Enrollment Email** - Sent when someone joins a group
+- **Group Publish Email** - Sent when admin approves a group
+- **Group Member Added Email** - Sent to new members
+- **Group Member Removed Email** - Sent when member is removed
+
+![Groups email](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/group-course/email-to-student-regarding-group.png)
+
+## Multiple Currency Support
+
+You can offer different prices for different currencies:
+
+### Step 1: Enable Multiple Currency Addon
+
+1. Go to **Masteriyo → Addons**
+2. Enable **Multiple Currency** addon
+3. Go to **Masteriyo → Settings → Currencies**
+4. Add pricing zones with exchange rates
+
+### Step 2: Configure Currency for Group Pricing
+
+1. Edit your course
+2. In **Settings** tab, enable **Multiple Currency**
+3. For each currency/zone:
+   - Enable price calculation by exchange rate, OR
+   - **Set prices manually** for each pricing tier
+4. When setting manually, enter Regular Price, Sale Price, and configure all pricing tiers for that currency
+
+Customers will see prices in their local currency and can select their preferred tier.
+
+## Plan Comparison
+
+### Free and Basic Plans
+
+- Create **1 pricing tier only**
+- **Fixed seats model only** (e.g., "10 seats for $500")
+- Single total price per tier (no per-seat or tiered pricing)
+- Perfect for getting started with group sales
+- Sell to teams and organizations
+
+### Pro and Elite Plans
+
+- Create **unlimited pricing tiers**
+- Use **Fixed Seats** (like Free/Basic) or **Variable Seats** model
+- Use **Per-Seat Pricing** or **Tiered Pricing** with volume discounts
+- Mix and match seat models and pricing models
+- Full flexibility for enterprise sales
+- Advanced B2B pricing strategies
+
+## Troubleshooting
+
+### Customers Can't See Multiple Tiers
+
+- Verify you're on Pro or Elite plan (Free and Basic plans show only 1 tier)
+- Check that "Sell to Groups" is enabled in course settings
+- Ensure you've created and saved multiple pricing tiers
+- Clear browser and WordPress caches
+
+### Price Not Calculating Correctly
+
+- For tiered pricing: Verify ranges are continuous without gaps
+- Check that min/max seats match your tier ranges
+- Ensure there's no overlap between price tier ranges
+- Test calculation manually: seats × per-seat price for that range
+
+### Customers Can't Complete Purchase
+
+- Verify the Groups addon is active
+- Check that selected tier is published/active
+- Ensure seat selection is within allowed range
+- Check for JavaScript errors in browser console
+
+### Legacy Group Pricing Not Showing
+
+- Your old settings automatically migrated to a single tier
+- Edit the course and you'll see the migrated tier
+- You can now add more tiers or modify the existing one
+
+### Can't Add More Tiers
+
+- Check your plan: Free and Basic plans allow only 1 tier
+- Upgrade to Pro or Elite for unlimited tiers
+- Verify you're clicking "Add Pricing Tier" button
+
+## Migration from Legacy
+
+If you were using the legacy single group pricing:
+
+### What Happens Automatically
+
+Your existing group pricing data automatically converts to the new format:
+
+- Old group price → First tier's regular price
+- Old max group size → First tier's fixed seats
+- Group name defaults to "Group"
+
+### What You Should Do
+
+1. Edit your course to review the migrated tier
+2. Optionally rename the tier (e.g., from "Group" to "Standard Team")
+3. Add more tiers to offer multiple options (Pro/Elite plans)
+4. Consider switching to variable seats or tiered pricing for more flexibility
+
+### Data Safety
+
+- Your original data remains in the database
+- Migration is non-destructive
+- You can always view/edit the migrated tier
+- Customer purchases remain unaffected
+
+## Frequently Asked Questions
+
+### Can I mix fixed and variable seats in one course?
+
+Yes! You can create multiple tiers with different seat models. For example:
+
+- Tier 1: Fixed 5 seats
+- Tier 2: Variable 10-50 seats
+- Tier 3: Variable 51-100 seats with tiered pricing
+
+### How many pricing tiers can I create?
+
+- **Free and Basic plans**: 1 tier only
+- **Pro and Elite plans**: Unlimited tiers
+
+### Can customers buy multiple tiers?
+
+No. Customers select one tier per purchase. If they want more seats, they can make a separate purchase or choose a larger tier.
+
+### Do group members need individual accounts?
+
+Yes. When the group creator adds members by email, those members receive invitations to create accounts or log in to access the course.
+
+### Can I change pricing after orders are placed?
+
+Yes, you can update pricing tiers anytime. However, existing orders/groups maintain their original pricing. Only new purchases use the updated pricing.
+
+### Does this work with payment gateways?
+
+Yes! Multiple group pricing works with all Masteriyo-supported payment gateways including PayPal, Stripe, and offline payments.
+
+### How do I offer free trials or coupons for groups?
+
+Use the Coupons addon to create discount codes that work with group purchases. Apply the coupon at checkout.
+
+### Can group leaders add members immediately after purchase?
+
+No. Group leaders must wait for admin approval. After purchasing, the group has "Draft" status and members cannot be added until an admin changes the order status to "Completed."
+
+### What happens if a group leader removes a member?
+
+Depending on your settings ("Deactivate Enrollment on Member Change"), the removed member may lose access to group courses. They will also receive a notification email if configured.
+
+### Can I remove myself from my own group?
+
+No. The group leader (purchaser) cannot remove themselves from the group. Only admins can change group ownership.
+
+### Where do group leaders manage their groups?
+
+Group leaders access their groups through **Account → Groups** in the sidebar menu. This menu item only appears for users who have purchased at least one group course.
+
+### Can group leaders see other people's groups?
+
+No. Group leaders can only view and manage groups they've created/purchased. Only admins can see all groups.
+
+### What if I want to add more members than my purchased seats?
+
+You cannot exceed the seat limit of your purchased tier. You would need to purchase another group or contact the admin about upgrading your existing group.
+
+### Do group members get enrolled automatically?
+
+Yes. When a group leader adds a member's email and saves, that member receives an invitation email. Once they create an account (or log in), they're automatically enrolled in all courses associated with that group.
+
+### Can group leaders delete their groups?
+
+Yes. Group leaders can delete groups they own from the Groups page. This action is permanent and will deactivate all member enrollments (if settings configured).
