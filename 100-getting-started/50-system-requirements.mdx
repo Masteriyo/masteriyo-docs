@@ -1,31 +1,104 @@
 ---
 title: System Requirements
-excerpt: Learn basics System Requirements yo use Masteriyo Free and premimum plugin.
+excerpt: Masteriyo LMS is designed to run on most modern WordPress hosting environments. Below are the minimum and recommended requirements for optimal performance.
 ---
 
-### General Configuration Recommendations
+## WordPress Requirements
 
-- **WP version**: 6.0 or higher
-- **PHP version**: 7.4 or higher
-- **MySQL version**:  version 8.0 or higher OR MariaDB version 10.5 or higher.
+| Requirement      | Minimum Version | Recommended           |
+| ---------------- | --------------- | --------------------- |
+| WordPress        | 6.5 or higher   | Latest stable version |
+| WordPress Tested | Up to 6.9       | -                     |
 
-### PHP Configuration Requirements
+## Server Requirements
 
-- **Post Max Size**: 64 MB
-- **Memory Limit**: 256 MB
-- **Time Limit**: 300
-- **Max Upload Size**: 64 MB
-- **WP Remote Get**: enabled
+### PHP
 
-### Hosting Requirements
+| Component   | Requirement       |
+| ----------- | ----------------- |
+| PHP Version | 7.4 or higher     |
+| Recommended | PHP 8.0 or higher |
+
+### Database
+
+| Component | Requirement    |
+| --------- | -------------- |
+| MySQL     | 5.6 or higher  |
+| MariaDB   | 10.1 or higher |
+
+### Web Server
+
+Masteriyo LMS is compatible with:
+
+- Apache (with mod_rewrite enabled)
+- Nginx
+- LiteSpeed
+
+## Required PHP Extensions
+
+The following PHP extensions must be enabled on your server:
+
+- **cURL** - For API integrations and external communications
+- **GD Library** or **Imagick** - For image processing and manipulation
+- **OpenSSL** - Required for secure payment gateway transactions
+- **mbstring** - For multi-byte string handling
+- **JSON** - For API communications and data processing
+- **XML** - For data import/export and processing
+- **Zip** - For file compression and decompression
+
+## Recommended PHP Configuration
+
+For optimal performance and functionality, configure your PHP settings as follows:
+
+| Setting             | Minimum     | Recommended     |
+| ------------------- | ----------- | --------------- |
+| memory_limit        | 256MB       | 512MB or higher |
+| max_execution_time  | 300 seconds | 600 seconds     |
+| max_input_vars      | 5000        | 10000           |
+| upload_max_filesize | 64MB        | 128MB           |
+| post_max_size       | 64MB        | 128MB           |
+| max_input_time      | 300 seconds | 600 seconds     |
+
+### How to Check Your PHP Settings
+
+You can check your current PHP configuration by:
+
+1. Installing a plugin like "WP Server Health Stats"
+2. Creating a `phpinfo.php` file in your WordPress root with:
+   ```php
+   <?php phpinfo(); ?>
+   ```
+3. Checking your hosting control panel (cPanel, Plesk, etc.)
+4. Using WordPress **Tools > Site Health** in your admin dashboard
+
+## SSL Certificate
+
+- **Required** for processing payments securely
+- **Recommended** for all production sites
+- Most hosting providers offer free SSL certificates via Let's Encrypt
+
+## Browser Compatibility
+
+Masteriyo LMS frontend is compatible with modern browsers:
+
+### Desktop Browsers
+
+- Google Chrome (Latest 2 versions)
+- Mozilla Firefox (Latest 2 versions)
+- Safari (Latest 2 versions)
+- Microsoft Edge (Latest 2 versions)
+
+> **Note:** Internet Explorer is not supported. We recommend users upgrade to a modern browser for the best experience.
+
+## Hosting Recommendations
 
 Masteriyo LMS performs best on a **dedicated hosting environment** with adequate server resources (CPU, RAM, and storage).
 
 We do **not recommend shared hosting**, including:
 
-* **Standard shared hosting**
-* **Budget or entry-level shared plans**
-* **Shared hosting with aggressive server-level caching** (such as LiteSpeed-based shared hosting)
+- **Standard shared hosting**
+- **Budget or entry-level shared plans**
+- **Shared hosting with aggressive server-level caching** (such as LiteSpeed-based shared hosting)
 
 These hosting types can cause **slow performance** and **cache-related issues**, especially for dynamic features like lessons and quizzes.
 
@@ -33,3 +106,107 @@ Please make sure your hosting server meets the **minimum WordPress requirements*
 [https://wordpress.org/about/requirements/](https://wordpress.org/about/requirements/)
 
 For the best experience, we recommend hosting that provides **full control over server-level caching** or uses modern setups such as **Nginx or Apache**.
+
+### Shared Hosting
+
+For small to medium-sized course sites (up to 1,000 students):
+
+- 2GB RAM minimum
+- SSD storage
+- PHP 7.4 or higher
+- Regular backups
+
+### VPS or Dedicated Hosting
+
+For larger course platforms (1,000+ students):
+
+- 4GB+ RAM
+- SSD storage
+- PHP 8.0 or higher
+- Object caching (Redis/Memcached)
+- CDN integration
+- Regular automated backups
+
+## Additional Requirements
+
+### For Payment Processing
+
+When using payment gateways (Stripe, PayPal, Mollie, etc.):
+
+- Valid SSL certificate (HTTPS)
+- API credentials from payment provider
+- Webhook support enabled
+- cURL and OpenSSL extensions
+
+### For Video Hosting
+
+Masteriyo supports multiple video hosting options:
+
+- **YouTube** - Free, unlimited storage
+- **Vimeo** - Privacy controls, better video quality
+- **Self-hosted** - Complete control, requires adequate server storage and bandwidth
+- **Third-party CDN** - For large-scale video delivery
+
+### For Email Notifications
+
+- SMTP server configuration recommended
+- Plugins like [Smart SMTP](https://wordpress.org/plugins/smart-smtp/) or similar
+- Valid SPF and DKIM records for deliverability
+
+### For Third-Party Integrations
+
+Depending on which features you use, you may need:
+
+- **Zoom** - API credentials for live class integration
+- **Google Meet** - OAuth credentials for meeting integration
+- **OpenAI** - API key for ChatGPT features
+- **Page Builders** - Elementor, Divi, Oxygen, or Bricks (if using their integrations)
+
+## Known Compatibility Issues
+
+### Server Configurations
+
+- **ModSecurity** - May block legitimate requests; whitelist Masteriyo endpoints if needed
+- **Cloudflare** - Ensure "Always Online" doesn't cache dynamic content
+- **Aggressive caching** - Exclude learn, checkout and account pages from caching
+
+### Plugin Conflicts
+
+While Masteriyo is designed to work with most plugins, conflicts may occur with:
+
+- Aggressive security plugins (may block REST API)
+- Caching plugins with improper configuration
+- Page builders with JavaScript conflicts
+
+> **Tip:** Always test plugin compatibility in a staging environment before deploying to production.
+
+## Checking Compatibility
+
+Before installing Masteriyo LMS, you can:
+
+1. Review your server's PHP version in **WordPress > Tools > Site Health**
+2. Contact your hosting provider to verify requirements
+3. Use a staging environment to test installation
+4. Check plugin compatibility with your current setup
+
+## Getting Help
+
+If you're unsure about your hosting environment or need assistance:
+
+- Contact your hosting provider's support team
+- Join our [Facebook Community](https://www.facebook.com/groups/masteriyo/)
+- Contact [Masteriyo Support](https://masteriyo.com/support/)
+
+## Minimum vs Recommended Requirements Summary
+
+| Component  | Minimum  | Recommended                 |
+| ---------- | -------- | --------------------------- |
+| WordPress  | 6.5      | Latest version              |
+| PHP        | 7.4      | 8.0+                        |
+| MySQL      | 5.6      | 5.7+ or MariaDB 10.1+       |
+| PHP Memory | 256MB    | 512MB+                      |
+| Storage    | 1GB      | 5GB+ (depending on content) |
+| SSL        | Optional | Required for payments       |
+| Caching    | None     | Page + Object caching       |
+
+> **Note:** Requirements may change with future updates. Always refer to the latest documentation when upgrading.
