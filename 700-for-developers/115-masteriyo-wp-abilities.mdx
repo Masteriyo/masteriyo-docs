@@ -1,0 +1,248 @@
+---
+title: Masteriyo WP Abilities API Integration
+excerpt: Masteriyo exposes full CRUD abilities for courses, sections, lessons, quizzes, questions, enrollments, orders, users, and settings via the WordPress Abilities API.
+---
+
+Masteriyo registers its core operations as **abilities** through the [WordPress Abilities API](https://developer.wordpress.org/apis/abilities/), making them available to AI agents, automation tools, and external integrations — including Claude Code via the WordPress MCP Adapter.
+
+Each ability maps directly to a Masteriyo REST API operation and respects the same permission model — only users with the correct WordPress capability can execute it.
+
+## Prerequisites
+
+- **WordPress 6.9 or higher** — the WP Abilities API is only available from WordPress 6.9+
+- **Masteriyo LMS** installed and activated (free or Pro)
+- **WordPress MCP Adapter plugin** — the official bridge that exposes WP Abilities to MCP clients like Claude Code ([download from GitHub](https://github.com/WordPress/mcp-adapter/releases/latest))
+- A WordPress user with **Administrator** role — abilities enforce the same capability checks as the Masteriyo REST API
+- **Application Password** for the user — generated from **WordPress Admin → Users → Profile → Application Passwords**
+
+---
+
+## Setup: Connect Claude Code to Your Site
+
+### Step 1 — Install the MCP Adapter plugin
+
+1. Download the latest release ZIP from the [WordPress/mcp-adapter GitHub releases page](https://github.com/WordPress/mcp-adapter/releases/latest).
+2. Go to **WordPress Admin → Plugins → Add New → Upload Plugin** and install the ZIP.
+3. Activate the plugin.
+
+### Step 2 — Generate an Application Password
+
+1. Go to **WordPress Admin → Users → Profile**.
+2. Scroll down to **Application Passwords**.
+3. Enter a name (e.g. `Claude Code`) and click **Add New Application Password**.
+4. Copy the generated password — you will not see it again.
+
+### Step 3 — Add the MCP server to Claude Code
+
+Add the following to your `.claude/mcp.json` (project-level) or `~/.claude/mcp.json` (global):
+
+```json
+{
+  "mcpServers": {
+    "masteriyo-site": {
+      "command": "npx",
+      "args": ["-y", "@automattic/mcp-wordpress-remote"],
+      "env": {
+        "WP_API_URL": "https://yoursite.com/wp-json/mcp/mcp-adapter-default-server",
+        "WP_API_USERNAME": "your-admin-username",
+        "WP_API_PASSWORD": "xxxx xxxx xxxx xxxx xxxx xxxx"
+      }
+    }
+  }
+}
+```
+
+> Replace `yoursite.com`, the username, and the Application Password with your own values.
+
+### Step 4 — Restart Claude Code
+
+After saving the config, restart Claude Code. The Masteriyo abilities will be discovered automatically and available as tools.
+
+---
+
+## Using Masteriyo Abilities in Claude Code
+
+Once connected, you can ask Claude Code to manage your Masteriyo LMS directly in natural language. Claude will call the appropriate ability behind the scenes.
+
+**Example prompts:**
+
+```
+List all published courses on my site.
+```
+
+```
+Create a new course called "Introduction to Python" with a beginner difficulty level.
+```
+
+```
+Enroll student ID 42 in course ID 15.
+```
+
+```
+Show me all pending orders.
+```
+
+```
+Update the general settings to disable guest checkout.
+```
+
+Claude Code resolves the intent to the matching ability (e.g. `masteriyo/course-create`, `masteriyo/enrollment-create`) and executes it with the correct parameters — no manual API calls needed.
+
+---
+
+## Available Abilities
+
+All abilities are registered under the `masteriyo-lms` category with the `masteriyo/` namespace.
+
+### Course
+
+| Ability                         | Description                              |
+| ------------------------------- | ---------------------------------------- |
+| `masteriyo/course-list`         | List all courses                         |
+| `masteriyo/course-get`          | Get a single course by ID                |
+| `masteriyo/course-create`       | Create a new course                      |
+| `masteriyo/course-update`       | Update an existing course                |
+| `masteriyo/course-delete`       | Delete a course                          |
+| `masteriyo/course-restore`      | Restore a trashed course                 |
+| `masteriyo/course-children-get` | Get sections and lessons inside a course |
+| `masteriyo/course-builder-get`  | Get the full course builder data         |
+| `masteriyo/course-builder-save` | Save course builder changes              |
+
+### Section
+
+| Ability                          | Description                              |
+| -------------------------------- | ---------------------------------------- |
+| `masteriyo/section-list`         | List all sections                        |
+| `masteriyo/section-get`          | Get a single section by ID               |
+| `masteriyo/section-create`       | Create a new section                     |
+| `masteriyo/section-update`       | Update a section                         |
+| `masteriyo/section-delete`       | Delete a section                         |
+| `masteriyo/section-children-get` | Get lessons and quizzes inside a section |
+
+### Lesson
+
+| Ability                    | Description               |
+| -------------------------- | ------------------------- |
+| `masteriyo/lesson-list`    | List all lessons          |
+| `masteriyo/lesson-get`     | Get a single lesson by ID |
+| `masteriyo/lesson-create`  | Create a new lesson       |
+| `masteriyo/lesson-update`  | Update a lesson           |
+| `masteriyo/lesson-delete`  | Delete a lesson           |
+| `masteriyo/lesson-restore` | Restore a trashed lesson  |
+| `masteriyo/lesson-clone`   | Clone an existing lesson  |
+
+### Quiz
+
+| Ability                       | Description                    |
+| ----------------------------- | ------------------------------ |
+| `masteriyo/quiz-list`         | List all quizzes               |
+| `masteriyo/quiz-get`          | Get a single quiz by ID        |
+| `masteriyo/quiz-create`       | Create a new quiz              |
+| `masteriyo/quiz-update`       | Update a quiz                  |
+| `masteriyo/quiz-delete`       | Delete a quiz                  |
+| `masteriyo/quiz-clone`        | Clone an existing quiz         |
+| `masteriyo/quiz-builder-get`  | Get the full quiz builder data |
+| `masteriyo/quiz-builder-save` | Save quiz builder changes      |
+
+### Question
+
+| Ability                     | Description                 |
+| --------------------------- | --------------------------- |
+| `masteriyo/question-list`   | List all questions          |
+| `masteriyo/question-get`    | Get a single question by ID |
+| `masteriyo/question-create` | Create a new question       |
+| `masteriyo/question-update` | Update a question           |
+| `masteriyo/question-delete` | Delete a question           |
+
+### Enrollment
+
+| Ability                       | Description                   |
+| ----------------------------- | ----------------------------- |
+| `masteriyo/enrollment-list`   | List all enrollments          |
+| `masteriyo/enrollment-get`    | Get a single enrollment by ID |
+| `masteriyo/enrollment-create` | Enroll a student in a course  |
+| `masteriyo/enrollment-update` | Update an enrollment          |
+| `masteriyo/enrollment-delete` | Delete an enrollment          |
+
+### Order
+
+| Ability                  | Description              |
+| ------------------------ | ------------------------ |
+| `masteriyo/order-list`   | List all orders          |
+| `masteriyo/order-get`    | Get a single order by ID |
+| `masteriyo/order-create` | Create a new order       |
+| `masteriyo/order-update` | Update an order          |
+| `masteriyo/order-delete` | Delete an order          |
+
+### User
+
+| Ability                 | Description             |
+| ----------------------- | ----------------------- |
+| `masteriyo/user-list`   | List all users          |
+| `masteriyo/user-get`    | Get a single user by ID |
+| `masteriyo/user-create` | Create a new user       |
+| `masteriyo/user-update` | Update a user           |
+| `masteriyo/user-delete` | Delete a user           |
+
+### Settings
+
+| Ability                              | Description              |
+| ------------------------------------ | ------------------------ |
+| `masteriyo/settings-get`             | Get all settings         |
+| `masteriyo/settings-update`          | Update settings          |
+| `masteriyo/settings-update-general`  | Update general settings  |
+| `masteriyo/settings-update-advance`  | Update advanced settings |
+| `masteriyo/settings-update-emails`   | Update email settings    |
+| `masteriyo/settings-update-payments` | Update payment settings  |
+| `masteriyo/settings-update-quiz`     | Update quiz settings     |
+
+---
+
+## Permissions
+
+Each ability enforces the same capability checks as the underlying Masteriyo REST API:
+
+- Creating or updating courses requires `edit_masteriyo_courses`
+- Managing users and settings requires `manage_masteriyo_settings`
+- Deleting orders requires admin-level access
+
+Unauthenticated requests or users without the required capability will receive a permission denied response.
+
+---
+
+## Extending with Custom Abilities
+
+Addons and third-party plugins can register additional abilities using the provided hooks.
+
+### Add a new ability
+
+```php
+add_action( 'masteriyo_register_abilities', function( $registry ) {
+    $registry->add( new MyCustomAbility() );
+} );
+```
+
+### Filter the full registry
+
+```php
+add_filter( 'masteriyo_abilities', function( $registry ) {
+    return $registry;
+} );
+```
+
+### Hide a specific ability
+
+```php
+add_filter( 'masteriyo_ability_mcp_public', function( $is_public, $ability_name ) {
+    if ( 'masteriyo/order-delete' === $ability_name ) {
+        return false;
+    }
+    return $is_public;
+}, 10, 2 );
+```
+
+<Callout>
+  Abilities must be registered before the registry is frozen. Always use the
+  `masteriyo_register_abilities` action — do not call `wp_register_ability()`
+  directly for Masteriyo abilities.
+</Callout>
