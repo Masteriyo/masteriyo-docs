@@ -191,18 +191,3 @@ Students can view their own attempts from the frontend account page by navigatin
 
 ![Student account Your Quiz Attempts page with H5P Quiz filter](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/14-student-quiz-attempts.png)
 
-### Scoring Behaviour for Multi-Content Quizzes [Pro]
-
-A single H5P Quiz can contain multiple H5P content items. Understanding how scoring works in this case is important:
-
-**How scores are calculated**
-
-When a student submits, Masteriyo collects each content item's individual score via xAPI, then sums them to produce the attempt's total earned points and total possible points. The pass/fail result is then evaluated against the **Pass** setting you configured (points or percentage).
-
-**Unattempted questions are scored as zero — they are not excluded**
-
-If a student submits without interacting with one or more content items, those items contribute `0 / max_score` to the total. The percentage and pass/fail result reflect all questions in the quiz, not just the ones answered.
-
-<Callout>
-  **Important:** For multi-content quizzes, the total possible points shown in **Score Overview** may be 0 until at least one student has completed the quiz, because H5P only records a content item's maximum score after it has been attempted. Once any student completes each item, the max scores are cached and all future attempts display correct totals. Use **Auto Calculate** on the **Full Points** setting to pre-populate the denominator without waiting for a real attempt.
-</Callout>
