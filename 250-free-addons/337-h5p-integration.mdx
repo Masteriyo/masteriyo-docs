@@ -4,98 +4,58 @@ show_child_cards: true
 excerpt: Embed interactive H5P content in lessons and add fully graded H5P Quizzes to your course curriculum — with attempt tracking, scoring, and a pass/fail result screen.
 ---
 
-<Callout>
-  {" "}
-  **Requirement:** The H5P Integration add-on requires the free [H5P plugin](https://wordpress.org/plugins/h5p/) to be installed and active. Masteriyo does not create H5P content — it renders and grades the content you build inside H5P.
-</Callout>
-
-H5P (HTML5 Package) is an open standard for building rich, interactive browser content — quizzes, drag-and-drop activities, interactive videos, flashcards, and more. Because Masteriyo's learn page is a React application, a plain `[h5p]` shortcode would not render correctly on its own; the add-on bridges that gap automatically.
+H5P (HTML5 Package) is an open standard for building rich, interactive browser content — quizzes, drag-and-drop activities, interactive videos, flashcards, and more. Because Masteriyo's learn page is a React application, a plain `[h5p]` shortcode would not render correctly on its own; this add-on bridges that gap automatically.
 
 The integration ships in two tiers:
 
-- **Free** — any `[h5p id="N"]` shortcode inside a lesson (or any other Masteriyo content area) is transparently converted into a responsive, auto-sizing iframe on the learn page. Nothing extra to configure.
+- **Free** — any `[h5p id="N"]` shortcode inside a lesson is transparently converted into a responsive, auto-sizing iframe on the learn page. Nothing extra to configure.
 - **Pro** — everything in Free, plus a dedicated **H5P Quiz** curriculum item with grading, attempt limits, a timer, a result screen, and per-question score tracking.
-
----
 
 ## Requirements
 
-| Requirement | Details |
-| --- | --- |
-| Masteriyo | Free plan (for embedding); Pro plan (for H5P Quizzes) |
-| H5P plugin | [H5P – Create and Share Rich Content and Applications](https://wordpress.org/plugins/h5p/) — free, from WordPress.org |
-| H5P content | Create your interactive content inside **Dashboard > H5P Content** before adding it to a course |
-
----
+1. [Masteriyo LMS](https://masteriyo.com/pricing/) (installed and activated)
+2. [H5P plugin](https://wordpress.org/plugins/h5p/) (installed and activated) — free from WordPress.org
+3. At least one H5P content item created under **Dashboard > H5P Content**
+4. [Masteriyo Pro](https://masteriyo.com/pricing/) — required for H5P Quizzes only
 
 ## Setup
 
 1. Install and activate the [H5P plugin](https://wordpress.org/plugins/h5p/) from WordPress.org.
 2. Go to **Dashboard > H5P Content** and create at least one piece of interactive content.
-3. Activate the [H5P Integration add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons) from **Masteriyo > Add-ons**.
+3. Activate the H5P Integration add-on from **Masteriyo > Addons**.
 
-![H5P Integration add-on toggle enabled in Masteriyo Add-ons](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/01-addon-toggle.png)
+![H5P Integration add-on toggle enabled in Masteriyo Addons](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/01-addon-toggle.png)
 
 <Callout>
-  {" "}
   **Note:** If the H5P plugin is not active, Masteriyo displays an admin notice. The add-on stays inactive until the H5P plugin is installed and running.
 </Callout>
-
----
 
 ## Supported Content Types
 
 ### For Lesson Embedding (Free)
 
-Any H5P content type can be embedded in a lesson using the `[h5p id="N"]` shortcode — there are no restrictions. Masteriyo converts the shortcode to a responsive iframe regardless of the content type.
+Any H5P content type can be embedded in a lesson — there are no restrictions. Masteriyo converts the shortcode to a responsive iframe regardless of content type.
 
-### For H5P Quizzes (Pro)
+### For H5P Quizzes [Pro]
 
-The H5P Question Bank only shows **scoreable** content — types that produce a grade Masteriyo can capture and display. The detection uses two complementary strategies:
+The H5P Question Bank only shows **scoreable** content types — those that produce a grade Masteriyo can capture and display:
 
-**Auto-detected — types that implement the H5P.Question interface**
-
-These types declare `H5P.Question` as a preloaded dependency (H5P's own standard interface for scored interactive content). Detection is dynamic: any future H5P type that implements the same interface will appear in the picker automatically without a plugin update.
-
-| Content Type | Machine Name |
+| Content Type | Content Type |
 | --- | --- |
-| Multiple Choice | `H5P.MultiChoice` |
-| True/False Question | `H5P.TrueFalse` |
-| Fill in the Blanks | `H5P.Blanks` |
-| Drag and Drop | `H5P.DragQuestion` |
-| Mark the Words | `H5P.MarkTheWords` |
-| Drag Text | `H5P.DragText` |
-| Essay | `H5P.Essay` |
-| Summary | `H5P.Summary` |
-| Image Hotspot Question | `H5P.ImageHotspotQuestion` |
-| Find Multiple Hotspots | `H5P.FindMultipleHotspots` |
-| Dictation | `H5P.Dictation` |
-| Speak the Words | `H5P.SpeakTheWords` |
-
-**Explicitly included — scoring types with their own model**
-
-These types have their own scoring model and do not declare an `H5P.Question` dependency, so they are included via an explicit allowlist:
-
-| Content Type | Machine Name |
-| --- | --- |
-| Question Set | `H5P.QuestionSet` |
-| Single Choice Set | `H5P.SingleChoiceSet` |
-| Arithmetic Quiz | `H5P.ArithmeticQuiz` |
-| Memory Game | `H5P.MemoryGame` |
-| Crossword | `H5P.Crossword` |
-| Flashcards | `H5P.Flashcards` |
-| Speak the Words Set | `H5P.SpeakTheWordsSet` |
-
-**Not shown in the quiz content picker**
-
-Pure presentational or informational types are excluded from H5P Quizzes because they produce no score: `H5P.ImageHotspots`, `H5P.Agamotto`, `H5P.InteractiveVideo`, `H5P.CoursePresentation`, `H5P.Timeline`, `H5P.Chart`, and all utility libraries. These types can still be embedded freely in lessons using the shortcode.
+| Multiple Choice | True/False Question |
+| Fill in the Blanks | Drag and Drop |
+| Mark the Words | Drag Text |
+| Essay | Summary |
+| Image Hotspot Question | Find Multiple Hotspots |
+| Dictation | Speak the Words |
+| Question Set | Single Choice Set |
+| Arithmetic Quiz | Memory Game |
+| Crossword | Flashcards |
+| Speak the Words Set | |
 
 <Callout>
-  {" "}
-  **Note:** Only content types that are actually installed on your WordPress site appear in the H5P Question Bank — the list reflects your installed H5P library, not the full catalogue above.
+  **Note:** Only content types installed on your WordPress site appear in the H5P Question Bank. Pure presentational types (Interactive Video, Course Presentation, Timeline, etc.) are excluded — they produce no score, but can still be embedded freely in lessons.
 </Callout>
-
----
 
 ## Embedding H5P Content in a Lesson (Free)
 
@@ -103,34 +63,31 @@ Every H5P item you create has a unique shortcode shown in **Dashboard > H5P Cont
 
 1. Go to **Masteriyo > Courses** and open the course **Builder**.
 2. Click a **Lesson** to edit it.
-3. Paste the H5P shortcode into the lesson **Description**.
+3. In the lesson **Description**, paste the H5P shortcode:
+   - **Classic Editor** — paste directly into the text area.
+   - **Block Editor** — add a **Shortcode** block, then paste the shortcode inside it.
 
    ```
    [h5p id="3"]
    ```
 
-4. Click **Update**.
+4. Click **Publish** or **Update** to save.
 
 ![H5P shortcode pasted in the lesson description editor](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/02-lesson-shortcode.png)
 
-On the learn page, Masteriyo silently replaces the shortcode with a sandboxed iframe. The iframe resizes itself to match the content height so there is no fixed blank space or scrollbar.
+On the learn page, Masteriyo silently replaces the shortcode with an iframe. The iframe resizes itself to match the content height so there is no fixed blank space or scrollbar.
 
 ![H5P interactive content rendered inside the Masteriyo learn page](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/03-lesson-learn-page.png)
 
 <Callout>
-  {" "}
-  **Tip:** The same `[h5p id="N"]` shortcode works in quiz descriptions, question descriptions, and assignment answer fields — anywhere Masteriyo renders content on the learn page.
+  **Tip:** The same `[h5p id="N"]` shortcode works in any Masteriyo content description field that renders on the learn page — including quiz descriptions, individual question descriptions, assignment descriptions, and Google Meet descriptions. Add it the same way: paste directly in Classic Editor, or use a Shortcode block in Block Editor.
 </Callout>
 
-The add-on also enables H5P's built-in **content-state saving**, so students can pause an activity and resume from where they left off when they return to the lesson.
+## H5P Quizzes [Pro]
 
----
+With [Masteriyo Pro](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version), the H5P Integration add-on introduces the **H5P Quiz** — a first-class curriculum item that sits alongside lessons and standard quizzes inside a course section. Pro also enables H5P's built-in **content-state saving**, so students can pause an activity and resume from where they left off when they return.
 
-## H5P Quizzes (Pro)
-
-With [Masteriyo Pro](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version), the H5P Integration add-on introduces the **H5P Quiz** — a first-class curriculum item that sits alongside lessons and standard quizzes inside a course section.
-
-### Creating an H5P Quiz
+### Creating an H5P Quiz [Pro]
 
 1. Open a course in the **Builder** and navigate to the section where the quiz should appear.
 2. Click **Add New** inside that section and choose **H5P Quiz**.
@@ -187,9 +144,7 @@ Configure grading and display behaviour before saving.
 
 The quiz now appears in the curriculum sidebar on the learn page with its name and, if set, its duration.
 
----
-
-### Taking an H5P Quiz (Student View)
+### Taking an H5P Quiz [Pro]
 
 Students open the H5P Quiz from the curriculum sidebar. Each H5P question loads in its own iframe, identical to the free lesson embedding but wired up for score capture.
 
@@ -210,17 +165,15 @@ After answering all questions, the student clicks **Submit**. If **Show Result**
 
 ![H5P Quiz result screen with score and pass/fail indicator](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/12-quiz-result.png)
 
-From the result screen the student can **Start Quiz Again** (if retakes are allowed) or click **Complete Quiz** to mark the item as complete and continue through the course — exactly the same behaviour as a standard Masteriyo quiz.
+From the result screen the student can **Start Quiz Again** (if retakes are allowed) or click **Complete Quiz** to mark the item as complete and continue through the course.
 
----
-
-### Viewing H5P Quiz Attempts
+### Viewing H5P Quiz Attempts [Pro]
 
 H5P Quiz attempts are visible in two places. Both surfaces share the same **Default / H5P Quiz** type dropdown that separates H5P attempts from standard Masteriyo quiz attempts.
 
 **Admin and Instructor — Masteriyo > Quiz Attempts**
 
-Go to **Dashboard > Masteriyo > Quiz Attempts** in the WordPress admin sidebar. The first dropdown defaults to **Default** (standard quizzes). Select **H5P Quiz** to switch the entire table — including the student search and the quiz filter — to show only H5P Quiz attempts.
+Go to **Dashboard > Masteriyo > Quiz Attempts**. The first dropdown defaults to **Default** (standard quizzes). Select **H5P Quiz** to switch the entire table — including the student search and the quiz filter — to show only H5P Quiz attempts.
 
 ![Masteriyo Quiz Attempts admin screen filtered to H5P Quiz](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/13-admin-quiz-attempts.png)
 
@@ -234,29 +187,22 @@ Each row in the table shows:
 
 **Student — Your Quiz Attempts (Account page)**
 
-Students can view their own attempts from the frontend account page by navigating to **Your Quiz Attempts** in the account sidebar. The page shows a **Default** dropdown (top-left) — selecting **H5P Quiz** filters the table to show only H5P Quiz attempts. The table columns are **Quiz**, **Quiz Summary**, and **Result**.
+Students can view their own attempts from the frontend account page by navigating to **Your Quiz Attempts** in the account sidebar. Select **H5P Quiz** from the dropdown to filter the table to H5P attempts. The table columns are **Quiz**, **Quiz Summary**, and **Result**.
 
 ![Student account Your Quiz Attempts page with H5P Quiz filter](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/14-student-quiz-attempts.png)
 
----
+### Scoring Behaviour for Multi-Content Quizzes [Pro]
 
-### Scoring Behaviour for Multi-Content Quizzes
-
-A single H5P Quiz can contain multiple H5P content items (one per question slot). Understanding how scoring works in this case is important:
+A single H5P Quiz can contain multiple H5P content items. Understanding how scoring works in this case is important:
 
 **How scores are calculated**
 
-When a student submits, Masteriyo collects each content item's individual score and max score via xAPI. It sums them across all items to produce the attempt's total earned points and total possible points. The **pass/fail** result is then evaluated against the **Pass** setting you configured (points or percentage).
+When a student submits, Masteriyo collects each content item's individual score via xAPI, then sums them to produce the attempt's total earned points and total possible points. The pass/fail result is then evaluated against the **Pass** setting you configured (points or percentage).
 
 **Unattempted questions are scored as zero — they are not excluded**
 
-If a student submits the quiz without interacting with one or more content items, those items contribute `0 / max_score` to the total. The total possible points denominator includes every question regardless of whether it was answered. This means:
-
-- A student who skips a question receives 0 points for it.
-- The percentage and pass/fail result reflect all questions in the quiz, not just the ones the student answered.
+If a student submits without interacting with one or more content items, those items contribute `0 / max_score` to the total. The percentage and pass/fail result reflect all questions in the quiz, not just the ones answered.
 
 <Callout>
-  {" "}
   **Important:** For multi-content quizzes, the total possible points shown in **Score Overview** may be 0 until at least one student has completed the quiz, because H5P only records a content item's maximum score after it has been attempted. Once any student completes each item, the max scores are cached and all future attempts display correct totals. Use **Auto Calculate** on the **Full Points** setting to pre-populate the denominator without waiting for a real attempt.
 </Callout>
-
