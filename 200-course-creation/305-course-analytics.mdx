@@ -1,40 +1,86 @@
 ---
 title: Advanced Analytics for Courses [Pro]
 show_child_cards: true
-excerpt: This section helps the instructor to analyze various aspects of the courses they create.
+excerpt: Open a detailed report for any single course — metric cards, enrollment and sales charts, enrolled students with progress, instructors, and commission — and mark progress or reset it.
 ---
 
 ## Advanced Analytics for Courses
 
-Masteriyo provides individual course reports. To access a report for each course, including student activity and progress, go to your **Dashboard > Masteriyo > Courses**. Click the three dots next to a course, then select the **"Reports"** button. 
+Masteriyo Pro gives every course its own detailed report — content counts, enrollment and sales trends, the list of enrolled students with their progress, instructors, and (with Revenue Sharing) a commission breakdown.
 
-![masteriyo-courses-analytics](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/eccf5458-fc6f-416a-a0f6-92162dbf9674)
+There are two ways to open a course's report:
 
-This will show advanced analytics for that course, including sales, enrollment, and student progress.   
+- From **Masteriyo > Courses**, click the three dots on a course and choose **Reports**.
+- From the [Analytics Dashboard](https://docs.masteriyo.com/getting-started/analytics-dashboard), open the **Courses** list and click **Details** on a course.
 
-![advanced-analytics-dashboard](https://github.com/user-attachments/assets/69238aad-119a-4086-a757-7781c6ea963a)
+---
 
-### Student's Progress
+## The course report
 
-To check the progress of the enrolled students, scroll to the Enrolled Students section. Here, you will find the list of the students enrolled in the respective course. You can click the **Progress** button for each student to check and modify their progress.
+At the top of the report you can fine-tune the view:
 
-![enrolled-students-progress](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/8ee29ed8-509d-407a-8365-ada797412374)  
+- **Date range** — pick the period to analyze (defaults to the last 30 days).
+- **Interval** — group the chart by **Day**, **Week**, or **Month**.
+- **Print** — print the report or save it as a PDF.
 
+![A single course's analytics report](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:b498e8d5d4f04d6fd1cfe8087e099676/directUpload/Single_Course_Analytics.png)
 
-#### Mark as Complete [Pro]
-Administrators can override user progress statuses through two methods:  
+### Metric cards
 
-![mark-as-complete-for-course](https://github.com/user-attachments/assets/39d70ff5-bc11-477e-9f55-b4e4313cb14e)
+Four metric cards summarize the course. By default they show **Total Lessons**, **Total Quizzes**, **Total Questions**, and **Total Reviews**. Click a card's title to swap it for another — **Total Q&A**, **Total Students**, or **Total Instructors**.
 
-  - **Mark All As Complete:** Mark an entire course as completed for specific users.    
-  - **Mark as Complete:** Manually mark individual course components (lessons, quizzes, assignments, etc.) as completed.  
-This feature is ideal for correcting progress tracking errors or accommodating exceptional circumstances.  
+### Charts
 
-#### Reset Progress [Pro]
-This functionality enables administrators to:  
-  - Reset user progress for entire courses through the Reset Progress button. It removes all completion records, quiz attempts, and tracked metrics associated with the selected course.  
+The report includes an **Enrollment** chart and a **Sales** chart. Use the chart menu to switch between them, and the series checkboxes to show or hide lines for **Students Enrolled**, **Course Completions**, **Lesson Completions**, and **Quiz Completions**.
 
-![reset-progress-for-course](https://github.com/user-attachments/assets/9705c0ab-2485-4ac6-ad06-467c720812ba)
+### Tables
 
-**Note:** This action is irreversible. Users will need to restart progress from the beginning.
+Below the chart, switch between tabs:
 
+- **Enrolled Students** — the students taking this course (see below).
+- **Instructors** — the course's instructors (Name, Username, Email).
+- **Commissions** — the instructor/admin earnings split. *(Only with the Revenue Sharing add-on.)*
+
+---
+
+## Enrolled students
+
+The **Enrolled Students** tab lists everyone taking the course, with their **Username**, **Email**, and a **Progress** bar.
+
+- **Search** students by username or email.
+- **Add Student** — enroll a student into the course manually.
+- **Unenroll** — remove a student (this also erases their progress and related data).
+- **Progress** — open that student's detailed progress report.
+
+---
+
+## A student's progress report
+
+Click **Progress** next to a student to open their report for the course. Here you can review and adjust how far they've come.
+
+### Activity summary
+
+If **user activity tracking** is enabled, the report shows the student's **Last Access**, **Access Count**, **Time Spent**, and **Idle Time** — both for the course overall and for each item.
+
+### Sections and items
+
+Each section expands to show its lessons, quizzes, and assignments. Completed items show a green check (with the completion date); items not yet done show a **Mark as Complete** button.
+
+### Mark as Complete [Pro]
+
+Administrators can override a student's progress:
+
+- **Mark All As Complete** — mark the entire course complete for the student. You can choose to notify the student, instructor, and admin by email.
+- **Mark as Complete** — mark an individual item (lesson, quiz, assignment, etc.) complete.
+
+This is ideal for correcting tracking errors or accommodating exceptional circumstances.
+
+![Mark a course or item as complete](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:10171e1a71e5caa3ed6240ce7b5f043e/directUpload/Student_Progress.png)
+
+### Reset Progress [Pro]
+
+Use **Reset Progress** to clear all of the student's progress for the course — completion records, quiz attempts, and tracked metrics.
+
+![Reset a student's course progress](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:f266c34a7f1f8df9f944e6719de6a625/directUpload/Reset_Progress.png)
+
+**Note:** This action is irreversible. The student will need to start the course again from the beginning.
