@@ -22,12 +22,22 @@ Each course sold through WooCommerce needs a linked WooCommerce product.
 2. Go to **Settings > Pricing**, set the course to **Paid**, and enter a price.
 3. Go to **Settings > WooCommerce**.
 
-![wc-create-product](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/course-editor-woocommerce-create-product.png)
+![course-editor-woocommerce-create-product-1](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/course-editor-woocommerce-create-product-1.png)
 
 You have two options:
 
 - **Create Product** — automatically creates a new WooCommerce product of type **Masteriyo Course** and links it to the course. The new product will appear under **Dashboard > Products > All Products**.
-- **Link Existing Product** — if you already have a WooCommerce product for this course, select it from the dropdown and click **Link Product**. The product stays as-is; only the link between the course and the product is established.
+- **Link Existing Product** — select an existing WooCommerce product from the dropdown and click **Link Product**.
+
+![course-editor-woocommerce-create-product-2](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/course-editor-woocommerce-create-product-2.png)
+
+When using **Link Existing Product**, a **Convert & Link Product** confirmation dialog appears. Check the box confirming the product type will change to **Masteriyo Course**, then click **Convert & Link**.
+
+![course-editor-woocommerce-create-product-3](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/course-editor-woocommerce-create-product-3.png)
+
+Once confirmed, the WooCommerce tab shows the linked product with its price and an **Unlink** button.
+
+![course-editor-woocommerce-create-product-4](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/course-editor-woocommerce-create-product-4.png)
 
 ### Step 2 — Students Buy and Get Enrolled
 
@@ -66,7 +76,7 @@ When enabled, students are redirected to the course they purchased immediately a
 
 ## Enrollment Confirmation Email
 
-When a WooCommerce order reaches **Completed**, students receive an enrollment confirmation email alongside WooCommerce's standard order email. This email confirms which course they have been enrolled in.
+When a WooCommerce order reaches **Completed**, Masteriyo sends an order completion email to the student. The enrollment confirmation email is sent separately — it is triggered when the student manually starts the course for the first time, not at the moment of purchase.
 
 To customize the email content, go to **Masteriyo > Settings > Emails**.
 
@@ -77,7 +87,7 @@ By default, enrollment requires every buyer to have a WordPress account. If you 
 Go to **WooCommerce > Settings > Accounts & Privacy**:
 
 - Under **Checkout** — **Check** "Enable guest checkout"
-- Under **Account creation** — **Check** "During checkout" — WooCommerce creates a WordPress account for the guest automatically, which is used to complete enrollment.
+- Under **Account creation** — **Check** "After checkout" or "During checkout" — either option tells WooCommerce to create a WordPress account for the guest automatically, which is used to complete enrollment.
 
 ![woocommerce-account-settings](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/woocommerce-accounts-privacy-settings.png)
 
@@ -90,11 +100,14 @@ Enrollment happens once the account is created — no action needed from the stu
 If you already have WooCommerce products and want to turn one into a course, you can do it directly from the products list — no need to start from the course editor.
 
 1. Go to **Dashboard > Products > All Products**.
-2. Hover over the product.
-3. Click **Create Course** in the row actions.
-4. A confirmation dialog appears. Check the box confirming the product type will change to **Masteriyo Course**, then click **Convert & Create Course**.
+2. Hover over the product to reveal the row actions.
+3. Click **Create Course**.
 
-![wc-create-course-row-action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/products-list-create-course-row-action.png)
+![products-list-create-course-row-action-1](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/products-list-create-course-row-action-1.png)
+
+4. A **Convert to Masteriyo Course?** confirmation dialog appears. Check the box confirming the product type will change to **Masteriyo Course**, then click **Convert & Create Course**.
+
+![products-list-create-course-row-action-2](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/products-list-create-course-row-action-2.png)
 
 A new course is created in **draft** status and automatically linked to that product. Open it in **Masteriyo > Courses** to add content and publish it. If the product is already linked to a course, the row action shows **Edit Course** instead.
 
@@ -104,7 +117,11 @@ You can manage the link from either side:
 
 **From the course editor** — Go to **Masteriyo > Courses**, open the course, and go to **Settings > WooCommerce**. From here you can create a new product, link an existing one, or remove the link.
 
+![course-editor-woocommerce-manage-link](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/course-editor-woocommerce-manage-link.png)
+
 **From the WooCommerce product editor** — Open the product under **Dashboard > Products > All Products**. In the **Product data** section, set the type to **Masteriyo Course** and use the **Course** tab to select or change the linked course.
+
+![woocommerce-product-editor-course-tab](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/woocommerce/woocommerce-product-editor-course-tab.png)
 
 To remove the link entirely, delete the WooCommerce product. The course itself is not deleted — only the link is removed.
 
