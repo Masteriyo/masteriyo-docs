@@ -4,101 +4,98 @@ show_child_cards: true
 excerpt: Seamlessly migrate courses, enrollments, orders, reviews, and more from LearnPress, Tutor LMS, MasterStudy, LifterLMS, and LearnDash into Masteriyo.
 ---
 
-The Masteriyo Migration Tool lets you transfer your existing LMS data — courses, lessons, quizzes, enrollments, orders, reviews, and more — directly into Masteriyo. Migration runs entirely in the background using WordPress's Action Scheduler, so large sites with thousands of courses and students can migrate safely without hitting PHP time limits or blocking your WordPress admin.
+The Migration Tool lets you transfer your existing LMS data — courses, lessons, quizzes, enrollments, orders, reviews, and more — directly into Masteriyo. Migration runs entirely in the background using WordPress's Action Scheduler, so large sites with thousands of courses and students can migrate safely without hitting PHP time limits or blocking your WordPress admin.
 
-**Requires**
+**Requirements**
 
 1. [Masteriyo LMS](https://masteriyo.com/pricing/) (installed and activated)
-2. [Migration Tool Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons) (installed and activated)
+2. Migration Tool add-on activated — go to **Masteriyo > Addons** and enable it ([how to activate addons](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons))
+3. Your source LMS plugin (installed and activated on the same WordPress site)
 
 ## Setup
 
-Navigate to **Masteriyo > Addons** and enable the **Migration Tool** addon. Then open the migration interface at:
+Open the migration interface at **Masteriyo > Tools > Migration**.
 
-        Masteriyo > Tools > Migration
+![migration-tool-lms-cards](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-tool-lms-cards.png)
 
-![migration-tool-lms-cards](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:84fba899dc2d9a0dbea1c0d6d4b0e34d/directUpload/migration-tool-lms-cards.png)
-
-The page shows a card for each supported source LMS. Cards for plugins that are not installed or not active on your site are grayed out — install and activate the source plugin first, then return to this page.
+The page shows a card for each supported source LMS. Cards for plugins that are not installed or active on your site are grayed out.
 
 <Callout>
-  Both the source LMS plugin and Masteriyo (with the Migration Tool addon) must be installed and active on the same WordPress site before you begin. No data leaves or enters your site through external servers — everything migrates locally.
+  Both the source LMS plugin and Masteriyo must be active on the same WordPress site before you begin. No data leaves or enters your site through external servers — everything migrates locally.
 </Callout>
 
 ## How Migration Works
 
-Migration uses **Action Scheduler** (the same background job library used by WooCommerce) to process data in batches of 100 items at a time. Each migration step (e.g. Courses, Enrollments, Orders) runs in its own background job so no single PHP process handles the full dataset.
+Migration uses **Action Scheduler** (the same background job library used by WooCommerce) to process data in batches of 100 items at a time. Each migration step — Courses, Enrollments, Orders, etc. — runs as its own background job, so no single PHP process handles the full dataset.
 
 - If a job hits PHP's memory or time limit, it automatically re-queues itself from the last saved position and continues on the next cron cycle — no data is lost and no items are duplicated.
-- You can close the migration modal or navigate away at any time. The background jobs continue running and you can check progress by returning to the Migration page.
-- If you have Masteriyo Pro, any required Pro addon (e.g. Assignment, Zoom, Course Bundle) is **automatically activated** when its corresponding migration step begins — you do not need to activate them manually beforehand.
+- You can close the migration modal or navigate away at any time. Background jobs continue running and you can check progress by returning to **Masteriyo > Tools > Migration**.
+- Any required Masteriyo Pro addon (e.g. Assignment, Zoom, Course Bundle) is **automatically activated** when its corresponding migration step begins [Pro] — no need to activate them manually beforehand.
 
 ## Starting a Migration
 
 1. On the **Migration** page, click the card for your source LMS to select it.
 2. Click **Migrate**. A confirmation dialog appears.
 
-   ![migration-confirm-dialog](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:4872528df1cd27c80768f452a9062dae/directUpload/migration-confirm-dialog.png)
+   ![migration-confirm-dialog](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-confirm-dialog.png)
 
-3. Type **confirm** (lowercase, exact match) in the input field to enable the **Confirm & Start** button. This guard prevents accidental migrations.
-4. Click **Confirm & Start**. The migration modal opens and processing begins immediately in the background.
+3. Type **confirm** (lowercase, exact match) in the input field to enable the **Start** button. This prevents accidental migrations.
+4. Click **Start**. The migration modal opens and processing begins immediately in the background.
 
-   ![migration-modal-running](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:3fd3c6fb99ba084f1506a751f5569b0d/directUpload/migration-modal-running.png)
+   ![migration-modal-running](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-modal-running.png)
 
-The modal displays each migration step with its own progress indicator, item count, and status icon. An overall progress percentage is shown at the top. Steps that have zero items on your site are skipped automatically.
+The modal shows each migration step with its own progress indicator, item count, and status. An overall progress percentage is shown at the top. Steps with zero items on your site are skipped automatically.
 
 ## Monitoring Progress and Resuming
 
-You can close the migration modal at any time — the background jobs keep running. A banner appears at the top of the Migration page showing the current percentage and a **View Progress** button to reopen the modal.
+You can close the migration modal at any time — background jobs keep running. A banner appears at the top of the Migration page showing the current percentage and a **View Progress** button to reopen the modal.
 
-![migration-in-progress-banner](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:692782b484960d7401ff705fdc9233aa/directUpload/migration-in-progress-banner.png)
+![migration-in-progress-banner](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-in-progress-banner.png)
 
-If your browser tab is closed or the page is refreshed mid-migration, the banner reappears automatically the next time you visit **Masteriyo > Tools > Migration**, letting you pick up exactly where you left off.
+If your browser tab is closed or the page is refreshed mid-migration, the banner reappears the next time you visit **Masteriyo > Tools > Migration**, letting you pick up exactly where you left off.
 
 To stop a running migration, click **Cancel** inside the migration modal. Cancellation takes effect between batches, so it may take a moment to stop.
 
 ## Reviewing Migration Logs
 
 <Callout>
-  The **Logs** link and the migration-tool log file are only available when the Masteriyo logger is enabled. To enable it, go to **Masteriyo > Settings > Advanced > Debug** and turn on **Enable Logger**.
+  The **Logs** link and log file are only available when the Masteriyo logger is enabled. To enable it, go to **Masteriyo > Settings > Advanced > Debug** and turn on **Enable Logger**.
 </Callout>
 
-When the logger is enabled, every migration step is recorded under the source **migration-tool**. The log captures:
+When the logger is enabled, every migration step is recorded in the **migration-tool** log. The log captures:
 
 - **Step started** — how many items were found for that step.
-- **Item failures** — the item ID and the exact error message for any item that failed to migrate. Failed items are skipped on resume so they do not block the rest of the migration.
+- **Item failures** — the item ID and exact error message for any item that failed to migrate. Failed items are skipped on resume so they do not block the rest of the migration.
 - **Step completed** — how many items succeeded and how many failed.
 - **Skipped steps** — steps with no source data.
-- **Auto-activated addons** — which Masteriyo Pro addons were activated automatically.
+- **Auto-activated addons** — which Pro addons were activated automatically.
 - **Re-queued jobs** — if a background job timed out and was automatically restarted.
 
-A **Logs** link appears directly in the migration UI (inside the modal and in completion notices) only when the logger is enabled **and** the `migration-tool` log file has been created. Clicking it takes you straight to that log file.
+A **Logs** link appears inside the migration modal and in completion notices only when the logger is enabled **and** the log file exists. Clicking it takes you straight to that log.
 
-![migration-logs-link](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:9e7580b0e2acddc0ce0d37bdeb58a4e6/directUpload/migration-logs-link.png)
+![migration-logs-link](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-logs-link.png)
 
 To browse logs manually, go to **Masteriyo > Tools > Logs** and open the file named **migration-tool**.
 
-![migration-tool-log-viewer](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:103c7024fd6328c173eb97015e6f6354/directUpload/migration-tool-log-viewer.png)
-
-Use the log to identify any items that did not migrate — the error message for each failed item is shown on its own line with the item ID.
+![migration-tool-log-viewer](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-tool-log-viewer.png)
 
 ## Supported Platforms
 
-Masteriyo supports migration from the following LMS plugins. Each card on the Migration page lists the data types it can migrate.
+<Callout>
+  **Certificate auto-assignment:** If a course in the source LMS had a certificate template, a default Masteriyo certificate template is automatically assigned during migration. Applies to Tutor LMS, MasterStudy, LifterLMS, and LearnDash. Customize assigned templates at **Masteriyo > Certificates** after migration.
+</Callout>
 
-| Source LMS | Requires | Free items | Additional items with Masteriyo Pro |
-|---|---|---|---|
-| LearnPress | LearnPress plugin | Courses, Users, Enrollments, Orders, Reviews, Quiz Attempts, Course Progress | — |
-| Tutor LMS | Tutor LMS plugin | Courses, Users, Enrollments, Orders, Reviews, Q&A, Announcements, Course Progress, Quiz Attempts, Wishlists | Assignment Submissions, Google Meet, Course Bundles, Zoom, Gradebook *(require Tutor LMS Pro active)* |
-| MasterStudy | MasterStudy LMS plugin | Courses, Users, Enrollments, Orders, Reviews, Course Progress, Quiz Attempts, Wishlists | Assignments, Assignment Submissions, Zoom, Course Bundles *(require MasterStudy LMS Pro active)* |
-| LifterLMS | LifterLMS plugin | Courses, Users, Enrollments, Orders, Reviews, Course Progress, Quiz Attempts | Certificate auto-assignment for courses that had a certificate in LifterLMS |
-| LearnDash | LearnDash plugin | Courses, Users, Enrollments, Orders, Course Progress, Quiz Attempts | Assignments |
+| Source LMS | Free items | Additional items with Masteriyo Pro |
+|---|---|---|
+| LearnPress | Courses, Users, Enrollments, Orders, Reviews, Quiz Results, Course Progress | — |
+| Tutor LMS | Courses, Users, Enrollments, Orders, Reviews, Q&A, Announcements, Course Progress, Quiz Attempts, Wishlists, Google Meet *(requires Tutor LMS Pro)* | Assignment Submissions, Course Bundles, Zoom, Gradebook *(require Tutor LMS Pro)* |
+| MasterStudy | Courses, Users, Enrollments, Orders, Reviews, Course Progress, Quiz Attempts, Wishlists | Assignments, Assignment Submissions, Zoom, Course Bundles *(require MasterStudy LMS Pro)* |
+| LifterLMS | Courses, Users, Enrollments, Orders, Reviews, Course Progress, Quiz Attempts | — |
+| LearnDash | Courses, Users, Enrollments, Orders, Course Progress, Quiz Attempts, Assignments [Pro] | — |
 
 ---
 
 ### Migrate from LearnPress
-
-**Migrated items (Free & Pro):**
 
 | Step | What is migrated |
 |---|---|
@@ -107,14 +104,14 @@ Masteriyo supports migration from the following LMS plugins. Each card on the Mi
 | Enrollments | Student course enrollments with status |
 | Orders | Purchase orders with correct status mapping |
 | Reviews | Course reviews and ratings |
-| Quiz Attempts | Quiz attempt results per student |
+| Quiz Results | Quiz result records per student |
 | Course Progress | Per-student lesson completion records |
 
 ---
 
 ### Migrate from Tutor LMS
 
-**Migrated items (Free):**
+**Free:**
 
 | Step | What is migrated |
 |---|---|
@@ -128,26 +125,22 @@ Masteriyo supports migration from the following LMS plugins. Each card on the Mi
 | Course Progress | Per-student lesson and quiz progress |
 | Quiz Attempts | Detailed quiz attempt records |
 | Wishlists | Student wishlists |
+| Google Meet *(requires Tutor LMS Pro)* | Google Meet virtual classroom sessions |
 
-**Additional items with Masteriyo Pro** *(requires Tutor LMS Pro active on your site)*:
+**Pro** [Pro] *(requires Masteriyo Pro + Tutor LMS Pro)*:
 
 | Step | What is migrated | Masteriyo Addon Auto-Activated |
 |---|---|---|
 | Assignment Submissions | Student assignment submission records | Assignment |
-| Google Meet | Google Meet virtual classroom sessions | Google Meet |
 | Course Bundles | Course bundle products with included courses | Course Bundle |
 | Zoom | Zoom virtual classroom sessions | Zoom |
 | Gradebook | Student gradebook records | Gradebook |
-
-<Callout>
-  Tutor LMS Pro must be installed and active on your site for its Pro-only migration steps to appear. Steps backed by Tutor LMS Pro are skipped automatically if the Pro plugin is not active.
-</Callout>
 
 ---
 
 ### Migrate from MasterStudy
 
-**Migrated items (Free):**
+**Free:**
 
 | Step | What is migrated |
 |---|---|
@@ -160,7 +153,7 @@ Masteriyo supports migration from the following LMS plugins. Each card on the Mi
 | Quiz Attempts | Detailed quiz attempt records |
 | Wishlists | Student course wishlists |
 
-**Additional items with Masteriyo Pro** *(requires MasterStudy LMS Pro active on your site)*:
+**Pro** [Pro] *(requires Masteriyo Pro + MasterStudy LMS Pro)*:
 
 | Step | What is migrated | Masteriyo Addon Auto-Activated |
 |---|---|---|
@@ -169,15 +162,9 @@ Masteriyo supports migration from the following LMS plugins. Each card on the Mi
 | Zoom | Zoom virtual classroom sessions | Zoom |
 | Course Bundles | Course bundle products with included courses | Course Bundle |
 
-<Callout>
-  MasterStudy LMS Pro must be installed and active on your site for its Pro-only migration steps to appear. Steps backed by MasterStudy LMS Pro are skipped automatically if the Pro plugin is not active.
-</Callout>
-
 ---
 
 ### Migrate from LifterLMS
-
-**Migrated items (Free & Pro):**
 
 | Step | What is migrated |
 |---|---|
@@ -189,42 +176,32 @@ Masteriyo supports migration from the following LMS plugins. Each card on the Mi
 | Course Progress | Per-student lesson and quiz progress |
 | Quiz Attempts | Detailed quiz attempt records |
 
-<Callout>
-  With Masteriyo Pro, any course in LifterLMS that had a certificate is automatically assigned a Masteriyo certificate template after migration. The original LifterLMS certificate design cannot be converted, so a default template is assigned. You can customize it at **Masteriyo > Certificates** after migration.
-</Callout>
 
 ---
 
 ### Migrate from LearnDash
 
-**Migrated items (Free):**
-
 | Step | What is migrated |
 |---|---|
 | Users | Instructor user accounts |
-| Courses | Courses with sections, lessons, and quizzes (with section ordering preserved) |
+| Courses | Courses with sections, lessons, and quizzes (section ordering preserved) |
 | Enrollments | Student course enrollments |
 | Orders | Purchase orders |
 | Course Progress | Per-student lesson completion records |
 | Quiz Attempts | Detailed quiz attempt records |
-
-**Additional items with Masteriyo Pro:**
-
-| Step | What is migrated | Masteriyo Addon Auto-Activated |
-|---|---|---|
-| Assignments | LearnDash assignment posts and student submissions | Assignment |
+| Assignments [Pro] | LearnDash assignment posts and student submissions (Assignment addon auto-activated) |
 
 ---
 
 ## After Migration
 
-Once migration completes, the modal shows a success state with the total number of items migrated. A completion notice also appears on the Migration page the next time you visit, including a **Logs** link when a log file exists.
+Once migration completes, the modal shows a success state with the total number of items migrated. A completion notice also appears the next time you visit the Migration page, including a **Logs** link when a log file exists.
 
-Verify migrated data in the corresponding Masteriyo sections:
+Verify the migrated data in the corresponding sections:
 
 - **Masteriyo > Courses** — courses, lessons, and quizzes
 - **Masteriyo > Students** — enrolled students
 - **Masteriyo > Orders** — purchase order history
 - **Masteriyo > Reviews** — course reviews
 
-If fewer items than expected were migrated, open **Masteriyo > Tools > Logs** and review the **migration-tool** log file. Each failed item is listed with its ID and the reason it was skipped.
+If fewer items than expected were migrated, go to **Masteriyo > Tools > Logs**, open the **migration-tool** log file, and look for failed items — each is listed with its ID and the reason it was skipped.
