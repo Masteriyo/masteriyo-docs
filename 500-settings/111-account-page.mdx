@@ -4,10 +4,7 @@ show_child_cards: true
 excerpt: Masteriyo > Settings > Account Page
 ---
 
-<Callout>
-  {" "}  
-Location: Masteriyo > Settings > Account Page
-</Callout>
+<Callout> Location: Masteriyo > Settings > Account Page</Callout>
 
 ![account-page-settings](https://github.com/user-attachments/assets/8bc74fb2-0fff-4c1d-809d-5eeeed0759f1)
 
@@ -31,3 +28,256 @@ Location: Masteriyo > Settings > Account Page
     - **Enable Edit Profile Button**: Enable this option to display a Edit Profile button on the Profile Page tab in the Account Page.
 
     ![account-page-profile-page-buttons](https://github.com/user-attachments/assets/763b652d-7f6f-4e6e-8a0d-ea5238c81b25)
+
+---
+
+## Add Custom Tab Programatically
+
+Masteriyo exposes a PHP registry API that lets addons and themes add custom links to the Account page sidebar. The API mirrors familiar WordPress patterns like `add_menu_page()` — register once, the core renders it.
+
+### Quick start
+
+You can place this code in any of the following locations:
+
+- **Theme's `functions.php`** — suitable for site-specific customizations.
+- **A custom plugin** — recommended for reusable or distributable addons.
+- **A [code snippets plugin](https://wordpress.org/plugins/code-snippets/)** — handy for lightweight additions without a custom plugin.
+
+```php
+use Masteriyo\Account\SidebarLinkRegistry;
+
+add_action( 'wp_enqueue_scripts', function() {
+    SidebarLinkRegistry::add( 'my-link', [
+        'label' => 'My Dashboard',
+        'url'   => '/my-dashboard/',
+    ] );
+} );
+```
+
+That's it. The link appears in the sidebar on every Account page.
+
+---
+
+### `SidebarLinkRegistry::add()`
+
+Register a new sidebar link.
+
+```php
+SidebarLinkRegistry::add( string $id, array $args ): void
+```
+
+#### Parameters
+
+| Parameter | Type     | Description                                             |
+| --------- | -------- | ------------------------------------------------------- |
+| `$id`     | `string` | Unique slug. `sanitize_key()` is applied automatically. |
+| `$args`   | `array`  | Link definition — see fields below.                     |
+
+#### `$args` fields
+
+| Field      | Type     | Default   | Required | Description                                                                              |
+| ---------- | -------- | --------- | -------- | ---------------------------------------------------------------------------------------- |
+| `label`    | `string` | —         | ✅       | Display text shown in the sidebar.                                                       |
+| `url`      | `string` | —         | ✅       | Destination. Internal: a path like `/courses/`. External: a full URL.                    |
+| `target`   | `string` | `'_self'` | —        | `'_self'` for React Router navigation (no page reload). `'_blank'` to open in a new tab. |
+| `icon`     | `string` | `''`      | —        | Inline SVG markup **or** an image URL.                                                   |
+| `priority` | `int`    | `10`      | —        | Sort order — lower numbers appear higher.                                                |
+
+#### URL format
+
+For internal links (`target: '_self'`), pass a client-side path. A leading `#` is normalized away so hash routing resolves correctly.
+
+```php
+'url' => '/courses/'       // ✅ recommended
+'url' => '#/courses/'      // ✅ normalized to /courses/
+'url' => 'https://...'     // ✅ pair with target => '_blank'
+```
+
+#### Priority ordering
+
+Built-in Masteriyo sidebar items use priority `10`.
+
+```php
+// appears above built-in links
+SidebarLinkRegistry::add( 'pinned', [
+    'label'    => 'Pinned',
+    'url'      => '/pinned/',
+    'priority' => 5,
+] );
+
+// appears below built-in links
+SidebarLinkRegistry::add( 'extras', [
+    'label'    => 'Extras',
+    'url'      => '/extras/',
+    'priority' => 20,
+] );
+```
+
+---
+
+### `SidebarLinkRegistry::remove()`
+
+Deregister a previously added link by its ID.
+
+```php
+SidebarLinkRegistry::remove( string $id ): void
+```
+
+Useful when a link should appear conditionally based on settings or user role.
+
+```php
+add_action( 'wp_enqueue_scripts', function() {
+    SidebarLinkRegistry::add( 'premium-reports', [
+        'label' => 'Premium Reports',
+        'url'   => '/reports/',
+    ] );
+
+    if ( ! current_user_can( 'manage_masteriyo_settings' ) ) {
+        SidebarLinkRegistry::remove( 'premium-reports' );
+    }
+} );
+```
+
+---
+
+### Hook timing
+
+Register links on or before `wp_enqueue_scripts`. The registry is read during script localization, which fires on that same hook.
+
+```php
+// ✅ correct — fires before scripts are localized
+add_action( 'wp_enqueue_scripts', function() {
+    SidebarLinkRegistry::add( 'my-link', [ /* ... */ ] );
+} );
+
+// ❌ too late — scripts already localized
+add_action( 'wp_footer', function() {
+    SidebarLinkRegistry::add( 'my-link', [ /* ... */ ] );
+} );
+```
+
+---
+
+### Icons
+
+The `icon` field accepts either an inline SVG string or an image URL. The registry detects the format based on whether the value starts with `<`.
+
+#### Inline SVG
+
+Pass raw SVG markup. It is sanitized server-side via `wp_kses()` before reaching the browser.
+
+Modern icon sets — Heroicons, Lucide, Phosphor — pass through without stripping because the allowlist includes `stroke`, `stroke-width`, `stroke-linecap`, `stroke-linejoin`, `fill-rule`, and `clip-rule`.
+
+SVG icons automatically inherit the sidebar text color via `fill: currentColor`.
+
+```php
+SidebarLinkRegistry::add( 'reports', [
+    'label' => 'Reports',
+    'url'   => '/reports/',
+    'icon'  => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+         fill="none" stroke="currentColor" stroke-width="2"
+         stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 3h18v18H3z"/>
+</svg>',
+] );
+```
+
+#### Image URL
+
+Pass a fully-qualified URL. The value is run through `esc_url_raw()`.
+
+```php
+SidebarLinkRegistry::add( 'docs', [
+    'label'  => 'Documentation',
+    'url'    => 'https://docs.example.com',
+    'target' => '_blank',
+    'icon'   => 'https://example.com/icon.png',
+] );
+```
+
+---
+
+### Validation
+
+Links missing `label` or `url` are silently dropped — no PHP notice, no broken entry in the UI.
+
+```php
+// silently dropped — no 'url'
+SidebarLinkRegistry::add( 'bad', [ 'label' => 'Broken' ] );
+
+// silently dropped — no 'label'
+SidebarLinkRegistry::add( 'also-bad', [ 'url' => '/somewhere/' ] );
+```
+
+---
+
+### Filter: `masteriyo_account_sidebar_common_links`
+
+For backward compatibility, the registry applies this filter before sorting and sanitizing. Links added through it continue to work.
+
+```php
+add_filter( 'masteriyo_account_sidebar_common_links', function( array $links ) {
+    $links['legacy-link'] = [
+        'label'    => 'Legacy Link',
+        'url'      => '/legacy/',
+        'priority' => 15,
+    ];
+    return $links;
+} );
+```
+
+:::caution
+Since the version that introduced `SidebarLinkRegistry`, the array passed to this filter is **keyed by link ID**, not numerically indexed. Callbacks that used `array_push()` or numeric keys should be updated to use associative keys.
+
+Prefer `SidebarLinkRegistry::add()` for new code. The filter is maintained for compatibility only.
+:::
+
+---
+
+### Complete example
+
+```php
+use Masteriyo\Account\SidebarLinkRegistry;
+
+add_action( 'wp_enqueue_scripts', function() {
+
+    // Internal SPA link with SVG icon
+    SidebarLinkRegistry::add( 'my-addon-home', [
+        'label'    => 'My Addon',
+        'url'      => '/my-addon/',
+        'icon'     => '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+             fill="none" stroke="currentColor" stroke-width="2">
+    <circle cx="12" cy="12" r="10"/>
+    <path d="M12 8v4l3 3"/>
+</svg>',
+        'priority' => 8,
+    ] );
+
+    // External link that opens in a new tab
+    SidebarLinkRegistry::add( 'my-addon-docs', [
+        'label'  => 'Addon Docs',
+        'url'    => 'https://docs.my-addon.com',
+        'target' => '_blank',
+        'icon'   => 'https://my-addon.com/favicon.png',
+    ] );
+
+    // Conditionally remove based on option
+    if ( ! get_option( 'my_addon_show_sidebar_link' ) ) {
+        SidebarLinkRegistry::remove( 'my-addon-home' );
+    }
+
+} );
+```
+
+---
+
+### Reference
+
+|                 |                                            |
+| --------------- | ------------------------------------------ |
+| **Class**       | `Masteriyo\Account\SidebarLinkRegistry`    |
+| **File**        | `includes/Account/SidebarLinkRegistry.php` |
+| **Filter**      | `masteriyo_account_sidebar_common_links`   |
+| **Register on** | `wp_enqueue_scripts` or earlier            |
+| **Since**       | `2.3.0`                                    |
+| **PHP target**  | 7.4+                                       |
