@@ -17,7 +17,7 @@ Navigate to **Masteriyo > Addons** and enable the **Migration Tool** addon. Then
 
         Masteriyo > Tools > Migration
 
-![migration-tool-lms-cards](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-tool-lms-cards.png)
+![migration-tool-lms-cards](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:84fba899dc2d9a0dbea1c0d6d4b0e34d/directUpload/migration-tool-lms-cards.png)
 
 The page shows a card for each supported source LMS. Cards for plugins that are not installed or not active on your site are grayed out — install and activate the source plugin first, then return to this page.
 
@@ -38,12 +38,12 @@ Migration uses **Action Scheduler** (the same background job library used by Woo
 1. On the **Migration** page, click the card for your source LMS to select it.
 2. Click **Migrate**. A confirmation dialog appears.
 
-   ![migration-confirm-dialog](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-confirm-dialog.png)
+   ![migration-confirm-dialog](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:4872528df1cd27c80768f452a9062dae/directUpload/migration-confirm-dialog.png)
 
-3. Type **confirm** (lowercase, exact match) in the input field to enable the **Start** button. This guard prevents accidental migrations.
-4. Click **Start**. The migration modal opens and processing begins immediately in the background.
+3. Type **confirm** (lowercase, exact match) in the input field to enable the **Confirm & Start** button. This guard prevents accidental migrations.
+4. Click **Confirm & Start**. The migration modal opens and processing begins immediately in the background.
 
-   ![migration-modal-running](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-modal-running.png)
+   ![migration-modal-running](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:3fd3c6fb99ba084f1506a751f5569b0d/directUpload/migration-modal-running.png)
 
 The modal displays each migration step with its own progress indicator, item count, and status icon. An overall progress percentage is shown at the top. Steps that have zero items on your site are skipped automatically.
 
@@ -51,7 +51,7 @@ The modal displays each migration step with its own progress indicator, item cou
 
 You can close the migration modal at any time — the background jobs keep running. A banner appears at the top of the Migration page showing the current percentage and a **View Progress** button to reopen the modal.
 
-![migration-in-progress-banner](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-in-progress-banner.png)
+![migration-in-progress-banner](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:692782b484960d7401ff705fdc9233aa/directUpload/migration-in-progress-banner.png)
 
 If your browser tab is closed or the page is refreshed mid-migration, the banner reappears automatically the next time you visit **Masteriyo > Tools > Migration**, letting you pick up exactly where you left off.
 
@@ -74,11 +74,11 @@ When the logger is enabled, every migration step is recorded under the source **
 
 A **Logs** link appears directly in the migration UI (inside the modal and in completion notices) only when the logger is enabled **and** the `migration-tool` log file has been created. Clicking it takes you straight to that log file.
 
-![migration-logs-link](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-logs-link.png)
+![migration-logs-link](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:9e7580b0e2acddc0ce0d37bdeb58a4e6/directUpload/migration-logs-link.png)
 
 To browse logs manually, go to **Masteriyo > Tools > Logs** and open the file named **migration-tool**.
 
-![migration-tool-log-viewer](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/migration-tool/migration-tool-log-viewer.png)
+![migration-tool-log-viewer](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:103c7024fd6328c173eb97015e6f6354/directUpload/migration-tool-log-viewer.png)
 
 Use the log to identify any items that did not migrate — the error message for each failed item is shown on its own line with the item ID.
 
