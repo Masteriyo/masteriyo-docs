@@ -24,7 +24,7 @@ The integration ships in two tiers:
 2. Go to **Dashboard > H5P Content** and create at least one piece of interactive content.
 3. Activate the H5P Integration add-on from **Masteriyo > Addons**.
 
-![H5P Integration add-on toggle enabled in Masteriyo Addons](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/01-addon-toggle.png)
+![H5P Integration add-on toggle enabled in Masteriyo Addons](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:af05ca03806e609191e955cec39ec5c5/directUpload/addon-toggle.png)
 
 <Callout>
   **Note:** If the H5P plugin is not active, Masteriyo displays an admin notice. The add-on stays inactive until the H5P plugin is installed and running.
@@ -47,11 +47,10 @@ The H5P Question Bank only shows **scoreable** content types — those that prod
 | Mark the Words | Drag Text |
 | Essay | Summary |
 | Image Hotspot Question | Find Multiple Hotspots |
-| Dictation | Speak the Words |
-| Question Set | Single Choice Set |
-| Arithmetic Quiz | Memory Game |
-| Crossword | Flashcards |
-| Speak the Words Set | |
+| Speak the Words | Question Set |
+| Single Choice Set | Arithmetic Quiz |
+| Memory Game | Crossword |
+| Flashcards | Speak the Words Set |
 
 <Callout>
   **Note:** Only content types installed on your WordPress site appear in the H5P Question Bank. Pure presentational types (Interactive Video, Course Presentation, Timeline, etc.) are excluded — they produce no score, but can still be embedded freely in lessons.
@@ -61,7 +60,7 @@ The H5P Question Bank only shows **scoreable** content types — those that prod
 
 Every H5P item you create has a unique shortcode shown in **Dashboard > H5P Content** (e.g. `[h5p id="3"]`).
 
-![h5p-content-shortcode](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/h5p-content-shortcode.png)
+![h5p-content-shortcode](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:56b42d95ea30e94b087847e3bb3ca8db/directUpload/h5p-content-shortcode.png)
 
 1. Go to **Masteriyo > Courses** and open the course **Builder**.
 2. Click a **Lesson** to edit it.
@@ -75,11 +74,11 @@ Every H5P item you create has a unique shortcode shown in **Dashboard > H5P Cont
 
 4. Click **Publish** or **Update** to save.
 
-![H5P shortcode pasted in the lesson description editor](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/02-lesson-shortcode.png)
+![H5P shortcode pasted in the lesson description editor](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:862d5da97ba81c6ba3be274c424817cd/directUpload/lesson-shortcode.png)
 
 On the learn page, Masteriyo silently replaces the shortcode with an iframe. The iframe resizes itself to match the content height so there is no fixed blank space or scrollbar.
 
-![H5P interactive content rendered inside the Masteriyo learn page](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/03-lesson-learn-page.png)
+![H5P interactive content rendered inside the Masteriyo learn page](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:17b0bfdf6601123980ae115815a7ae5d/directUpload/lesson-learn-page.png)
 
 <Callout>
   **Tip:** The same `[h5p id="N"]` shortcode works in any Masteriyo content description field that renders on the learn page — including quiz descriptions, individual question descriptions, assignment descriptions, and Google Meet descriptions. Add it the same way: paste directly in Classic Editor, or use a Shortcode block in Block Editor.
@@ -91,38 +90,43 @@ With [Masteriyo Pro](https://docs.masteriyo.com/getting-started/installation#ins
 
 ### Creating an H5P Quiz [Pro]
 
-1. Open a course in the **Builder** and navigate to the section where the quiz should appear.
-2. Click **Add New** inside that section and choose **H5P Quiz**.
+1. Go to **Masteriyo > Courses**, open the course, and click the **Builder** tab. Scroll to the section where you want to add the quiz.
 
-![Add New content modal with H5P Quiz option in the course builder](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/04-add-h5p-quiz.png)
+![Course Builder with Add New Content button highlighted](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:e890fc0905cf5c73768675f5b83c6fa7/directUpload/course-builder-add-new-content.png)
 
-3. The H5P Quiz editor opens with three tabs — **Info**, **Questions**, and **Quiz Settings**.
+2. Click **Add New Content** inside that section and choose **H5P Quiz**.
+
+![Add New content modal with H5P Quiz option in the course builder](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:cca2c962ef857aa3324de8a50e0de071/directUpload/add-h5p-quiz.png)
+
+3. The H5P Quiz editor opens with three tabs — **Info**, **Questions**, and **Quiz Settings**. Configure each tab as described below.
 
 #### Info Tab
 
 Enter the quiz **Name** and an optional **Description**.
 
-![H5P Quiz Info tab with name and description fields](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/05-quiz-info-tab.png)
+![H5P Quiz Info tab with name and description fields](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:76803d92d43a03de58b8e3b763e04638/directUpload/quiz-info-tab.png)
 
 #### Questions Tab
+
+![H5P Quiz Questions tab — empty state before adding questions](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:927ea17872687c5d523560525a4f42e0/directUpload/quiz-questions-tab.png)
 
 1. Click **Add H5P Question** to open the **H5P Question Bank**.
 2. Browse or search your H5P library. Each item shows its title and content-type badge.
 
-![H5P Question Bank modal with search and content-type filter](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/07-h5p-question-bank.png)
+![H5P Question Bank modal with search and content-type filter](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:2977773fe169da9559f32985483166e6/directUpload/h5p-question-bank.png)
 
 3. Select one or more items and click **Add**. Items appear as an ordered list inside the quiz.
 4. Drag to reorder or click the trash icon to remove an item.
 
-![H5P Quiz Questions tab showing selected H5P content items](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/08-quiz-questions-with-items.png)
+![H5P Quiz Questions tab showing selected H5P content items](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:b0082ebd232929521a7dd2738371c260/directUpload/quiz-questions-with-items.png)
 
 #### Quiz Settings Tab
 
 Configure grading and display behaviour before saving.
 
-![H5P Quiz Settings tab — General section](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/09-quiz-settings-general.png)
+![H5P Quiz Settings tab — General section](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:8382858813bd604c258a6b28f2a9f1dd/directUpload/quiz-settings-general.png)
 
-![H5P Quiz Settings tab — Display section](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/10-quiz-settings-display.png)
+![H5P Quiz Settings tab — Display section](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:5077485f6a5ed42ef95639637c14224d/directUpload/quiz-settings-display.png)
 
 **General**
 
@@ -142,15 +146,19 @@ Configure grading and display behaviour before saving.
 | **Randomize Questions** | Shuffles question order on each new attempt so students cannot memorise the sequence. |
 | **Show Result** | Displays the result screen (score, pass/fail, per-question breakdown) after the student submits. |
 
-5. Click **Add H5P Quiz** to save and return to the builder.
+4. Click **Add H5P Quiz** to save and return to the builder.
 
 The quiz now appears in the curriculum sidebar on the learn page with its name and, if set, its duration.
 
 ### Taking an H5P Quiz [Pro]
 
-Students open the H5P Quiz from the curriculum sidebar. Each H5P question loads in its own iframe, identical to the free lesson embedding but wired up for score capture.
+Students open the H5P Quiz from the curriculum sidebar. The quiz intro screen shows the quiz name, description, and a summary bar with duration, number of questions, total points, and pass points.
 
-![H5P Quiz on the student learn page with curriculum sidebar](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/11-quiz-learn-page.png)
+![H5P Quiz intro screen with Start Quiz button](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:caae00b98aa44301f7b64e10593eab55/directUpload/quiz-learn-page-start.png)
+
+Click **Start Quiz** to begin. Each H5P question loads in its own iframe, identical to the free lesson embedding but wired up for score capture.
+
+![H5P Quiz in progress with questions and Submit Quiz button](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:802860ffc5f116a8a125cef5f0964bc6/directUpload/quiz-learn-page.png)
 
 When **Duration** is configured, a countdown timer is displayed. When time expires, the quiz is auto-submitted.
 
@@ -165,7 +173,7 @@ After answering all questions, the student clicks **Submit**. If **Show Result**
 | **Earned Points** | Score the student achieved |
 | **Result** | Pass or Fail badge with percentage |
 
-![H5P Quiz result screen with score and pass/fail indicator](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/12-quiz-result.png)
+![H5P Quiz result screen with score and pass/fail indicator](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:e8a0523076a8c9604b06d3a81a74814e/directUpload/quiz-result.png)
 
 From the result screen the student can **Start Quiz Again** (if retakes are allowed) or click **Complete Quiz** to mark the item as complete and continue through the course.
 
@@ -177,7 +185,7 @@ H5P Quiz attempts are visible in two places. Both surfaces share the same **Defa
 
 Go to **Dashboard > Masteriyo > Quiz Attempts**. The first dropdown defaults to **Default** (standard quizzes). Select **H5P Quiz** to switch the entire table — including the student search and the quiz filter — to show only H5P Quiz attempts.
 
-![Masteriyo Quiz Attempts admin screen filtered to H5P Quiz](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/13-admin-quiz-attempts.png)
+![Masteriyo Quiz Attempts admin screen filtered to H5P Quiz](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:9e7abf5d1e354224617b3039e1c8950d/directUpload/admin-quiz-attempts.png)
 
 Each row in the table shows:
 
@@ -191,5 +199,4 @@ Each row in the table shows:
 
 Students can view their own attempts from the frontend account page by navigating to **Your Quiz Attempts** in the account sidebar. Select **H5P Quiz** from the dropdown to filter the table to H5P attempts. The table columns are **Quiz**, **Quiz Summary**, and **Result**.
 
-![Student account Your Quiz Attempts page with H5P Quiz filter](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/h5p-integration/14-student-quiz-attempts.png)
-
+![Student account Your Quiz Attempts page with H5P Quiz filter](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:6bfe2116960bf266b094819ae8236357/directUpload/student-quiz-attempts.png)
