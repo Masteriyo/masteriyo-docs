@@ -1,146 +1,167 @@
 ---
 title: WooCommerce
 show_child_cards: true
-excerpt: WooCommerce Integration Addon for Masteriyo allows the user to use WooCommerce for the checkout process and plethora of payment methods provided by the WooCommerce to sell courses.
+excerpt: Sell courses through WooCommerce checkout and payment gateways. Students enroll automatically when their order completes.
 ---
 
-WooCommerce Integration Addon for Masteriyo allows the user to use WooCommerce for the checkout process and plethora of payment methods provided by the WooCommerce to sell courses.
+The WooCommerce Integration addon connects your LMS to WooCommerce, letting you sell courses through any WooCommerce payment gateway. Students complete checkout through WooCommerce, and enrollment happens automatically — no manual action needed.
 
-## Requires
+**Requirements**
 
-- WooCommerce to be installed and activated.
+1. [Masteriyo LMS](https://masteriyo.com/pricing/) (installed and activated)
+2. [WooCommerce](https://wordpress.org/plugins/woocommerce/) (installed and activated)
+3. WooCommerce Integration add-on activated — go to **Masteriyo > Addons** and enable it ([how to activate addons](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons))
 
-## Features
+## Setup
 
-- Allows to use WooCommerce checkout process to enroll users.
-- Allows to use abundant of WooCommerce payment gateways.
-- Allow to use WooCommerce analytics.
+### Step 1 — Link a Course to a WooCommerce Product
 
-## WooCommerce Configuration
+Each course sold through WooCommerce needs a linked WooCommerce product.
 
-- [Mandatory] Uncheck `Allow customers to place orders without an account`
-- [Mandatory] Check `Allow customers to log into an existing account during checkout`
-  ![WooCommerce configuration!](https://i.imgur.com/cip5vlc.png)
-- [Optional] Check `Redirect to the cart page after successful addition` to provide seemless flow similar to Masteriyo checkout.
-  ![Redirect to cart page!](https://i.imgur.com/oVbwFUp.png)
+1. Go to **Masteriyo > Courses** and open the course you want to sell.
+2. Go to **Settings > Pricing**, set the course to **Paid**, and enter a price.
+3. Go to **Settings > WooCommerce**.
 
-## How to use?
+![course-editor-woocommerce-create-product-1](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:fdc14f5495981455c18a5e11495609c7/directUpload/course-editor-woocommerce-create-product-1.png)
 
-1. Install and activate [WooCommerce](https://wordpress.org/plugins/woocommerce/) plugin.
+You have two options:
 
-2. Activate _WooCommerce Integration for Masteriyo_ Addon.
-   ![Activate WooCommerce Integration Addon For Masteriyo!](https://i.imgur.com/qjeYmrQ.png)
+- **Create Product** — automatically creates a new WooCommerce product of type **Masteriyo Course** and links it to the course. The new product will appear under **Dashboard > Products > All Products**.
+- **Link Existing Product** — select an existing WooCommerce product from the dropdown and click **Link Product**.
 
-3. Create a paid course in Masteriyo.
-   ![Create new course!](https://i.imgur.com/w4IFMAq.png)
-   ![Create course with price!](https://i.imgur.com/TgmtYbO.png)
+![course-editor-woocommerce-create-product-2](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:d024fd9c8698a023933ee2880efd3860/directUpload/course-editor-woocommerce-create-product-2.png)
 
-4. Go to Settings > WooCommerce and click on **Create Product**.
-   ![create-a-product](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/e95a0fc9-51d1-4cbc-8f64-8439a98af9b4)
+When using **Link Existing Product**, a **Convert & Link Product** confirmation dialog appears. Check the box confirming the product type will change to **Masteriyo Course**, then click **Convert & Link**.
 
-5. Go to the Courses page and click on the Buy Now button.
-   ![course-pages-buy-now](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/f226e0c2-a8c4-4d8d-b4f8-4571d3a71d3b)
+![course-editor-woocommerce-create-product-3](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:e9010cfe9ce3e98b7b17df3520d51559/directUpload/course-editor-woocommerce-create-product-3.png)
 
-   **OR** Go to single Course Page and click on the Buy Now button.
-   ![Single Course](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/c5ec6a63-176c-4b6a-b897-cd503351fae5)
+Once confirmed, the WooCommerce tab shows the linked product with its price and an **Unlink** button.
 
-6. The associated product will be added to the WooCommerce cart.
+![course-editor-woocommerce-create-product-4](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:e4edee894cc4ff609391222ce4057e8c/directUpload/course-editor-woocommerce-create-product-4.png)
 
-   ![WooCommerce cart page](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/30c00d91-e152-43aa-9f16-a4378a37ef44)
+### Step 2 — Students Buy and Get Enrolled
 
-7. Follow WooCommerce checkout process and use Cash on Delivery as payment option for now. Select other payment option if you have configured.
+Once a product is linked, the course shows a **Buy Now** button on the courses page. Students click it, complete the WooCommerce checkout, and are automatically enrolled when the order status reaches **Completed**. If the [Add to Cart](#enable-add-to-cart) setting is enabled, the button label changes to **Add to Cart** — the checkout flow and enrollment behavior remain the same.
 
-   ![WooCommerce checkout page](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/6b6498c3-17b8-4c7d-9a64-b2894163e7e5)
-
-8. Once the checkout is completed, you will be redirected to Order details Page.
-
-   ![Order-details-page](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/d9632c89-dbc0-4354-963c-33a4b87ea764)
-
-9. Goto courses page as you can see you are still unable to start the course, because the order is not completed.
-   ![Unable to start course!](https://i.imgur.com/pXBwkY8.png)
-
-10. Goto orders page and change order status to `Completed`
-    ![Change order status!](https://i.imgur.com/BRVfMJd.png)
-
-11. Goto courses page, now you can start the course.
-    ![Start course](https://i.imgur.com/RSLx2bj.png)
-
-## Unenrollment process
-
-By default, whenever the WooCommerce order is of the following types `Cancelled`, `Refunded` and `Failed`, the user is unenrolled from the course. You can change the unenrollment statuses from the global settings page.
-![Change unenrollment status!](https://i.imgur.com/8lTnEUb.png)
-
-## WooCommerce Subscription Support
-
-Masteriyo plugin is compatible with the WooCommerce Subscription extension.
-
-**Requires**
-
-- [WooCommerce Subscription](https://woocommerce.com/document/subscriptions/)
-
-### Configuration
-
-- Go to **Masteriyo > Courses**.
-- Go to Course Editor of the required course.
-- Go to **Settings > Pricing**.
-- Set the pricing as '**Paid**'.
-- Enable '**Recurring**' and determine the recurring sum and time period.
-
-![set-reccuring-payment](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/20175e5f-55c5-45b2-80ce-7b021e205bba)
-
-Once the recurring payment is set for the course, you can now set this course as a WooCommerce Product. For this, follow the steps below.
-
-- Go to **Products > Add New**
-- Provide a name to the product. Make sure to match it with the course.
-- On the Product Data meta box, select **Masteriyo Course** as the Product type.
-
-![product-type-masteriyo-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/73e05f16-a379-4006-91a7-9ddbc8489343)
-
-Now, you will see a Course and a General tab on this meta box. On the Course tab you can select the course for which you have set the recurring payments.
-
-![select-masteriyo-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/1c7d3a9f-ef38-4a08-b31f-0712d219a125)
-
-On the General tab, you need to set the same amount for the recurring fee as well as the same recurring time period just as the one you have set for the course above.
-
-![product-data-general-tab-masteriyo-subscription](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/297ab29b-8aee-4c34-b90c-1442c09a0f9f)
-
-Once you have done this, when the user enrolls to the course, there subscription will be created in the WooCommerce > subscriptions. You can manage the subscription from there.
-
-## How to add the courses as a WooCommerce product?
-
-- Go to **Masteriyo > Courses**.
-
-- Add a new Course. Provide the course's name and click on **Next**.
-
-- Add a new Section. Click on Add new Section and click on **Next**.
-
-- Provide the section name. Click on **Add**.
-
-- Go to **Settings > Pricing** and select paid and Add a price for paid Course.
-  ![add-pricing-paid](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/92fcc417-a1f7-4066-abf7-9c818efeecd9)
-
-- Go to Settings > WooCommerce and click on **Create Product**.
-  ![create-a-product](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/e95a0fc9-51d1-4cbc-8f64-8439a98af9b4)
-
-- Once you do these steps, you can check the product from **Dashboard > Products > All Products**.
-  ![view-created-product](https://github.com/Masteriyo/masteriyo-docs/assets/90859959/b4ef3a24-ca08-4131-9b79-a0e1108583a0)
-
-### How to remove the product or unlink it completely from Masteriyo?
-
-If you decide to unlink the product or separate it from Masteriyo, you will need to delete the product completely.
-
-The WooCommerce feature will automatically create a product on your Dashboard under the "Products" section when you create a product through your course.
-
-To separate the product from your course, navigate to your Dashboard, then go to "Products" and select "All products." Find the product created for the Masteriyo course and delete it. This will move the product to the trash. To completely remove the product, locate it in the trash and delete it permanently.
+<video width="100%" controls loop muted autoPlay playsInline>
+  <source
+    src="https://img.masteriyo.com/files/id:87bad8f1cc172c3de428c70ddfa601ee/directUpload/woocommerce-integration-addon-frontend.webm"
+    type="video/webm"
+  />
+</video>
 
 <Callout>
-  {" "} 
-  If the students purchase the course(create as a prodcut) via the WooCommerce, the
-  emails, payments, registration via checkout, and order details are then handled
-  by the WooCommerce. However, the customers will automatically be enrolled to the
-  Masteriyo Course once they purchase the product. Order Received Page(redirected
-  after the order is confirmed), also know as Thank You page, is created by the WooCommerce
-  in this case. You can customize this page to show the enrolled course details to
-  the customers/students. [To learn how to customize this page, click here.](https://woocommerce.com/posts/customize-woocommerce-thank-you-confirmation-page/)
-  Add the URL of the Masteriyo > Account Page > Course tab.
+  WooCommerce handles payment, checkout, and order emails. Enrollment is triggered automatically once the order status reaches **Completed**.
 </Callout>
+
+## Global WooCommerce Settings
+
+Go to **Masteriyo > Settings > Integrations > WooCommerce Integration** to configure the following options.
+
+![masteriyo-woocommerce-integration-settings](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:11f2ee15e84db5993841bf5025bfcbb2/directUpload/masteriyo-woocommerce-integration-settings.png)
+
+### Unenrollment Status
+
+Choose which WooCommerce order statuses automatically unenroll a student. The defaults are **Cancelled**, **Refunded**, and **Failed**. Add or remove statuses as needed.
+
+### Enable Add to Cart
+
+By default, the course page shows a **Buy Now** button that sends students straight to checkout. Enabling **Add to Cart** lets students add multiple courses to the cart and buy them together.
+
+When enabled:
+- The **Buy Now** button becomes **Add to Cart**.
+- After adding to the cart, the button changes to **View Cart**.
+- Customize both labels using the **Label (Before Adding to Cart)** and **Label (After Adding to Cart)** fields.
+
+<Callout>
+  This setting only affects courses that have a linked WooCommerce product. Courses without one are not sold through WooCommerce and will not show an Add to Cart button regardless of this setting.
+</Callout>
+
+### Auto Redirect to Courses
+
+When enabled, students are redirected to the course they purchased immediately after completing checkout — instead of landing on the standard WooCommerce order confirmation page.
+
+## Enrollment Confirmation Email
+
+When a WooCommerce order reaches **Completed**, Masteriyo sends an order completion email to the student. The enrollment confirmation email is sent separately — it is triggered when the student manually starts the course for the first time, not at the moment of purchase.
+
+To customize the email content, go to **Masteriyo > Settings > Emails**.
+
+## Guest Checkout
+
+By default, enrollment requires every buyer to have a WordPress account. If you want to allow students to check out without creating an account upfront, configure WooCommerce as follows.
+
+Go to **WooCommerce > Settings > Accounts & Privacy**:
+
+- Under **Checkout** — **Check** "Enable guest checkout"
+- Under **Account creation** — **Check** "After checkout" or "During checkout" — either option tells WooCommerce to create a WordPress account for the guest automatically, which is used to complete enrollment.
+
+![woocommerce-account-settings](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:ed3dd262e3985ded30db427586bd6bbb/directUpload/woocommerce-accounts-privacy-settings.png)
+
+Enrollment happens once the account is created — no action needed from the student or admin.
+
+**Admin notice:** If guest checkout is enabled here but WooCommerce is not set to create accounts during checkout, a warning appears in the admin with a direct link to the setting that needs fixing.
+
+## Create a Course from a WooCommerce Product
+
+If you already have WooCommerce products and want to turn one into a course, you can do it directly from the products list — no need to start from the course editor.
+
+1. Go to **Dashboard > Products > All Products**.
+2. Hover over the product to reveal the row actions.
+3. Click **Create Course**.
+
+![products-list-create-course-row-action-1](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:e993a75394f486c83f82ac5957968bfc/directUpload/products-list-create-course-row-action-1.png)
+
+4. A **Convert to Masteriyo Course?** confirmation dialog appears. Check the box confirming the product type will change to **Masteriyo Course**, then click **Convert & Create Course**.
+
+![products-list-create-course-row-action-2](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:9dcb25eb8a23e573ff0344eac46c2386/directUpload/products-list-create-course-row-action-2.png)
+
+A new course is created in **draft** status and automatically linked to that product. Open it in **Masteriyo > Courses** to add content and publish it. If the product is already linked to a course, the row action shows **Edit Course** instead.
+
+## Managing the Course–Product Link
+
+You can manage the link from either side:
+
+**From the course editor** — Go to **Masteriyo > Courses**, open the course, and go to **Settings > WooCommerce**. From here you can create a new product, link an existing one, or remove the link.
+
+![course-editor-woocommerce-manage-link](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:cbc65ab3ded9930c0fef1fd333fe8a48/directUpload/course-editor-woocommerce-manage-link.png)
+
+**From the WooCommerce product editor** — Open the product under **Dashboard > Products > All Products**. In the **Product data** section, set the type to **Masteriyo Course** and use the **Course** tab to select or change the linked course.
+
+![woocommerce-product-editor-course-tab](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:bbc5b2cd7547d9b1c579da65ed64c0fc/directUpload/woocommerce-product-editor-course-tab.png)
+
+To remove the link entirely, delete the WooCommerce product. The course itself is not deleted — only the link is removed.
+
+## WooCommerce Subscription Support [Pro]
+
+Integrate with [WooCommerce Subscriptions](https://woocommerce.com/document/subscriptions/) to charge students on a recurring schedule. Students stay enrolled as long as the subscription is active.
+
+**Additional requirement:** [WooCommerce Subscriptions](https://woocommerce.com/document/subscriptions/) plugin (installed and activated).
+
+### Setting Up a Recurring Course
+
+1. Open the course editor, go to **Settings > Pricing**, set the course to **Paid**, and enable **Recurring**. Set the recurring amount and billing interval.
+
+![course-editor-recurring-pricing](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:5ece35f3f0519319ac5b84ee2b71464b/directUpload/course-editor-recurring-pricing.png)
+
+2. Go to **Settings > WooCommerce** and click **Create Product**.
+
+3. Go to **Dashboard > Products**, open the product that was just created, and on the **General** tab of the Product Data section, set the same recurring amount and billing interval as the course.
+
+![woocommerce-subscription-product-general-tab](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:74083dc2797af2eea84d8c618d70866d/directUpload/woocommerce-subscription-product-general-tab.png)
+
+Once a student purchases the course, WooCommerce creates a subscription for them. View and manage all active subscriptions from **WooCommerce > Subscriptions**.
+
+## Course Bundle WooCommerce Integration [Pro]
+
+Course bundles — collections of multiple courses sold together — can be sold through WooCommerce with support for both one-time and recurring subscription purchases.
+
+### Selling a Bundle via WooCommerce
+
+1. Open the bundle editor in **Masteriyo > Course Bundles**.
+2. In the right sidebar, set the **Pricing Option** to **One Time** or **Recurring** and enter a price.
+3. Click **Create Product** under the **Create as a Product** option in the same sidebar.
+
+![course-bundle-editor-woocommerce-tab](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:8e0dd2382a8e6b6855145a533eb05470/directUpload/course-bundle-editor-woocommerce-tab.png)
+
+Once linked, the bundle listing and single bundle pages show a **Buy Now** button by default. If [Add to Cart](#enable-add-to-cart) is enabled in the global settings, the button becomes **Add to Cart** and adds the bundle to the cart without a page reload. For recurring subscriptions, once an active subscription exists, the button changes to **Explore** — taking the student directly to the bundle.
