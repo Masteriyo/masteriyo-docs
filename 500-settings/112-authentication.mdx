@@ -24,7 +24,7 @@ The Authentication tab groups the settings that control how users sign in and ho
 
 ### reCAPTCHA
 
-This sub-tab appears only when the free **Google reCAPTCHA** add-on is activated under Masteriyo > Settings > Addons. It lets you protect your login and registration forms from bots and spam.
+This sub-tab appears only when the free **Google reCAPTCHA** add-on is activated under Masteriyo > Addons. It lets you protect your login and registration forms from bots and spam.
 
 For setup and configuration details, see the [Google reCAPTCHA](/free-addons/google-recaptcha) add-on documentation.
 
@@ -32,20 +32,20 @@ For setup and configuration details, see the [Google reCAPTCHA](/free-addons/goo
 
 Adds a one-time password (OTP) step on top of the normal login. Available with Masteriyo Pro.
 
-- **Enable Two-Factor Authentication** — Turns the OTP challenge on or off.
+- **Enable Two Factor Authentication** — Turns the OTP challenge on or off.
 - **Location** — Where the second factor is enforced: Masteriyo & WP Login, Masteriyo login only, or WP login only.
 - **OTP Length** — Number of digits in the one-time code. Default: **6**.
-- **OTP Expiration** — How long a code stays valid. Default: **30 minutes**.
-- **Resend Interval** — Minimum wait before a user can request a new code. Default: **2 minutes**.
-- **Resend Max Attempts** — Maximum number of times a user can request a new code. Default: **10**.
+- **OTP Expiration Interval** — How long a code stays valid, in seconds. Default: **1800** (30 minutes); minimum 120.
+- **OTP Resend Interval** — Minimum wait before a user can request a new code. Entered in seconds (minimum 60). Default: **120 seconds (2 minutes)**.
+- **OTP Resend Max Attempts** — Maximum number of times a user can request a new code. Default: **10** (min 1, max 100).
 
-For full setup instructions, see the [Two-Factor Authentication](/premium-addons/two-factor-authentication) add-on documentation.
+For full setup instructions, see the [Two-Factor Authentication](/premium-addons/two-factor-authentication) documentation. Two-Factor Authentication is built into Masteriyo Pro — it moved from an add-on into core in v3.1.0, so no add-on activation is needed.
 
 ### Social Login [Pro]
 
 Lets users sign in with their existing social accounts. This sub-tab appears when the Social Login add-on is active.
 
-- **Google** — Toggle Google sign-in and enter the Client ID and Client Secret.
-- **Facebook** — Toggle Facebook sign-in and enter the Client ID and Client Secret.
+- **Google** — Toggle **Google Login** and enter the Client ID and Secret Key (a read-only Redirect Url is provided to paste into your Google credentials).
+- **Facebook** — Toggle **Facebook Login** and enter the App ID and App Secret (a read-only Redirect Url is provided to paste into your Facebook app).
 
 For full setup instructions, see the [Social Login](/premium-addons/social-logins) add-on documentation.
