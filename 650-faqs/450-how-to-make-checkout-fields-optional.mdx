@@ -1,12 +1,12 @@
 ---
 title: How do you make checkout fields optional?
 show_child_cards: true
-excerpt: Learn how to make the checkout field optional. 
+excerpt: Make Masteriyo checkout billing fields optional or remove them entirely with the masteriyo_checkout_fields filter — code snippets and field keys included.
 ---
 
 By default, Masteriyo marks specific billing fields as required based on your **Settings > Payments > Checkout Fields**. If you’d instead let customers skip any of these, you can hook into the `masteriyo_checkout_fields` filter and clear the `required` flag.
 
-## Example 1: Make **all** built-in field optional  
+## Example 1: Make **all** built-in fields optional
 
 ```
 add_filter( 'masteriyo_checkout_fields', 'make_all_fields_optional', 10, 1 );    
@@ -47,6 +47,9 @@ Target any of these keys in your filter to change their `required` status:
 
 | **Key** | **Label**                                                                 | 
 |----------------|---------------------------------------------------------------------------|
+| `billing_first_name` | First name | 
+| `billing_last_name` | Last name | 
+| `billing_email` | Email address (used for account creation and should normally stay required) | 
 | `billing_country` | Country  | 
 | `billing_address_1`    | Address line 1 | 
 | `billing_address_2`    | Address line 2 | 

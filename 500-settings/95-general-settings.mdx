@@ -1,7 +1,7 @@
 ---
 title: General Settings
 show_child_cards: true
-excerpt: Masteriyo > Settings > General
+excerpt: General settings in Masteriyo — LMS pages setup, primary color and styles, course access, student and instructor registration, guest checkout, and video player.
 ---
 The General Settings section in Masteriyo LMS provides comprehensive control over your learning platform's core functionality and appearance. This documentation covers the essential configuration options that form the foundation of your LMS experience.
 
@@ -21,7 +21,7 @@ Configure your LMS page structure and navigation, including course catalogs, use
 - **Learn Page** - Select the learn page.
 - **Account Page** - Select the page for the user's account.
 - **Checkout Page** - Select the page to redirect users to for checkout.
-- **Thankyou Page** - Select a page to be set as Course Thankyou Page. This page shows a thank you page if the course has been completed by students.
+- **Thankyou Page** - Select the page to be used as the course thank-you page. It is shown to students after they complete a course.
 
   ![thank-you-page](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/f942917d-ad5e-4446-aeb2-036149e89372)
 
@@ -34,6 +34,12 @@ You can customize the visual appearance of your learning platform with theme opt
 
 - **Primary Color** - Select the color that matches your brand/site, the style will be applied to course archives.
 - You can also select the primary color for your learn page and button color from here. 
+- **Button Hover Color** - Select the color applied to buttons when a user hovers over them.
+
+<Callout>
+  {" "}  
+ If your active WordPress theme is **eLearning** or **Neve**, Masteriyo automatically syncs its colors from the theme's global colors whenever you save changes in the WordPress Customizer. This is a one-way sync and requires no manual setting.
+</Callout>
 
 ### Course Access
 Define how students can access courses, set enrollment rules, and manage course visibility and permissions.
@@ -69,7 +75,7 @@ Please note that you can change the brand logo using the [White Label addon](htt
   - **Display Brand Logo on Player**: Show/hide your brand logo on the video player.
   - **Require Full Video Watch**: Force students to watch the entire video before proceeding.
   - **Autoplay with Sound**: Enable automatic video playback with audio.
-  - **Seek Time**: Set jump interval (currently 5 seconds) for forward/backward controls.
+  - **Seek Time**: Set the jump interval (default: 5 seconds) for the forward/backward controls.
 
 #### API Integration:
 

@@ -1,5 +1,5 @@
 ---
-title: How to Setup SMTP Using the SmartSMTP Plugin?
+title: How to Set Up SMTP Using the SmartSMTP Plugin?
 show_child_cards: true
 excerpt: Learn how to set up SMTP using the SmartSMTP plugin and fix your email delivery issue.
 ---
@@ -8,11 +8,11 @@ This documentation outlines a straightforward solution: leveraging the SmartSMTP
 
 ## Step 1: Install the SmartSMTP Plugin  
 
-•	Navigate to **Plugins > Add New** on your Masteriyo Dashboard.
+- Navigate to **Plugins > Add New** on your WordPress dashboard.
 
-•	Search for the **SmartSMTP** plugin and click on the Install Now button. 
+- Search for the **SmartSMTP** plugin and click on the Install Now button. 
 
-•	Next, click on the **Activate** button to use the plugin.
+- Next, click on the **Activate** button to use the plugin.
 
 ![install-smart-smtp-plugin](https://github.com/user-attachments/assets/08a67aa2-9d30-473f-be5c-d6f05545638f)
 
@@ -74,9 +74,9 @@ The Other SMTP option provides flexibility in connecting with any SMTP provider,
 
 **When to use this option?**    
 
-  •	You already have an email service you prefer    
-  •	You need specialized delivery options    
-  •	You want complete control over email settings    
+  - You already have an email service you prefer    
+  - You need specialized delivery options    
+  - You want complete control over email settings    
 
 It requires you to manually configure the details that your email provider will provide, like SMTP Host, encryption, port, and so on. So, you can contact your email provider or visit their documentation for their SMTP settings (they usually have a guide). Once you have the details, you can configure settings.   
 
@@ -93,15 +93,15 @@ Enable the **Other SMTP** option and configure settings further.
 **SMTP Host:** The hostname or IP address of the SMTP server. Example: smtp.gmail.com for Gmail and smtp.office365.com for Outlook.    
 
 **Type of Encryption:** The encryption method used by the SMTP server   
-  •	TLS (Transport Layer Security)    
-  •	SSL (Secure Sockets Layer)  
+  - TLS (Transport Layer Security)    
+  - SSL (Secure Sockets Layer)  
 
 **SMTP Port:** Typically, 587 for TLS or 465 for SSL    
 
 **SMTP Authentication:** The authentication method required by the SMTP server. Enable, and you’ll be asked to fill in the username and password:    
 
-  •	**Username:** Your SMTP email address    
-  •	**Password:** Your account password or app-specific password    
+  - **Username:** Your SMTP email address    
+  - **Password:** Your account password or app-specific password    
 
 **Security Note:** Many providers, including Gmail and Microsoft, require app-specific passwords rather than your regular account password.    
 
@@ -109,27 +109,27 @@ Click on **Save Connection Settings** once you complete the configuration.
 
 ![other-smtp-settings](https://github.com/user-attachments/assets/f5df76b8-7b74-41db-858f-14c6a19e1879)
 
-Once everything is configured, WordPress will route emails (such as form submissions, order confirmations, and password resets) through the SMTP server instead of the default mail ( )  function.   
+Once everything is configured, WordPress will route emails (such as form submissions, order confirmations, and password resets) through the SMTP server instead of PHP's default `mail()` function.   
 
 #### Common Email Providers Settings    
 
 **Gmail**  
 
-  •	SMTP Host: smtp.gmail.com    
-  •	Encryption: TLS  
-  •	Port: 587  
-  •	Authentication: On  
-        •	Username: Your Gmail address  
-        •	Password: Generate an App Password from Google  
+  - SMTP Host: smtp.gmail.com    
+  - Encryption: TLS  
+  - Port: 587  
+  - Authentication: On  
+      - Username: Your Gmail address  
+      - Password: Generate an App Password from Google  
 
 **Microsoft 365/Outlook**
 
-  •	SMTP Host: smtp.office365.com    
-  •	Encryption: TLS    
-  •	Port: 587    
-  •	Authentication: On    
-      •	Username: Your Outlook email    
-      •	Password: Generate an App Password from Microsoft Security settings
+  - SMTP Host: smtp.office365.com    
+  - Encryption: TLS    
+  - Port: 587    
+  - Authentication: On    
+      - Username: Your Outlook email    
+      - Password: Generate an App Password from Microsoft Security settings
 
 ## Step 3: Validate Your Configuration  
 
@@ -160,11 +160,11 @@ SmartSMTP includes a mail logging system to track delivery status:
 
 ### Email Delivery Best Practices  
 
-•	Use a professional domain-based email address when possible    
-•	Check mail logs regularly to identify potential delivery issues    
-•	Run test emails after WordPress core updates    
-•	Keep the SmartSMTP plugin updated for security and compatibility    
-•	Monitor spam complaint rates to maintain the sender reputation    
+- Use a professional domain-based email address when possible    
+- Check mail logs regularly to identify potential delivery issues    
+- Run test emails after WordPress core updates    
+- Keep the SmartSMTP plugin updated for security and compatibility    
+- Monitor spam complaint rates to maintain the sender reputation    
 
 
 

@@ -1,7 +1,7 @@
 ---
 title: Account Page
 show_child_cards: true
-excerpt: Masteriyo > Settings > Account Page
+excerpt: Account page settings in Masteriyo — order history, invoice download, profile page, instructor apply button, plus a PHP API to add custom sidebar tabs.
 ---
 
 <Callout> Location: Masteriyo > Settings > Account Page</Callout>
@@ -24,14 +24,23 @@ excerpt: Masteriyo > Settings > Account Page
 
 ![account-page-profile-page](https://github.com/user-attachments/assets/dd9d585d-9daf-45bf-817f-72364f3450a4)
 
-    - **Enable Instructor Apply Button**: Enable this option to display a 'Apply for Instructor' button on the Profile Page tab.
-    - **Enable Edit Profile Button**: Enable this option to display a Edit Profile button on the Profile Page tab in the Account Page.
+    - **Enable Instructor Apply Button**: Enable this option to display an 'Apply for Instructor' button on the Profile Page tab.
+    - **Enable Edit Profile Button**: Enable this option to display an Edit Profile button on the Profile Page tab in the Account Page.
 
     ![account-page-profile-page-buttons](https://github.com/user-attachments/assets/763b652d-7f6f-4e6e-8a0d-ea5238c81b25)
 
+- **Enable Quiz Attempts**: Show the Quiz Attempts tab on the Account page.
+- **Enable Certificate**: Show the Certificates tab so students can download earned certificates.
+- **Enable Subscriptions**: Show the Subscriptions tab.
+- **Enable Zoom Session**: Show the Zoom Sessions tab.
+- **Enable Google Meet**: Show the Google Meet sessions tab on the Account page.
+- **Enable Certificate Page**: Show the Certificate Page tab on the Account page.
+- **Enable Session Information**: Show the Session Information (calendar/session) tab on the Account page.
+- **Show/Hide Header and Footer**: Choose whether the site header and footer are displayed on the Account page.
+
 ---
 
-## Add Custom Tab Programatically
+## Add Custom Tab Programmatically
 
 Masteriyo exposes a PHP registry API that lets addons and themes add custom links to the Account page sidebar. The API mirrors familiar WordPress patterns like `add_menu_page()` — register once, the core renders it.
 
@@ -226,11 +235,7 @@ add_filter( 'masteriyo_account_sidebar_common_links', function( array $links ) {
 } );
 ```
 
-:::caution
-Since the version that introduced `SidebarLinkRegistry`, the array passed to this filter is **keyed by link ID**, not numerically indexed. Callbacks that used `array_push()` or numeric keys should be updated to use associative keys.
-
-Prefer `SidebarLinkRegistry::add()` for new code. The filter is maintained for compatibility only.
-:::
+<Callout>**Caution:** Since the version that introduced `SidebarLinkRegistry`, the array passed to this filter is **keyed by link ID**, not numerically indexed. Callbacks that used `array_push()` or numeric keys should be updated to use associative keys. Prefer `SidebarLinkRegistry::add()` for new code; the filter is maintained for compatibility only.</Callout>
 
 ---
 

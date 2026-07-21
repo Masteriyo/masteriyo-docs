@@ -316,7 +316,7 @@ PATCH/masteriyo/v1/course-progress/items/{id}
 DELETE/masteriyo/v1/course-progress/items/{id}
 
 ```
-## Data's Endpoints
+## Data Endpoints
 ```bash
 GET/masteriyo/v1/datas/countries
 GET/masteriyo/v1/datas/states/{country}
@@ -378,17 +378,19 @@ POST/masteriyo/v1/openai/generate-content
 GET/masteriyo/v1/openai/get-course-status
 
 ```
-## Quizzes Endpoints
+## Quiz Import/Export Endpoints
 ```bash
 POST/masteriyo/v1/quizzes/export
 POST/masteriyo/v1/quizzes/import
+POST/masteriyo/v1/quizzes/single-export
+POST/masteriyo/v1/quizzes/single-import
 
 ```
 ## Student Reports Endpoints
 ```bash
 GET/masteriyo/v1/student-reports/{id}
 ```
-## Utilities  Endpoints
+## Utilities Endpoints
 ```bash
 DELETE/masteriyo/v1/utilities/refresh-course-access
 POST/masteriyo/v1/utilities/plugin-update
