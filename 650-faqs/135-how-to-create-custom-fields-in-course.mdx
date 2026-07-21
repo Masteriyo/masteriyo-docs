@@ -10,32 +10,32 @@ Masteriyo allows admins to extend course creation with additional fields and con
 - Masteriyo LMS **Free v1.18.0** or above and **Pro v2.19.0** or above.
 - Plugin for inserting custom code.
 
-### How It Works
+## How It Works
 - Developers can register fields dynamically in the course builder using the registerMasteriyoField function.  
 - Fields can be added to specific placement locations, ensuring they appear in the desired sections.  
 - The system supports various fields, including text, number, textarea, password, date, time, checkbox, radio, switch, and select.  
 - Custom field data is automatically saved when the course is updated.  
 
 
-### Implementation Guide
+## Implementation Guide
 
-#### Step 1: Install a Code Snippet Plugin
+### Step 1: Install a Code Snippet Plugin
 To add custom code, you first need to install and activate a plugin to add custom JavaScript code to your WordPress site. You can use plugins like **"Simple Custom CSS and JS "**, which is available in the WordPress plugin repository.   
 
-#### Step 2: Register Custom Fields
+### Step 2: Register Custom Fields
 Use the `registerMasteriyoField()` function to add custom fields to the course builder. The function accepts the following parameters:
 1.	**Placement location** - Specifies where the field should appear in the interface.
 2.	**Field configuration** - An object containing field properties.
 3.	**Component target (optional)** - Specific component to attach the field to.
 
-##### Where Do Custom Fields Appear
+#### Where Do Custom Fields Appear
 Currently, Masteriyo supports the following placement locations:  
 
 - after_description - Appears after the course description field.
 
 ![Custom Field in Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-fields-in-masteriyo-course.png)
 
-### Field Configuration Options
+## Field Configuration Options
 Each field requires the following configuration options:
 
 - **name**: unique field identifier
@@ -46,7 +46,7 @@ Each field requires the following configuration options:
 - **defaultValue**: initial value
 - **rules** (optional): validation rules
 
-#### Component Targets
+### Component Targets
 Fields can be added to different components within the Masteriyo LMS interface:
 
 - **Default (Course)** - When no component is specified, fields are added to the course.	
@@ -55,7 +55,7 @@ Fields can be added to different components within the Masteriyo LMS interface:
 
 **Important**: When specifying "Curriculum.Lesson" as the third parameter, the custom fields will only appear in the lesson editor, not in the main course form. This allows you to create different fields for different content types.
 
-### Validation Rules
+## Validation Rules
 You can add validation to your custom fields using the rules property. Here are some examples:
 ```javascript
 // Required field validation
@@ -63,7 +63,7 @@ rules: {
   required: 'This field is required' 
 }
 ```  
-#### Step 3: Add Custom JavaScript
+### Step 3: Add Custom JavaScript
 
 Create a new JavaScript snippet in your chosen plugin with the following structure:  
 
@@ -77,7 +77,7 @@ if (typeof window.registerMasteriyoField === 'function') {
   ```
 Publish the code through the plugin settings and check the courses of your LMS site.
 
-### Examples of Adding a New Field
+## Examples of Adding a New Field
 For example, to add a new text area field, you can use the following code snippet:  
 
 ``` javascript
@@ -108,8 +108,8 @@ rules: { required: 'ABC is required' }
 });
 ``` 
 ![Custom Field in Course Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/example-of-adding-custom-field.png)
-#### Other Examples
-##### Checkbox Field Example  
+### Other Examples
+#### Checkbox Field Example
 
 ``` javascript
 document.addEventListener('DOMContentLoaded', function () {  
@@ -129,7 +129,7 @@ if (typeof window.registerMasteriyoField === 'function') {
 ```
 ![Custom Checkbox Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-checkbox-field.png)
 
-##### Radio Button Group Example:   
+#### Radio Button Group Example:
   
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {  
@@ -154,7 +154,7 @@ rules: { required: 'Please select your gender' }
 ``` 
 ![Custom Radio Button Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-radio-button-field.png)
 
-##### Switch Field Example  
+#### Switch Field Example
 ``` javascript
 document.addEventListener('DOMContentLoaded', function () {  
   // Check if registerMasteriyoField is available  
@@ -172,7 +172,7 @@ defaultValue: true
 ``` 
 ![Custom Switch Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/newsletter-subscription-field.png)
 
-##### Select Dropdown Example  
+#### Select Dropdown Example
 ``` javascript
 document.addEventListener('DOMContentLoaded', function () {  
   // Check if registerMasteriyoField is available  
@@ -198,7 +198,7 @@ window.registerMasteriyoField('after_description', {
 ``` 
 ![Custom Dropdown Field Example](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-dropdown-field.png)
 
-### Adding Fields to Lessons  
+## Adding Fields to Lessons
 ```javascript
 document.addEventListener('DOMContentLoaded', function () {  
   // Check if registerMasteriyoField is available  
@@ -229,7 +229,7 @@ rules: { required: 'This field is required' }
 ```
 ![Custom Field in Lesson](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/custom-fields/custom-field-in-lesson.png)
 
-### Troubleshooting  
+## Troubleshooting
 - Ensure your JavaScript code is loaded correctly and not blocked by other scripts.  
 - Check the browser console for any errors.  
 - Verify that the Masteriyo LMS plugin is up to date.  

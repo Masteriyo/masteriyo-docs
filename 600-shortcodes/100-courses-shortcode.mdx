@@ -3,7 +3,6 @@ title: Courses Shortcode
 excerpt: Display a course list anywhere with the [masteriyo_courses] shortcode — columns, count, category, order, and pagination attributes with examples.
 ---
 
-### Courses Shortcode
 
 This shortcode lets you show a list of courses anywhere on your site.
 
@@ -17,16 +16,23 @@ However, there are more attributes via which you will have some control on what 
 
 <Embed>https://www.youtube.com/watch?v=Gft3BdHE-ZI</Embed>
 
-#### Attributes
+## Attributes
 
-1. **category**: Empty by default (shows all courses). Add one or more course category slugs, separated by commas (e.g. art, science, music), to display only courses from those categories.
-2. **Columns**: Default value is `3`. You can choose the columns value ranging from **1** to **4**, as Masteriyo supports up to 4 columns while showing the courses.
-3. **Count**: Default value is `12`. You can set any number as you like and it will show that number of courses.
-4. **per_page**: Number of courses to display per page. Only takes effect when `show_pagination` is set to `on`.
-5. **order**: Set ASC for ascending and DESC for descending order.
-6. **show_pagination**: 'on' for enabling pagination, and 'off' for disabling.
+| Attribute | Default | Description |
+| --------- | ------- | ----------- |
+| `count` | `12` | How many courses to show in total. |
+| `columns` | `3` | Number of columns in the grid, from **1** to **4**. |
+| `category` | *(empty)* | One or more course category slugs, separated by commas (e.g. `art, science, music`). Empty shows courses from every category. |
+| `ids` | *(empty)* | Show only these courses. Comma-separated course IDs. |
+| `exclude_ids` | *(empty)* | Hide these courses. Comma-separated course IDs. |
+| `per_page` | `-1` | Courses per page. Only takes effect when `show_pagination` is `on`. |
+| `order` | `DESC` | Sort direction: `ASC` (ascending) or `DESC` (descending). |
+| `orderby` | `date` | Field to sort by — `date`, `title`, `name`, `ID`, `author`, `modified`, `rand`, or `menu_order`. |
+| `show_pagination` | `off` | `on` to show pagination links, `off` to hide them. |
+| `view` | `grid` | Layout mode: `grid` or `list`. |
+| `layout` | `default` | Course card template to use. |
 
-#### Examples
+## Examples
 
 1.  Shortcode: `[masteriyo_courses columns=4 count=4 category="art"]`
 
