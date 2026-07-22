@@ -12,7 +12,7 @@ Anything that is in `main` branch is considered deployable to a live site. As su
 
 ### Using Github UI to contribute
 
-[Guide on using Github UI](contributing-using-github-ui.mdx)
+You can edit any `.mdx` file directly from the GitHub web interface. See GitHub's guide on [editing files in your repository](https://docs.github.com/en/repositories/working-with-files/managing-files/editing-files).
 
 ### Style Guides
 

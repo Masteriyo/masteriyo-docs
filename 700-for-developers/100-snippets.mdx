@@ -1,11 +1,11 @@
 ---
 title: Code Snippets
-excerpt: Documentation for listing code snippets
+excerpt: PHP code snippets to customize Masteriyo LMS - change offline order status, sort courses, redirect after login or registration, resize course images, coupons.
 ---
 
-All of the code snippets for modifying existing features can be found below. Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) if you do not know where to add custom code snipeets to your site.
+All of the code snippets for modifying existing features can be found below. Check out [this link](/faqs/custom-code-snippet) if you do not know where to add custom code snippets to your site.
 
-### Change Default Order Status For Ofline Payment
+## Change Default Order Status For Offline Payment
 
 ```php
 add_filter( 'masteriyo_offline_process_payment_order_status', function( $status ) {
@@ -15,10 +15,10 @@ add_filter( 'masteriyo_offline_process_payment_order_status', function( $status 
 
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### Change Courses Featured label [PRO]
+## Change the Course Featured Label [Pro]
 
 ```php
 add_filter( 'masteriyo_pro_course_featured_text', function( $text ) {
@@ -28,10 +28,10 @@ add_filter( 'masteriyo_pro_course_featured_text', function( $text ) {
 
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### Sort the courses in the courses page alphabetically by course name.
+## Sort the courses in the courses page alphabetically by course name.
 ```php
 add_filter( 'pre_get_posts', function ($q) {
 	// We only want to affect the main query.
@@ -44,42 +44,42 @@ add_filter( 'pre_get_posts', function ($q) {
 
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### Sort the courses in the courses page according to published date.
+## Sort the courses in the courses page according to published date.
 ```php
 add_filter( 'pre_get_posts', function ($q) {
 	// We only want to affect the main query.
 	if ( $q->is_main_query() && is_post_type_archive( 'mto-course' ) ) {
 		$q->set( 'orderby', 'date ID');
-		$q->set( 'order', 'DESC'); // ASC for Oldest->Newswet or DESC for Newest->Oldest
+		$q->set( 'order', 'DESC'); // ASC for Oldest->Newest or DESC for Newest->Oldest
 	}
 });
 ```
 
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### Sort the courses in the courses page according to modified date.
+## Sort the courses in the courses page according to modified date.
 ```php
 add_filter( 'pre_get_posts', function ($q) {
 	// We only want to affect the main query.
 	if ( $q->is_main_query() && is_post_type_archive( 'mto-course' ) ) {
 		$q->set( 'orderby', 'modified ID');
-		$q->set( 'order', 'DESC'); // ASC for Oldest->Newswet or DESC for Newest->Oldest
+		$q->set( 'order', 'DESC'); // ASC for Oldest->Newest or DESC for Newest->Oldest
 	}
 });
 ```
 
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### Multiple Coupon code support.
+## Multiple Coupon Code Support [Pro]
 ```php
 add_filter('masteriyo_enable_multiple_coupon', function($bool, $coupon_code) {
   return true;
@@ -88,12 +88,12 @@ add_filter('masteriyo_enable_multiple_coupon', function($bool, $coupon_code) {
 
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### Solution to Video Playback Fast-Forward or Rewind Function Not Working.
+## Solution to Video Playback Fast-Forward or Rewind Function Not Working.
 
-To ensure the security of your self-hosted videos, we provide various security codes. However, in certain cases, the hosting platform may clash with this security measure, making it impossible to forward or rewind the video by clicking on a specific time. In these scenarios, we suggest implementing the code snippet below to resolve the problem.
+To ensure the security of your self-hosted videos, we apply various security measures. However, in certain cases, the hosting platform may clash with this security measure, making it impossible to forward or rewind the video by clicking on a specific time. In these scenarios, we suggest implementing the code snippet below to resolve the problem.
 
 ```php
 add_filter( 'masteriyo_self_hosted_lesson_video_url', function( $url, $lesson ) {
@@ -102,7 +102,7 @@ add_filter( 'masteriyo_self_hosted_lesson_video_url', function( $url, $lesson ) 
 }, 10, 2);
 ```
 
-### [Redirect to different page after user/instructor registration.](#redirect-to-different-page-after-user-registration)
+## Redirect to a Different Page After User/Instructor Registration
 
 ```php
 add_filter( 'masteriyo_registration_redirect_url', function( $url ) {
@@ -112,7 +112,7 @@ add_filter( 'masteriyo_registration_redirect_url', function( $url ) {
 > P.S. Currently, you cannot redirect to third-party websites. You can only redirect to the same website page.
 
 
-### [Redirect to different page after user/instructor is logged in.](#redirect-to-different-page-after-user-logged-in)
+## Redirect to a Different Page After User/Instructor Is Logged In
 ```php
 add_filter( 'masteriyo_after_signin_redirect_url', function( $url ) {
 	return get_permalink( 1 ); // Where 1 is the page/post id.
@@ -121,10 +121,10 @@ add_filter( 'masteriyo_after_signin_redirect_url', function( $url ) {
 
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### [Redirect to a different page after user/instructor is logged out.](#redirect-to-different-page-after-user-logged-out)
+## Redirect to a Different Page After User/Instructor Is Logged Out
 
 ```php
 add_filter( 'masteriyo_redirect_logout_url', function($url) {
@@ -135,10 +135,10 @@ add_filter( 'masteriyo_redirect_logout_url', function($url) {
 ```
 <Callout>
   {" "}  
-  Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>
 
-### [Change Course Feature Image Size.](#change-course-feature-image-size)
+## Change Course Feature Image Size
 ```php
 add_filter( 'masteriyo_product_get_image', 'modified_img_size', 10, 4 );
 
@@ -153,5 +153,5 @@ return $image;
 
 <Callout>
   {" "} 
-  You can change the 400 and 400 image sizes according to your needs. Want to know where and how to add code snippets? Check out [this link](https://docs.masteriyo.com/faqs/custom-code-snippet) 
+  You can change the 400 and 400 image sizes according to your needs. Want to know where and how to add code snippets? Check out [this link](/faqs/custom-code-snippet) 
 </Callout>

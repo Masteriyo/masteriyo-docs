@@ -4,7 +4,7 @@ show_child_cards: true
 excerpt: Learn how to set up the Stripe Payment Gateway for your Masteriyo LMS. Stripe allows you to securely accept payments via major credit cards, debit cards, and local payment methods.
 ---
 
-## Prerequisites:
+## Prerequisites
 
 - **Masteriyo LMS:** Free plan or higher.
 - **SSL Certificate:** Your site must be running on HTTPS to process secure payments.
@@ -23,7 +23,7 @@ excerpt: Learn how to set up the Stripe Payment Gateway for your Masteriyo LMS. 
 
 To use Stripe, you must first enable the addon within your Masteriyo dashboard.
 
-1. Go to Masteriyo > Settings > Addons.
+1. Go to Masteriyo > Addons.
 2. Search for Stripe using the search bar.
 3. Once found, toggle the switch to enable the addon.
 
@@ -34,7 +34,7 @@ To use Stripe, you must first enable the addon within your Masteriyo dashboard.
 Masteriyo offers a "one-click" connection to make the setup process as simple as possible.
 
 1. Go to your WordPress dashboard and navigate to Masteriyo > Settings.
-2. Click on the Payment tab and select Stripe.
+2. Click on the Payments tab and select Stripe.
 3. Click the Connect with Stripe button.
    ![stripe-connect-btn](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/stripe/masteriyo-stripe-connection.png)
 4. You will be redirected to the Stripe login page. Enter your Stripe username and password.
@@ -48,7 +48,7 @@ Masteriyo offers a "one-click" connection to make the setup process as simple as
 ### Step 3: Configure Stripe Options
 
 After connecting, you can customize the following settings under Masteriyo > Settings >
-Payment > Stripe:
+Payments > Stripe:
 
 - **Connection Status:** Shows if your site is currently linked to Stripe.
 - **Enable iDEAL Payment:** Toggle this on if you wish to accept iDEAL payments.
@@ -73,7 +73,7 @@ access to their courses, you must link a Webhook to your Stripe account. Without
 system won't know when a payment is successful, and orders may remain in a "Pending"
 state.
 
-## Before You Start
+## Before You Set Up Webhooks
 
 - **Active Stripe Connection:** Ensure you have already connected your Stripe
   account to Masteriyo.
@@ -82,8 +82,6 @@ state.
 
 ### Step 1: Copy the Webhook Endpoint from Masteriyo
 
-[https://dashboard.stripe.com/webhooks](https://dashboard.stripe.com/webhooks)
-
 1. Go to Masteriyo > Settings > Payments > Stripe.
 2. Scroll to the bottom of the page to find the Webhook Endpoint field.
 3. Copy the entire URL provided in that box.
@@ -91,7 +89,7 @@ state.
 
 ### Step 2: Configure the Webhook in Stripe
 
-1. Log in to your Stripe Dashboard.
+1. Log in to your [Stripe Dashboard](https://dashboard.stripe.com/webhooks).
 2. Go to the search bar at the top and search for "Webhooks" and click on
    create a webhook.
    ![stripe-webhook](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/stripe/stripe-webhooks-search.png)
@@ -101,7 +99,7 @@ state.
 5. Select Events to Listen to: You must configure the events before adding the
    endpoint URL.
    - Under the Event from option, select Your account.
-     ![stripe-webhook-destination](https://raw.gi thubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/stripe/stripe-event.png)
+     ![stripe-webhook-destination](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/stripe/stripe-event.png)
 6. Search and Select Events: In the search bar that appears, search for and
    check all events related to Checkout and Payment Intent.
    ![checkout-intent](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/stripe/stripe-checkout-event.png)

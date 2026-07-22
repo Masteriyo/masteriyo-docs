@@ -1,23 +1,23 @@
 ---
-title: Two Factor Authentication
+title: Two-Factor Authentication
 show_child_cards: true
-excerpt: Enhance the security by enabling two-factor authentication.
+excerpt: "Secure Masteriyo and WordPress logins with two-factor authentication (2FA) — email OTP verification with configurable length, expiry, and resend limits."
 ---
 
 Two-factor authentication enhances security by requiring users to verify their identity through a **one-time password (OTP)** sent to their email, providing an additional layer of protection beyond passwords.
 
-## Prerequisites:
+## Prerequisites
 
 1. [Masteriyo LMS Pro plan or higher](https://masteriyo.com/pricing/).  
-2. [Masteriyo LMS installed and activated](https://docs.masteriyo.com/getting-started/installation#installing-masteriyo-lms-pro-version).  
-3. [Two Factor Authentication Add-on](https://docs.masteriyo.com/getting-started/activate-masteriyo-addons).  
+2. [Masteriyo LMS installed and activated](/getting-started/installation#installing-masteriyo-lms-pro-version).  
+3. [Two Factor Authentication Add-on](/getting-started/activate-masteriyo-addons).  
 
 ## Installation & Activation
 
-To enable the addon, follow the steps mentioned below:
-1. Navigate to the addon through **Masteriyo > Addons**.
-2. Locate **Two-factor Authentication**.
-3. Next, toggle to enable the addon. 
+To enable the feature, follow the steps below:
+1. Navigate to **Masteriyo > Settings > Authentication**.
+2. Locate **Two-Factor Authentication**.
+3. Toggle **Enable** to turn the feature on.
 
 ![Enable Two Factor Authentication Addon](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/enable-two-factor-authentication-addon.png)
 
@@ -26,7 +26,7 @@ Once you activate the addon, you can go to the following location.
 
 <Callout>
   {" "} 
-**Masteriyo > Settings > Advanced > Two Factor Authentication**
+**Masteriyo > Settings > Authentication > Two-Factor Authentication**
 </Callout>
 
 ![Navigate to Two Factor Authentication Tab](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/navigate-to-two-factor-authentication.png)
@@ -41,7 +41,7 @@ The Location dropdown in your Two-Factor Authentication settings determines wher
 
 - **Masteriyo & WP Login**:  Enforces two-factor authentication on both LMS and WordPress login for your site.
 - **Masteriyo Login**: Enforces two-factor authentication only on Masteriyo Login. 
-- **WP Login**: Enforces two-factor authentication only on WordPRess login.
+- **WP Login**: Enforces two-factor authentication only on the WordPress login.
 
 ### OTP-related settings
 Next, you'll find different setting options related to OTP:
@@ -92,13 +92,13 @@ To test two-factor authentication, register on your LMS site and sign out. Now, 
 
 Copy the OTP and paste it under the OTP field to log in. 
 
-If you don't receive email or have a problem sending email, you can try [using the SmartSMTP plugin](https://docs.masteriyo.com/faqs/how-to-setup-smart-smtp-with-masteriyo). It helps ensure emails are delivered reliably by configuring proper SMTP settings for your WordPress site.
+If you don't receive email or have a problem sending email, you can try [using the SmartSMTP plugin](/faqs/how-to-setup-smart-smtp-with-masteriyo). It helps ensure emails are delivered reliably by configuring proper SMTP settings for your WordPress site.
 
 Here's how the two-factor authentication works at the user's end:
 
 ![Example of Two-factor Authentication](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/two-factor-authentication/otp-verification-demo.gif)
 
 ## Additional Resources
-- [Enable Google reCAPTCHA in your LMS](https://docs.masteriyo.com/free-addons/google-recaptcha).
-- [Using Masteriyo Trigger Webhooks with Zapier](https://docs.masteriyo.com/masteriyo-tools/webhooks).
+- [Enable Google reCAPTCHA in your LMS](/free-addons/google-recaptcha).
+- [Using Masteriyo Trigger Webhooks with Zapier](/masteriyo-tools/webhooks).
 

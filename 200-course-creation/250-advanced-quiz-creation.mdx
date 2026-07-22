@@ -1,15 +1,15 @@
 ---
 title: Advanced Quiz Creation
-excerpt: A quick guide on how to create an advanced quiz.
+excerpt: Build quizzes in Masteriyo with true/false, multiple choice, fill in the blanks, matching, audio and video questions, a question bank, and pass marks.
 ---
 
 <Callout>
   {" "}
   **Note:** This instruction is for creating a Quiz for your course. If you missed
-  the documentation for creating a complete course, please review it here: [https://docs.masteriyo.com/course-creation/complete-course-creation](https://docs.masteriyo.com/course-creation/complete-course-creation).
+  the documentation for creating a complete course, please review it here: [Complete Course Creation](/course-creation/complete-course-creation).
 </Callout>
 
-# How to create a Quiz?
+## How to Create a Quiz
 
 With Masteriyo, you can create advanced quizzes as per your needs. There is a component in the course section called quiz where you can add questions and allow users to answer them. You can assign points to these questions, set a pass mark and check the student's progress.
 
@@ -63,7 +63,7 @@ If you want to add a new question, please follow the steps below.
 
 ### True False
 
-Write the questions that have a true or false answer. Similarly, you can add question description, answer, and answer explanation. Also, dont forgot to update the question and quiz.
+Write the questions that have a true or false answer. Similarly, you can add question description, answer, and answer explanation. Also, don't forget to update the question and quiz.
 
 ![Select Question Type](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/add-true-or-false-question.png)
 
@@ -76,7 +76,7 @@ Here's how the **True False** looks at the frontend:
 
 ### Single Choice
 
-If you have questions where the learners have to select only one question out of the available options, you need to add this question type. Click on 'Add new answer' to add a new option.
+If you have questions where the learners have to select only one answer out of the available options, you need to add this question type. Click on 'Add new answer' to add a new option.
 
 ![quiz-question-type-single-choice](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/add-single-quiz.png)
 
@@ -84,7 +84,7 @@ At the user's end, the quiz might look similar to the image below:
 
 ![Frontend View of Single Choice](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontend-view-of-single-choice.png)
 
-### MultiChoice
+### Multiple Choice
 
 This is similar to the single-choice questions, but here the learners can select more than one answer. Click on 'Add new answer' to add a new option.
 
@@ -108,7 +108,7 @@ This quiz will look similar to the image below at the frontend:
 
 This is a question type where the answers are to be matched with the prompts. You can select whether you are matching text to text, image to text or image to image.
 
-![match-the-following](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontend-view-of-match-the-following.png)
+![match-the-following](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/match-the-following-settings.png)
 
 When you select any options related to image, you can upload your image from the uploader button.
 
@@ -116,7 +116,7 @@ When you select any options related to image, you can upload your image from the
 
 While submitting the quiz, the learners should select the matching answers for the respective prompts from the drop-down menu. You can see it in the image below.
 
-![Frontend View of Match the Following](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontendt-view-of-match-the-following.png)
+![Frontend View of Match the Following](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontend-view-of-match-the-following.png)
 
 ### Fill in the blanks [Pro]
 
@@ -142,16 +142,18 @@ Now, while submitting the form, the learners can listen to the audio and write t
 
 ### Video [Pro]
 
-Here, you can upload videos while creating courses and give questions related to that videos. There are four video sources you can choose from. They are:
+Here, you can upload videos while creating courses and add questions related to those videos. There are six video sources you can choose from. They are:
 
-- Self-Hosted
-- Youtube
+- Self Hosted
+- YouTube
 - Vimeo
-- External URL
+- External URL (requires an active Masteriyo Pro license)
+- Embed Video
+- BunnyNet
 
 ![video-sources](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/video-quiz-setting.png)
 
-In the Self-Hosted option, you will need to upload a video from the local source. Similarly, if you choose YouTube or Vimeo, you can add YouTube or Vimeo video links. The last one is the external URL. You can add the URL of the place where you have hosted your own video.
+In the Self Hosted option, you upload a video from your Media Library. YouTube and Vimeo take the video link. External URL takes the URL of a video you host yourself. Embed Video takes an iframe embed code, and BunnyNet plays a video from your Bunny Stream library.
 
 Now, while submitting the quiz, the learners can watch the video and write the answer to the question asked.
 
@@ -182,12 +184,13 @@ On the last tab of the Quiz Editor screen, you will see the Settings specificall
 - **Enable Reveal Mode**: Toggle to enable **reveal mode** for the quiz so that it automatically sets the number of attempts to one. This mode limits students to one quiz attempt and shows them all correct answers after submission.
 - **Attempts Allowed**: You can set whether to put a limit on the attempts allowed for the quiz to be solved or not.
 - **Number of Attempts**: When "Limit" is selected, this field specifies the maximum number of attempts allowed.
+- **Answer All Questions [Pro]**: When enabled, students must answer every question before they can submit the quiz. This is a per-quiz setting; note that the timer's auto-submit will still bypass it. In the free version, this appears as a locked, upgrade-only option.
 
 ### Display
 
 ![Display Settings for Quiz](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/question-per-page.png)
 
-- **Questions Per Page**: You can choose two options for this. Either choose to inherit the global settings for the number of questions to be displayed in each page or choose a custom number for separate quizzes.
+- **Questions Per Page**: You can choose two options for this. Either choose to inherit the global settings for the number of questions to be displayed on each page or choose a custom number for separate quizzes.
   - The maximum limit for the questions per page is 999. 
 - **Randomize Questions**: When enabled, presents questions in random order to each student. (Toggle to enable/disable).
 - **Show Result**: When enabled, displays quiz results to students immediately after completion. (Toggle to enable/disable).
@@ -196,4 +199,4 @@ You can then update the quiz.
 
 ## Additional Resources
 
-- [Import or Export Individual Quizzes](https://docs.masteriyo.com/faqs/import-and-export-individual-quizzes)
+- [Import or Export Individual Quizzes](/faqs/import-and-export-individual-quizzes)

@@ -1,8 +1,8 @@
 ---
 title: Masteriyo LMS REST API Guide
-excerpt: _Integrate, Automate, and Extend Your LMS Programmatically_
+excerpt: Masteriyo LMS REST API guide - generate API keys, authenticate with Basic Auth, and read, create, update, or delete courses and LMS data over HTTP.
+---
 
---- 
 Masteriyo LMS integrates with the WordPress REST API, allowing external applications to securely interact with your LMS data (courses, users, content) using standard HTTP requests and JSON.
  
 <Callout>
@@ -17,7 +17,7 @@ Masteriyo LMS integrates with the WordPress REST API, allowing external applicat
 ## Key Capabilities
 Masteriyo REST API lets your application talk to your LMS system just like a messenger. You can:
 
-- **Read Data**: Fetch course, user progress, categories, or other.  
+- **Read Data**: Fetch courses, user progress, categories, and more.  
 - **Write Data**: Create or update courses, lessons, or user profiles.  
 - **Delete Data**: Remove outdated content programmatically.  
 - **Automate Workflows**: Sync data with CRMs, mobile apps, or other tools.  
@@ -30,7 +30,7 @@ To set up your course API access in Masteriyo LMS, follow the steps below:
 
 **Step 1:** From your WordPress Dashboard, navigate to **Masteriyo >** **Tools > REST API**.
 
-**Step 2:** Click the **ADD New** button, and configure details:  
+**Step 2:** Click the **Add New** button, and configure the details:  
 
 - **User:** Choose a user who will own this connection. This can be anyone who has joined or created a course.  
 
@@ -156,8 +156,8 @@ Example of Response:
 }
 ```
 
-## Deleting Data 
-Here’s an example of removing a lesson from the course.
+### Deleting Data
+Here’s an example of deleting a course.
 
 Example of Request:
 ```bash 
@@ -177,7 +177,7 @@ Example of Response:
 }
 ```
 
-## **Troubleshooting**
+## Troubleshooting
 | **Error Code** | **Cause**                                                                 | **Solution**                                                                 |
 |----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------|
 | `401 Unauthorized` | Invalid or missing API key.                                               | Verify the API key and secret key. Ensure they are correctly entered.        |
@@ -211,7 +211,7 @@ Response (401 Unauthorized)
 }
 ```
 ## Additional Support and Resources
-[Masteriyo LMS REST API Endpoints](https://docs.masteriyo.com/for-developers/rest-api-endpoints)
+[Masteriyo LMS REST API Endpoints](/for-developers/rest-api-endpoints)
 ### Getting Help
   - [Contact Masteriyo LMS support](https://masteriyo.com/support/)
   - [Join the developer community](https://www.facebook.com/groups/masteriyo)

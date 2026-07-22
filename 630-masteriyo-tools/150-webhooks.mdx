@@ -1,7 +1,7 @@
 ---
-title: WebHooks
+title: Webhooks
 show_child_cards: true
-excerpt: This features let you send data to an external URL.
+excerpt: Set up Masteriyo webhooks to send real-time course, enrollment, and quiz data to external apps, or receive incoming actions from Zapier and other tools.
 ---
 
 **Webhooks** are a powerful feature in Masteriyo that enables real-time communication between your WordPress LMS and external applications. This documentation covers both types of webhook functionality available in Masteriyo:
@@ -17,7 +17,7 @@ Webhooks allow different applications to communicate automatically with each oth
 Trigger webhooks send data from your Masteriyo LMS to external applications whenever specific events occur on your site.
 
 ### Setting Up Trigger Webhooks
-1. Navigate to **Masteriyo > Webhoooks** in your WordPress admin dashboard.   
+1. Navigate to **Masteriyo > Webhooks** in your WordPress admin dashboard.   
 2. Click **Add New Webhook**.       
 
 ![Add New Webhook](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/navigate-to-webhooks.png)
@@ -25,7 +25,7 @@ Trigger webhooks send data from your Masteriyo LMS to external applications when
 3. Configure the webhook with the following settings:
 - **Webhook Name** - Provide a name for the Webhook.
 - **Description** - Describe the purpose of the Webhook.
-- **Status(Active)** - Enable this to make the Webhook active.
+- **Status (Active)** - Enable this to make the webhook active.
 - **Delivery URL** - Enter the URL where you want to send the data.
 - **Events** - Lets you select the desired event for sending the data. There are various events available.        
 
@@ -33,24 +33,26 @@ Trigger webhooks send data from your Masteriyo LMS to external applications when
 
         Note: The Event will vary for the admin and the instructors.
 
-**Secret(Optional)** - This helps you identify if a malicious third-party system has altered the data before it reaches its destination.
+**Secret (Optional)** - This helps you identify if a malicious third-party system has altered the data before it reaches its destination.
 
 After filling in all the required information, click on **Create** to save the webhook.        
 
 ### Available Trigger Events
 Masteriyo offers various events that can trigger webhooks:
-- Course Completed 
-- Course Published 
-- Course Question Created 
-- Course Question Reply Created 
-- Course Review Created 
-- Instructor Registration 
+- Course Completed
+- Course Published
 - Lesson Completed
-- Lesson Published        
-- Quiz Completed        
-- Quiz Published        
-- Student Enrolled        
-- Student Registration                
+- Lesson Published
+- New Course Review
+- New Enrollment
+- New Instructor Registration
+- New Order
+- New question in a course
+- New Reply to a question in a Course
+- New Student Registration
+- Quiz Attempt Status Change
+- Quiz Completed
+- Quiz Published
 
         Note: When logged in as an instructor, webhooks will only be triggered for events related to that specific instructor's courses and activities.
 
@@ -59,7 +61,7 @@ Masteriyo offers various events that can trigger webhooks:
 Masteriyo sends data to your specified URL using HTTP POST in JSON format when a trigger event occurs.
 
 ## Action Webhooks (Incoming Data) [Pro]
-Action webhooks allow external applications to perform actions within your Masteriyo LMS. This feature is available in the PRO version and enables you to integrate Masteriyo with CRM systems, automation tools, or other applications.
+Action webhooks allow external applications to perform actions within your Masteriyo LMS. This feature is available in Masteriyo Pro and enables you to integrate Masteriyo with CRM systems, automation tools, or other applications.
 
 ### Supported Action Webhooks
 Masteriyo supports the following action webhooks:        
@@ -71,8 +73,8 @@ Masteriyo supports the following action webhooks:
 | `masteriyo_create_instructor`  | Creates a new instructor account   | `email`, `user_name`, `firstname`, `lastname` |
 | `masteriyo_complete_lesson` | Marks a lesson as complete for a user | `lesson_id`, `user_id`, `course_id`|
 | `masteriyo_course_progress_reset`  | Resets course progress for a user |`course_id`, `user_id` |
-| `masteriyo_unenrolled_user_from_coursey` | Unenrolls a user from a course   | `course_id`, `user_id` |
-| `masteriyo_course_user_completed` | EMarks a course as completed for a user | `user_id`, `course_id` |
+| `masteriyo_unenrolled_user_from_course` | Unenrolls a user from a course   | `course_id`, `user_id` |
+| `masteriyo_course_user_completed` | Marks a course as completed for a user | `user_id`, `course_id` |
 
 ### Setting Up Action Webhooks
 To send action webhooks to Masteriyo from an external application (such as Zapier), use the following configuration:       
@@ -106,7 +108,7 @@ Use JSON format. For example,
 The `event` parameter specifies which action to trigger, and additional parameters will vary based on the selected action.
 
 ## Using Masteriyo Trigger Webhooks with Zapier
-1. First, [enable Zapier addon](https://docs.masteriyo.com/premium-addons/zapier-integration).
+1. First, [enable the Zapier addon](/premium-addons/zapier-integration).
 2. Log in to Zapier to create a new Zap and click on the trigger. 
 
 ![Create Zap in Zapier](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/create-zap-in-zapier.png) 
@@ -136,7 +138,7 @@ Here, you'll see the API key.
 
 ![Paste API Key on Zapier](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/allow-zapier-to-access-masteriyo-account.png)
 
-9. Click on the **Continue** button to proceed further. It'll now provide you with the option to test the trigger to confirm your trigger. Test to confirm the trigger. If you see any records, it confirms that the trigger has been set. 
+9. Click on the **Continue** button to proceed further. It'll now provide you with the option to test the trigger. Run the test — if you see any records, the trigger has been set up correctly. 
 
 ![Continue with selected record](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/continue-with-selected-record.png)
 
@@ -168,11 +170,11 @@ Example:
 
 ![Configure Remaining Action](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/configure-remaining-action-settings.png)
 
-You can find the Webhook token from your WordPress dashboard. So, navigate to **Webhook** and click on the settings icon. Now, you'll see the webhook token in the side interface.       
+You can find the webhook token in your WordPress dashboard. Navigate to **Masteriyo > Webhooks** and click on the settings icon. Now, you'll see the webhook token in the side interface.       
 
  ![Navigate to Webhook and its Settings](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/webhooks/webhooks-token.png) 
  
-Copy this token and paste under **Headers** of the Zap you're currently creating.   
+Copy this token and paste it under **Headers** of the Zap you're currently creating.   
 
 4. Click on **Continue** to test the Zap.  
 
@@ -185,6 +187,5 @@ This means you've successfully triggered webhooks with Zapier and sent the actio
 Now, whenever a student is enrolled in the course, the webhook will mark the course as completed. 
 
 <Callout>
-  {" "} 
-In this documentation, we used **Student Enrolled** as the trigger that leads to the action of **Course Completion**. Similarly, you can use other Triggers and set other Action. 
+In this documentation, we used **Student Enrolled** as the trigger that leads to the action of **Course Completion**. Similarly, you can use other triggers and set other actions. 
 </Callout>

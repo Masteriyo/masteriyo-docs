@@ -1,9 +1,9 @@
 ---
 title: Course Categories Shortcode
-excerpt: Learn about course categories shortcode for Masteriyo
+excerpt: Show course categories anywhere with the [masteriyo_course_categories] shortcode — columns, IDs, sorting, subcategories, and slider options.
 ---
 
-Using the shortcode for course categories, you can display your course categories anywhere in your site.   
+Using the shortcode for course categories, you can display your course categories anywhere on your site.   
 
 Shortcode: [masteriyo_course_categories]  
 
@@ -19,10 +19,13 @@ It also supports multiple attributes for further customization:
 | `ids`    | Display specific categories using their IDs.  | [masteriyo_course_categories ids="1,2,3"] |
 | `exclude_ids` |Exclude specific categories by ID.    | [masteriyo_course_categories exclude_ids="4,5,6"]|
 | `order`  | Sorting order, either ASC (ascending) or DESC (descending). |Example: [masteriyo_course_categories order="ASC"]|
-| `order_by` | Order categories by name, ID, or count.  | [masteriyo_course_categories orderby="name"]|
+| `orderby` | Order categories by name, ID, or count.  | [masteriyo_course_categories orderby="name"]|
 | `hide_courses_count` | Hide course count. Use yes to hide, no to show.       | [masteriyo_course_categories hide_courses_count="no"] |
 | `include_sub_categories` |Include subcategories. Use yes or no. | [masteriyo_course_categories include_sub_categories="no"]|    
 | `enable_slider` | Enable slider functionality. Use true or false | [masteriyo_course_categories enable_slider="true"]|  
+| `space_between` | Space in pixels between slides when the slider is enabled. | [masteriyo_course_categories enable_slider="true" space_between="30"] |
+| `reverse_direction` | Slide in reverse direction. Use true or false. | [masteriyo_course_categories enable_slider="true" reverse_direction="true"] |
+| `delay` | Autoplay delay between slides in milliseconds. | [masteriyo_course_categories enable_slider="true" delay="2500"] |
 
 ### Examples of Using Shortcode:   
 
@@ -34,7 +37,7 @@ You can use the shortcode to display course categories with specific configurati
 
 ### Where to Use This Shortcode  
 You can place this shortcode anywhere on your WordPress site, including:  
-•	Homepage sections  
-•	Course listing pages  
-•	Widgets and sidebars  
-•	Custom-built pages  
+- Homepage sections
+- Course listing pages
+- Widgets and sidebars
+- Custom-built pages

@@ -1,8 +1,7 @@
 ---
 title: Instructor List Shortcode
-excerpt: Learn to add Instructor list using the shortcode for Masteriyo.
-
---- 
+excerpt: Display a list of instructors (teachers) with the [masteriyo_instructors_list] shortcode — columns, IDs, order, and pagination attributes with examples.
+---
 
 With the instructors shortcode, you can display a customizable list of instructors anywhere on your site. This shortcode offers multiple attributes to control the display, order, and pagination of instructors.
 
@@ -14,12 +13,12 @@ Shortcode: **[masteriyo_instructors_list]**
 
 | **Attribute** | **Description**                                                                 | **Example**                                                                 |
 |----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| `count` | To display a total number of instructors.                                              | [masteriyo_instructors_list count="5"]      |
-| `columns`    | To display numbers in the form of columns (supports 1–4 columns).                              | [masteriyo_instructors_list columns="2"]  |
+| `count` | The total number of instructors to display.                                              | [masteriyo_instructors_list count="5"]      |
+| `columns`    | Number of columns to arrange instructors in (supports 1–4 columns).                              | [masteriyo_instructors_list columns="2"]  |
 | `ids`    | Display specific instructors using their IDs.              | [masteriyo_instructors_list ids="1,5,9"] |
 | `exclude_ids` | Comma-separated list of instructor IDs to exclude.            | [masteriyo_instructors_list exclude_ids="3,7"] |
 | `order`  | Order direction to display instructor list: ASC (ascending) or DESC (descending).                     |[masteriyo_instructors_list order="ASC"] |
-| `order_by` | Sort instructors by criteria like name, date, or other fields.                            | [masteriyo_instructors_list orderby="name"] |
+| `orderby` | Sort instructors by criteria like name, date, or other fields.                            | [masteriyo_instructors_list orderby="name"] |
 | `paginate` | Enable pagination: "true" to turn on, "false" to turn off.                       | [masteriyo_instructors_list paginate="true"] |
 | `per_page` | Number of instructors displayed per page (requires paginate="true").                                 | [masteriyo_instructors_list per_page="5"]|    
 
