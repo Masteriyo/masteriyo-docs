@@ -1,17 +1,102 @@
 ---
-title: How to fix course access issues?
-show_child_cards: true
-excerpt: "Fix course access issues in Masteriyo by clearing the plugin cache from Masteriyo > Tools > Utilities — resolves enrollment and caching glitches."
+title: Student Can't Access a Course After Paying
+excerpt: Diagnose lost course access in Masteriyo — check the enrollment record, the order status, unenrollment statuses, guest checkout, and caching, in that order.
 ---
 
-Masteriyo is a React-based advanced LMS plugin. You may occasionally experience issues accessing courses because of external caches.
-Masteriyo provides an inbuilt feature to clear those caches. It improves course access by removing temporary glitches, such as duplicate enrollments, caused by website caching.
-This ensures that your course list is up-to-date and error-free.
+A student paid but cannot open the course. Work through these checks in order. **Caching is the last thing to
+suspect, not the first** — in most reports the enrollment is inactive because of an order status, and clearing a
+cache will not bring it back.
 
-To clear the cache, follow the steps below:
+## 1. Is this actually a caching problem?
 
-1. Please log in to your site's WordPress dashboard.
-2. Go to **Masteriyo -> Tools -> Utilities**.
-3. Click on **Clear Cache**.
+Open the course as the affected student, or in a private window, and look at what the browser gets:
 
-![clear-cache](https://github.com/user-attachments/assets/583ba572-a8c0-4311-a72d-4d0e2ca4cc7d)
+- **The page loads but says the student is not enrolled, or the curriculum is locked** — an enrollment or order
+  problem. Continue to step 2.
+- **A 500 error, a blank white screen, or a PHP fatal error** — not caching either. Go to
+  [How to debug errors in Masteriyo](/faqs/debugging-error) and turn on logging.
+- **The student sees a stale version of the page, or content belonging to a different logged-in user** — this one
+  is caching. Skip to step 6.
+
+## 2. Does the enrollment exist, and is it active?
+
+Open **Masteriyo > Users** and find the student. An enrollment is either **active** or **inactive**, and an
+inactive enrollment looks exactly like "no access" to the student even though the record still exists.
+
+Masteriyo keeps an enrollment active only while the order that paid for it is **Completed**. Every other order
+status leaves it inactive. That is what step 3 checks.
+
+## 3. Check the order status
+
+Open **Masteriyo > Orders** and find the order.
+
+**Native Masteriyo checkout** — access is active only while the order status is **Completed**. Pending, On hold,
+Cancelled, Refunded and Failed all leave the enrollment inactive. If the payment succeeded at the gateway but the
+order never moved to Completed, investigate the gateway callback rather than the enrollment.
+
+**WooCommerce** — a Completed order enrolls the student. Access is removed when the order moves to any status
+listed under **Masteriyo > Settings > Integrations > WooCommerce > Unenrollment Status**, which defaults to
+**Cancelled**, **Failed** and **Refunded**.
+
+<Callout>
+  **WooCommerce orders sitting in *Processing* also lose access, and that cannot be switched off from the
+  Unenrollment Status setting.** Masteriyo treats `processing` and `checkout-draft` as unenrolled regardless of
+  what that setting contains. If your WooCommerce workflow parks paid orders in Processing, students will not have
+  access until the order reaches Completed.
+</Callout>
+
+**Easy Digital Downloads** — the same Unenrollment Status setting applies, on the same settings screen.
+
+**Lemon Squeezy** — unenrollment defaults to **Refunded** only.
+
+So a refund removes course access by default. If you refund for an unrelated reason, expect the student to lose
+the course as well.
+
+## 4. Is the buyer the same account as the learner?
+
+Access belongs to the account that owns the order. Two mismatches account for most of the rest:
+
+- The course was bought as a **guest**, or with an email address that does not match the account the student signs
+  in with.
+- Someone bought it **on behalf of** the student — a manager, a parent, an administrator.
+
+The order is fine in both cases; the enrollment simply belongs to a different account. Enroll the right user
+directly — see [How to add a student manually to a course](/faqs/how-to-add-a-student-manually-to-a-course).
+
+## 5. Is the course itself restricting access?
+
+Confirm the course is not the reason: check whether it is still a draft, limited to a group, gated behind a
+prerequisite, scheduled to start later, or set to Coming Soon.
+
+## 6. Caching
+
+If step 1 pointed at caching, follow
+[How to configure caching plugins](/faqs/configuring-caching-plugins) and exclude the Masteriyo pages from your
+caching plugin, your host's page cache, and your CDN.
+
+## About "Clear Cache" in Masteriyo Tools
+
+**Masteriyo > Tools > Utilities** has a button labelled **Clear Cache**. Despite the label, it does not clear a
+cache.
+
+<Callout>
+  **This tool permanently deletes database rows. Back up your database before using it.**
+
+  "Clear Cache" runs a repair routine over the enrollment tables. It deletes rows it treats as duplicate
+  enrollments from `masteriyo_user_items`, deletes duplicate lesson-activity rows from
+  `masteriyo_user_activities`, and flags enrollments belonging to WordPress users that no longer exist.
+
+  There is no confirmation step, it does not report how many rows it changed, and **the deletions cannot be undone**.
+  Learner progress held in those activity rows goes with them.
+</Callout>
+
+Use it only when you have identified genuine duplicate enrollment records — after a failed import, for example —
+and only with a current backup. It will not restore access for a student whose enrollment is inactive because of an
+order status. Steps 2 to 4 are what fix that.
+
+## Still stuck?
+
+Collect the course ID, the student's user ID and email address, the order ID and its current status, and the log
+from [How to enable error logging in Masteriyo](/faqs/how-to-enable-logging-in-masteriyo). Then open a topic on the
+[WordPress.org support forum](https://wordpress.org/support/plugin/learning-management-system/) if you are using the
+free version, or contact support with your license key if you are on Masteriyo Pro.

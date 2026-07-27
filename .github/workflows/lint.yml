@@ -1,0 +1,17 @@
+name: Lint docs
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Check frontmatter, paths, order prefixes and redirects
+        run: python3 .github/scripts/lint-docs.py
