@@ -1,6 +1,5 @@
 ---
 title: Zoom Integration [Pro]
-show_child_cards: true
 excerpt: Use the Pro-only Zoom Integration add-on to create Zoom class sessions for your courses.
 ---
 
@@ -42,13 +41,13 @@ After getting the credentials, you will have to provide access to the Zoom app f
 
 ![Company-information](https://user-images.githubusercontent.com/75772539/232668655-62f6b551-5859-4542-a149-d2f499ddd545.png)
 
-Now, move to the **Scope** section and click on **Add Scope**. Here, you will have to add the required scopes related to the Meeting, Webinar, and Recording. 
+Now, move to the **Scope** section and click on **Add Scope**. Here, you will have to add the required scopes related to the Meeting, Webinar, and Recording.
 
 **Scopes Example**: meeting:write:meeting, meeting:write:meeting:admin, meeting:update:meeting:admin, meeting:update:meeting
-We have added all the scopes under Meeting, Webinar, and Recording.     
+We have added all the scopes under Meeting, Webinar, and Recording.
 
 <Callout>
-  {" "}  
+  {" "}
   Find the list of required scopes [here](/premium-addons/zoom-integration#list-of-required-scopes)
 </Callout>
 
@@ -98,46 +97,46 @@ Please note that there are various other options that you can set in the meeting
 - **Mute Upon Entry** - Enable this to mute the attendee when they join the meeting.
 - **Close Registration** - Enable this to prevent registrations after the event date/meeting date.
 - **Recording Storage** - You can either store the recorded meeting on your local storage or use cloud service.
-- **Meeting Password** - Set a password, if required, for your meeting.    
+- **Meeting Password** - Set a password, if required, for your meeting.
 
 ## List of Required Scopes
 
 ### Meeting Scopes
 
 ```
-meeting:read:local_recording_token:admin 
+meeting:read:local_recording_token:admin
 meeting:read:summary:admin
-meeting:read:list_summaries:admin 
-meeting:read:past_meeting:admin 
-meeting:read:meeting:admin 
-meeting:read:list_past_participants:admin 
-meeting:read:list_upcoming_meetings:admin 
-meeting:read:list_past_instances:admin 
-meeting:read:list_meetings:admin 
-meeting:read:invitation:admin 
-meeting:read:alert:admin 
-meeting:read:list_registrants:admin 
-meeting:read:livestream:admin 
-meeting:read:participant:admin 
-meeting:write:registrant:admin 
-meeting:update:meeting:admin 
-meeting:delete:meeting:admin 
-meeting:write:meeting:admin 
-meeting:write:invite_links:admin 
-meeting:read:list_summaries:master 
+meeting:read:list_summaries:admin
+meeting:read:past_meeting:admin
+meeting:read:meeting:admin
+meeting:read:list_past_participants:admin
+meeting:read:list_upcoming_meetings:admin
+meeting:read:list_past_instances:admin
+meeting:read:list_meetings:admin
+meeting:read:invitation:admin
+meeting:read:alert:admin
+meeting:read:list_registrants:admin
+meeting:read:livestream:admin
+meeting:read:participant:admin
+meeting:write:registrant:admin
+meeting:update:meeting:admin
+meeting:delete:meeting:admin
+meeting:write:meeting:admin
+meeting:write:invite_links:admin
+meeting:read:list_summaries:master
 meeting:read:summary:master
 
-```    
+```
 
 ### Recording Scopes
- 
+
 ```
 archiving:read:archived_file_statistics:admin
 archiving:read:list_archived_files:admin
 ```
- 
+
 ### User Scopes
- 
+
 ```
 user:read:list_schedulers:admin
 user:read:summary:admin
@@ -157,9 +156,9 @@ user:read:token:master
 user:read:list_schedulers:master
 user:read:zak:admin
 ```
- 
+
 ### Webinar Scopes
- 
+
 ```
 webinar:read:list_past_instances:admin
 webinar:read:list_webinars:admin
@@ -170,4 +169,5 @@ webinar:read:alert:admin
 webinar:update:webinar:admin
 webinar:delete:webinar:admin
 ```
+
 **Note:** If you’re having trouble finding these scopes, use the search bar of the Add Scopes page.

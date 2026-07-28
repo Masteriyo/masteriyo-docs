@@ -1,6 +1,6 @@
 ---
 title: Allow Usage Tracking (Contribute to Enhancement)
-excerpt: What data Masteriyo's optional usage tracking shares (site URL, WordPress/PHP versions, active plugins) and how to enable it.
+excerpt: Exactly what Masteriyo's usage tracking sends — admin email, WordPress/PHP versions, active plugins, add-ons, course counts, setup-wizard progress — and what is sent even when it is off.
 ---
 
 ## Contribute to Enhancement
@@ -11,29 +11,41 @@ excerpt: What data Masteriyo's optional usage tracking shares (site URL, WordPre
 
 You will find a notice from the Masteriyo plugin asking for your consent to allow usage tracking. This helps us improve the plugin's features and deliver a better user experience overall.
 
-### What is shared?
+### What is shared when you enable it
 
-Allowing this option will share the following information with the developers.
+| Field | What it contains |
+| --- | --- |
+| `admin_email` | The site administrator's email address |
+| `base_product` / `product_data` | Which Masteriyo edition and version is installed |
+| `plugin_activation_date` / `masteriyo_install_days` | When Masteriyo was first activated, and how long ago that was |
+| `wp_version` · `php_version` · `mysql_version` | WordPress, PHP and MySQL versions |
+| `locale` · `timezone` | Your site's language/region and time zone |
+| `is_multisite` | Whether the site is part of a WordPress multisite network |
+| `active_theme` | Name of the active theme |
+| `other_plugins` | The number of other active plugins and their names |
+| `addons` | Which Masteriyo add-ons are active |
+| `publish_course_count` | How many courses you have published |
+| `enrolled_users_count` | How many enrollments exist in total |
+| `onboarding_data` | Setup-wizard progress: which steps you completed or skipped, the step numbers, and two choices from the welcome step — whether you plan to sell or enroll students, and which payment method you selected. Values are limited to true/false, whole numbers and a fixed set of options; nothing you typed into the wizard is included. |
+| `last_error_report` | The most recent Masteriyo error report — see below |
 
-- admin_email – Your email
-- website_url – Your site’s URL
-- wp_version – WordPress version of your site
-- php_version – PHP version of your site
-- mysql_version – MySQL version of your site
-- server_software – Software used on your server
-- is_ssl – Is your site SSL or not?
-- is_multisite – Is your site a multi-site platform?
-- is_wp_com – Is your site hosted on wordpress.com?
-- is_wp_com_vip – Is your site hosted on WordPress.com VIP?
-- is_wp_cache – Is WP Cache enabled?
-- multi_site_count – How many subsites are there if multi-site?
-- active_theme – Name of the active theme
-- active_theme_version – Version of the active theme
-- locale – Language and regional settings of your website
-- timezone – Time Zone Detail
-- activated plugins – List of the activated plugins
-- published course count: Total number of courses published via Masteriyo plugin
-- completed order count: Total number of orders completed with the Masteriyo plugin
+### What is sent even when usage tracking is off
 
-> We take the privacy of our users very seriously and we only collect the data mentioned (such as PHP version, SSL or not, WordPress plugins and themes used, etc) with their explicit consent. The collected data will be used for the improvement and compatibility testing of our plugins and add-ons. This data will help us to ensure that our plugins work seamlessly with different PHP versions, different plugins, and themes. The data will not be shared with any third-party and will be kept confidential and secure. Rest assured that your data is in good hands and will only be used to enhance your experience with our products.
-> Also, you will receive occasional emails notifying you about new features or recent security updates.
+If Masteriyo has recorded an error report, that report is transmitted whether or not you enable usage tracking. It
+contains the page URL, error code and message, stack trace, HTTP method, request data, user agent, the time the
+error occurred, and Masteriyo's own debug context. Stack traces and request data can include file paths from your
+server and the contents of the request that failed.
+
+<Callout>
+  If you do not want error reports leaving your site, keep an eye on the plugin's error reporting behaviour and
+  raise it with support — the usage-tracking checkbox does not control it.
+</Callout>
+
+### How the data is used
+
+The information above is used for improving Masteriyo and for compatibility testing — making sure the plugin works
+across PHP versions, themes and other plugins. It is not sold, and it is not shared for advertising.
+
+Enabling the option in the setup wizard also subscribes the administrator email to occasional product emails about
+new features and security updates. That is a separate thing from the diagnostic data above, and you can
+unsubscribe from those emails at any time.

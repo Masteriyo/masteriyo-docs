@@ -1,8 +1,24 @@
 ---
 title: How to configure caching plugins?
-show_child_cards: true
 excerpt: Configure WP Rocket, WP Super Cache, and LiteSpeed Cache to exclude Masteriyo pages (account, learn, checkout) and fix caching issues.
 ---
+
+## Is this actually a caching problem?
+
+Caching gets blamed for a lot of problems it did not cause. Check the symptom first:
+
+- **A stale page, or content that belongs to a different logged-in user** — yes, this is caching. Continue below.
+- **A 500 error, a blank white screen, or a PHP fatal error** — not caching. A 500 is never a cache problem. Go to
+  [How to debug errors in Masteriyo](/faqs/debugging-error).
+- **A student who paid but cannot open the course** — almost never caching. Go to
+  [Student Can't Access a Course After Paying](/faqs/how-to-fix-course-access-issue), which checks the enrollment
+  and the order status first.
+
+Remember there may be more than one cache in front of your site: the caching plugin, your host's own page cache,
+an object cache such as Redis or Memcached, and a CDN like Cloudflare. Excluding a page in the plugin does nothing
+if the host or the CDN is still serving a cached copy.
+
+## Excluding the Masteriyo pages
 
 When using a caching plugin, make sure to exclude Masteriyo default pages from the cache, disable caching for **logged-in users**, and turn off the cache for the **REST API**. Adjusting these settings will help ensure a smoother experience and avoid any potential issues.
 
