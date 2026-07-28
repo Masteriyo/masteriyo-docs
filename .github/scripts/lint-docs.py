@@ -15,8 +15,11 @@ Catches the classes of problem that have actually reached production:
     depend on filesystem order
   * `show_child_cards` on a page that has no children, which suppresses
     prev/next navigation and renders an empty card grid
-  * a redirect in `_redirects` whose target is not a real page, or whose source
-    collides with a page that is live
+
+Redirects are NOT configured in this repo: it is consumed as a git submodule at
+`content/docs` by the website repo, whose publish root is `.next`, so a
+`_redirects` file here is never read. Redirects live in the website repo, in
+`next.config.js` and `public/_redirects`.
 
 Run: python3 .github/scripts/lint-docs.py
 """
@@ -127,22 +130,6 @@ def main():
             p = rel(os.path.join(root, f))
             if " " in p or p != p.lower():
                 warnings.append(f"{p}: asset paths should be lowercase with no spaces")
-
-    redirects = os.path.join(REPO, "_redirects")
-    if os.path.exists(redirects):
-        for i, line in enumerate(open(redirects, encoding="utf-8"), 1):
-            line = line.strip()
-            if not line or line.startswith("#"):
-                continue
-            parts = line.split()
-            if len(parts) < 2:
-                errors.append(f"_redirects:{i}: expected `<from> <to> [status]`, got {line!r}")
-                continue
-            src, tgt = parts[0], parts[1]
-            if tgt.startswith("/") and tgt not in urls:
-                errors.append(f"_redirects:{i}: target {tgt} is not a page in this repo")
-            if src in urls:
-                errors.append(f"_redirects:{i}: source {src} is a live page — this rule would shadow it")
 
     print(f"checked {len(files)} pages")
     for w in warnings:
