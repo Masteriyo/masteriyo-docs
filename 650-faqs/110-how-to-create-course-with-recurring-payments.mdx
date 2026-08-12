@@ -1,38 +1,54 @@
 ---
 title: How to create a course with a subscription option? [Pro]
-excerpt: Learn how to create a course with a subscription option or recurring payments. 
+excerpt: Learn how to create a course with a subscription option or recurring payments.
 ---
 
-Follow the steps below to create a subscription-based course with recurring payments via PayPal, Stripe or Mollie.
+## Overview
 
-**Requires**
+Recurring payments allow you to monetize your expertise through a subscription model, ensuring consistent revenue while giving learners ongoing access to your materials. The Recurring Payment feature allows you to sell your courses on a subscription basis (e.g., weekly, monthly, or yearly).
 
-1. [Masteriyo LMS Pro plan or above](https://masteriyo.com/pricing/)
-2. A supported payment gateway — PayPal (built in, no add-on needed), or the [Stripe](/getting-started/activate-masteriyo-addons) or [Mollie](/getting-started/activate-masteriyo-addons) payment add-on.
+## Requirements
 
-## Configuration
+- **Masteriyo Pro Plan:** The recurring pricing feature is available in the Pro version and above.
+- **Stripe Payment Gateway:** You must have Stripe configured to handle the automated billing cycles.
+- **SSL Certificate:** Your site must be secured with HTTPS to process recurring transactions safely.
 
-Once you have set up the PayPal, Stripe or Mollie payment gateway for your courses, you can create a course with a subscription by following the steps below.
+## Setup and Configuration
 
-- Go to Courses > Select a Course.
-- Go to Settings > Pricing
+Once you have configured the Stripe gateway, you can create the course with subscription by following the steps below:
 
-In the course that has payment set as **Paid**, you can choose **Recurring** 
+### Step 1: Access the Course Pricing
 
-![recurring-payments](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/123ab20c-2683-4ab9-8cec-0bba1013304a)
+- Go to **Masteriyo > Courses** and select the course you wish to set the recurring payment.
+- Click on the **Settings** tab.
 
-Here, you can set the time period for the subscription along with the subscription fees. You can set the expiry time in months. The maximum expiry time can be set up to 24 months. 
+  ![Course settings](https://mlcucdwjz8hi.i.optimole.com/w:auto/h:auto/q:auto/id:7a2ff2efdd23a39600c07c6a47154953/directUpload/Course-settings.png)
+
+- Click on the **Pricing** tab on the left sidebar.
+
+  ![Pricing tab](https://mlcucdwjz8hi.i.optimole.com/w:auto/h:auto/q:auto/id:e6e8ad9477bad256a3774eece25c8659/directUpload/Pricing-tab.png)
+
+### Step 2: Enable Recurring Payments
+
+- Set the pricing option to **Paid**.
+- Then, click on the **Recurring** option.
+- Configure Billing Details:
+  - **Subscription Price:** Enter the amount charged per cycle.
+  - **Billing Frequency:** Choose Per Day, Weekly, Monthly, or Yearly.
+  - **Subscription Length:** Define if the plan should Never Expire or end after a Fixed Amount of cycles.
+
+![Recurring price options](https://mlcucdwjz8hi.i.optimole.com/w:auto/h:auto/q:auto/id:488422184fec5aeecc10283f6b164df6/directUpload/Recurring-price-options.png)
+
+### Step 3: Save and Publish
+
+- Click **Update** or **Publish** to save your pricing settings and activate the subscription on your course.
+
+![Update option](https://mlcucdwjz8hi.i.optimole.com/w:auto/h:auto/q:auto/id:4b18b3c46c00b3459b01c8ae7d0ca3f5/directUpload/Update-option.png)
 
 <Callout>
-Native recurring/subscription billing is supported by the **PayPal**, **Stripe** and **Mollie** payment gateways. (WooCommerce-based recurring payments are handled separately through the WooCommerce Subscriptions extension — see the WooCommerce Subscription Support page.)
+  Once configured, the subscription price and billing cycle details will
+  automatically be displayed on the Single Course page, as shown in the
+  screenshot below:
 </Callout>
 
-### Managing subscriptions [Pro]
-
-Once students subscribe, you can view and manage all subscriptions from **Masteriyo LMS > Orders > Subscriptions** in the WordPress admin. This screen requires an active Masteriyo Pro license above the Basic tier and lets you filter subscriptions by status:
-
-- Active
-- Pending
-- On Hold
-- Cancelled
-- Expired
+![Recurring single course page](https://mlcucdwjz8hi.i.optimole.com/w:auto/h:auto/q:auto/id:5586a7992ede368b50d19c0b41c48350/directUpload/Recurring-single_course_page.png)
