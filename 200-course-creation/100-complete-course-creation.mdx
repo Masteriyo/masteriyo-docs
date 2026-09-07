@@ -29,6 +29,13 @@ Let's now set up the course with the required information:
 
 ![Masteriyo Course Setting for Free Version](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/masteriyo-course-setting-for-free-version.png)
 
+<Callout>
+  The Course Description editor and lesson content editors can now use
+  **different editors** [Pro] — set them independently under **Masteriyo →
+  Settings → General → Editor** (Default Editor for lessons, Course Overview
+  Editor for the description shown on the single course page).
+</Callout>
+
 ### Premium Features on Course Builder [Pro]
 
 If you have Masteriyo Pro, you can set the course as a featured course and add a featured video.
@@ -60,6 +67,16 @@ Now, select the content type based on your preference.
 
 ![Select Content Type](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/select-content-type.png)
 
+<Callout>
+  Use the **Search curriculum** box in the Builder tab to quickly filter
+  sections and lessons in courses with a lot of content. Each section also
+  gets an **Upload** button that opens your media library in multi-select
+  mode — every video file you pick becomes a draft lesson in that section
+  automatically (PDF and audio files require a paid plan).
+</Callout>
+
+{/* IMAGE: course-builder-search-and-bulk-upload */}
+
  - **Text Lesson** - A text-based learning module where educators can share detailed course content, including formatted text, links, and resources. Perfect for self-paced learning in your LMS platform. Learn how to create engaging text content with our [text lesson creation guide](/course-creation/text-lesson-creation).
 
 - **Video Lesson** - Deliver engaging educational content through high-quality video lessons. Ideal for visual learners and designed to enhance course interactivity on your LMS. Learn [how to add Video Lessons from our detailed guide](/course-creation/video-lesson-creation).
@@ -78,6 +95,24 @@ Now, select the content type based on your preference.
 
 - **Audio Lesson** [Pro] - Deliver educational content through high-quality audio recordings. Ideal for podcasts, lectures, interviews, language learning, meditation sessions, or any content where students prefer to listen while multitasking or on the go. Create engaging audio content with our [audio lesson creation tutorial](/course-creation/audio-lesson-creation).
 
+<Callout>
+  Each lesson row in the Builder tab shows a **previewable** badge and a
+  direct preview link when the lesson is marked as a free preview — you don't
+  need to open the lesson editor just to check or preview it. On the Free
+  plan, the "Make this lesson a free preview" toggle appears locked with a
+  Pro upgrade prompt.
+</Callout>
+
+### Bulk Editing Lessons
+
+Turn on bulk-select in the Builder tab to check multiple lessons at once and, from the floating selection bar:
+
+- **Publish** or **switch to Draft** in one action
+- **Edit Lesson Options** — bulk toggle **Enable Video Share** and **Enable Right Click** across every selected lesson, plus bulk-edit **content drip release dates** [Pro]
+- **Delete** the selected lessons (with a two-step confirmation)
+
+{/* IMAGE: course-builder-bulk-lesson-editing */}
+
 
 ## Course Settings
 Navigate to **Settings** tab. Each course you make will have its own individual settings that have the course flow, type: free or pro, and many more features. There are six groups of options to set in the individual settings. They are,
@@ -90,6 +125,18 @@ Navigate to **Settings** tab. Each course you make will have its own individual 
 - **Content Drip**
 
 Active add-ons add further tabs (Certificate, Prerequisites, FAQ, WooCommerce, Lemon Squeezy, Paid Memberships Pro, Restrict Content Pro).
+
+<Callout>
+  The Certificate tab's certificate selector now includes a **Create new
+  certificate** option directly in the dropdown, so you don't need to leave
+  the course builder to set one up.
+</Callout>
+
+<Callout>
+  From **Masteriyo → Addons**, active add-ons like Zoom or Google Meet now
+  show a **Settings** (gear) button that jumps straight to that add-on's
+  configuration, instead of hunting for it under Settings.
+</Callout>
 
 ### Pricing
 From this tab, you can set the course's price. You can either make the course Free or charge for it.
@@ -158,19 +205,21 @@ This tab controls when and how students can access the course.
 ![Enrollment Setting](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/enrollment-setting-on-masteriyo-pro.png)
 
 ### Display
-This tab lets you customize how the courses appear.
 
+This tab no longer holds its own per-course controls. Display options — curriculum visibility, reviews, welcome message, and course layout — now apply **globally to every course** rather than per course, and this tab simply links you to where to change them:
 
-![Display Setting for Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/display-settings-for-course.png)
+- **Masteriyo → Settings → Styles**
+- **Masteriyo → Settings → Single Course Page → Display**
 
-- **Curriculum Visibility** — Choose **Always Visible** to show the course curriculum to everyone, or **Only Visible to Enrollers** to show it only to enrolled students. 
-- **Enable Review** -  Allows students to leave ratings and comments on your course. When enabled, a review section appears on the course page where enrolled students can share their feedback and rate the course.
-- **Review after course completion** - Let users leave a review after they complete the course.  
-- **Welcome Message For User** - Displays a personalized greeting when students first access your course learning page. Add a custom welcome title and description to provide important course information or instructions.
+See [Single Course Settings](/settings/single-course-page) for the full list of these options.
 
-You can also preview the welcome message:  
+{/* IMAGE: course-builder-display-tab-global-settings-link */}
 
-![Preview welcome message](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/preview-welcome-message.gif)
+<Callout>
+  The per-course Reports page has also been removed from the course builder —
+  course-level analytics now live under [Course
+  Analytics](/course-creation/course-analytics) instead.
+</Callout>
 
 ### Content Drip
 Content Drip controls when course lessons become available to students after enrollment. Instead of releasing all content at once, you can: 
@@ -191,6 +240,12 @@ Once you have set up the course's settings per your requirement, hit the **Publi
 Here's how your course might appear at the frontend: 
 
 ![Course at frontend](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/course-at-frontend-after-creation.png)
+
+<Callout>
+  While viewing any course, lesson, or quiz page on the frontend as an admin
+  or instructor, look for the **Edit Course** link in the WordPress admin bar
+  — it takes you straight back to that course's builder.
+</Callout>
 
 ### Additional Resources
 - [Create a Private course using Masteriyo LMS](/course-creation/private-course-creation).
