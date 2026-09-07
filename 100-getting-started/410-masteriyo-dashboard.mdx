@@ -44,9 +44,7 @@ Each card links straight to the relevant screen, and completed steps are tracked
 
 <Callout>
   Click **Hide this guide** to dismiss the checklist — this removes the Home
-  tab from the Dashboard entirely. There's no in-app button to bring it back;
-  see [Guided Course Setup Wizard](#guided-course-setup-wizard) below for a
-  way to reach the underlying onboarding flow directly by URL.
+  tab from the Dashboard entirely, with no in-app button to bring it back.
 </Callout>
 
 ### Resource Links
@@ -62,53 +60,12 @@ Alongside the checklist (hidden on white-labeled installs), you'll still find th
 
 {/* IMAGE: masteriyo-dashboard-home-tab */}
 
-## Guided Course Setup Wizard
-
-Separate from the Home tab, new installs are guided through a one-time setup wizard (reachable at `wp-admin/admin.php?page=masteriyo-onboard`).
-
-### Welcome — Access Question
-
-The wizard opens by asking a single question: **"How will learners get access to your courses?"**
-
-- They will buy courses online
-- We will enroll them ourselves
-- Both
-- I am just exploring
-
-This step also includes a usage-tracking consent checkbox. Your answer determines whether the next step (payment setup) is shown at all.
-
-### Payment Setup
-
-If your answer implies you'll be selling courses, a payment setup panel appears:
-
-- **Currency** — a dropdown with a best guess suggested from your site's address
-- **Payment methods** — toggle on Offline Payment, PayPal (with an inline email field), and/or Stripe (with a Connect button)
-
-### Starter Templates
-
-A template-picking step follows, letting you optionally start from a pre-built course template rather than a blank course.
-
-### Finish
-
-A completion screen summarizes what was set up, includes a toggle for the sample courses (see below), and offers **Go to your courses** or **Visit your site** buttons.
-
 <Callout>
-  The **AI curriculum draft** mentioned in the 3.4.0 changelog isn't part of
-  this wizard — it's a **"Draft it with AI"** button available per-course in
-  the course editor's onboarding screen. It builds a static skeleton of
-  sections and draft lessons from your course title and description (not
-  generated lesson content), and everything it creates stays fully editable.
+  New installs are also guided through a separate, one-time setup wizard
+  (currency, access, payment method, sample courses) right after activation —
+  see [Guided Course Setup](/getting-started/guided-course-setup) for the
+  full walkthrough.
 </Callout>
-
-### Sample Draft Courses
-
-On a genuinely fresh site (no existing courses), Masteriyo automatically seeds three example courses as **drafts** in the background, shortly after activation:
-
-- A product-tour style course
-- A subject/topic course
-- A cohort-based course
-
-These are meant purely as previewable examples of what a finished course can look like, and don't publish or affect your site until you choose to use or delete them.
 
 ## Migration Tool Auto-Activation
 
