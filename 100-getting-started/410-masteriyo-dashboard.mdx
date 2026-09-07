@@ -23,10 +23,102 @@ As you can see, there are various tabs on the dashboard page, in this order: **H
 
 ## Home
 
-From here, you can access Masteriyo video tutorials, community, documentation, etc. Also, if you have any trouble with the plugin, you can directly create a support ticket from here. Moreover, if you see any features missing, you can request the feature as well.
-Don't forget to leave a review for the plugin from the **Submit a Review** option.
+Home is no longer a static welcome screen — it's a dynamic setup guide with a numbered checklist of setup steps, alongside the original resource links.
+
+### Setup Checklist
+
+The main area shows cards guiding you through the steps to get your LMS ready, roughly in this order:
+
+1. Required pages (Courses page, Account page, Checkout page, etc.)
+2. How learners will get access to your courses
+3. Create your first course
+4. Set your currency
+5. Set up a payment method
+6. Set a price and publish your course
+7. Test the checkout flow
+8. Add or enroll a learner
+9. Preview your sample courses
+10. Browse starter templates
+
+Each card links straight to the relevant screen, and completed steps are tracked so you can see what's left to do.
+
+<Callout>
+  Click **Hide this guide** to dismiss the checklist — this removes the Home
+  tab from the Dashboard entirely. There's no in-app button to bring it back;
+  see [Guided Course Setup Wizard](#guided-course-setup-wizard) below for a
+  way to reach the underlying onboarding flow directly by URL.
+</Callout>
+
+### Resource Links
+
+Alongside the checklist (hidden on white-labeled installs), you'll still find the original set of links:
+
+- **Community** — the Masteriyo Facebook group
+- **Getting Started / Documentation**
+- **Support** — create a support ticket
+- **Feature Request**
+- **Submit a Review**
+- **Video Tutorials**
 
 {/* IMAGE: masteriyo-dashboard-home-tab */}
+
+## Guided Course Setup Wizard
+
+Separate from the Home tab, new installs are guided through a one-time setup wizard (reachable at `wp-admin/admin.php?page=masteriyo-onboard`).
+
+### Welcome — Access Question
+
+The wizard opens by asking a single question: **"How will learners get access to your courses?"**
+
+- They will buy courses online
+- We will enroll them ourselves
+- Both
+- I am just exploring
+
+This step also includes a usage-tracking consent checkbox. Your answer determines whether the next step (payment setup) is shown at all.
+
+### Payment Setup
+
+If your answer implies you'll be selling courses, a payment setup panel appears:
+
+- **Currency** — a dropdown with a best guess suggested from your site's address
+- **Payment methods** — toggle on Offline Payment, PayPal (with an inline email field), and/or Stripe (with a Connect button)
+
+### Starter Templates
+
+A template-picking step follows, letting you optionally start from a pre-built course template rather than a blank course.
+
+### Finish
+
+A completion screen summarizes what was set up, includes a toggle for the sample courses (see below), and offers **Go to your courses** or **Visit your site** buttons.
+
+<Callout>
+  The **AI curriculum draft** mentioned in the 3.4.0 changelog isn't part of
+  this wizard — it's a **"Draft it with AI"** button available per-course in
+  the course editor's onboarding screen. It builds a static skeleton of
+  sections and draft lessons from your course title and description (not
+  generated lesson content), and everything it creates stays fully editable.
+</Callout>
+
+### Sample Draft Courses
+
+On a genuinely fresh site (no existing courses), Masteriyo automatically seeds three example courses as **drafts** in the background, shortly after activation:
+
+- A product-tour style course
+- A subject/topic course
+- A cohort-based course
+
+These are meant purely as previewable examples of what a finished course can look like, and don't publish or affect your site until you choose to use or delete them.
+
+## Migration Tool Auto-Activation
+
+If Masteriyo detects another LMS plugin active on your site — Tutor LMS, LearnDash, LearnPress, LifterLMS, or MasterStudy — it automatically activates the (normally inactive) Migration Tool add-on for you and shows a one-time notice, both as a regular WordPress admin notice and inside the Masteriyo app itself, linking to the Migration tool under **Tools**.
+
+<Callout>
+  This only happens once per detected plugin. If you dismiss the notice or
+  manually deactivate the Migration Tool afterward, it won't auto-activate
+  itself again.
+</Callout>
 
 ## Analytics
 
