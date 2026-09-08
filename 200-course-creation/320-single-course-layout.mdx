@@ -1,0 +1,146 @@
+---
+title: Single Course Layout
+excerpt: Compare the four single course page layouts — Simple, Modern, Minimal, and Immersive — and see how to switch between them.
+---
+
+## What is a Single Course Layout?
+
+The **Single Course Layout** setting controls how a course's single course page is presented to visitors — the arrangement of the hero, description, curriculum, price/enroll area, and other sections. It's a global setting: whichever layout you choose applies to every course's single course page at once, not per course.
+
+<Callout>
+  Location: **Masteriyo → Settings → Single Course Page → Template → Choose
+  Layout**. Looking for the layout of the **courses list/archive page**
+  instead? See [Course Settings](/settings/course-settings).
+</Callout>
+
+Four layouts are available:
+
+- [Simple](#simple)
+- [Modern](#modern)
+- [Minimal](#minimal)
+- [Immersive](#immersive-new) (New)
+
+{/* IMAGE: Layout picker showing all four layout thumbnails with a hover preview open */}
+
+## Simple
+
+The standard, classic two-column course page: an 8/4 column split with the featured image, categories, title, author/rating, and full course content (curriculum, description, tabs, reviews) in the wide left column, and a sticky sidebar card on the right with price, the enroll button, course stats, and highlights.
+
+### Layout Structure
+
+1. **Main column** (left, wide) — featured image, categories, title, author/rating, then the curriculum, description, and reviews
+2. **Sidebar** (right, narrow) — price and enroll button, course stats, highlights
+
+<Callout>
+  The sidebar card sticks in place as visitors scroll through the main
+  column, so price and enroll stay visible.
+</Callout>
+
+![Simple layout single course page](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:22b574d5a18b1a4022ac73a23ed67bc4/directUpload/Defaultpng.png)
+
+## Modern
+
+A hero-first layout: a header block spans the full width with the category, title, an author/rating badge row, a meta-info row (duration, students, difficulty, last updated, seats), and the featured image — followed by a two-column body below it. The main content area uses tabs (Overview, Curriculum, Instructor, Reviews) instead of one long scrolling column.
+
+### Layout Structure
+
+1. **Header** (full-width) — category, title, author/rating, course meta, featured image
+2. **Body — main content** — tabbed sections: Overview, Curriculum, Instructor, Reviews
+3. **Body — sidebar** — progress (for enrolled students), price and enroll card, cohort info, expiry countdown, highlights
+
+<Callout>
+  Like Simple, the price and enroll card in the sidebar is sticky while
+  scrolling the tabbed content.
+</Callout>
+
+![Modern layout single course page](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:288922cf996f168f76a628400078996a/directUpload/Modern.png)
+
+## Minimal
+
+Similar to Simple's two-column body, but with a full-width featured image banner above it, and an additional tabbed content strip appended after the two columns for extra content.
+
+### Layout Structure
+
+1. **Featured image** (full-width banner, above everything else)
+2. **Main column** (left) — categories, title, badges, expiration info, author/rating, course content
+3. **Sidebar** (right) — price and enroll button, course stats, highlights
+4. **Additional tabbed content** (full-width, below the two-column body)
+
+<Callout>
+  The sidebar card is sticky here too, and shows progress-aware states for
+  enrolled students (including a certificate-share option once a course is
+  completed).
+</Callout>
+
+![Minimal layout single course page](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:b5d291c137d81c4e5439f17fc4a9e371/directUpload/Minimal.png)
+
+## Immersive (New)
+
+A landing-page style layout: a full-bleed hero band, a sticky floating enroll card, then one continuous scrolling "story" made up of the course's highlights, description, curriculum, instructor bio, and reviews.
+
+### Layout Structure
+
+The Immersive page is built as a sequence of full-width sections:
+
+1. **Hero** — a full-bleed background band with the course title, category badges, rating, and author
+2. **Enroll card** (sticky, sits alongside the story) — featured media, price, sale badge, the enroll/purchase button, remaining-seats text, and a checklist of what's included
+3. **What you'll learn** — the course highlights as a grid
+4. **About this course** — the full course description
+5. **Course content** — the curriculum, same as other layouts
+6. **Your instructor** — bio and stats
+7. **Reviews**
+8. **Closing call-to-action**
+
+Each section only renders when it has content — a course with no reviews yet, for example, simply skips that section rather than showing an empty block.
+
+![Immersive layout single course page](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:d52ffb0c3d9c56f2ef45949a677f797f/directUpload/Immersive.png)
+
+### The Sticky Enroll Card
+
+The enroll card stays pinned in view as a visitor scrolls through the course story, so the price and enroll button are always reachable.
+
+<Callout>
+  If the enroll card's own content is taller than the visible viewport (for
+  example, a long "includes" checklist), Masteriyo automatically falls back to
+  normal, non-sticky positioning for that card instead of pinning it in a way
+  that would push content out of reach.
+</Callout>
+
+{/* IMAGE: Immersive layout showing the sticky enroll card alongside the scrolling story */}
+
+## Custom Templates
+
+Additional layout options become available when you activate the Elementor or Bricks page builder addons, or by setting your own template as the active one.
+
+## Switching Layouts
+
+1. Go to **Masteriyo → Settings → Single Course Page**
+2. Open the **Template** section
+3. Under **Choose Layout**, hover any layout thumbnail to see a larger preview
+4. Select the layout you want
+5. Click **Save Changes**
+
+{/* IMAGE: Layout picker with a thumbnail's hover preview popover open */}
+
+<Callout>
+  The layout picker shows a static preview image on hover, not a live preview
+  of your own course content.
+</Callout>
+
+## Frequently Asked Questions
+
+### Can I use different layouts for different courses?
+
+No. The Template setting applies site-wide to every course's single course page — there's currently no per-course override.
+
+### Do the built-in layouts work with page builder addons like Elementor or Bricks?
+
+Custom page-builder templates are a separate setting from the built-in layouts. If you've set an Elementor or Bricks template as your active single course template, that takes over regardless of which built-in layout (Simple, Modern, Minimal, Immersive) is selected.
+
+### Will switching layouts break my existing course content?
+
+No. All four layouts reuse the same course data and rendering hooks (curriculum, price, reviews, etc.) — only the presentation changes.
+
+### Is Immersive a paid feature?
+
+No. Immersive is available on Masteriyo Free, the same as the other three layouts.

@@ -5,7 +5,7 @@ excerpt: "Create a WordPress course in Masteriyo: add sections, lessons and quiz
 
 This guide walks you through every step of building a professional WordPress course from initial setup to publication using Masteriyo LMS. From basic course information to advanced features like content dripping and enrollment management, discover how to leverage Masteriyo's full potential for your e-learning success.
 
-<Embed>https://www.youtube.com/watch?v=DVtHq5pY1kc</Embed>
+<Embed>https://www.youtube.com/watch?v=20PEFeNVRXs&t=429s</Embed>
 
 ## Accessing Course Creation Interface
 
@@ -13,7 +13,7 @@ To access the course creation interface on your WordPress website:
 
 - Navigate to **Masteriyo** > **Courses** and click **Add New Course**.
 
-![Add New Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/navigate-to-course-and-add-new-course.png)
+![Courses list with Add New Course button](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:1ac51f427b9c9af9da5f34f59a9f5b96/directUpload/courses-list.png)
 
 - A new course builder interface will appear. 
 
@@ -27,7 +27,14 @@ Let's now set up the course with the required information:
 - Now, add the slug for your course, which is the course URL.
 - Click **Add Featured Image** to add an image for the course.
 
-![Masteriyo Course Setting for Free Version](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/masteriyo-course-setting-for-free-version.png)
+![Course builder — edit course basics](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:27830194d5e808cb456ad5bce89b68d6/directUpload/edit-course.png)
+
+<Callout>
+  The Course Description editor and lesson content editors can now use
+  **different editors** [Pro] — set them independently under **Masteriyo →
+  Settings → General → Editor** (Default Editor for lessons, Course Overview
+  Editor for the description shown on the single course page).
+</Callout>
 
 ### Premium Features on Course Builder [Pro]
 
@@ -36,7 +43,7 @@ If you have Masteriyo Pro, you can set the course as a featured course and add a
 - **Featured:** Enabling the Featured toggle button helps you to highlight the course from all your courses.
 - **Featured Video:** Replace the featured image with a video on your course pages.
 
-![Masteriyo Course Setting for Pro Version](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/masteriyo-course-setting-for-pro-version.png)
+{/* IMAGE: course-builder-pro-basic-settings */}
 
 ## Course Content Creation
 
@@ -44,21 +51,31 @@ Each course can be divided into **Sections**. Sections are a group of **Lessons*
 
 - Navigate to **Builder** tab and click on **Add New Section** button. 
 
-![add-new-section](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/add-new-section-for-course.png)
+![Add New Section](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:039446eba81148da6c963eb607da9a16/directUpload/add-new-section.png)
 
 - Give a name to the section in the **Section Name** field and click **Add**.
 
-![section-name](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/create-a-new-section.png)
+{/* IMAGE: course-builder-section-name-input */}
 
 ### Adding Course Content
 
 Once you add a new section, you'll see the **Add New Content** link, from where you can add Text Lessons, Video Lessons, Live Streams, Quizzes, Google Meet, Zoom Meetings, and Assignments.
 
-![Click on Add New Content](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/add-new-content-for-section.png)
+![Click on Add New Content](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:2737f08c57a842c9e863e95539fc235a/directUpload/add-new-content.png)
 
 Now, select the content type based on your preference.   
 
-![Select Content Type](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/select-content-type.png)
+{/* IMAGE: course-builder-select-content-type */}
+
+<Callout>
+  Use the **Search curriculum** box in the Builder tab to quickly filter
+  sections and lessons in courses with a lot of content. Each section also
+  gets an **Upload** button that opens your media library in multi-select
+  mode — every video file you pick becomes a draft lesson in that section
+  automatically (PDF and audio files require a paid plan).
+</Callout>
+
+{/* IMAGE: course-builder-search-and-bulk-upload */}
 
  - **Text Lesson** - A text-based learning module where educators can share detailed course content, including formatted text, links, and resources. Perfect for self-paced learning in your LMS platform. Learn how to create engaging text content with our [text lesson creation guide](/course-creation/text-lesson-creation).
 
@@ -78,6 +95,24 @@ Now, select the content type based on your preference.
 
 - **Audio Lesson** [Pro] - Deliver educational content through high-quality audio recordings. Ideal for podcasts, lectures, interviews, language learning, meditation sessions, or any content where students prefer to listen while multitasking or on the go. Create engaging audio content with our [audio lesson creation tutorial](/course-creation/audio-lesson-creation).
 
+<Callout>
+  Each lesson row in the Builder tab shows a **previewable** badge and a
+  direct preview link when the lesson is marked as a free preview — you don't
+  need to open the lesson editor just to check or preview it. On the Free
+  plan, the "Make this lesson a free preview" toggle appears locked with a
+  Pro upgrade prompt.
+</Callout>
+
+### Bulk Editing Lessons
+
+Turn on bulk-select in the Builder tab to check multiple lessons at once and, from the floating selection bar:
+
+- **Publish** or **switch to Draft** in one action
+- **Edit Lesson Options** — bulk toggle **Enable Video Share** and **Enable Right Click** across every selected lesson, plus bulk-edit **content drip release dates** [Pro]
+- **Delete** the selected lessons (with a two-step confirmation)
+
+{/* IMAGE: course-builder-bulk-lesson-editing */}
+
 
 ## Course Settings
 Navigate to **Settings** tab. Each course you make will have its own individual settings that have the course flow, type: free or pro, and many more features. There are six groups of options to set in the individual settings. They are,
@@ -91,10 +126,22 @@ Navigate to **Settings** tab. Each course you make will have its own individual 
 
 Active add-ons add further tabs (Certificate, Prerequisites, FAQ, WooCommerce, Lemon Squeezy, Paid Memberships Pro, Restrict Content Pro).
 
+<Callout>
+  The Certificate tab's certificate selector now includes a **Create new
+  certificate** option directly in the dropdown, so you don't need to leave
+  the course builder to set one up.
+</Callout>
+
+<Callout>
+  From **Masteriyo → Addons**, active add-ons like Zoom or Google Meet now
+  show a **Settings** (gear) button that jumps straight to that add-on's
+  configuration, instead of hunting for it under Settings.
+</Callout>
+
 ### Pricing
 From this tab, you can set the course's price. You can either make the course Free or charge for it.
 
-![Free Pricing Option](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/free-pricing-option.png)
+![Course Pricing tab](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:8b74f8db6937632e81626e83fc032dbb/directUpload/course-pricing.png)
 
 #### Free 
 If you decide to make the course free, you will then have two additional options: 
@@ -107,7 +154,7 @@ For paid pricing as well, you've two options:
 
   Set a one-time fee for the course you have created. 
 
-![Pricing for Paid](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/paid-pricing-option.png)
+{/* IMAGE: course-pricing-one-time-paid */}
 
 The enrollers must then pay this amount to take the course. You can also add a sale price so that the course will display both the original price and the sale price. 
 
@@ -115,62 +162,69 @@ The enrollers must then pay this amount to take the course. You can also add a s
 
   Recurring creates a subscription-based course where students pay repeatedly at set intervals to maintain access. 
 
-![Recurring Pricing Option](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/recurring-pricing-option.png) 
+![Recurring Pricing Option](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:ae2efdb279dbce0bd981a6925d1f2b18/directUpload/course-recurring-price.png)
 
 You can set a **Subscription Price** (how much they pay each billing cycle) and choose the billing frequency (every week, month, or year). The **Expire After** setting determines when their access ends if they don't renew. 
 
 ### Group Pricing
 
-This tab lets you set up quantity-based pricing tiers so a buyer can purchase multiple seats of the course at once, typically at a discounted per-seat rate.
+This tab lets you set up quantity-based pricing tiers so a buyer can purchase multiple seats of the course at once, typically at a discounted per-seat rate. See [Groups](/free-addons/group-course) for the full walkthrough — pricing tiers, fixed vs. variable seats, and managing group enrollments.
 
 ### General
 In this tab, you will find basic course related settings like instructor, difficulty, duration, etc. All these settings are explained briefly as below: 
 
-![General Course Setting for Free Version](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/general-course-setting.png)
+![General tab in course settings](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:fb9274b4a4c6e0f522f05783757d2450/directUpload/course-general-tab.png)
 
 #### Course Basics
 
-- **Instructor** - The user who has created the course will be shown here.  
-- **Additional Instructor** [Pro] - You can add more than one instructor if the course is prepared by a group of instructors.  
-- **Course Badge** - Give a badge to your course, such as "Expert's Choice", and so on. 
-- **Difficulty** - Set the difficulty of the course to be Expert, Intermediate, or Beginner as per the course's contents.
-- **Duration** - Set the course duration in hours and minutes. 
+- **Instructor** - Search and select the course's instructor from your site's admins and instructors. The user who created the course is selected by default.
+- **Additional Instructors** [Pro] - Add more than one instructor if the course is prepared by a group of instructors.
+- **Difficulty** - Choose the course level from a dropdown (e.g. Expert, Intermediate, Beginner) as per the course's contents.
+- **Duration** - Set the course duration in hours and minutes.
+- **Course Badge** - Give a badge to your course, such as "Expert's Choice", and so on.
 
-#### Enrollment & Access Control
-- **Maximum Students** - Set a limit for the students to enroll or make the course available to unlimited students. 
-- **Static Enrolled Count** - Add a base number of students that is added to the actual enrollment count displayed on the course.  
-- **Password** - Set a password for the course. The students will have to enter the password to view/enroll. 
-- **Enable Course Retake** - Enable this option to allow users to retake the course. 
+#### Access & Restrictions
 
-#### Content & Restrictions
-
+- **Maximum Students** - Choose **No limit**, or **Limit** and enter the maximum **Number of Students** allowed to enroll.
+- **Static Enrolled Count** - Add a base number of students that is added to the actual enrollment count displayed on the course. Only available when Maximum Students is set to no limit.
+- **Password** - Set a password for the course. The students will have to enter the password to view/enroll. Click the eye icon to reveal what you typed.
+- **Allow Course Retake** - Enable this option to allow users to retake the course.
 - **Restrict Content During Quiz** - Enable this option to restrict the course content when a student is doing the Quiz.
+- **Assignment options** [Pro] - When the Assignment add-on is active, extra assignment-completion and retake controls appear here as well.
 
 ### Schedule & Access [Pro]
 
 This tab controls when and how students can access the course.
 
-- **Cohort Mode** [Pro] - Group enrolled students into cohorts that move through the course together on a shared schedule.
-- **Course Coming Soon** - Show the course but block enrollment until the date you specify.
+- **Cohort Mode** [Pro] - Group enrolled students into cohorts that move through the course together on a shared schedule. See [Cohort Mode](/course-creation/cohort-based-course) for the full walkthrough.
+- **Course Coming Soon** - Show the course but block enrollment until the date you specify. See [Course Coming Soon](/free-addons/course-coming-soon) for the full walkthrough.
 - **End Date** - Set a date for when the course ends. Once the date has arrived and passed, the course will then change into Draft.
 - **Enrollment Expiration** - From here, you can set a deadline for students to complete your course after they enroll. Once enabled, you can specify a time limit in days, and students must finish the course within that timeframe or lose access.
 
-![Enrollment Setting](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/enrollment-setting-on-masteriyo-pro.png)
+![Enrollment Expiration setting](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:7be57e2b53a12a129706e784b8eb8f27/directUpload/course-enrollment-expiration.png)
 
 ### Display
-This tab lets you customize how the courses appear.
 
-
-![Display Setting for Course](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/display-settings-for-course.png)
-
-- **Curriculum Visibility** — Choose **Always Visible** to show the course curriculum to everyone, or **Only Visible to Enrollers** to show it only to enrolled students. 
-- **Enable Review** -  Allows students to leave ratings and comments on your course. When enabled, a review section appears on the course page where enrolled students can share their feedback and rate the course.
-- **Review after course completion** - Let users leave a review after they complete the course.  
 - **Welcome Message For User** - Displays a personalized greeting when students first access your course learning page. Add a custom welcome title and description to provide important course information or instructions.
 
-You can also preview the welcome message:  
+You can also preview the welcome message:
 
-![Preview welcome message](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/preview-welcome-message.gif)
+{/* IMAGE: course-builder-welcome-message-preview */}
+
+Curriculum visibility, reviews, and course layout are no longer per-course settings here — they now apply **globally to every course**, and this tab links you to where to change them instead of duplicating the controls:
+
+- **Masteriyo → Settings → Styles**
+- **Masteriyo → Settings → Single Course Page → Display**
+
+See [Single Course Settings](/settings/single-course-page) for the full list of these options.
+
+{/* IMAGE: course-builder-display-tab-welcome-message-and-global-settings-link */}
+
+<Callout>
+  The per-course Reports page has also been removed from the course builder —
+  course-level analytics now live under [Course
+  Analytics](/course-creation/course-analytics) instead.
+</Callout>
 
 ### Content Drip
 Content Drip controls when course lessons become available to students after enrollment. Instead of releasing all content at once, you can: 
@@ -179,18 +233,24 @@ Content Drip controls when course lessons become available to students after enr
 - **Date Selection** [Pro]: Release lessons on specific dates you choose.  
 - **X Days From Enrollment** [Pro]: Lessons unlock automatically after a set number of days from when each student enrolls. 
  
-![Select Flow Type for Content Drip](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/select-flow-type-for-content-drip.png)
+{/* IMAGE: course-builder-content-drip-flow-type */}
 
 Once you have set up the course's settings per your requirement, hit the **Publish** button to save the changes. You can also click on the **Preview** button beside the Publish button to glance at the course you have made and see how it appears to the students.   
 
-![Preview Course at Frontend](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/frontend-view-of-course.gif)
+{/* IMAGE: course-preview-button-frontend */}
 
 **Note**: Here's our [detailed documentation on Content Drip](/premium-addons/content-drip). 
 
 ## Frontend View for the Course
 Here's how your course might appear at the frontend: 
 
-![Course at frontend](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/course-creation/course-at-frontend-after-creation.png)
+![Course at frontend](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:9a8cd4707ee5885e909fcba516b0316a/directUpload/courses-frontend.png)
+
+<Callout>
+  While viewing any course, lesson, or quiz page on the frontend as an admin
+  or instructor, look for the **Edit Course** link in the WordPress admin bar
+  — it takes you straight back to that course's builder.
+</Callout>
 
 ### Additional Resources
 - [Create a Private course using Masteriyo LMS](/course-creation/private-course-creation).
