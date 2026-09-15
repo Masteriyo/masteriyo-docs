@@ -1,0 +1,65 @@
+---
+title: How to Create Quizzes with AI Using JSON Import in Masteriyo LMS?
+excerpt: Turn documents, question banks, or notes into Masteriyo quizzes with any AI assistant — export a sample quiz as a template, let the AI fill it, and import the result in .json format.
+---
+
+## Create Quizzes with AI and JSON Import
+
+If your questions already exist somewhere — a Word document, a PDF, a spreadsheet, or your notes — you don't need to retype them into the Course Builder one by one. Any AI assistant (ChatGPT, Claude, Gemini, and others) can convert them into Masteriyo's quiz .json format, which you can then import in one step. Course creators use this workflow to build large question banks in minutes instead of hours.
+
+**Prerequisite:**
+- **Masteriyo LMS plugin v1.16.0** or above installed and activated.
+- An AI assistant of your choice (a regular chat subscription is enough — no API key is needed for this workflow).
+
+### Step 1: Export a Sample Quiz as Your Template
+
+The most reliable way to produce a valid quiz file is to give the AI a real example to follow.
+
+1. In your WordPress dashboard, go to **Masteriyo > Courses** and open any course in the **Builder** tab
+2. Create a small quiz manually if you don't have one yet — two or three questions of the types you want (for example, one multiple choice and one true/false)
+3. Click the quiz's **Export** menu — the quiz downloads as a **.json** file
+
+This exported file is your template: it contains the quiz, its questions, and the answers exactly as Masteriyo expects them. Questions are linked to their quiz, and each question carries its answer options and correct answers inside it.
+
+<Callout>
+  Include one question of each type you plan to generate (multiple choice, true/false, and so on) in the sample quiz, so the AI has a correct example of every format.
+</Callout>
+
+### Step 2: Ask the AI to Fill the Template
+
+Open your AI assistant, attach or paste **both** the exported .json file and your source material (document, question list, or notes), then use instructions like these:
+
+```text
+You will convert my content into a Masteriyo LMS quiz import file.
+
+1. Use the attached exported quiz .json strictly as a structural template.
+   Do not add, remove, or rename any fields. Do not change IDs, types, or
+   the way questions reference their quiz.
+2. Replace only the quiz title, the question titles, the answer options,
+   and the correct-answer markings, based on my source material below.
+3. Follow the same pattern as the template for each question type.
+4. Keep the same number-of-answers style the template uses, and make the
+   wrong options plausible — not obviously wrong.
+5. Return only the final .json file content, nothing else.
+
+My source material:
+[paste your questions or attach your document here]
+```
+
+Save the AI's output as a `.json` file.
+
+### Step 3: Import and Verify
+
+1. In the **Course Builder**, click the **Import Quiz** menu
+2. Select your generated **.json** file and hit **Import Quiz**
+3. Click **Update**, then preview the quiz
+
+<Callout>
+  Always review the imported questions before publishing — open each one and confirm the correct answers are marked as you intended. Import into a draft or test course first if you are generating a large batch.
+</Callout>
+
+### Importing Whole Courses
+
+The same template approach works one level up: **Masteriyo > Tools > Import/Export** exports entire courses (sections, lessons, quizzes, and questions) as .json. Export a small sample course, hand it to the AI as the template together with your material, and import the result the same way. This is useful when migrating existing training material into Masteriyo in bulk.
+
+For the basics of quiz import/export, see [How to Import or Export Individual Quizzes in Masteriyo LMS](/faqs/import-and-export-individual-quizzes).
