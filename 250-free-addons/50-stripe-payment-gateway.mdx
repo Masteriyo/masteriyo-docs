@@ -51,6 +51,7 @@ Payments > Stripe:
 
 - **Connection Status:** Shows if your site is currently linked to Stripe.
 - **Enable iDEAL Payment:** Toggle this on if you wish to accept iDEAL payments.
+- **Cards Only** (New in 3.5.0): Restrict checkout to card payments only, hiding bank transfers, wallets, and other local payment methods Stripe would otherwise offer automatically. This is especially useful with Stripe Connect, where the available methods normally come from the platform account and a connected merchant can't turn individual ones off any other way.
 - **Title:** This is the name of the payment method shown to students at checkout (e.g.,
   "Credit Card").
 - **Description:** This text appears under the title to explain the payment method to the user.
