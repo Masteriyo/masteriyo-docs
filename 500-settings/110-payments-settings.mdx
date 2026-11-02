@@ -102,6 +102,10 @@ The region will appear in your tax regions list. Click on **Save Setting** to sa
 
 You can enable any of the available fields to display them on the checkout form.
 
+### Invoice (New in 3.5.0)
+
+- **Enable Invoices** - On by default. Turn this off to stop generating order invoice PDFs and hide their download links for customers, if you don't want to offer invoices at all.
+
 ### Standard PayPal
 
 ![payment-paypal-standard](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/payments/standard-paypal-tab.png)
@@ -159,3 +163,4 @@ To display the information, toggle the **Display Wire Transfer Information** opt
   - **Test Secret Key** - Add the test secret key from Stripe here.
   - **Webhook Secret Key** - Get your webhook secret key from Stripe and add it here.
   - **Webhook Endpoint** - Add the given endpoint to your Stripe webhook endpoint list to verify the payment status.
+  - **Cards Only** (New in 3.5.0) - Restrict Stripe checkout to card payments only, hiding bank transfers, wallets, and other local payment methods. See [Stripe Payment Gateway](/free-addons/stripe-payment-gateway) for details.

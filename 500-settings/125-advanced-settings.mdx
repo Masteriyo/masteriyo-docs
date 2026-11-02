@@ -9,7 +9,14 @@ excerpt: Advanced Masteriyo settings — permalinks, checkout endpoints, debug m
 
 ![masteriyo-advanced-setting-for-permalinks](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-settings/permalinks.png)
 
-Here you can set the permalinks for different pages as shown in the above image.
+- **Course Category Base** - The URL segment used for course category archives.
+- **Course Tag Base** (New in 3.5.0) - The URL segment used for course tag archives. Previously only the category and difficulty bases could be customized here — tags used a fixed default with no UI to change it.
+- **Course Difficulty Base** - The URL segment used for course difficulty archives.
+- **Single Course Permalink** - Choose how individual course URLs are structured:
+  - **Default** - `yoursite.com/course/sample-course`
+  - **Courses page base** - uses your Courses page as the base, e.g. `yoursite.com/courses/sample-course`
+  - **Courses page base with category** - adds the course's category to the URL, e.g. `yoursite.com/courses/category-name/sample-course`
+  - **Custom base** (New in 3.5.0) - type any base you want, e.g. `yoursite.com/kurs/sample-course`. Useful for localized sites that don't want an English URL segment like "course". The base needs at least one letter, number, or underscore — anything that sanitizes down to nothing (like `!!!`) is rejected.
 
 ## Checkout Endpoints
 

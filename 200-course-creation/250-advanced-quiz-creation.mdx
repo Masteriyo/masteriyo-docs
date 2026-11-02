@@ -6,19 +6,19 @@ excerpt: Build quizzes in Masteriyo with true/false, multiple choice, fill in th
 <Callout>
   {" "}
   **Note:** This instruction is for creating a Quiz for your course. If you missed
-  the documentation for creating a complete course, please review it here: [Complete Course Creation](/course-creation/complete-course-creation).
+  the documentation for creating a complete course, please review it here: [Complete
+  Course Creation](/course-creation/complete-course-creation).
 </Callout>
 
 ## How to Create a Quiz
 
 With Masteriyo, you can create advanced quizzes as per your needs. There is a component in the course section called quiz where you can add questions and allow users to answer them. You can assign points to these questions, set a pass mark and check the student's progress.
 
-
 - Navigate to the course builder of the course where you want to create a quiz. Now, click on **Add New Content**.
 
 ![Click on Add New Content](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/click-on-add-new-content.png)
 
-- Select content type as **Quiz**. 
+- Select content type as **Quiz**.
 
 ![Add New Quiz](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/click-on-quiz-creation.png)
 
@@ -39,7 +39,7 @@ The question bank is a centralized repository for Masteriyo LMS, where you can f
 
 You can choose your preferred action:
 
-**Add to Quiz:** Adds the question directly (removes it from the bank).  
+**Add to Quiz:** Adds the question directly (removes it from the bank).
 
 ![Add to Quiz](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/add-to-quiz-button.png)
 
@@ -59,6 +59,21 @@ If you want to add a new question, please follow the steps below.
 
 ![Select Question Type](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/select-question-type.png)
 
+### Text Direction
+
+From **v3.5+** each question has its own **Text direction** selector next to **Points** in the question editor, with three options:
+
+- **Inherit** (default) — follows the site's overall text direction.
+- **LTR** — left-to-right, for questions written in languages like English.
+- **RTL** — right-to-left, for languages like Arabic or Hebrew.
+
+This lets you mix languages within the same quiz — for example, an otherwise RTL quiz can include one LTR question — and the direction is respected everywhere the question appears: while editing, on the learn page, in the read-only view, and in the results breakdown.
+
+![Text direction selector beside Points in the question editor](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:76078576f9c5ba194b04590fb684f719/directUpload/question-text-direction-selector.png)
+
+**Frontend:**
+![A question set to RTL shown on the frontend learn page](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:a382a681094d65f93c2037be930c1004/directUpload/question-rtl-frontend-example.png)
+
 ## Question Types
 
 ### True False
@@ -70,7 +85,7 @@ Write the questions that have a true or false answer. Similarly, you can add que
 #### Answer Explanation
 
 This option lets the instructor add an explanation to the correct answer. The students will be able to see this once they submit the answers.
-Here's how the **True False** looks at the frontend:  
+Here's how the **True False** looks at the frontend:
 
 ![Frontend View of True False](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontendt-view-of-true-or-false.png)
 
@@ -80,7 +95,7 @@ If you have questions where the learners have to select only one answer out of t
 
 ![quiz-question-type-single-choice](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/add-single-quiz.png)
 
-At the user's end, the quiz might look similar to the image below: 
+At the user's end, the quiz might look similar to the image below:
 
 ![Frontend View of Single Choice](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontend-view-of-single-choice.png)
 
@@ -88,9 +103,9 @@ At the user's end, the quiz might look similar to the image below:
 
 This is similar to the single-choice questions, but here the learners can select more than one answer. Click on 'Add new answer' to add a new option.
 
-![quiz-question-type-multiple-choice](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/multiple-choice-quiz.png)  
+![quiz-question-type-multiple-choice](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/multiple-choice-quiz.png)
 
-Here's the frontend view of **MultiChoice** quiz: 
+Here's the frontend view of **MultiChoice** quiz:
 
 ![Frontend View of MultipleChoice](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontend-view-of-multiple-choice.png)
 
@@ -100,7 +115,7 @@ This question type lets you create a question that requires explanatory text ans
 
 ![Text Answer](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/text-answer-settings.png)
 
-This quiz will look similar to the image below at the frontend: 
+This quiz will look similar to the image below at the frontend:
 
 ![Frontend View of Text Answer](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/frontend-view-of-text-answer.png)
 
@@ -191,11 +206,11 @@ On the last tab of the Quiz Editor screen, you will see the Settings specificall
 ![Display Settings for Quiz](https://raw.githubusercontent.com/Masteriyo/masteriyo-docs/main/assets/images/advanced-quiz-creation/question-per-page.png)
 
 - **Questions Per Page**: You can choose two options for this. Either choose to inherit the global settings for the number of questions to be displayed on each page or choose a custom number for separate quizzes.
-  - The maximum limit for the questions per page is 999. 
+  - The maximum limit for the questions per page is 999.
 - **Randomize Questions**: When enabled, presents questions in random order to each student. (Toggle to enable/disable).
 - **Show Result**: When enabled, displays quiz results to students immediately after completion. (Toggle to enable/disable).
 
-You can then update the quiz. 
+You can then update the quiz.
 
 ## Additional Resources
 

@@ -35,9 +35,8 @@ Think of it like SaaS pricing plans, but for your courses. You can offer volume 
 - Groups addon enabled
 
 <Callout>
-  Note: The Free plan is limited to 1 pricing tier with fixed seats
-  only. Paid plans unlock unlimited tiers, variable seats, and advanced
-  pricing models.
+  Note: The Free plan is limited to 1 pricing tier with fixed seats only. Paid
+  plans unlock unlimited tiers, variable seats, and advanced pricing models.
 </Callout>
 
 ## Differences from Legacy Group Pricing
@@ -73,7 +72,7 @@ The new system provides enterprise-level flexibility:
 | **Pricing**      | One total price for all seats            | Two options (see Pricing Models below)               |
 | **Example**      | "Small Team - 10 seats for $1,000"       | "Enterprise - Choose 11-50 seats"                    |
 | **Use case**     | Standard team sizes, package deals       | Scalable teams, custom group sizes                   |
-| **Availability** | All plans, including Free                                | Paid plans only                               |
+| **Availability** | All plans, including Free                | Paid plans only                                      |
 | **Best for**     | Predefined team packages                 | Flexible, varying team sizes                         |
 
 ## Understanding Pricing Models
@@ -467,7 +466,25 @@ Group leaders can see which courses are associated with their group:
 - **Read-only view** - Cannot add/remove courses (determined by purchase)
 - Members automatically get enrolled in these courses once added
 
-#### 6. Delete Groups
+#### 6. Track Member Progress [Pro]
+
+On the group's **Edit** screen, a **Member Progress** table shows how each member is doing in the group's courses — one table per course when the group is linked to more than one.
+
+**Required version: v3.5.0**
+
+Each row covers one member, with these columns:
+
+- **Member** — display name and email, or **"No account yet"** if the email hasn't registered.
+- **Status** — **Not enrolled**, **Inactive**, **Not started**, **In progress**, or **Completed**.
+- **Progress** — a percentage and progress bar.
+- **Lessons** / **Quizzes** — completed vs. total, shown as `3 of 10`.
+- **Last activity** — the completion date, or the most recent progress update if the member hasn't finished.
+
+The table only appears once the group has both a linked course and at least one member.
+
+![Member Progress table on the group's Edit screen](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:4001ac81bf622904b006ab5522283541/directUpload/group-member-progress-table.png)
+
+#### 7. Delete Groups
 
 Group leaders can delete groups they no longer need:
 

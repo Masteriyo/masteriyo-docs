@@ -1,45 +1,63 @@
 ---
 title: Tools Overview
-excerpt: Import and export Masteriyo courses, quizzes, and users, install ready-made sample courses, and clear cache from the Masteriyo > Tools page.
+excerpt: Import and export a full Masteriyo site, courses, quizzes, and users, install ready-made sample courses, and clear cache from the Masteriyo > Tools page.
 ---
 
-The Tools section in the Masteriyo plugin helps you import/export courses and add sample courses to your site with ease.
+The Tools section in the Masteriyo plugin helps you import/export your whole site or individual courses, and add sample courses to your site with ease.
 
         Masteriyo > Tools
 
-## Courses Import/Export
+## Full Site Import/Export (v3.5+)
 
-![import-export-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/a31f51aa-ea86-4eb8-b5dc-fad8247e4586)
+A **Full Site** tab on the Import/Export screen lets administrators move Masteriyo content between sites — for example, cloning a staging setup to production, or migrating to a new host — without reconfiguring everything by hand. This tab is visible to administrators only.
 
-You can import or export courses from here. You will need the courses to be in JSON format for importing.
+**Exporting:**
 
-You can upload the JSON file using the upload button and click on the Import Courses button. The courses will thus be imported and will be available at **Masteriyo > Courses**.
-Similarly, just click on the Export Courses button and you can download the available courses in a JSON file.
+1. Choose which parts to include: **Settings**, **Users**, and/or **Courses** (all three are selected by default).
+2. Click **Export**. The export runs in the background — courses can take a while on larger sites — and the screen polls for progress until it's ready.
+3. Download the generated **.zip** file once the export completes.
 
-### Quizzes Import/Export
+**Importing:**
 
-![quizzes-import-export](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/d2be1cac-16c7-4df5-9a09-c35366c0cf95)
+1. On the destination site's **Full Site** tab, choose the **.zip** file produced by an export.
+2. Click **Import**. The file uploads in chunks, so large exports aren't blocked by your host's upload-size limit.
+3. Masteriyo imports each included section and reports its own result — if settings or users import fine but something in courses fails, you'll see a per-section status with a message instead of one all-or-nothing result.
 
-You can now import or export the quizzes you have created with the Masteriyo LMS. You can also import individual quizzes from the course builder. Here's a [detailed guide on importing or exporting individual quizzes](/faqs/import-and-export-individual-quizzes).
+![Full Site Import/Export tab](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:27a03ec55d11fe026694613cda0b20ab/directUpload/full-import-export.png)
+
+<Callout>
+  Full-site export/import is separate from the **Courses**, **Users**, and
+  **Settings** tabs below — those import/export one type at a time in JSON or
+  CSV, while Full Site bundles everything into a single transferable .zip.
+</Callout>
+
+## Courses, Users, Settings & Quizzes Import/Export
+
+The **Courses**, **Users**, **Settings**, and **Quizzes** tabs all work the same way: choose a file and click **Import**, or click **Export** to download your current data. What differs between them is the file format and what gets moved:
+
+- **Courses** — **.json** file. Imported courses appear at **Masteriyo > Courses**.
+- **Users** — **.csv** file only.
+- **Settings** — **.json** file, covering your Masteriyo settings.
+- **Quizzes** — **.json** file. You can also import or export individual quizzes directly from the Course Builder — see the [detailed guide](/faqs/import-and-export-individual-quizzes) for that workflow, including the PDF answer key export.
+
+![Courses, Users, Settings and Quizzes Import/Export tabs](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:034b125313503ff51180b085e9966b39/directUpload/courses-import-export.png)
+
+<Callout>
+  Settings and Users are visible to administrators only, matching the Full Site
+  tab above.
+</Callout>
 
 ## Sample Courses
 
-![sample-course](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/0e9a15bd-669f-4c76-83fa-72cb91f65f33)
+![sample-course](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:b802a0aab4c292d1507c65bc385e5457/directUpload/sample-courses.png)
 
 Using this feature, you can install sample courses created by our team into your site. This will help you understand how to create a course in an elegant manner. Choose whether you want the courses to be published directly or saved as drafts, then click the Install button.
 
 Once the installation is completed, you can find the installed courses at Masteriyo > Courses
 
-![installed-courses](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/78abc061-c682-403b-8045-2dd6d5679364)
-
-## Users Import/Export
-
-![import-export-users](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/d4e3165e-6c4e-4fda-ae01-0c1b03d47ad5)
-
-You can import/export users from here. This supports CSV files only.
-
 ## Utilities Tab
 
-![utilities-tab](https://github.com/Masteriyo/masteriyo-docs/assets/75772539/95d50531-b9aa-44d4-b6ba-1a1e3dcee92e)
+![utilities-tab](https://img.masteriyo.com/w:auto/h:auto/q:auto/id:4808d7c206a8a1ca12de35a2e147b744/directUpload/utilities.png)
 
-Improve your course access by removing cache. This ensures the courses are up to date and error-free.
+- **Refresh Course Access** — click **Clear Cache** to remove temporary glitches, like duplicate enrollments, caused by website caching. This keeps your course list up to date and error-free.
+- **Force Plugin Update** — click **Check for Update** to manually check whether a newer version of Masteriyo is available. If one is found, an **Update Now** button appears to install it right away. Use this when automatic updates aren't available or you need to update immediately.
